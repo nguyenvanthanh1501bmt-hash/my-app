@@ -1,66 +1,11 @@
-[00:00:02.299] Server  LOG      ✓ Ready in 1786ms
-[00:00:21.804] Server  LOG      ○ Compiling / ...
-[00:00:30.160] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:30.808] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:00:31.320] Browser ERROR   uncaughtError: Error: Hydration failed because the server rendered HTML didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:
-
-- A server/client branch `if (typeof window !== 'undefined')`.
-- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
-- Date formatting in a user's locale which doesn't match the server.
-- External changing data without sending a snapshot of it along with the HTML.
-- Invalid HTML tag nesting.
-
-It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
-
-https://react.dev/link/hydration-mismatch
-
-  ...
-    <LoadingBoundary name="/" loading={null}>
-      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
-        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
-          <RedirectBoundary>
-            <RedirectErrorBoundary router={{...}}>
-              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
-                <SegmentViewNode type="page" pagePath="page.tsx">
-                  <SegmentTrieNode>
-                  <Home>
-                    <div>
-                      <Header>
-                        <header className="p-5 flex i...">
-                          <div>
-                          <div className="flex gap-2...">
-                            <LinkComponent href="/dashboard">
-+                             <a
-+                               ref={function}
-+                               onClick={function onClick}
-+                               onMouseEnter={function onMouseEnter}
-+                               onTouchStart={function onTouchStart}
-+                               href="/dashboard"
-+                             >
-                            ...
-                          ...
-                      ...
-                ...
-              ...
-
-[00:00:31.320] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:36.970] Browser LOG     Current path: /dashboard/expenses
-[00:00:36.970] Browser LOG     Current path: /dashboard/expenses
-[00:00:39.246] Browser LOG     Current path: /dashboard/budget
-[00:00:41.298] Browser LOG     Current path: /dashboard/saving-wallet
-[00:00:43.041] Browser LOG     Current path: /dashboard/your-debt
-[00:00:46.227] Browser LOG     Current path: /dashboard
-[00:00:47.688] Browser LOG     Current path: /dashboard/expenses
-[00:00:48.818] Browser LOG     Current path: /dashboard/budget
-[00:00:49.857] Browser LOG     Current path: /dashboard/saving-wallet
-[00:00:51.949] Browser LOG     Current path: /dashboard
-[00:01:41.873] Browser LOG     Current path: /dashboard/expenses
-[00:01:42.923] Browser LOG     Current path: /dashboard/budget
-[00:01:43.909] Browser LOG     Current path: /dashboard/saving-wallet
-[00:01:44.727] Browser LOG     Current path: /dashboard/your-debt
-[00:01:45.831] Browser LOG     Current path: /dashboard
-[00:01:55.887] Browser LOG     Current path: /dashboard/your-debt
-[00:01:55.887] Browser LOG     Current path: /dashboard/your-debt
-[00:01:57.584] Browser LOG     Current path: /dashboard/saving-wallet
-[00:01:58.671] Browser LOG     Current path: /dashboard/budget
-[00:01:59.574] Browser LOG     Current path: /dashboard/expenses
+[00:00:02.728] Server  LOG      ✓ Ready in 2.4s
+[00:00:15.332] Server  LOG      ○ Compiling / ...
+[00:00:19.304] Server  ERROR    ⨯ TypeError: immutable
+[00:00:19.564] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.621] Server  ERROR    ⨯ TypeError: immutable
+[00:00:20.358] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:20.368] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:20.389] Server  ERROR   Error: The requested resource isn't a valid image.
+[00:00:20.405] Server  ERROR   Error: The requested resource isn't a valid image.
+[00:00:21.519] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:22.401] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.

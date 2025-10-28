@@ -862,10 +862,6 @@
     outline-style: none;
   }
 
-  .running {
-    animation-play-state: running;
-  }
-
   @media (hover: hover) {
     .group-hover\/sidebar\:translate-x-1:is(:where(.group\/sidebar):hover *) {
       --tw-translate-x: calc(var(--spacing) * 1);
