@@ -1,37 +1,57 @@
 # app/database.py
 import urllib.parse
 from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker, declarative_base   # ✅ thêm declarative_base
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-# ✅ Khai báo Base để ORM dùng làm lớp nền cho models
+# =============================
+# Khai báo Base để ORM dùng
+# =============================
 Base = declarative_base()
 
-# Bạn có thể đổi driver thành: ODBC Driver 17 for SQL Server (khuyên dùng)
-DRIVER   = "SQL Server"  # hoặc "ODBC Driver 17 for SQL Server"
-SERVER   = r"LAPTOP-7N0B7R24\SQL"
+# =============================
+# Cấu hình kết nối SQL Server
+# =============================
+DRIVER   = "ODBC Driver 18 for SQL Server"  # hoặc "ODBC Driver 17 for SQL Server"
+SERVER   = "localhost"                       # tên server, hoặc "localhost\\SQLEXPRESS" nếu SQL Express
 DATABASE = "CHITIEU"
 
+# Chuỗi ODBC
 odbc_str = (
     f"DRIVER={{{DRIVER}}};"
     f"SERVER={SERVER};"
     f"DATABASE={DATABASE};"
     "Trusted_Connection=Yes;"
+    "Encrypt=no;"
 )
 
-connect_url = "mssql+pyodbc:///?odbc_connect=" + urllib.parse.quote_plus(
-    odbc_str.replace("{DRIVER}", DRIVER)
-)
+# URL cho SQLAlchemy
+connect_url = "mssql+pyodbc:///?odbc_connect=" + urllib.parse.quote_plus(odbc_str)
 
+# =============================
+# Tạo engine
+# =============================
 engine = create_engine(
     connect_url,
-    use_setinputsizes=False, 
+    use_setinputsizes=False,
     fast_executemany=True,
     pool_pre_ping=True,
-    echo=True
+    echo=True  # bật để debug SQL query
 )
 
+# =============================
+# Tạo Session
+# =============================
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
+# =============================
+# Test kết nối (chạy trực tiếp)
+# =============================
 if __name__ == "__main__":
-    with engine.connect() as conn:
-        print(conn.execute(text("SELECT DB_NAME() AS db, GETDATE() AS now")).mappings().all())
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT DB_NAME() AS db, GETDATE() AS now"))
+            for row in result.mappings():
+                print(row)
+        print("✅ Kết nối SQL Server thành công!")
+    except Exception as e:
+        print("❌ Lỗi kết nối:", e)

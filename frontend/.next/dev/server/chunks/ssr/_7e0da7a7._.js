@@ -18,7 +18,7 @@ function SignInPage() {
             path: "/sign-in",
             routing: "path",
             signUpUrl: "/sign-up",
-            redirectUrl: "/dashboard"
+            redirectUrl: "/"
         }, void 0, false, {
             fileName: "[project]/app/(auth)/sign-in/[[...sign-in]]/page.jsx",
             lineNumber: 8,
