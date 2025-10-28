@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/Visual%20studio%20code/project-python/my-app/app/%28auth%29/sign-in/%5B%5B...sign-in%5D%5D/page.jsx"],"sourcesContent":["'use client'\r\n\r\nimport { SignIn } from \"@clerk/nextjs\";\r\n\r\nexport default function SignInPage() {\r\n  return (\r\n    <SignIn\r\n      path=\"/sign-in\"           // URL page đăng nhập\r\n      routing=\"path\"            // cách routing của Clerk\r\n      signUpUrl=\"/sign-up\"      // link để chuyển sang SignUp\r\n      redirectUrl=\"/dashboard\"  // ← sau khi login xong sẽ chuyển đến /dashboard\r\n    />\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAAS;IACtB,qBACE,2PAAC,6NAAM;QACL,MAAK;QACL,SAAQ;QACR,WAAU;QACV,aAAY;;;;;;AAGlB","debugId":null}},
+    {"offset": {"line": 29, "column": 0}, "map": {"version":3,"sources":["file:///D:/Visual%20studio%20code/project-python/my-app/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-ssr']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,mIACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0],"debugId":null}}]
+}

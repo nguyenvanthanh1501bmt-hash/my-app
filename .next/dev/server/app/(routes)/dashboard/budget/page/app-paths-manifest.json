@@ -1,0 +1,3 @@
+{
+  "/(routes)/dashboard/budget/page": "app/(routes)/dashboard/budget/page.js"
+}
