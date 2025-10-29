@@ -23,7 +23,7 @@
             <span className="ml-2 font-bold text-lg text-black">Finman</span>
           </Link>
         </div>
-
+ 
         <div className="flex flex-row sm:items-center sm:flex-row gap-2 sm:gap-3 sm:mt-0">
           {isSignedIn ? (
             <>
