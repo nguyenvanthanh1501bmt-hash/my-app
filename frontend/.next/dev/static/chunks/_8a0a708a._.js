@@ -21,12 +21,12 @@ function SignInPage() {
             redirectUrl: "/"
         }, void 0, false, {
             fileName: "[project]/app/(auth)/sign-in/[[...sign-in]]/page.jsx",
-            lineNumber: 8,
+            lineNumber: 7,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/app/(auth)/sign-in/[[...sign-in]]/page.jsx",
-        lineNumber: 7,
+        lineNumber: 6,
         columnNumber: 5
     }, this);
 }
