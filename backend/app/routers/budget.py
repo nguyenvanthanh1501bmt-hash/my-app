@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from app.deps import get_db
 from app.schemas.budget import BudgetCreate, BudgetUpdate, BudgetOut
@@ -45,3 +45,7 @@ def update_partial(user_id: int, month: str, body: BudgetUpdate, db: Session = D
 def delete_budget(budget_id: int, db: Session = Depends(get_db)):
     BudgetRepo.delete(db, budget_id)
     return {"deleted": True}
+
+@router.get("/", response_model=list[BudgetOut])
+def list_budgets(user_id: int = Query(...), db: Session = Depends(get_db)):
+    return BudgetRepo.list_by_user(db, user_id)

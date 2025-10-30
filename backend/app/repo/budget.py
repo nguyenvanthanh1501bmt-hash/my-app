@@ -64,3 +64,8 @@ class BudgetRepo:
         b = db.get(Budget, budget_id)
         if b:
             db.delete(b); db.commit()
+
+    @staticmethod
+    def list_by_user(db: Session, user_id: int):
+        return db.query(Budget).filter(Budget.user_id == user_id)\
+                .order_by(Budget.month.desc()).all()
