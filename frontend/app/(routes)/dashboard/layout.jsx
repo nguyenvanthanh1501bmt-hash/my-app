@@ -5,7 +5,6 @@ import SidebarDemo from "./components/SideNav";           // Sidebar menu
 import DashboardHeader from "./components/DashboardHeader"; // Header trên cùng
 import { useUser } from "@clerk/nextjs";             // Hook kiểm tra trạng thái login
 import { useRouter } from "next/navigation";        // Hook điều hướng client
-import SendUsername from "../../_components/profile_user"; // Component gửi username lên backend
 
 export default function DashboardLayout({ children }) {
     const { isSignedIn } = useUser();  // Lấy trạng thái đăng nhập
@@ -25,7 +24,6 @@ export default function DashboardLayout({ children }) {
             <div className="flex-1 flex flex-col">
                 {/* Header phía trên */}
                 <DashboardHeader />
-                <SendUsername />  {/* Gửi username lên backend khi đăng nhập */}
                 {/* Nội dung chính của từng page */}
                 <main className="p-5 flex-1 overflow-auto">
                     {children}  {/* Đây là nơi page (ví dụ page.jsx) được render */}

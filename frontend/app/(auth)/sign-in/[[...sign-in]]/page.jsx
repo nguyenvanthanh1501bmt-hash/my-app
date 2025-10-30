@@ -8,7 +8,6 @@ export default function SignInPage() {
         path="/sign-in" // URL page đăng nhập 
         routing="path" // cách routing của Clerk 
         signUpUrl="/sign-up" // link để chuyển sang SignUp 
-        redirectUrl="/" // ← sau khi login xong sẽ chuyển đến /dashboard 
       /> 
     </div> 
   ); 

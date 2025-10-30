@@ -9,9 +9,6 @@ export default function SendUsername() {
   useEffect(() => {
     if (!isSignedIn || !user) return;
 
-    // tránh gửi nhiều lần
-    if (localStorage.getItem("sent_username")) return;
-
     const sendUsername = async () => {
       try {
         // Lấy name từ Clerk
@@ -54,8 +51,6 @@ export default function SendUsername() {
         const data = await res.json();
         console.log("Username sent successfully:", name, "Backend response:", data);
 
-        // đánh dấu đã gửi
-        localStorage.setItem("sent_username", "true");
       } catch (err) {
         console.error("Send username failed:", err);
       }

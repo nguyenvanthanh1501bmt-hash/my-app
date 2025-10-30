@@ -1,52 +1,1908 @@
-[00:00:03.565] Server  LOG      ✓ Ready in 2.9s
-[00:00:11.252] Server  LOG      ○ Compiling / ...
-[00:00:13.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:14.156] Server  ERROR    ⨯ TypeError: immutable
-[00:00:14.261] Server  ERROR    ⨯ TypeError: immutable
-[00:00:14.498] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:14.498] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:00:16.362] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:16.366] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:17.986] Server  ERROR    ⨯ TypeError: immutable
-[00:00:18.023] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:18.039] Browser LOG     Current path: /dashboard
-[00:00:18.039] Browser LOG     Sending username to backend: abc123
-[00:00:18.039] Browser LOG     Current path: /dashboard
-[00:00:18.039] Browser LOG     Sending username to backend: abc123
-[00:00:18.800] Browser ERROR   Send username failed: {}
-[00:00:18.800] Browser ERROR   Send username failed: {}
-[00:04:13.100] Server  ERROR    ⨯ TypeError: immutable
-[00:04:13.103] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:13.165] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:13.204] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:13.205] Browser LOG     Current path: /dashboard
-[00:04:13.608] Browser LOG     Sending username to backend: abc123
-[00:04:13.971] Browser ERROR   Send username failed: {}
-[00:06:57.220] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:57.299] Server  ERROR    ⨯ TypeError: immutable
-[00:06:57.352] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:57.399] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:06:57.399] Browser LOG     Current path: /dashboard
-[00:06:57.763] Browser LOG     Sending username to backend: abc123
-[00:06:58.159] Browser ERROR   Send username failed: {}
-[00:08:59.517] Server  ERROR    ⨯ TypeError: immutable
-[00:08:59.519] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:59.548] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:08:59.708] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:08:59.708] Browser LOG     Current path: /dashboard
-[00:09:00.002] Browser LOG     Sending username to backend: abc123
-[00:09:00.469] Browser ERROR   Send username failed: {}
-[00:11:17.613] Server  ERROR    ⨯ TypeError: immutable
-[00:11:17.643] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:17.644] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:11:17.827] Browser LOG     Current path: /dashboard
-[00:11:17.827] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:11:18.154] Browser LOG     Sending username to backend: abc123
-[00:11:18.892] Browser ERROR   Send username failed: {}
-[00:18:41.776] Server  ERROR    ⨯ TypeError: immutable
-[00:18:41.781] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:18:41.817] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:18:41.967] Browser LOG     Current path: /dashboard
-[00:18:41.967] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:18:42.344] Browser LOG     Sending username to backend: abc123
-[00:18:42.749] Browser LOG     Username sent successfully: abc123 Backend response: {"created_at":"2025-10-30T09:51:29","id":1,"name":"abc123"}
+[00:00:01.357] Server  LOG      ✓ Ready in 1024ms
+[00:00:49.677] Server  LOG      ○ Compiling / ...
+[00:00:52.077] Server  ERROR    ⨯ TypeError: immutable
+[00:00:52.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.589] Server  ERROR    ⨯ TypeError: immutable
+[00:00:53.441] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:53.443] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:54.209] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:01:09.349] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:01:42.339] Server  LOG      ✓ Compiled in 189ms
+[00:01:44.807] Server  ERROR    ⨯ TypeError: immutable
+[00:01:44.846] Server  ERROR    ⨯ TypeError: immutable
+[00:01:44.853] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:44.924] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:01:44.926] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:01:45.180] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:01:45.180] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:01:59.546] Server  LOG      ✓ Compiled in 122ms
+[00:02:02.221] Server  ERROR    ⨯ TypeError: immutable
+[00:02:02.290] Server  ERROR    ⨯ TypeError: immutable
+[00:02:02.295] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:02.326] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:02.347] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:02.424] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:02:02.555] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:02:15.209] Browser ERROR   ./app/layout.tsx:40:7
+Parsing ecmascript source code failed
+  38 |         <lo
+  39 |
+> 40 |       </body>
+     |       ^
+  41 |     </html>
+  42 |     </ClerkProvider>
+  43 |   );
+
+Expression expected
+[00:02:15.209] Browser ERROR   ./app/layout.tsx:40:8
+Parsing ecmascript source code failed
+  38 |         <lo
+  39 |
+> 40 |       </body>
+     |        ^^^^^^
+  41 |     </html>
+  42 |     </ClerkProvider>
+  43 |   );
+
+Unterminated regexp literal
+[00:02:19.217] Browser ERROR   ./app/layout.tsx:40:7
+Parsing ecmascript source code failed
+  38 |         <LoginUser
+  39 |
+> 40 |       </body>
+     |       ^
+  41 |     </html>
+  42 |     </ClerkProvider>
+  43 |   );
+
+Expression expected
+[00:02:19.217] Browser ERROR   ./app/layout.tsx:40:8
+Parsing ecmascript source code failed
+  38 |         <LoginUser
+  39 |
+> 40 |       </body>
+     |        ^^^^^^
+  41 |     </html>
+  42 |     </ClerkProvider>
+  43 |   );
+
+Unterminated regexp literal
+[00:02:20.511] Server  LOG      ✓ Compiled in 115ms
+[00:02:20.941] Browser LOG     Logging in user: ab12345
+[00:02:20.941] Browser LOG     Logging in user: ab12345
+[00:02:21.334] Browser ERROR   Login failed: {}
+[00:02:21.334] Browser ERROR   Login failed: {}
+[00:02:31.295] Server  LOG      ✓ Compiled in 155ms
+[00:02:31.532] Server  ERROR    ⨯ TypeError: immutable
+[00:02:31.543] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:31.850] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:31.938] Server  ERROR    ⨯ TypeError: immutable
+[00:02:31.957] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:33.089] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:02:33.089] Browser LOG     Logging in user: ab12345
+[00:02:33.089] Browser ERROR   Login failed: {}
+[00:02:33.169] Server  LOG      ✓ Compiled in 137ms
+[00:02:33.478] Server  ERROR    ⨯ TypeError: immutable
+[00:02:33.532] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:33.609] Server  ERROR    ⨯ TypeError: immutable
+[00:02:33.667] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:33.831] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:34.027] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:02:34.027] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:02:34.308] Browser LOG     Logging in user: ab12345
+[00:02:34.308] Browser ERROR   Login failed: {}
+[00:03:47.026] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/(auth)/components/profile_user_register.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:03:47.311] Server  ERROR    ⨯ TypeError: immutable
+[00:03:47.327] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:03:47.592] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:47.653] Server  ERROR    ⨯ TypeError: immutable
+[00:03:47.667] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:03:49.209] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:03:49.209] Browser LOG     Logging in user: ab12345
+[00:03:49.209] Browser LOG     Logging in user: ab12345
+[00:03:49.209] Browser ERROR   Login failed: {}
+[00:03:49.209] Browser ERROR   Login failed: {}
+[00:03:53.379] Server  LOG      ✓ Compiled in 209ms
+[00:03:53.564] Server  ERROR    ⨯ TypeError: immutable
+[00:03:53.589] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:03:53.810] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:53.895] Server  ERROR    ⨯ TypeError: immutable
+[00:03:53.924] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:03:54.200] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:03:54.200] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:03:54.487] Browser LOG     Logging in user: ab12345
+[00:03:54.816] Browser ERROR   Login failed: {}
+[00:04:06.694] Server  LOG      ✓ Compiled in 321ms
+[00:04:06.993] Server  ERROR    ⨯ TypeError: immutable
+[00:04:07.066] Server  ERROR    ⨯ TypeError: immutable
+[00:04:07.071] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:07.127] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:04:07.153] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:04:07.274] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:04:07.391] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:04:07.622] Browser LOG     Logging in user: ab12345
+[00:04:07.622] Browser LOG     Logging in user: ab12345
+[00:04:07.622] Browser ERROR   Login failed: {}
+[00:04:07.622] Browser ERROR   Login failed: {}
+[00:05:02.880] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./app/(auth)/components/profile_user_register.jsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:05:03.138] Server  ERROR    ⨯ TypeError: immutable
+[00:05:03.149] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:03.435] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:03.555] Server  ERROR    ⨯ TypeError: immutable
+[00:05:03.566] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:04.220] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:05.219] Browser LOG     Logging in user: ab12345
+[00:05:05.219] Browser ERROR   Login failed: {}
+[00:05:48.537] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:05:51.091] Server  ERROR    ⨯ TypeError: immutable
+[00:05:51.133] Server  ERROR    ⨯ TypeError: immutable
+[00:05:51.143] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:51.178] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:51.208] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:51.434] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:51.434] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:05:51.639] Browser LOG     Logging in user: ab12345
+[00:05:51.973] Browser ERROR   Login failed: {}
+[00:08:11.582] Server  ERROR    ⨯ TypeError: immutable
+[00:08:11.807] Server  ERROR    ⨯ TypeError: immutable
+[00:08:11.866] Server  ERROR    ⨯ TypeError: immutable
+[00:08:11.869] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:11.903] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:08:11.939] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:08:12.023] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:08:12.185] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:08:14.330] Server  ERROR    ⨯ TypeError: immutable
+[00:08:14.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:14.777] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:08:50.438] Server  ERROR    ⨯ TypeError: immutable
+[00:08:50.484] Server  ERROR    ⨯ TypeError: immutable
+[00:08:50.491] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:08:50.491] Browser LOG     Logging in user: 23521456a
+[00:08:50.527] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:08:50.561] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:08:50.781] Browser ERROR   Login failed: {}
+[00:09:44.770] Server  LOG      ✓ Compiled in 367ms
+[00:09:45.552] Server  ERROR    ⨯ TypeError: immutable
+[00:09:45.624] Server  ERROR    ⨯ TypeError: immutable
+[00:09:45.637] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:45.653] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:09:45.674] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:09:45.791] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:09:45.897] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:09:50.489] Server  ERROR    ⨯ TypeError: immutable
+[00:09:50.744] Server  ERROR    ⨯ TypeError: immutable
+[00:09:50.784] Server  ERROR    ⨯ TypeError: immutable
+[00:09:50.810] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:50.840] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:09:50.841] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:09:51.035] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:09:51.035] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:10:10.105] Server  ERROR    ⨯ TypeError: immutable
+[00:10:10.181] Server  ERROR    ⨯ TypeError: immutable
+[00:10:10.258] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:10:10.259] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:06.856] Server  ERROR    ⨯ TypeError: immutable
+[00:12:07.062] Server  ERROR    ⨯ TypeError: immutable
+[00:12:07.104] Server  ERROR    ⨯ TypeError: immutable
+[00:12:07.106] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:07.123] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:07.143] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:07.342] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:12:07.342] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:12:20.079] Server  ERROR    ⨯ TypeError: immutable
+[00:12:20.115] Server  ERROR    ⨯ TypeError: immutable
+[00:12:20.145] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:20.146] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:38.874] Server  LOG      ✓ Compiled in 39ms
+[00:12:41.745] Server  ERROR    ⨯ TypeError: immutable
+[00:12:41.795] Server  ERROR    ⨯ TypeError: immutable
+[00:12:41.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:41.849] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:41.852] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:41.940] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:12:42.111] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:12:42.368] Browser LOG     Sending username to backend: 23521456c
+[00:12:43.083] Browser LOG     Username sent successfully: 23521456c Backend response: {"created_at":"2025-10-30T11:22:08","id":2,"name":"23521456c"}
+[00:12:46.995] Server  ERROR    ⨯ TypeError: immutable
+[00:12:47.255] Server  ERROR    ⨯ TypeError: immutable
+[00:12:47.308] Server  ERROR    ⨯ TypeError: immutable
+[00:12:47.317] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:47.354] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:47.390] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:47.453] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:12:47.590] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:13:01.993] Server  ERROR    ⨯ TypeError: immutable
+[00:13:02.029] Server  ERROR    ⨯ TypeError: immutable
+[00:13:02.031] Browser LOG     Sending username to backend: 23521456d
+[00:13:02.031] Browser LOG     Username sent successfully: 23521456d Backend response: {"created_at":"2025-10-30T11:22:27","id":3,"name":"23521456d"}
+[00:13:02.089] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:02.091] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:21.144] Server  ERROR    ⨯ TypeError: immutable
+[00:13:21.192] Server  ERROR    ⨯ TypeError: immutable
+[00:13:21.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:21.231] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:21.254] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:21.320] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:13:21.505] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:13:21.690] Browser LOG     Sending username to backend: 23521456d
+[00:13:21.690] Browser LOG     Logging in user: 23521456d
+[00:13:22.046] Browser ERROR   Send username failed: {}
+[00:13:22.046] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY0NDE1MzY2fQ.6BdoxuguBxJMUg6tgJA7Tuh78boDcwfsRIE84U-bwZU","user":{"created_at":"2025-10-30T11:22:27","id":3,"name":"23521456d"}}
+[00:13:29.430] Server  ERROR    ⨯ TypeError: immutable
+[00:13:29.714] Server  ERROR    ⨯ TypeError: immutable
+[00:13:29.778] Server  ERROR    ⨯ TypeError: immutable
+[00:13:29.787] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:29.845] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:29.848] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:29.922] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:13:30.073] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:13:33.127] Browser WARN    Clerk: The prop "redirectUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props
+[00:13:59.660] Server  ERROR    ⨯ TypeError: immutable
+[00:13:59.711] Server  ERROR    ⨯ TypeError: immutable
+[00:13:59.739] Browser LOG     Sending username to backend: 23521456d
+[00:13:59.739] Browser LOG     Logging in user: 23521456d
+[00:13:59.739] Browser ERROR   Send username failed: {}
+[00:13:59.739] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY0NDE1NDA0fQ.JtU7szeFK4n2fi8z7B0pbqpJzjkDHelufbJeb0Ve0tA","user":{"created_at":"2025-10-30T11:22:27","id":3,"name":"23521456d"}}
+[00:13:59.764] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:59.779] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:14:11.453] Server  ERROR    ⨯ TypeError: immutable
+[00:14:11.688] Server  ERROR    ⨯ TypeError: immutable
+[00:14:11.689] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:11.741] Server  ERROR    ⨯ TypeError: immutable
+[00:14:11.781] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:14:11.800] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:14:12.040] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:14:12.040] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:14:32.626] Server  ERROR    ⨯ TypeError: immutable
+[00:14:32.698] Server  ERROR    ⨯ TypeError: immutable
+[00:14:32.714] Browser LOG     Sending username to backend: 23521456e
+[00:14:32.714] Browser LOG     Logging in user: 23521456e
+[00:14:32.714] Browser LOG     Username sent successfully: 23521456e Backend response: {"created_at":"2025-10-30T11:23:57","id":4,"name":"23521456e"}
+[00:14:32.714] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZXhwIjoxNzY0NDE1NDM3fQ.OIZg3iAzBESamSEtfLfK284dgdgYZyZaYKFhK9vLHHw","user":{"created_at":"2025-10-30T11:23:57","id":4,"name":"23521456e"}}
+[00:14:32.731] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:14:32.746] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:16.528] Server  ERROR    ⨯ TypeError: immutable
+[00:15:16.800] Server  ERROR    ⨯ TypeError: immutable
+[00:15:16.859] Server  ERROR    ⨯ TypeError: immutable
+[00:15:16.867] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:16.947] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:16.960] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:17.076] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:15:17.197] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:15:18.363] Browser WARN    Clerk: The prop "redirectUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props
+[00:15:39.527] Server  ERROR    ⨯ TypeError: immutable
+[00:15:39.583] Server  ERROR    ⨯ TypeError: immutable
+[00:15:39.593] Browser LOG     Sending username to backend: 23521456e
+[00:15:39.593] Browser LOG     Logging in user: 23521456e
+[00:15:39.708] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:39.712] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:39.917] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZXhwIjoxNzY0NDE1NTA0fQ.e1bogpZMNLMH8OkTb12qrg_mMnWPXzN5d-nhTQCsDko","user":{"created_at":"2025-10-30T11:23:57","id":4,"name":"23521456e"}}
+[00:15:39.917] Browser ERROR   Send username failed: {}
+[00:19:08.484] Server  LOG      ✓ Compiled in 43ms
+[00:19:16.740] Server  LOG      ✓ Compiled in 23ms
+[00:20:32.886] Server  LOG      ✓ Compiled in 151ms
+[00:20:34.577] Server  ERROR    ⨯ TypeError: immutable
+[00:20:34.596] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:20:34.849] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:34.959] Server  ERROR    ⨯ TypeError: immutable
+[00:20:34.992] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:20:36.206] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:20:47.218] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:5:1
+Parsing ecmascript source code failed
+  3 | import Se
+  4 |
+> 5 | export default function SignInPage() { 
+    | ^^^^^^
+  6 |   return ( 
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50"> 
+  8 |       <SignIn 
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:20:48.211] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:5:1
+Parsing ecmascript source code failed
+  3 | import Send
+  4 |
+> 5 | export default function SignInPage() { 
+    | ^^^^^^
+  6 |   return ( 
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50"> 
+  8 |       <SignIn 
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:20:52.221] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:5:1
+Parsing ecmascript source code failed
+  3 | import 
+  4 |
+> 5 | export default function SignInPage() { 
+    | ^^^^^^
+  6 |   return ( 
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50"> 
+  8 |       <SignIn 
+
+Expected 'from', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:20:54.220] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:5:1
+Parsing ecmascript source code failed
+  3 | import Se
+  4 |
+> 5 | export default function SignInPage() { 
+    | ^^^^^^
+  6 |   return ( 
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50"> 
+  8 |       <SignIn 
+
+Expected ',', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:20:58.211] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:5:1
+Parsing ecmascript source code failed
+  3 | import 
+  4 |
+> 5 | export default function SignInPage() { 
+    | ^^^^^^
+  6 |   return ( 
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50"> 
+  8 |       <SignIn 
+
+Expected 'from', got 'export'
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:21:21.681] Server  LOG      ✓ Compiled in 55ms
+[00:21:25.006] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | export default function Page() {
+  6 |   return (
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50">
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:25.213] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | export default function Page() {
+  6 |   return (
+  7 |     <div className="flex items-center justify-center h-screen bg-gray-50">
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:26.597] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:27.210] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:30.953] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:31.215] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:11:5
+Parsing ecmascript source code failed
+   9 |       <SignUp />
+  10 |       <se
+> 11 |     </div>
+     |     ^
+  12 |     
+  13 |   );
+  14 | }
+
+Expression expected
+[00:21:31.215] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:11:6
+Parsing ecmascript source code failed
+   9 |       <SignUp />
+  10 |       <se
+> 11 |     </div>
+     |      ^^^^^
+  12 |     
+  13 |   );
+  14 | }
+
+Unterminated regexp literal
+[00:21:31.215] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:35.685] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:35.686] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:36.218] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:49.869] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:49.869] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:50.211] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:50.211] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:52.188] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:52.189] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:53.210] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:53.210] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:53.320] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:53.321] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:53.322] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:53.323] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:21:54.210] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:54.210] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:21:56.249] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:22:00.801] Server  ERROR    ⨯ TypeError: immutable
+[00:22:00.865] Server  ERROR    ⨯ TypeError: immutable
+[00:22:00.879] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:01.014] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:01.035] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:22:01.366] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <ClerkProvider publishableKey="pk_test_bG..." proxyUrl="" domain="" isSatellite={false} signInUrl="" signUpUrl="" ...>
+      <ClerkProviderBase publishableKey="pk_test_bG..." proxyUrl="" domain="" isSatellite={false} signInUrl="" ...>
+        <ClerkContextProvider initialState={null} isomorphicClerkOptions={{...}}>
+          <OrganizationProvider organization={undefined}>
+            <SWRConfig value={undefined}>
+              <__experimental_CheckoutProvider value={undefined}>
+                <RouterTelemetry>
+                <ClerkJSScript>
+                <html lang="en">
+                  <body
+                    className="geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable an..."
+-                   style={{padding-right:"15px",overflow-x:"hidden",overflow-y:"hidden"}}
+                  >
+
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:01.366] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve './(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "./(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:13.026] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:13.027] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:13.028] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:13.029] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:13.207] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:13.207] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../(auth)/components/profile_user_login'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../(auth)/components/profile_user_login";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:18.195] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve ''
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:18.196] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve ''
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:18.197] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve ''
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:18.198] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve ''
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:19.209] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:19.209] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve ''
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:20.248] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:20.250] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:20.252] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:20.254] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:21.207] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:21.207] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:24.650] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:24.652] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:24.653] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:24.654] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:25.218] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:25.218] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:27.639] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../components'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../components";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:27.642] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../components'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../components";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:27.645] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../components'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../components";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:27.649] Server  ERROR    ⨯ ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../components'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../components";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:28.210] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:28.210] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:3:1
+Module not found: Can't resolve '../../components'
+  1 | 'use client' 
+  2 | import { SignIn } from "@clerk/nextjs";
+> 3 | import LoginUser from "../../components";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  4 |
+  5 | export default function SignInPage() { 
+  6 |   return ( 
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:31.063] Server  LOG      ✓ Compiled in 37ms
+[00:22:31.219] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve './(auth)/components/profile_user_register'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "./(auth)/components/profile_user_register";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:41.019] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve '../../'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:41.020] Server  ERROR    ⨯ ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve '../../'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[00:22:41.213] Browser ERROR   ./app/(auth)/sign-up/[[...sign-up]]/page.jsx:4:1
+Module not found: Can't resolve '../../'
+  2 |
+  3 | import { SignUp } from "@clerk/nextjs";
+> 4 | import SendUsername from "../../";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | export default function Page() {
+  7 |   return (
+
+https://nextjs.org/docs/messages/module-not-found
+[00:22:43.312] Server  LOG      ✓ Compiled in 26ms
+[00:22:45.629] Server  ERROR    ⨯ TypeError: immutable
+[00:22:45.665] Server  ERROR    ⨯ TypeError: immutable
+[00:22:45.670] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:45.732] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:45.736] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:45.802] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:22:45.976] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:22:47.980] Server  ERROR    ⨯ TypeError: immutable
+[00:22:48.235] Server  ERROR    ⨯ TypeError: immutable
+[00:22:48.307] Server  ERROR    ⨯ TypeError: immutable
+[00:22:48.320] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:48.376] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:48.379] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:48.440] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:22:48.569] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:22:50.177] Browser WARN    Clerk: The prop "redirectUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props
+[00:23:08.649] Server  ERROR    ⨯ TypeError: immutable
+[00:23:08.693] Server  ERROR    ⨯ TypeError: immutable
+[00:23:08.724] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:08.726] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:38.951] Server  LOG      ✓ Compiled in 22ms
+[00:23:40.297] Server  LOG      ✓ Compiled in 72ms
+[00:23:41.224] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:13:21
+Parsing ecmascript source code failed
+  11 |         signUpUrl="/sign-up" // link để chuyển sang SignUp 
+  12 |         redirectUrl="/" // ← sau khi login xong sẽ chuyển đến /dashboard 
+> 13 |         <LoginUser />
+     |                     ^
+  14 |       /> 
+  15 |       
+  16 |     </div> 
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:23:41.224] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:14:7
+Parsing ecmascript source code failed
+  12 |         redirectUrl="/" // ← sau khi login xong sẽ chuyển đến /dashboard 
+  13 |         <LoginUser />
+> 14 |       /> 
+     |       ^^^
+  15 |       
+  16 |     </div> 
+  17 |   ); 
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:24:07.388] Server  LOG      ✓ Compiled in 49ms
+[00:24:19.319] Server  LOG      ✓ Compiled in 25ms
+[00:24:22.844] Server  ERROR    ⨯ TypeError: immutable
+[00:24:22.895] Server  ERROR    ⨯ TypeError: immutable
+[00:24:22.896] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:22.918] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:24:22.941] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:24:23.135] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:24:23.136] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:24:25.049] Server  ERROR    ⨯ TypeError: immutable
+[00:24:25.323] Server  ERROR    ⨯ TypeError: immutable
+[00:24:25.363] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:24:25.389] Server  ERROR    ⨯ TypeError: immutable
+[00:24:25.409] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:24:25.442] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:24:25.546] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:24:25.671] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:24:29.477] Browser WARN    Clerk: The prop "redirectUrl" is deprecated and should be replaced with the new "fallbackRedirectUrl" or "forceRedirectUrl" props instead. Learn more: https://clerk.com/docs/guides/custom-redirects#redirect-url-props
+[00:24:48.829] Server  ERROR    ⨯ TypeError: immutable
+[00:24:48.919] Server  ERROR    ⨯ TypeError: immutable
+[00:24:49.042] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:24:49.050] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:25:45.963] Server  LOG      ✓ Compiled in 51ms
+[00:25:53.838] Server  LOG      ✓ Compiled in 32ms
+[00:27:00.875] Server  LOG      ✓ Compiled in 24ms
+[00:27:05.329] Server  ERROR    ⨯ TypeError: immutable
+[00:27:05.343] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:05.456] Server  ERROR    ⨯ TypeError: immutable
+[00:27:05.462] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:27:05.505] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:27:05.507] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:27:05.772] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:27:08.556] Server  ERROR    ⨯ TypeError: immutable
+[00:27:08.808] Server  ERROR    ⨯ TypeError: immutable
+[00:27:08.860] Server  ERROR    ⨯ TypeError: immutable
+[00:27:08.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:27:08.915] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:27:08.917] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:27:08.995] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:27:09.146] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:27:24.450] Server  ERROR    ⨯ TypeError: immutable
+[00:27:24.513] Server  ERROR    ⨯ TypeError: immutable
+[00:27:24.633] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:27:24.636] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:07.437] Server  LOG      ✓ Compiled in 33ms
+[00:28:08.220] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:13:21
+Parsing ecmascript source code failed
+  11 |         signUpUrl="/sign-up" // link để chuyển sang SignUp 
+  12 |         redirectUrl="/" // ← sau khi login xong sẽ chuyển đến /dashboard 
+> 13 |         <LoginUser />
+     |                     ^
+  14 |       /> 
+  15 |       
+  16 |     </div> 
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:28:08.220] Browser ERROR   ./app/(auth)/sign-in/[[...sign-in]]/page.jsx:14:7
+Parsing ecmascript source code failed
+  12 |         redirectUrl="/" // ← sau khi login xong sẽ chuyển đến /dashboard 
+  13 |         <LoginUser />
+> 14 |       /> 
+     |       ^^^
+  15 |       
+  16 |     </div> 
+  17 |   ); 
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component Browser]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Client Component SSR]
+    ./app/(auth)/sign-in/[[...sign-in]]/page.jsx [Server Component]
+[00:28:10.095] Server  LOG      ✓ Compiled in 56ms
+[00:28:11.608] Server  LOG      ✓ Compiled in 29ms
+[00:28:18.589] Server  LOG      ✓ Compiled in 39ms
+[00:28:31.642] Server  ERROR    ⨯ TypeError: immutable
+[00:28:31.713] Server  ERROR    ⨯ TypeError: immutable
+[00:28:31.727] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:31.748] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:31.778] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:32.000] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:28:32.000] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:28:33.411] Server  ERROR    ⨯ TypeError: immutable
+[00:28:33.588] Server  ERROR    ⨯ TypeError: immutable
+[00:28:33.673] Server  ERROR    ⨯ TypeError: immutable
+[00:28:33.698] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:28:33.735] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:33.738] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:33.926] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:28:33.926] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:28:57.659] Server  ERROR    ⨯ TypeError: immutable
+[00:28:57.710] Server  ERROR    ⨯ TypeError: immutable
+[00:28:57.783] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:28:57.789] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:01.518] Server  LOG      ✓ Compiled in 53ms
+[00:31:05.131] Server  LOG      ✓ Compiled in 64ms
+[00:31:05.296] Server  ERROR    ⨯ TypeError: immutable
+[00:31:05.308] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:05.649] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:05.763] Server  ERROR    ⨯ TypeError: immutable
+[00:31:05.783] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:06.207] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:31:22.463] Server  ERROR    ⨯ TypeError: immutable
+[00:31:22.485] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:22.799] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:22.855] Server  ERROR    ⨯ TypeError: immutable
+[00:31:22.865] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:23.232] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:31:24.211] Browser LOG     Sending username to backend: 23521456f
+[00:31:24.211] Browser LOG     Logging in user: 23521456f
+[00:31:24.211] Browser ERROR   Login failed: {}
+[00:31:24.211] Browser LOG     Username sent successfully: 23521456f Backend response: {"created_at":"2025-10-30T11:40:49","id":5,"name":"23521456f"}
+[00:31:26.161] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:31:26.922] Server  ERROR    ⨯ TypeError: immutable
+[00:31:27.004] Server  ERROR    ⨯ TypeError: immutable
+[00:31:27.010] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:27.040] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:27.069] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:27.074] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:31:27.454] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:31:27.454] Browser LOG     Sending username to backend: 23521456f
+[00:31:27.455] Browser LOG     Logging in user: 23521456f
+[00:31:27.455] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwiZXhwIjoxNzY0NDE2NDUyfQ.qlHtciJtlaKOqpEChDKI1QEIVKAPYxZzZfPejf7ld-0","user":{"created_at":"2025-10-30T11:40:49","id":5,"name":"23521456f"}}
+[00:31:27.455] Browser ERROR   Send username failed: {}
+[00:33:55.090] Server  LOG      ✓ Compiled in 173ms
+[00:33:56.403] Server  ERROR    ⨯ TypeError: immutable
+[00:33:56.419] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:33:56.635] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:33:56.706] Server  ERROR    ⨯ TypeError: immutable
+[00:33:56.720] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:33:58.210] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:34:13.646] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:34:14.884] Server  ERROR    ⨯ TypeError: immutable
+[00:34:14.943] Server  ERROR    ⨯ TypeError: immutable
+[00:34:14.947] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:14.968] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:14.991] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:15.079] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:34:15.218] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:34:17.555] Server  ERROR    ⨯ TypeError: immutable
+[00:34:17.796] Server  ERROR    ⨯ TypeError: immutable
+[00:34:17.807] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:17.849] Server  ERROR    ⨯ TypeError: immutable
+[00:34:17.871] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:17.907] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:18.338] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:34:18.338] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:34:18.422] Server  ERROR    ⨯ Error: aborted
+[00:34:18.600] Server  ERROR    ⨯ TypeError: immutable
+[00:34:18.625] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:18.749] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:34:34.252] Server  ERROR    ⨯ TypeError: immutable
+[00:34:34.293] Server  ERROR    ⨯ TypeError: immutable
+[00:34:34.297] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:34:34.321] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:34.347] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:43.196] Server  LOG      ✓ Compiled in 54ms
+[00:34:48.200] Server  LOG      ✓ Compiled in 149ms
+[00:34:48.319] Server  ERROR    ⨯ TypeError: immutable
+[00:34:48.336] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:48.440] Server  ERROR    ⨯ TypeError: immutable
+[00:34:48.531] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:34:48.690] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:34:48.871] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:34:48.871] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:34:49.089] Browser LOG     Sending username to backend: 23521456e
+[00:34:49.089] Browser LOG     Logging in user: 23521456e
+[00:34:49.459] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZXhwIjoxNzY0NDE2NjU0fQ.SoSW5nCuJjA82Iy-Bg-w9cTzlsGsE575iuD2r1W1a0I","user":{"created_at":"2025-10-30T11:23:57","id":4,"name":"23521456e"}}
+[00:34:49.459] Browser ERROR   Send username failed: {}
