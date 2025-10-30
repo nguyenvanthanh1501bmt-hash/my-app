@@ -40,12 +40,23 @@ def register(body: UserCreate, db: Session = Depends(get_db)):
     """
     Tạo user mới chỉ với name. Chặn trùng name.
     """
-    # Trùng tên?
-    if UserRepo.find_by_name(db, body.name):
-        raise HTTPException(status_code=400, detail="User đã tồn tại")
+    print("Register request body:", body)  # log request
 
-    user = UserRepo.create(db, name=body.name)
-    return user
+    try:
+        # Kiểm tra trùng tên
+        if UserRepo.find_by_name(db, body.name):
+            raise HTTPException(status_code=400, detail="User đã tồn tại")
+
+        # Tạo user mới
+        user = UserRepo.create(db, name=body.name)
+        print("User created:", user)  # log thành công
+        return user
+    except Exception as e:
+        import traceback
+        print("Error creating user:", e)
+        traceback.print_exc()  # log stack trace đầy đủ
+        raise HTTPException(status_code=500, detail=str(e))
+
 
 # ====== Đăng nhập (không mật khẩu) ======
 @router.post("/login")

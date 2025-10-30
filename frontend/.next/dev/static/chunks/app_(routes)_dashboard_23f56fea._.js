@@ -282,9 +282,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$routes$292f$dashboa
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$routes$292f$dashboard$2f$components$2f$DashboardHeader$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/(routes)/dashboard/components/DashboardHeader.jsx [app-client] (ecmascript)"); // Header trên cùng
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$clerk$2f$shared$2f$dist$2f$react$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@clerk/shared/dist/react/index.mjs [app-client] (ecmascript)"); // Hook kiểm tra trạng thái login
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)"); // Hook điều hướng client
+(()=>{
+    const e = new Error("Cannot find module '../_components/profile_user'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 var _s = __turbopack_context__.k.signature();
 'use client'; // Bắt buộc vì dùng useUser, useRouter và SideNav (client components)
+;
 ;
 ;
 ;
@@ -308,7 +314,7 @@ function DashboardLayout({ children }) {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$routes$292f$dashboard$2f$components$2f$SideNav$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/(routes)/dashboard/layout.jsx",
-                lineNumber: 21,
+                lineNumber: 22,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -316,9 +322,15 @@ function DashboardLayout({ children }) {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f28$routes$292f$dashboard$2f$components$2f$DashboardHeader$2e$jsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                         fileName: "[project]/app/(routes)/dashboard/layout.jsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 17
                     }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SendUsername, {}, void 0, false, {
+                        fileName: "[project]/app/(routes)/dashboard/layout.jsx",
+                        lineNumber: 28,
+                        columnNumber: 17
+                    }, this),
+                    "  ",
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
                         className: "p-5 flex-1 overflow-auto",
                         children: [
@@ -327,19 +339,19 @@ function DashboardLayout({ children }) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/(routes)/dashboard/layout.jsx",
-                        lineNumber: 29,
+                        lineNumber: 30,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(routes)/dashboard/layout.jsx",
-                lineNumber: 24,
+                lineNumber: 25,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/(routes)/dashboard/layout.jsx",
-        lineNumber: 19,
+        lineNumber: 20,
         columnNumber: 9
     }, this);
 }
