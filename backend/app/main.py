@@ -12,7 +12,7 @@ from fastapi.responses import JSONResponse
 
 app = FastAPI(title="Expense API")
 origins = [
-    "http://localhost:3000",  # domain/port frontend của bạn
+    #"http://localhost:3000",  # domain/port frontend của bạn
     # "http://localhost:5173", nếu dùng Vite dev server
 ]
 
@@ -20,7 +20,7 @@ Base.metadata.create_all(bind=engine)  # tạo bảng sau khi import app.models
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins, allow_credentials=True,
+    allow_origins=["*"], allow_credentials=True,
     allow_methods=["*"], allow_headers=["*"],
 )
 

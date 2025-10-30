@@ -44,8 +44,9 @@ def register(body: UserCreate, db: Session = Depends(get_db)):
 
     try:
         # Kiểm tra trùng tên
-        if UserRepo.find_by_name(db, body.name):
-            raise HTTPException(status_code=400, detail="User đã tồn tại")
+        existing_user = UserRepo.find_by_name(db, body.name)
+        if existing_user:
+            return existing_user
 
         # Tạo user mới
         user = UserRepo.create(db, name=body.name)
