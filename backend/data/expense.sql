@@ -28,8 +28,6 @@ IF OBJECT_ID(N'dbo.[users]', N'U')        IS NOT NULL DROP TABLE dbo.[users];
 CREATE TABLE dbo.[users](
   [id]        INT IDENTITY(1,1) PRIMARY KEY,
   [name]      NVARCHAR(100) NOT NULL,
-  [email]     NVARCHAR(255) NOT NULL,
-  [password]  NVARCHAR(255) NOT NULL, -- hash hoặc placeholder
   [created_at] DATETIME2(0) NOT NULL CONSTRAINT DF_users_created_at DEFAULT SYSUTCDATETIME()
 );
 CREATE UNIQUE INDEX UX_users_email ON dbo.[users]([email]);
@@ -104,13 +102,13 @@ CREATE TABLE dbo.[transactions](
 
 /* 3.1 USERS (3 mẫu) */
 SET IDENTITY_INSERT dbo.[users] ON;
-INSERT INTO dbo.[users]([id],[name],[email],[password])
-VALUES (1, N'Admin', N'Admin@example.com', N'$2b$12$hash_demo_An'),
-       (2, N'Tam',   N'Tam@example.com', N'$2b$12$hash_demo_Binh'),
-       (3, N'Thanh',  N'Thanh@example.com', N'$2b$12$hash_demo_Chi'),
-	   (4, N'Hai',  N'Hai@example.com', N'$2b$12$hash_demo_Chi'),
-       (5, N'Nam',  N'Nam@example.com', N'$2b$12$hash_demo_Chi'),
-	   (6, N'Dang',  N'Dang@example.com', N'$2b$12$hash_demo_Chi');
+INSERT INTO dbo.[users]([id],[name])
+VALUES (1, N'Admin'),
+       (2, N'Tam'),
+       (3, N'Thanh'),
+	   (4, N'Hai'),
+       (5, N'Nam'),
+	   (6, N'Dang');
 SET IDENTITY_INSERT dbo.[users] OFF;
 
 /* 3.2 CATEGORIES (18 mẫu) */

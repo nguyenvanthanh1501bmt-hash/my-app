@@ -8,8 +8,6 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
-    email = Column(String(255), nullable=False, unique=True)
-    password = Column(String(255), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     
     # relationships

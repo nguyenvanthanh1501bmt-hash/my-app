@@ -3,16 +3,16 @@ from app.models.user import User
 
 class UserRepo:
     @staticmethod
-    def find_by_email(db: Session, email: str) -> User | None:
-        return db.query(User).filter(User.email == email).first()
-
-    @staticmethod
     def get_by_id(db: Session, user_id: int) -> User | None:
         return db.get(User, user_id)
 
     @staticmethod
-    def create(db: Session, name: str, email: str, password_hash: str) -> User:
-        u = User(name=name, email=email, password=password_hash)
+    def find_by_name(db: Session, name: str) -> User | None:
+        return db.query(User).filter(User.name == name).first()
+
+    @staticmethod
+    def create(db: Session, name: str) -> User:
+        u = User(name=name)
         db.add(u); db.commit(); db.refresh(u)
         return u
 
@@ -26,4 +26,5 @@ class UserRepo:
 
     @staticmethod
     def list_basic(db: Session):
-        return db.query(User.id, User.name, User.email).all()
+        # Trả về luôn cả created_at để map ra UserOut cho dễ
+        return db.query(User.id, User.name, User.created_at).all()
