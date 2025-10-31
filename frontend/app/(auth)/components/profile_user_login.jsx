@@ -8,7 +8,7 @@ export default function LoginUser() {
 
   useEffect(() => {
     if (!isSignedIn || !user) return;
-
+    
 
     const login = async () => {
       try {
@@ -43,7 +43,6 @@ export default function LoginUser() {
 
         const data = await res.json();
         console.log("Login successful:", data);
-
         if (data.token) {
           localStorage.setItem("token", data.token);
         }
