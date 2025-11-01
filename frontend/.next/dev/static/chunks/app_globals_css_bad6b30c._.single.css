@@ -25,9 +25,6 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;
@@ -54,10 +51,8 @@
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
     --color-red-600: #e40014;
-    --color-green-50: #f0fdf4;
     --color-green-300: #7bf1a8;
     --color-green-400: #05df72;
-    --color-green-500: #00c758;
     --color-green-600: #00a544;
     --color-blue-100: #dbeafe;
     --color-blue-500: #3080ff;
@@ -97,8 +92,6 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
-    --text-2xl: 1.5rem;
-    --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
     --text-4xl: 2.25rem;
@@ -121,10 +114,8 @@
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
-      --color-green-50: lab(98.1563% -5.60117 2.75913);
       --color-green-300: lab(86.9953% -47.2691 25.0054);
       --color-green-400: lab(78.503% -64.9265 39.7492);
-      --color-green-500: lab(70.5521% -66.5147 45.8072);
       --color-green-600: lab(59.0978% -58.6621 41.2579);
       --color-blue-100: lab(92.0301% -2.24757 -11.6453);
       --color-blue-500: lab(54.1736% 13.3368 -74.6839);
@@ -546,14 +537,6 @@
     margin-left: 10%;
   }
 
-  .ml-\[20\%\] {
-    margin-left: 20%;
-  }
-
-  .ml-\[30\%\] {
-    margin-left: 30%;
-  }
-
   .block {
     display: block;
   }
@@ -621,14 +604,6 @@
     height: calc(var(--spacing) * 16);
   }
 
-  .h-\[5\%\] {
-    height: 5%;
-  }
-
-  .h-\[10\%\] {
-    height: 10%;
-  }
-
   .h-\[30rem\] {
     height: 30rem;
   }
@@ -661,32 +636,12 @@
     width: calc(var(--spacing) * 16);
   }
 
-  .w-\[30\#\] {
-    width: 30# ;
-  }
-
-  .w-\[30\%\] {
-    width: 30%;
-  }
-
-  .w-\[30\] {
-    width: 30px;
-  }
-
   .w-\[40\%\] {
     width: 40%;
   }
 
   .w-\[70\%\] {
     width: 70%;
-  }
-
-  .w-\[70\] {
-    width: 70px;
-  }
-
-  .w-\[100\%\] {
-    width: 100%;
   }
 
   .w-\[300px\] {
@@ -843,11 +798,6 @@
     border-width: 2px;
   }
 
-  .border-3 {
-    border-style: var(--tw-border-style);
-    border-width: 3px;
-  }
-
   .border-4 {
     border-style: var(--tw-border-style);
     border-width: 4px;
@@ -912,10 +862,6 @@
 
   .bg-background {
     background-color: var(--background);
-  }
-
-  .bg-black {
-    background-color: var(--color-black);
   }
 
   .bg-black\/40 {
@@ -1062,16 +1008,8 @@
     padding-inline: calc(var(--spacing) * 6);
   }
 
-  .py-1\.5 {
-    padding-block: calc(var(--spacing) * 1.5);
-  }
-
   .py-2 {
     padding-block: calc(var(--spacing) * 2);
-  }
-
-  .py-3 {
-    padding-block: calc(var(--spacing) * 3);
   }
 
   .py-4 {
@@ -1084,10 +1022,6 @@
 
   .py-15 {
     padding-block: calc(var(--spacing) * 15);
-  }
-
-  .py-20 {
-    padding-block: calc(var(--spacing) * 20);
   }
 
   .pt-5 {
@@ -1104,11 +1038,6 @@
 
   .text-right {
     text-align: right;
-  }
-
-  .text-2xl {
-    font-size: var(--text-2xl);
-    line-height: var(--tw-leading, var(--text-2xl--line-height));
   }
 
   .text-3xl {
@@ -1178,10 +1107,6 @@
     color: var(--color-black);
   }
 
-  .text-gray-50 {
-    color: var(--color-gray-50);
-  }
-
   .text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -1194,16 +1119,12 @@
     color: var(--color-gray-700);
   }
 
-  .text-green-50 {
-    color: var(--color-green-50);
+  .text-green-300 {
+    color: var(--color-green-300);
   }
 
   .text-green-400 {
     color: var(--color-green-400);
-  }
-
-  .text-green-500 {
-    color: var(--color-green-500);
   }
 
   .text-green-600 {
@@ -1342,15 +1263,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:scale-102:hover {
-      --tw-scale-x: 102%;
-      --tw-scale-y: 102%;
-      --tw-scale-z: 102%;
-      scale: var(--tw-scale-x) var(--tw-scale-y);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:scale-\[1\.02\]:hover {
       scale: 1.02;
     }
@@ -1369,12 +1281,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-blue-600:hover {
-      background-color: var(--color-blue-600);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-destructive\/90:hover {
       background-color: var(--destructive);
     }
@@ -1383,12 +1289,6 @@
       .hover\:bg-destructive\/90:hover {
         background-color: color-mix(in oklab, var(--destructive) 90%, transparent);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-gray-400:hover {
-      background-color: var(--color-gray-400);
     }
   }
 
@@ -1443,12 +1343,6 @@
   @media (hover: hover) {
     .hover\:bg-slate-100:hover {
       background-color: var(--color-slate-100);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-transparent:hover {
-      background-color: #0000;
     }
   }
 
@@ -2102,24 +1996,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
-}
-
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
 }
 
 @keyframes spin {

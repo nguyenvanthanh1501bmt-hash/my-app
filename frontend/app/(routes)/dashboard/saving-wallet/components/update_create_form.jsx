@@ -165,3 +165,66 @@ export function Updateform({ savingid, datachange, onClose, onSubmit }) {
     </div>
   );
 }
+
+
+export function SavingInCome({savingid, oldCurrent, onClose, onSubmit}){
+    const [currentAmount, setCurrentAmount] = useState("");
+
+    const handleSubmit = async (e) => {
+      e.preventDefault(); // ngăn reload trang
+      try {
+        const parsedAmount = parseFloat(currentAmount) || 0;
+        const newData = {
+          current_amount: Number((Number(oldCurrent) + parsedAmount).toFixed(2))
+        };
+
+        if (onSubmit) {
+          await onSubmit(newData); // gọi callback về LoadingDisplay
+        } else {
+          await UpdateSaving(savingid, newData); // fallback: tự gọi API nếu không có callback
+        }
+
+        onClose(); // đóng modal
+      } catch (err) {
+        console.error(err);
+        alert("Error updating saving"); // thông báo lỗi
+      }
+    };
+    return (
+      <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+        <form
+          className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative"
+          onSubmit={handleSubmit}
+        >
+          <h1 className="font-bold text-xl">Incoming Saving</h1>
+
+          <div>
+            <label className="font-medium mb-1 block">Add money into wallet</label>
+            <input
+              type="number"
+              value={currentAmount}
+              onChange={(e) => setCurrentAmount(e.target.value)}
+              className="w-full border p-2 rounded"
+              required
+            />
+          </div>
+
+          <div className="flex gap-2 mt-2 justify-between">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white p-2 rounded-2xl hover:bg-green-400 w-[40%]"
+            >
+              Update
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-500 w-[40%]"
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    );
+}

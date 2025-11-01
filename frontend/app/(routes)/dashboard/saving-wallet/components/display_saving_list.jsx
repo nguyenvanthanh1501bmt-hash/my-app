@@ -1,81 +1,88 @@
 "use client";
 
-import { useUserSavingList } from "./Saving_list"; // hook custom lấy danh sách saving goals của user
-import { Button } from "../../../../../components/ui/components/ui/button"; // component nút UI
-import { useState } from "react"; // hook quản lý state cục bộ
-import { Eye, Pencil, Trash2, Plus, Target } from "lucide-react"; // icon UI
-import { DeleteSaving, CreateSaving, UpdateSaving } from "./API_setup"; // API gọi backend
-import { InputForm, Updateform } from "./update_create_form"; // form modal tạo mới & update
-import { useUserInfo } from "../../components/necessary_info"; // lấy thông tin user
+import { useUserSavingList } from "./Saving_list";
+import { Button } from "../../../../../components/ui/components/ui/button";
+import { useState } from "react";
+import { Pencil, Trash2, Plus, Target, BadgeDollarSign } from "lucide-react";
+import { DeleteSaving, CreateSaving, UpdateSaving } from "./API_setup";
+import { InputForm, Updateform, SavingInCome } from "./update_create_form";
+import { useUserInfo } from "../../components/necessary_info";
 
 export default function LoadingDisplay() {
-  const { data, setData, error } = useUserSavingList(); // lấy dữ liệu saving goals & setter
-  const [showForm, setShowForm] = useState(false); // state bật/tắt modal tạo mới
-  const [updateModal, setUpdateModal] = useState({ show: false, item: null }); // state modal update: show + item cần sửa
-  const { id: userId } = useUserInfo(); // lấy userId hiện tại
-  
-  // Hàm xóa saving
+  const { data, setData, error } = useUserSavingList();
+  const [showForm, setShowForm] = useState(false);
+  const [updateModal, setUpdateModal] = useState({ show: false, item: null });
+  const [showformupdatecurrent, setshowformsetupcurrent] = useState({ show: false, item: null });
+  const { id: userId } = useUserInfo();
+
+  // Xóa saving
   const handleDelete = async (id) => {
-    await DeleteSaving(id); // gọi API xóa
-    setData(prev => prev.filter(item => item.id !== id)); // cập nhật state: loại bỏ item vừa xóa
+    await DeleteSaving(id);
+    setData(prev => prev.filter(item => item.id !== id));
   };
 
-  // Hàm tạo saving mới
+  // Tạo saving mới
   const handleCreate = async (savingData) => {
-    const res = await CreateSaving(savingData); // gọi API tạo mới
-    setData(prev => [...prev, res]); // thêm saving mới vào state => UI tự động render
+    const res = await CreateSaving(savingData);
+    setData(prev => [...prev, res]);
   };
 
-  // Hàm cập nhật saving
+  // Cập nhật saving
   const handleUpdate = async (id, datachange) => {
-    const res = await UpdateSaving(id, datachange); // gọi API update
-    setData(prev => prev.map(item => item.id === id ? res : item)); // update item trong state
+    const res = await UpdateSaving(id, datachange);
+    setData(prev => prev.map(item => item.id === id ? res : item));
   };
 
-  if (!data) return <p>Loading...</p>; // loading khi chưa có data
-  if (error) return <p>Error: {error}</p>; // hiển thị lỗi nếu có
+  if (!data) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div>
       <h2 className="text-3xl font-bold mb-2 ml-[10%]">Your goal</h2>
       <div className="flex justify-center flex-col items-center">
-        {/* Hiển thị danh sách saving goals */}
         {data.map(item => (
           <SavingFormDisplay
             key={item.id}
             goal_name={item.goal_name}
             target_amount={item.target_amount}
             current_amount={item.current_amount}
-            onDelete={() => handleDelete(item.id)} // gọi hàm xóa khi click
-            onEdit={() => setUpdateModal({ show: true, item })} // bật modal update
+            onDelete={() => handleDelete(item.id)}
+            onEdit={() => setUpdateModal({ show: true, item })}
+            onUpdateCurrent={() => setshowformsetupcurrent({ show: true, item })}
           />
         ))}
 
-        {/* Nút tạo saving mới */}
         <Button
           className="mt-4 border-2 border-dotted rounded-2xl w-[70%] bg-transparent text-black py-15 cursor-pointer hover:scale-[1.02] hover:bg-slate-100 transition-transform"
-          onClick={() => setShowForm(true)} // bật modal tạo mới
+          onClick={() => setShowForm(true)}
         >
           <Plus className="h-5 w-5 rounded-full bg-gray-200 p-1 border border-gray-400" />
           Create New Saving Goal
         </Button>
 
-        {/* Modal tạo mới */}
         {showForm && (
           <InputFormModal
-            userId={userId} // truyền userId
-            onClose={() => setShowForm(false)} // đóng modal
-            onCreate={handleCreate} // callback tạo mới
+            userId={userId}
+            onClose={() => setShowForm(false)}
+            onCreate={handleCreate}
           />
         )}
 
-        {/* Modal update */}
         {updateModal.show && (
           <UpdateFormModal
-            savingid={updateModal.item.id} // id saving cần update
-            datachange={updateModal.item} // data hiện tại của saving
-            onClose={() => setUpdateModal({ show: false, item: null })} // đóng modal
-            onUpdate={handleUpdate} // callback update
+            savingid={updateModal.item.id}
+            datachange={updateModal.item}
+            onClose={() => setUpdateModal({ show: false, item: null })}
+            onUpdate={handleUpdate}
+          />
+        )}
+
+        {showformupdatecurrent.show && (
+          <InputCurrentSaving
+            savingid={showformupdatecurrent.item.id}
+            oldCurrent = {showformupdatecurrent.item.current_amount}
+            onClose={() => setshowformsetupcurrent({ show: false, item: null })}
+            onUpdate={handleUpdate}
           />
         )}
       </div>
@@ -83,45 +90,62 @@ export default function LoadingDisplay() {
   );
 }
 
-// Modal wrapper cho InputForm
+// Modal tạo mới 
 function InputFormModal({ userId, onClose, onCreate }) {
   const handleSubmit = async (data) => {
-    await onCreate(data); // gọi callback tạo mới
-    onClose(); // đóng modal sau khi tạo xong
+    await onCreate(data);
+    onClose();
   };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative">
-        <InputForm id={userId} onClose={onClose} onSubmit={handleSubmit} /> {/* form tạo mới */}
+        <InputForm id={userId} onClose={onClose} onSubmit={handleSubmit} />
       </div>
     </div>
   );
 }
 
-// Modal wrapper cho UpdateForm
+// Modal cập nhật current amount
+function InputCurrentSaving({ savingid, oldCurrent, onClose, onUpdate }) {
+  const handleSubmit = async (change) => {
+    await onUpdate(savingid, change);
+    onClose();
+  };
+
+  return (
+    <SavingInCome
+      savingid={savingid}
+      oldCurrent = {oldCurrent}
+      onClose={onClose}
+      onSubmit={handleSubmit}
+    />
+  );
+}
+
+// Modal update saving
 function UpdateFormModal({ savingid, datachange, onClose, onUpdate }) {
   const handleSubmit = async (change) => {
-    await onUpdate(savingid, change); // gọi callback update
-    onClose(); // đóng modal sau khi update
+    await onUpdate(savingid, change);
+    onClose();
   };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
       <div className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative">
-        <Updateform 
-          savingid={savingid} 
-          datachange={datachange} 
-          onClose={onClose} 
-          onSubmit={handleSubmit} 
-        /> {/* form update */}
+        <Updateform
+          savingid={savingid}
+          datachange={datachange}
+          onClose={onClose}
+          onSubmit={handleSubmit}
+        />
       </div>
     </div>
   );
 }
 
 // Component hiển thị 1 saving goal
-const SavingFormDisplay = ({ goal_name, target_amount, current_amount, onDelete, onEdit }) => (
+const SavingFormDisplay = ({ goal_name, target_amount, current_amount, onDelete, onEdit, onUpdateCurrent }) => (
   <div className="flex flex-col border-2 rounded-xl p-5 mt-5 w-[70%] gap-1 hover:bg-slate-100 transition-transform">
     <div className="flex justify-between items-center">
       <span className="font-bold">{goal_name}</span>
@@ -132,22 +156,28 @@ const SavingFormDisplay = ({ goal_name, target_amount, current_amount, onDelete,
 
     <div className="text-green-600 font-bold flex justify-between items-center">
       <p>{current_amount}đ</p>
-      <p className="text-gray-400">{target_amount - current_amount} left</p> {/* còn bao nhiêu tiền */}
+      <p className={Number(current_amount) >= Number(target_amount)
+          ? "text-green-300"
+          : "text-gray-400"}>
+        {Number(current_amount) >= Number(target_amount)
+          ? "Complete"
+          : `${(Number(target_amount) - Number(current_amount)).toFixed(2)} left`}
+      </p>
     </div>
 
-    {/* progress bar */}
     <div className="w-full bg-gray-200 rounded-full h-4 mt-4">
       <div
         className="bg-green-400 h-4 rounded-full"
-        style={{ width: `${(current_amount / target_amount) * 100}%` }} // tính % hoàn thành
+        style={{ width: `${Math.min((current_amount / target_amount) * 100, 100)}%` }}
       />
     </div>
 
     <div className="text-gray-400 font-bold flex justify-between mt-1">
-      <p>{((current_amount / target_amount) * 100).toFixed(1)}% completed</p>
+      <p>{target_amount ? ((current_amount / target_amount) * 100).toFixed(1) : 0}% completed</p>
       <div className="flex gap-2">
-        <Pencil className="text-pink-400 cursor-pointer" onClick={onEdit}/> {/* edit */}
-        <Trash2 className="text-red-500 cursor-pointer" onClick={onDelete} /> {/* delete */}
+        <BadgeDollarSign className="text-green-400 cursor-pointer" onClick={onUpdateCurrent} />
+        <Pencil className="text-pink-400 cursor-pointer" onClick={onEdit} />
+        <Trash2 className="text-red-500 cursor-pointer" onClick={onDelete} />
       </div>
     </div>
   </div>
