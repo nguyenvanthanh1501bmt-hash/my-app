@@ -1,6 +1,6 @@
 var R=require("../../../../chunks/ssr/[turbopack]_runtime.js")("server/app/(routes)/dashboard/your-debt/page.js")
-R.c("server/chunks/ssr/node_modules_49a86b4c._.js")
-R.c("server/chunks/ssr/[root-of-the-server]__d7d58aac._.js")
+R.c("server/chunks/ssr/node_modules_next_dist_1e88c39c._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7263b2ee._.js")
 R.c("server/chunks/ssr/node_modules_eb7ec0ea._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__e8a2741f._.js")
 R.c("server/chunks/ssr/app_b9b1292a._.js")

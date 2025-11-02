@@ -39,7 +39,6 @@ export function useUserInfo() {
 
         // Chuyển response sang JSON
         const data = await res.json();
-        console.log("Login response test thử xem như nào2345:", data);
 
         // Nếu backend trả về user.id, lưu vào state
         if (data.user.id) setId(data.user.id);

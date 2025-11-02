@@ -28,7 +28,7 @@ function SideNav() {
         { id: 2, name: 'Expenses', icon: <ReceiptText />, path: '/dashboard/expenses' },
         { id: 3, name: 'Budget', icon: <ShieldCheck />, path: '/dashboard/budget' },
         { id: 4, name: 'Saving Wallet', icon: <PiggyBank />, path: '/dashboard/saving-wallet' },
-        { id: 5, name: 'Your Debt', icon: <CircleDollarSign />, path: '/dashboard/your-debt' }
+        { id: 5, name: 'Your Loan/Debt', icon: <CircleDollarSign />, path: '/dashboard/your-debt' }
     ];
 
     // Lấy đường dẫn hiện tại của trang
