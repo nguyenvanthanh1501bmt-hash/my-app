@@ -2,9 +2,6 @@
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
-      --tw-scale-x: 1;
-      --tw-scale-y: 1;
-      --tw-scale-z: 1;
       --tw-border-style: solid;
       --tw-gradient-position: initial;
       --tw-gradient-from: #0000;
@@ -37,6 +34,9 @@
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-animation-delay: 0s;
       --tw-animation-direction: normal;
       --tw-animation-duration: initial;
@@ -68,7 +68,6 @@
     --color-orange-100: #ffedd5;
     --color-orange-300: #ffb96d;
     --color-orange-700: #c53c00;
-    --color-amber-50: #fffbeb;
     --color-green-100: #dcfce7;
     --color-green-300: #7bf1a8;
     --color-green-400: #05df72;
@@ -145,7 +144,6 @@
       --color-orange-100: lab(94.7127% 3.58391 14.3151);
       --color-orange-300: lab(80.8059% 21.7313 50.4455);
       --color-orange-700: lab(46.4615% 57.7275 70.8507);
-      --color-amber-50: lab(98.6252% -.635982 8.42309);
       --color-green-100: lab(96.186% -13.8464 6.52362);
       --color-green-300: lab(86.9953% -47.2691 25.0054);
       --color-green-400: lab(78.503% -64.9265 39.7492);
@@ -697,16 +695,12 @@
     width: 48%;
   }
 
+  .w-\[60\%\] {
+    width: 60%;
+  }
+
   .w-\[70\%\] {
     width: 70%;
-  }
-
-  .w-\[70\] {
-    width: 70px;
-  }
-
-  .w-\[250px\] {
-    width: 250px;
   }
 
   .w-\[300px\] {
@@ -743,20 +737,6 @@
 
   .shrink-0 {
     flex-shrink: 0;
-  }
-
-  .scale-0 {
-    --tw-scale-x: 0%;
-    --tw-scale-y: 0%;
-    --tw-scale-z: 0%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
-  }
-
-  .scale-105 {
-    --tw-scale-x: 105%;
-    --tw-scale-y: 105%;
-    --tw-scale-z: 105%;
-    scale: var(--tw-scale-x) var(--tw-scale-y);
   }
 
   .animate-spin {
@@ -835,20 +815,8 @@
     gap: calc(var(--spacing) * 4);
   }
 
-  .gap-5 {
-    gap: calc(var(--spacing) * 5);
-  }
-
-  .gap-30 {
-    gap: calc(var(--spacing) * 30);
-  }
-
-  .gap-50 {
-    gap: calc(var(--spacing) * 50);
-  }
-
-  .gap-100 {
-    gap: calc(var(--spacing) * 100);
+  .gap-15 {
+    gap: calc(var(--spacing) * 15);
   }
 
   .overflow-auto {
@@ -929,6 +897,10 @@
 
   .border-\[\#6C6C6C\] {
     border-color: #6c6c6c;
+  }
+
+  .border-blue-500 {
+    border-color: var(--color-blue-500);
   }
 
   .border-blue-600 {
@@ -1063,6 +1035,10 @@
     background-color: var(--color-red-100);
   }
 
+  .bg-red-400 {
+    background-color: var(--color-red-400);
+  }
+
   .bg-red-500 {
     background-color: var(--color-red-500);
   }
@@ -1073,10 +1049,6 @@
 
   .bg-slate-50 {
     background-color: var(--color-slate-50);
-  }
-
-  .bg-slate-100 {
-    background-color: var(--color-slate-100);
   }
 
   .bg-slate-200 {
@@ -1461,11 +1433,6 @@
     transition-duration: .15s;
   }
 
-  .duration-200 {
-    --tw-duration: .2s;
-    transition-duration: .2s;
-  }
-
   .duration-300 {
     --tw-duration: .3s;
     transition-duration: .3s;
@@ -1507,12 +1474,6 @@
   @media (hover: hover) {
     .hover\:bg-accent:hover {
       background-color: var(--accent);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-amber-50:hover {
-      background-color: var(--color-amber-50);
     }
   }
 
@@ -2135,24 +2096,6 @@
   }
 }
 
-@property --tw-scale-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
-@property --tw-scale-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 1;
-}
-
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -2331,6 +2274,24 @@
   syntax: "*";
   inherits: false;
   initial-value: 0;
+}
+
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 
 @keyframes spin {

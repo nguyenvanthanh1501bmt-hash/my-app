@@ -32,9 +32,9 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
       onClose();
     } catch (err) {
       console.error(err);
-      alert("Error creating loan/debt");
+      alert("Error creating loan/debt"); 
     }
-  };
+  }; 
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
@@ -267,7 +267,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
   );
 }
 
-export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, onClose, onSubmit }) {
+export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, currentstatus , onClose, onSubmit }) {
   const [currentAmount, setCurrentAmount] = useState("");
   const [typeSelect, setTypeSelect] = useState("loan"); // "loan" hoặc "debt"
 
@@ -300,10 +300,11 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, onClose
         newCurrent += parsedAmount; 
       }
     }
-    
+    const newStatus = Number(newCurrent) === 0 ? "paid" : "pending";
 
     const newData = {
       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
+      status: newStatus
     };
 
     try {
@@ -330,7 +331,7 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, onClose
           <button
             type="button"
             onClick={() => setTypeSelect("loan")}
-            className={`w-[48%] p-2 rounded-2xl transition-colors ${
+            className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
               typeSelect === "loan"
                 ? "bg-blue-500 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-blue-400"
@@ -341,7 +342,7 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, onClose
           <button
             type="button"
             onClick={() => setTypeSelect("debt")}
-            className={`w-[48%] p-2 rounded-2xl transition-colors ${
+            className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
               typeSelect === "debt"
                 ? "bg-red-500 text-white"
                 : "bg-gray-200 text-gray-700 hover:bg-red-400"

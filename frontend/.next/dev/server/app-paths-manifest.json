@@ -1,3 +1,6 @@
 {
-  "/(routes)/dashboard/your-debt/page": "app/(routes)/dashboard/your-debt/page.js"
+  "/(routes)/dashboard/page": "app/(routes)/dashboard/page.js",
+  "/(routes)/dashboard/saving-wallet/page": "app/(routes)/dashboard/saving-wallet/page.js",
+  "/(routes)/dashboard/your-debt/page": "app/(routes)/dashboard/your-debt/page.js",
+  "/page": "app/page.js"
 }

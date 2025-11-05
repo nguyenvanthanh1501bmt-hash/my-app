@@ -13,7 +13,7 @@ import {
 import { Button } from "../../../../../components/ui/components/ui/button";
 import { DeleteLoan, CreateLoan, UpdateLoan } from "./API_setup";
 import { LoanInputForm, LoanUpdateForm, UpdateCurrentLoan_Debt } from "./update_create_form";
-import LoanDebtCard  from "./loan_debt_card"
+import LoanDebtCard from "./loan_debt_card";
 
 export default function LoadingDisplay() {
   const { data, setData, error, total_loan, total_debt } = useLoanData();
@@ -26,19 +26,25 @@ export default function LoadingDisplay() {
   // ===== Xóa khoản vay / nợ =====
   const handleDelete = async (id) => {
     await DeleteLoan(id);
-    setData(prev => prev.filter(i => i.id !== id));
+    setData((prev) => prev.filter((i) => i.id !== id));
   };
 
   // ===== Tạo mới =====
   const handleCreate = async (data) => {
-    const res = await CreateLoan(data);
-    setData(prev => [...prev, res]);
+    const res = await CreateLoan({
+      ...data,
+      status: data.status?.toLowerCase() || "pending",
+    });
+    setData((prev) => [...prev, res]);
   };
 
   // ===== Cập nhật =====
   const handleUpdate = async (id, change) => {
-    const res = await UpdateLoan(id, change);
-    setData(prev => prev.map(i => (i.id === id ? res : i)));
+    const res = await UpdateLoan(id, {
+      ...change,
+      status: change.status?.toLowerCase(),
+    });
+    setData((prev) => prev.map((i) => (i.id === id ? res : i)));
   };
 
   if (!data) return <p>Loading...</p>;
@@ -47,13 +53,14 @@ export default function LoadingDisplay() {
   return (
     <div>
       <h2 className="text-3xl font-bold mb-2 ml-[10%]">Your Loans & Debts</h2>
-      <div className="flex justify-center flex-row items-center gap-30">
+      <div className="flex justify-center flex-row items-center gap-15">
         <LoanDebtCard title="Total Loan" value={total_loan} />
         <LoanDebtCard title="Total Debt" value={-total_debt} />
         <LoanDebtCard title="Net Currency" value={total_loan - total_debt} />
       </div>
+
       <div className="flex justify-center flex-col items-center">
-        {data.map(item => (
+        {data.map((item) => (
           <LoanFormDisplay
             key={item.id}
             {...item}
@@ -72,7 +79,11 @@ export default function LoadingDisplay() {
         </Button>
 
         {showForm && (
-          <InputFormModal userId={userId} onClose={() => setShowForm(false)} onCreate={handleCreate} />
+          <InputFormModal
+            userId={userId}
+            onClose={() => setShowForm(false)}
+            onCreate={handleCreate}
+          />
         )}
 
         {updateModal.show && (
@@ -89,7 +100,9 @@ export default function LoadingDisplay() {
             loanid={showFormUpdateCurrent.item.id}
             oldamount={showFormUpdateCurrent.item.amount}
             currentType={showFormUpdateCurrent.item.type}
-            onClose={() => setShowFormUpdateCurrent({ show: false, item: null })}
+            onClose={() =>
+              setShowFormUpdateCurrent({ show: false, item: null })
+            }
             onUpdate={handleUpdate}
           />
         )}
@@ -171,8 +184,12 @@ function UpdateCurrentLoan({ loanid, oldamount, currentType, onClose, onUpdate }
 
 // ===== HIỂN THỊ ITEM =====
 function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete, onEdit, onUpdate }) {
-  const isPaid = status === "paid";
-  const typeLabel = type.toLowerCase() === "loan" ? "Owed to you" : "You owed";
+  const isPaid = status?.toLowerCase() === "paid";
+  const typeLabel = type?.toLowerCase() === "loan" ? "Owed to you" : "You owed";
+
+  const statusClass = isPaid
+    ? "bg-green-100 text-green-600 border border-green-400"
+    : "bg-red-100 text-red-600 border border-red-400";
 
   return (
     <div
@@ -186,13 +203,9 @@ function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete,
           Amount: <span className="text-blue-600">${amount}</span>
         </p>
         <p
-          className={`text-sm font-semibold uppercase tracking-wide px-4 py-1 rounded-full shadow-sm ${
-            isPaid
-              ? "bg-green-100 text-green-700 border border-green-400"
-              : "bg-red-100 text-red-600 border border-red-400"
-          }`}
+          className={`text-sm font-semibold uppercase tracking-wide px-4 py-1 rounded-full shadow-sm ${statusClass}`}
         >
-          {status}
+          {isPaid ? "Paid" : "Pending"}
         </p>
       </div>
 
