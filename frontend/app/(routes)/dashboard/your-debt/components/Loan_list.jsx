@@ -1,11 +1,13 @@
-import { useState, useEffect } from "react";
+// ================= HOOK useLoanData =================
+import { useState, useEffect, useMemo } from "react";
 import { useUserInfo } from "../../components/necessary_info";
 
-export function useUserLoanList() {
+export function useLoanData() {
   const { id: userId, loading } = useUserInfo();
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
 
+  // Fetch dữ liệu từ API
   useEffect(() => {
     if (loading || !userId) return;
 
@@ -23,11 +25,29 @@ export function useUserLoanList() {
     };
 
     fetchData();
-    return () => {
-      canceled = true;
-    };
+    return () => { canceled = true; };
   }, [userId, loading]);
 
-  // Trả setData để component có thể cập nhật UI khi thêm/xoá
-  return { data, setData, error };
+  // Tách loans và debts, tính tổng
+  const loans = useMemo(
+    () => (Array.isArray(data) ? data.filter(item => item.type?.toLowerCase() === "loan") : []),
+    [data]
+  );
+
+  const debts = useMemo(
+    () => (Array.isArray(data) ? data.filter(item => item.type?.toLowerCase() === "debt") : []),
+    [data]
+  );
+
+  const total_loan = useMemo(
+    () => loans.reduce((sum, item) => sum + Number(item.amount || 0), 0),
+    [loans]
+  );
+
+  const total_debt = useMemo(
+    () => debts.reduce((sum, item) => sum + Number(item.amount || 0), 0),
+    [debts]
+  );
+
+  return { data, setData, loans, debts, total_loan, total_debt, error };
 }

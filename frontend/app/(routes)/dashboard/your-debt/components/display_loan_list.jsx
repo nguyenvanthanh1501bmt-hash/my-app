@@ -1,4 +1,6 @@
-import { useUserLoanList } from "./Loan_list";
+// ================= COMPONENT LoadingDisplay =================
+import React, { useState } from "react";
+import { useLoanData } from "./Loan_list";
 import { useUserInfo } from "../../components/necessary_info";
 import {
   Pencil,
@@ -11,31 +13,32 @@ import {
 import { Button } from "../../../../../components/ui/components/ui/button";
 import { DeleteLoan, CreateLoan, UpdateLoan } from "./API_setup";
 import { LoanInputForm, LoanUpdateForm, UpdateCurrentLoan_Debt } from "./update_create_form";
-import { useState } from "react";
+import LoanDebtCard  from "./loan_debt_card"
 
 export default function LoadingDisplay() {
-  const { data, setData, error } = useUserLoanList();
+  const { data, setData, error, total_loan, total_debt } = useLoanData();
   const { id: userId } = useUserInfo();
+
   const [showForm, setShowForm] = useState(false);
   const [updateModal, setUpdateModal] = useState({ show: false, item: null });
-  const [showformupdatecurrent, setshowformsetupcurrent] = useState({ show: false, item: null });
+  const [showFormUpdateCurrent, setShowFormUpdateCurrent] = useState({ show: false, item: null });
 
-  // ====== Xóa khoản vay / nợ ======
+  // ===== Xóa khoản vay / nợ =====
   const handleDelete = async (id) => {
     await DeleteLoan(id);
-    setData((prev) => prev.filter((item) => item.id !== id));
+    setData(prev => prev.filter(i => i.id !== id));
   };
 
-  // ====== Tạo mới ======
+  // ===== Tạo mới =====
   const handleCreate = async (data) => {
     const res = await CreateLoan(data);
-    setData((prev) => [...prev, res]);
+    setData(prev => [...prev, res]);
   };
 
-  // ====== Cập nhật ======
+  // ===== Cập nhật =====
   const handleUpdate = async (id, change) => {
     const res = await UpdateLoan(id, change);
-    setData((prev) => prev.map((item) => (item.id === id ? res : item)));
+    setData(prev => prev.map(i => (i.id === id ? res : i)));
   };
 
   if (!data) return <p>Loading...</p>;
@@ -44,25 +47,22 @@ export default function LoadingDisplay() {
   return (
     <div>
       <h2 className="text-3xl font-bold mb-2 ml-[10%]">Your Loans & Debts</h2>
+      <div className="flex justify-center flex-row items-center gap-30">
+        <LoanDebtCard title="Total Loan" value={total_loan} />
+        <LoanDebtCard title="Total Debt" value={-total_debt} />
+        <LoanDebtCard title="Net Currency" value={total_loan - total_debt} />
+      </div>
       <div className="flex justify-center flex-col items-center">
-        {data.map((item) => {
-          return (
-            <LoanFormDisplay
-              key={item.id}
-              id={item.id}
-              amount={item.amount}
-              person={item.person}
-              due_date={item.due_date}
-              type={item.type}
-              status={item.status}
-              onDelete={() => handleDelete(item.id)}
-              onEdit={() => setUpdateModal({ show: true, item })}
-              onUpdate={() => setshowformsetupcurrent({ show: true, item })}
-            />
-          );
-        })}
+        {data.map(item => (
+          <LoanFormDisplay
+            key={item.id}
+            {...item}
+            onDelete={() => handleDelete(item.id)}
+            onEdit={() => setUpdateModal({ show: true, item })}
+            onUpdate={() => setShowFormUpdateCurrent({ show: true, item })}
+          />
+        ))}
 
-        {/* ====== Nút tạo mới ====== */}
         <Button
           className="mt-4 border-2 border-dotted rounded-2xl w-[70%] bg-transparent text-black py-15 cursor-pointer hover:scale-[1.02] hover:bg-slate-100 transition-transform"
           onClick={() => setShowForm(true)}
@@ -71,16 +71,10 @@ export default function LoadingDisplay() {
           Create New Loan / Debt
         </Button>
 
-        {/* ====== Form tạo mới ====== */}
         {showForm && (
-          <InputFormModal
-            userId={userId}
-            onClose={() => setShowForm(false)}
-            onCreate={handleCreate}
-          />
+          <InputFormModal userId={userId} onClose={() => setShowForm(false)} onCreate={handleCreate} />
         )}
 
-        {/* ====== Form cập nhật ====== */}
         {updateModal.show && (
           <UpdateFormModal
             loanid={updateModal.item.id}
@@ -90,12 +84,12 @@ export default function LoadingDisplay() {
           />
         )}
 
-        {showformupdatecurrent.show && (
+        {showFormUpdateCurrent.show && (
           <UpdateCurrentLoan
-            loanid={showformupdatecurrent.item.id}
-            oldamount={showformupdatecurrent.item.amount} // sửa từ oldCurrent
-            currentType={showformupdatecurrent.item.type}
-            onClose={() => setshowformsetupcurrent({ show: false, item: null })}
+            loanid={showFormUpdateCurrent.item.id}
+            oldamount={showFormUpdateCurrent.item.amount}
+            currentType={showFormUpdateCurrent.item.type}
+            onClose={() => setShowFormUpdateCurrent({ show: false, item: null })}
             onUpdate={handleUpdate}
           />
         )}
@@ -104,11 +98,16 @@ export default function LoadingDisplay() {
   );
 }
 
-// ========== FORM CREATE ==========
+// ===== FORM CREATE =====
 function InputFormModal({ userId, onClose, onCreate }) {
   const handleSubmit = async (data) => {
-    await onCreate(data);
-    onClose();
+    try {
+      await onCreate(data);
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert("Create failed");
+    }
   };
 
   return (
@@ -120,11 +119,16 @@ function InputFormModal({ userId, onClose, onCreate }) {
   );
 }
 
-// ========== FORM UPDATE ==========
+// ===== FORM UPDATE =====
 function UpdateFormModal({ loanid, datachange, onClose, onUpdate }) {
   const handleSubmit = async (change) => {
-    await onUpdate(loanid, change);
-    onClose();
+    try {
+      await onUpdate(loanid, change);
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert("Update failed");
+    }
   };
 
   return (
@@ -143,8 +147,13 @@ function UpdateFormModal({ loanid, datachange, onClose, onUpdate }) {
 
 function UpdateCurrentLoan({ loanid, oldamount, currentType, onClose, onUpdate }) {
   const handleSubmit = async (change) => {
-    await onUpdate(loanid, change); // map về handleUpdate ở LoadingDisplay
-    onClose();
+    try {
+      await onUpdate(loanid, change);
+      onClose();
+    } catch (err) {
+      console.error(err);
+      alert("Update failed");
+    }
   };
 
   return (
@@ -160,21 +169,10 @@ function UpdateCurrentLoan({ loanid, oldamount, currentType, onClose, onUpdate }
   );
 }
 
-
-// ========== HIỂN THỊ ITEM ==========
-function LoanFormDisplay({
-  id,
-  amount,
-  person,
-  due_date,
-  type,
-  status,
-  onDelete,
-  onEdit,
-  onUpdate,
-}) {
+// ===== HIỂN THỊ ITEM =====
+function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete, onEdit, onUpdate }) {
   const isPaid = status === "paid";
-  const typeLabel = type.toLowerCase() === "loan" ? "Owed to you" : "You owed"; // loan = người khác nợ bạn, debt = bạn nợ người khác
+  const typeLabel = type.toLowerCase() === "loan" ? "Owed to you" : "You owed";
 
   return (
     <div
@@ -182,12 +180,11 @@ function LoanFormDisplay({
         isPaid ? "border-green-300" : "border-red-300"
       }`}
     >
-      {/* ====== Header: Amount + Status ====== */}
+      {/* Header: Amount + Status */}
       <div className="flex justify-between items-center">
         <p className="text-gray-700 font-semibold text-lg">
           Amount: <span className="text-blue-600">${amount}</span>
         </p>
-
         <p
           className={`text-sm font-semibold uppercase tracking-wide px-4 py-1 rounded-full shadow-sm ${
             isPaid
@@ -199,7 +196,7 @@ function LoanFormDisplay({
         </p>
       </div>
 
-      {/* ====== Type + Person ====== */}
+      {/* Type + Person */}
       <div className="flex flex-wrap justify-between items-center gap-4 mt-4">
         <div
           className={`w-[25%] text-center font-semibold py-3 rounded-xl shadow-inner ${
@@ -217,7 +214,7 @@ function LoanFormDisplay({
         </div>
       </div>
 
-      {/* ====== Footer: Due date + Actions ====== */}
+      {/* Footer: Due date + Actions */}
       <div className="flex justify-between items-center mt-5">
         <div className="flex flex-row items-center gap-2 text-gray-500 text-sm font-medium bg-white shadow-inner rounded-xl px-4 py-2">
           <CalendarDays className="h-5 w-5 text-gray-400" />
@@ -225,9 +222,10 @@ function LoanFormDisplay({
         </div>
 
         <div className="flex gap-4">
-          <BadgeDollarSign 
-            className="cursor-pointer hover:text-green-400 transition-colors" 
-            onClick={onUpdate}/>
+          <BadgeDollarSign
+            className="cursor-pointer hover:text-green-400 transition-colors"
+            onClick={onUpdate}
+          />
           <Pencil
             className="cursor-pointer hover:text-blue-500 transition-colors"
             onClick={onEdit}
