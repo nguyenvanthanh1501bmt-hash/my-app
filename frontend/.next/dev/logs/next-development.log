@@ -1,1065 +1,122 @@
-[00:00:03.363] Server  LOG      ✓ Ready in 2.9s
-[00:00:12.342] Server  LOG      ○ Compiling / ...
-[00:00:14.631] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:14.797] Server  ERROR    ⨯ TypeError: immutable
-[00:00:14.878] Server  ERROR    ⨯ TypeError: immutable
-[00:00:15.117] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:15.117] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:00:15.511] Browser LOG     Sending username to backend: ac12
-[00:00:15.511] Browser LOG     Logging in user: ac12
-[00:00:16.798] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:16.799] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:16.800] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1MzI2fQ.wGEwVtKL6ndg6jfDsSvXF5laaDNdHjstjrpaBIjbzDM","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:00:16.801] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:00:18.333] Server  ERROR    ⨯ TypeError: immutable
-[00:00:18.359] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:18.390] Browser LOG     Current path: /dashboard
-[00:00:18.390] Browser LOG     Current path: /dashboard
-[00:00:20.664] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-
-[00:00:20.891] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:00:20.891] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:00:20.946] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-
-[00:00:21.199] Browser ERROR   uncaughtError: Error: ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-
-[00:00:21.395] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:00:21.395] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx:5:25
-Ecmascript file had an error
-  3 | import LoanDebtCard from "./loan_debt_card"
-  4 |
-> 5 | export default function LoanDebtCard(){
-    |                         ^^^^^^^^^^^^
-  6 |     const {total_loan, total_debt } = useLoanData();
-  7 |     return(
-  8 |         <div className="flex justify-center flex-row items-center gap-15">
-
-the name `LoanDebtCard` is defined multiple times
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/LoanDebt_container.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:00:47.439] Server  LOG      ✓ Compiled in 51ms
-[00:00:47.972] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:48.075] Server  ERROR    ⨯ TypeError: immutable
-[00:00:48.090] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:48.699] Server  LOG      ✓ Compiled in 29ms
-[00:00:50.038] Browser LOG     Current path: /dashboard/your-debt
-[00:00:50.038] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:00:50.038] Browser LOG     Sending username to backend: ac12
-[00:00:50.038] Browser LOG     Logging in user: ac12
-[00:00:50.038] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1MzYwfQ.RFm106MZ3ELz2RVXcH0os06p_MFc9PKXrARN-Priyog","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:00:50.038] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:00:55.065] Server  LOG      ✓ Compiled in 45ms
-[00:00:56.036] Browser ERROR   uncaughtError: ReferenceError: LoanDebtCard is not defined
-[00:00:59.347] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:00:59.379] Server  LOG      ✓ Compiled in 105ms
-[00:00:59.789] Browser LOG     Current path: /dashboard/your-debt
-[00:00:59.789] Browser LOG     Sending username to backend: ac12
-[00:00:59.789] Browser LOG     Logging in user: ac12
-[00:00:59.789] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:00:59.789] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1MzY5fQ.f0vEL2lcOU9C68c-OTRsbBuA7VO6LBDdmLDXRlK2wA8","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:00:59.841] Server  ERROR    ⨯ TypeError: immutable
-[00:00:59.875] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:01:00.014] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:00.103] Server  ERROR    ⨯ TypeError: immutable
-[00:01:00.164] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:01:00.263] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:01:00.263] Browser LOG     Current path: /dashboard/your-debt
-[00:01:00.572] Browser LOG     Sending username to backend: ac12
-[00:01:00.572] Browser LOG     Logging in user: ac12
-[00:01:00.572] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:01:00.572] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1MzcwfQ.jPyyl_VJkHn9aapo78lTTCVNbIS8eCb_EkNT9HDP09o","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:01:47.039] Server  LOG      ✓ Compiled in 111ms
-[00:01:52.448] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.449] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.450] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.452] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.453] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.454] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.454] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.455] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.456] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.457] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.458] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.458] Server  ERROR    ⨯ ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-
-
-[00:01:52.484] Server  LOG      ✓ Compiled in 28ms
-[00:01:53.035] Browser ERROR   ./app/(routes)/dashboard/your-debt/page.jsx:4:1
-Module not found: Can't resolve './components/LoanDebt_container'
-  2 | import React from "react";
-  3 | import LoadingDisplay from "./components/display_loan_list"
-> 4 | import LoanDebt_container from "./components/LoanDebt_container"
-    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  5 |
-  6 | export default function LoanListPage() {
-  7 |     return (
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-https://nextjs.org/docs/messages/module-not-found
-[00:02:02.042] Browser ERROR   uncaughtError: ReferenceError: LoanDebt_container is not defined
-[00:02:03.142] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:02:03.166] Server  LOG      ✓ Compiled in 109ms
-[00:02:03.745] Browser LOG     Current path: /dashboard/your-debt
-[00:02:03.745] Browser LOG     Sending username to backend: ac12
-[00:02:03.745] Browser LOG     Logging in user: ac12
-[00:02:03.745] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1NDMzfQ.-hfkEaDrSAwlkmPdgs_FFfmmXPjKd3t2ea-XE-46lq4","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:02:03.745] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:02:03.775] Server  ERROR   Error: aborted
-[00:02:03.776] Server  ERROR    ⨯ "uncaughtException:" Error: aborted
-[00:02:03.777] Server  ERROR    ⨯ "uncaughtException: " Error: aborted
-[00:02:03.859] Server  ERROR    ⨯ TypeError: immutable
-[00:02:03.890] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:04.006] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:04.076] Server  ERROR    ⨯ TypeError: immutable
-[00:02:04.138] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:04.158] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:02:04.158] Browser LOG     Current path: /dashboard/your-debt
-[00:02:04.466] Browser LOG     Sending username to backend: ac12
-[00:02:04.466] Browser LOG     Logging in user: ac12
-[00:02:04.466] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1NDM0fQ.x55_0A_WB3oV80rA3XVfXMf2SaEn_9Zsyo7lBhStnpo","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:02:04.466] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:05:10.753] Server  LOG      ✓ Compiled in 42ms
-[00:05:11.040] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:05:17.652] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:05:17.682] Server  LOG      ✓ Compiled in 35ms
-[00:05:17.806] Server  ERROR    ⨯ TypeError: immutable
-[00:05:17.826] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:05:18.038] Browser LOG     Current path: /dashboard/your-debt
-[00:05:18.038] Browser LOG     Sending username to backend: ac12
-[00:05:18.038] Browser LOG     Logging in user: ac12
-[00:05:18.737] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:18.833] Server  ERROR    ⨯ TypeError: immutable
-[00:05:18.845] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:05:20.044] Browser LOG     Current path: /dashboard/your-debt
-[00:05:20.044] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:05:20.044] Browser LOG     Sending username to backend: ac12
-[00:05:20.044] Browser LOG     Logging in user: ac12
-[00:05:20.044] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1NjI5fQ.Lnb9zj7QHP1lmq-GPGmFwQ4NZ7Y8Eud_HdxkhLjdeaY","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:05:20.044] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:05:20.044] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:05:24.909] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:05:24.936] Server  LOG      ✓ Compiled in 54ms
-[00:05:25.455] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:05:25.549] Server  ERROR    ⨯ TypeError: immutable
-[00:05:25.590] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:05:25.706] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:05:25.706] Browser LOG     Current path: /dashboard/your-debt
-[00:05:26.049] Browser LOG     Sending username to backend: ac12
-[00:05:26.049] Browser LOG     Logging in user: ac12
-[00:05:26.049] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:05:26.049] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1NjM2fQ.eHlZbPDL7aRv8MhkWk_ONCKO-Sb_e5YQXhQfP9ahZDQ","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:05:39.341] Server  LOG      ✓ Compiled in 35ms
-[00:05:40.040] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx:180:7
-Parsing ecmascript source code failed
-  178 |       className={`w-[70%] bg-gradient-to-br from-white to-slate-50 shadow-lg rounded-2xl p-5 mt-4 border transition-transform hover:scale-[1.01] ${
-  179 |         Number(amount ? "border-green-300" : "border-red-300"
-> 180 |       }`}
-      |       ^
-  181 |     >
-  182 |       {/* Header: Amount + Status */}
-  183 |       <div className="flex justify-between items-center">
-
-Expected ',', got '}'
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:05:48.910] Server  LOG      ✓ Compiled in 48ms
-[00:05:55.355] Server  LOG      ✓ Compiled in 28ms
-[00:05:57.863] Server  LOG      ✓ Compiled in 34ms
-[00:05:58.035] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx:180:7
-Parsing ecmascript source code failed
-  178 |       className={`w-[70%] bg-gradient-to-br from-white to-slate-50 shadow-lg rounded-2xl p-5 mt-4 border transition-transform hover:scale-[1.01] ${
-  179 |         Number(amount ? "border-green-300" : "border-red-300"
-> 180 |       }`}
-      |       ^
-  181 |     >
-  182 |       {/* Header: Amount + Status */}
-  183 |       <div className="flex justify-between items-center">
-
-Expected ',', got '}'
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:06:01.039] Browser ERROR   uncaughtError: ReferenceError: Numberamount is not defined
-[00:06:06.220] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:06:06.238] Server  LOG      ✓ Compiled in 24ms
-[00:06:06.415] Server  ERROR    ⨯ TypeError: immutable
-[00:06:06.437] Server  ERROR   Error: aborted
-[00:06:06.438] Server  ERROR    ⨯ "uncaughtException:" Error: aborted
-[00:06:06.438] Server  ERROR    ⨯ "uncaughtException: " Error: aborted
-[00:06:06.450] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:06.598] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:06.665] Server  ERROR    ⨯ TypeError: immutable
-[00:06:06.673] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:08.043] Browser LOG     Current path: /dashboard/your-debt
-[00:06:08.044] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:06:08.044] Browser LOG     Sending username to backend: ac12
-[00:06:08.044] Browser LOG     Logging in user: ac12
-[00:06:08.044] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:06:08.044] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1Njc3fQ.kmrkfGMoYxzJm8ctOJnlFbvty8qt0S5lXosmG7eVMjU","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:06:08.044] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:06:08.222] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:06:08.247] Server  LOG      ✓ Compiled in 27ms
-[00:06:08.479] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:08.557] Server  ERROR    ⨯ TypeError: immutable
-[00:06:08.568] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:10.033] Browser LOG     Current path: /dashboard/your-debt
-[00:06:10.033] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:06:10.034] Browser LOG     Sending username to backend: ac12
-[00:06:10.034] Browser LOG     Logging in user: ac12
-[00:06:10.034] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1Njc5fQ.G10lxwtPYpA_le9CsgHxkiuWdUlLrRWKrHYwXyIVUwo","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:06:10.034] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:06:13.484] Server  LOG      ✓ Compiled in 34ms
-[00:06:14.034] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:06:16.737] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:06:16.761] Server  LOG      ✓ Compiled in 49ms
-[00:06:16.983] Server  ERROR   Error: aborted
-[00:06:16.984] Server  ERROR    ⨯ "unhandledRejection:" Error: aborted
-[00:06:16.985] Server  ERROR    ⨯ "unhandledRejection: " Error: aborted
-[00:06:17.024] Server  ERROR    ⨯ TypeError: immutable
-[00:06:17.038] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:17.169] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:17.295] Server  ERROR    ⨯ TypeError: immutable
-[00:06:17.311] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:19.037] Browser LOG     Current path: /dashboard/your-debt
-[00:06:19.037] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:06:19.037] Browser LOG     Sending username to backend: ac12
-[00:06:19.037] Browser LOG     Logging in user: ac12
-[00:06:19.037] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1Njg4fQ.CeDM_-6MtvHFMdb1ITOFcY2RiCB88Ro8MisrMwSMlNU","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:06:19.037] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:06:19.037] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:06:19.424] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:06:19.450] Server  LOG      ✓ Compiled in 73ms
-[00:06:19.782] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:06:19.830] Server  ERROR    ⨯ TypeError: immutable
-[00:06:19.859] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:06:19.931] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:06:19.931] Browser LOG     Current path: /dashboard/your-debt
-[00:06:20.251] Browser LOG     Sending username to backend: ac12
-[00:06:20.251] Browser LOG     Logging in user: ac12
-[00:06:20.251] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:06:20.251] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1NjkwfQ.0IUXh8H2zQbU1KQAkza496ZmSk_nC3gT-88cUQ6yHwA","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:08:47.329] Server  LOG      ✓ Compiled in 43ms
-[00:09:17.045] Server  LOG      ✓ Compiled in 42ms
-[00:09:18.388] Server  LOG      ✓ Compiled in 45ms
-[00:09:36.701] Server  LOG      ✓ Compiled in 60ms
-[00:09:40.604] Server  LOG      ✓ Compiled in 32ms
-[00:10:27.261] Server  LOG      ✓ Compiled in 33ms
-[00:10:35.110] Server  LOG      ✓ Compiled in 74ms
-[00:10:45.166] Server  LOG      ✓ Compiled in 119ms
-[00:10:54.928] Server  LOG      ✓ Compiled in 32ms
-[00:10:55.080] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:10:56.282] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:10:56.312] Server  LOG      ✓ Compiled in 42ms
-[00:10:56.513] Server  ERROR    ⨯ TypeError: immutable
-[00:10:56.519] Browser LOG     Current path: /dashboard/your-debt
-[00:10:56.519] Browser LOG     Sending username to backend: ac12
-[00:10:56.519] Browser LOG     Logging in user: ac12
-[00:10:56.579] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:10:56.892] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1OTY3fQ.i_X0KjFF1JLgkhSpy_8vmV_28Mx6n2cpYUXCiu1v1OQ","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:10:56.892] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:10:56.892] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:10:57.755] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:57.858] Server  ERROR    ⨯ TypeError: immutable
-[00:10:57.869] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:10:58.828] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
-[00:10:58.828] Browser LOG     Current path: /dashboard/your-debt
-[00:10:58.828] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:10:58.828] Browser LOG     Sending username to backend: ac12
-[00:10:58.828] Browser LOG     Logging in user: ac12
-[00:10:58.828] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1OTY4fQ.Ll4agqfkFlogqfrcqEUsi3VD3aGOPUylz-j6Js-j_dg","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:10:58.828] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:10:58.828] Browser ERROR   uncaughtError: ReferenceError: isPaid is not defined
-[00:10:58.853] Server  LOG      ✓ Compiled in 73ms
-[00:10:59.186] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:10:59.294] Server  ERROR    ⨯ TypeError: immutable
-[00:10:59.303] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:10:59.852] Server  LOG      ✓ Compiled in 42ms
-[00:11:01.041] Browser LOG     Current path: /dashboard/your-debt
-[00:11:01.042] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:11:01.042] Browser LOG     Sending username to backend: ac12
-[00:11:01.042] Browser LOG     Logging in user: ac12
-[00:11:01.042] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM1OTcwfQ.Xn2ETcdzsoOVk9OZRW9MhMjgM-I5ke8BWy4s1yD7l14","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:11:01.042] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:12:05.314] Server  LOG      ✓ Compiled in 42ms
-[00:12:31.558] Server  LOG      ✓ Compiled in 45ms
-[00:12:38.673] Server  LOG      ✓ Compiled in 54ms
-[00:12:40.765] Server  LOG      ✓ Compiled in 37ms
-[00:12:41.045] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx:93:13
-Parsing ecmascript source code failed
-  91 |             currentType={showFormUpdateCurrent.item.type}
-  92 |             currentStatus={}
-> 93 |             onClose={() => setShowFormUpdateCurrent({ show: false, item: null })}
-     |             ^^^^^^^
-  94 |             onUpdate={handleUpdate}
-  95 |           />
-  96 |         )}
-
-Expected '</', got 'onClose'
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:12:47.314] Server  LOG      ✓ Compiled in 44ms
-[00:12:49.349] Server  LOG      ✓ Compiled in 44ms
-[00:13:00.800] Server  LOG      ✓ Compiled in 44ms
-[00:13:08.487] Server  LOG      ✓ Compiled in 39ms
-[00:13:11.319] Server  LOG      ✓ Compiled in 45ms
-[00:13:12.386] Server  LOG      ✓ Compiled in 31ms
-[00:13:26.995] Server  LOG      ✓ Compiled in 36ms
-[00:13:29.987] Server  LOG      ✓ Compiled in 43ms
-[00:13:41.381] Server  LOG      ✓ Compiled in 56ms
-[00:13:42.038] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:270:74
-Parsing ecmascript source code failed
-  268 | }
-  269 |
-> 270 | export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, , onClose, onSubmit }) {
-      |                                                                          ^
-  271 |   const [currentAmount, setCurrentAmount] = useState("");
-  272 |   const [typeSelect, setTypeSelect] = useState("loan"); // "loan" hoặc "debt"
-  273 |
-
-Unexpected token `,`. Expected identifier, string literal, numeric literal or [ for the computed key
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:13:49.473] Server  LOG      ✓ Compiled in 45ms
-[00:13:54.722] Server  LOG      ✓ Compiled in 52ms
-[00:14:19.534] Server  LOG      ✓ Compiled in 44ms
-[00:14:20.045] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:303:8
-Parsing ecmascript source code failed
-  301 |       }
-  302 |     }
-> 303 |     if()
-      |        ^
-  304 |
-  305 |     const newData = {
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:22.032] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:303:11
-Parsing ecmascript source code failed
-  301 |       }
-  302 |     }
-> 303 |     if(new)
-      |           ^
-  304 |
-  305 |     const newData = {
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:23.040] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     if(newCurrent)
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:27.044] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     if(newCurrent)
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:50.037] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:303:27
-Parsing ecmascript source code failed
-  301 |       }
-  302 |     }
-> 303 |     newStatus = Number(new)
-      |                           ^
-  304 |
-  305 |     const newData = {
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:50.942] Server  LOG      ✓ Compiled in 62ms
-[00:14:52.844] Server  LOG      ✓ Compiled in 47ms
-[00:14:53.045] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     newStatus = Number(newCurrent) ?
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:14:54.878] Server  LOG      ✓ Compiled in 40ms
-[00:14:55.032] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     newStatus = Number(newCurrent) ? ""
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expected ':', got 'const'
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:15:05.041] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     newStatus = Number(newCurrent) ? "Pending"
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expected ':', got 'const'
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:15:06.038] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:305:5
-Parsing ecmascript source code failed
-  303 |     newStatus = Number(newCurrent) ? "Pending" : 
-  304 |
-> 305 |     const newData = {
-      |     ^^^^^
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |     };
-  308 |
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:15:10.447] Server  LOG      ✓ Compiled in 46ms
-[00:15:18.599] Server  LOG      ✓ Compiled in 40ms
-[00:15:19.037] Browser ERROR   ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx:308:5
-Parsing ecmascript source code failed
-  306 |       amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-  307 |       status: new
-> 308 |     };
-      |     ^
-  309 |
-  310 |     try {
-  311 |       await onSubmit(newData); // gọi handleSubmit ở UpdateCurrentLoan
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/your-debt/components/update_create_form.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/components/display_loan_list.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/your-debt/page.jsx [Server Component]
-[00:15:31.622] Browser ERROR   unhandledRejection: ReferenceError: newStatus is not defined
-[00:15:43.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:43.762] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:15:43.762] Browser LOG     Current path: /dashboard
-[00:15:44.059] Browser LOG     Sending username to backend: ac12
-[00:15:44.060] Browser LOG     Logging in user: ac12
-[00:15:45.063] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM2MjU0fQ.-c-SU6xx2UTDMKk-PggsAWt2Bg0EACSIwgatPc9kRvw","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:15:45.063] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:16:23.010] Browser LOG     Current path: /dashboard/your-debt
-[00:16:28.121] Browser ERROR   UpdateLoan error: {}
-[00:16:28.121] Browser ERROR   {}
-[00:16:34.082] Browser ERROR   UpdateLoan error: {}
-[00:16:34.082] Browser ERROR   {}
-[00:17:54.352] Server  LOG      ✓ Compiled in 115ms
-[00:18:13.765] Server  LOG      ✓ Compiled in 44ms
-[00:18:43.225] Browser ERROR   UpdateLoan error: {}
-[00:18:43.225] Browser ERROR   {}
-[00:20:12.228] Browser LOG     Current path: /dashboard
-[00:20:13.855] Server  ERROR    ⨯ TypeError: immutable
-[00:20:13.911] Server  ERROR    ⨯ TypeError: immutable
-[00:20:13.917] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:20:13.985] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:20:13.994] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:20:16.643] Server  ERROR    ⨯ TypeError: immutable
-[00:20:16.689] Browser LOG     Current path: /dashboard
-[00:20:16.690] Browser LOG     Current path: /dashboard
-[00:20:16.691] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:20:18.172] Server  ERROR    ⨯ TypeError: immutable
-[00:20:18.184] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:18.184] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:20:18.184] Browser LOG     Current path: /dashboard
-[00:20:18.206] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:20:18.558] Browser LOG     Sending username to backend: ac12
-[00:20:18.558] Browser LOG     Logging in user: ac12
-[00:20:18.900] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY0OTM2NTI5fQ.g4GhXD8M0GsVAw4J4WmLsNYMOcOY2cwR_XYSYmBEbVI","user":{"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}}
-[00:20:18.900] Browser LOG     Username sent successfully: ac12 Backend response: {"created_at":"2025-10-30T12:03:39","id":7,"name":"ac12"}
-[00:20:19.709] Browser LOG     Current path: /dashboard/your-debt
-[00:21:19.621] Browser LOG     Current path: /dashboard/saving-wallet
-[00:21:22.298] Browser LOG     Current path: /dashboard/your-debt
+[00:00:02.955] Server  LOG      ✓ Ready in 2.3s
+[00:00:17.481] Server  LOG      ○ Compiling / ...
+[00:00:22.023] Server  ERROR    ⨯ TypeError: immutable
+[00:00:22.056] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:22.137] Server  ERROR    ⨯ TypeError: immutable
+[00:00:22.377] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:22.377] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:22.818] Browser LOG     Sending username to backend: test123
+[00:00:22.818] Browser LOG     Logging in user: test123
+[00:00:23.297] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY1NzY2Nzc3fQ.yestuoBwRvIoXDexC325PHVt_CrlJna5U5bC9aBhqn8","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
+[00:00:23.297] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
+[00:00:24.239] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:24.242] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:01:47.488] Server  ERROR    ⨯ TypeError: immutable
+[00:01:47.492] Browser LOG     Current path: /dashboard
+[00:01:47.492] Browser LOG     Current path: /dashboard
+[00:01:47.539] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:01:50.019] Browser LOG     Current path: /dashboard/budget
+[00:01:52.034] Browser LOG     Current path: /dashboard/expenses
+[00:01:53.453] Browser ERROR   fetch transactions error: {}
+[00:01:53.453] Browser ERROR   fetch categories error: {}
+[00:01:53.453] Browser ERROR   fetch transactions error: {}
+[00:01:53.453] Browser ERROR   fetch categories error: {}
+[00:02:35.712] Server  ERROR    ⨯ TypeError: immutable
+[00:02:35.715] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:35.777] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:35.914] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:02:35.914] Browser LOG     Current path: /dashboard/expenses
+[00:02:36.247] Browser LOG     Sending username to backend: test123
+[00:02:36.247] Browser LOG     Logging in user: test123
+[00:02:36.247] Browser ERROR   fetch transactions error: {}
+[00:02:36.247] Browser ERROR   fetch categories error: {}
+[00:02:36.534] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
+[00:02:36.534] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY1NzY2OTExfQ.rpvNsUuYA1lZ5GE0vBj_eALjiv2hMU2SZvTJrQ0xZU4","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
+[00:13:00.210] Server  LOG      ✓ Compiled in 65ms
+[00:13:13.316] Server  ERROR    ⨯ TypeError: immutable
+[00:13:13.357] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:13:13.548] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:15.108] Browser LOG     Current path: /dashboard/expenses
+[00:13:15.108] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:13:15.108] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:13:15.108] Browser LOG     TX data: []
+[00:13:15.108] Browser LOG     Sending username to backend: test123
+[00:13:15.108] Browser LOG     Logging in user: test123
+[00:13:15.108] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY1NzY3NTQ5fQ.0MMPz9XxfIHL8hD6o5km81vYTWAh3JnBgeNFnP8rYAA","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
+[00:13:15.108] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
+[00:13:35.421] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1}]
+[01:11:21.245] Server  LOG      ✓ Compiled in 191ms
+[01:11:21.738] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[01:11:21.739] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1}]
+[01:17:59.782] Server  LOG      ✓ Compiled in 183ms
+[01:18:02.741] Server  LOG      ✓ Compiled in 267ms
+[01:18:05.974] Server  LOG      ✓ Compiled in 208ms
+[01:18:10.319] Server  LOG      ✓ Compiled in 134ms
+[01:18:14.148] Server  LOG      ✓ Compiled in 43ms
+[01:18:15.282] Server  LOG      ✓ Compiled in 48ms
+[01:18:19.490] Server  LOG      ✓ Compiled in 111ms
+[01:18:39.031] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1}]
+[01:56:14.909] Browser LOG     Current path: /dashboard/your-debt
+[01:59:11.811] Browser LOG     Current path: /dashboard/expenses
+[01:59:12.170] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[01:59:12.170] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1}]
+[01:59:12.170] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[01:59:12.170] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1}]
+[03:03:26.983] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:06:28.102] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:06:44.780] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"350000.00","category_id":9,"date":"2025-11-15","id":5,"note":"Mua đồ ăn","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:07:01.046] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"350000.00","category_id":9,"date":"2025-11-15","id":5,"note":"Mua đồ ăn","type":"outcome","user_id":1},{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:11:19.882] Server  LOG      ✓ Compiled in 287ms
+[03:11:21.118] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:11:21.118] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":1,"note":"trả bill","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"350000.00","category_id":9,"date":"2025-11-15","id":5,"note":"Mua đồ ăn","type":"outcome","user_id":1},{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:11:33.637] Browser LOG     TX data: [{"amount":"1000000.00","category_id":15,"date":"2025-11-15","id":2,"note":"Tiền lương","type":"income","user_id":1},{"amount":"350000.00","category_id":9,"date":"2025-11-15","id":5,"note":"Mua đồ ăn","type":"outcome","user_id":1},{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:11:39.726] Browser LOG     TX data: [{"amount":"350000.00","category_id":9,"date":"2025-11-15","id":5,"note":"Mua đồ ăn","type":"outcome","user_id":1},{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:11:44.342] Browser LOG     TX data: [{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:15:00.478] Server  LOG      ✓ Compiled in 55ms
+[03:15:01.107] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:15:01.107] Browser LOG     TX data: [{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:15:13.781] Server  ERROR    ⨯ TypeError: immutable
+[03:15:13.785] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:15:13.830] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[03:15:14.037] Browser LOG     Current path: /dashboard/expenses
+[03:15:14.037] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[03:15:14.037] Browser LOG     TX data: [{"amount":"100000.00","category_id":18,"date":"2025-11-15","id":6,"note":"Mẹ cho","type":"outcome","user_id":1},{"amount":"500000.00","category_id":11,"date":"2025-11-12","id":4,"note":"Mua vớ","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-06-15","id":3,"note":"Trúng vé số","type":"income","user_id":1}]
+[03:15:14.037] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:15:14.247] Browser LOG     Sending username to backend: test123
+[03:15:14.247] Browser LOG     Logging in user: test123
+[03:15:14.609] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY1Nzc4NDY5fQ.xd5_c5Fdx9g2SiCEt8SLoeSD8ANkGDLGIPr-Wc6Cp48","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
+[03:15:14.609] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
+[03:15:58.531] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1}]
+[03:16:20.813] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:17:23.315] Server  LOG      ✓ Compiled in 49ms
+[03:17:24.111] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:17:24.111] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:17:26.884] Server  LOG      ✓ Compiled in 54ms
+[03:17:27.113] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:17:27.113] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:17:33.604] Server  LOG      ✓ Compiled in 64ms
+[03:17:34.108] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:17:34.108] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:18:01.769] Server  LOG      ✓ Compiled in 43ms
+[03:18:02.106] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:18:02.107] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:18:03.612] Server  LOG      ✓ Compiled in 144ms
+[03:18:03.755] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1}]
+[03:18:03.755] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:18:30.069] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1}]
+[03:18:45.767] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":10,"note":"Mẹ cho","type":"outcome","user_id":1}]
+[03:19:07.445] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1}]
+[03:19:27.374] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1}]
+[03:19:46.734] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1}]
+[03:25:22.871] Server  LOG      ✓ Compiled in 122ms
+[03:25:23.314] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:25:23.314] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1}]
+[03:25:25.827] Server  LOG      ✓ Compiled in 136ms
+[03:25:25.967] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:25:25.967] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1}]
+[03:25:29.944] Server  LOG      ✓ Compiled in 51ms
+[03:25:30.117] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1}]
+[03:25:30.117] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[03:25:31.501] Server  LOG      ✓ Compiled in 123ms
+[03:25:31.667] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1}]
+[03:25:31.667] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
