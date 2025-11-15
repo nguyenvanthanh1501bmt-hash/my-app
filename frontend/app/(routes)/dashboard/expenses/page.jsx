@@ -10,6 +10,16 @@ import React, {
 const API_BASE =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
+// màu cho pie chart report
+const REPORT_COLORS = [
+  "#2563eb",
+  "#22c55e",
+  "#f97316",
+  "#e11d48",
+  "#0ea5e9",
+  "#a855f7",
+];
+
 /* --------- helpers --------- */
 const currency = (n) =>
   (Number(n || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) ||
@@ -63,6 +73,8 @@ export default function ExpensesPage() {
 
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [reportTab, setReportTab] = useState("income"); // income | outcome
+
   const [form, setForm] = useState({
     user_id: userId,
     amount: "",
@@ -72,7 +84,7 @@ export default function ExpensesPage() {
     category_id: 1,
   });
 
-  /* --------- fetch data (dùng useCallback để fix warning deps) --------- */
+  /* --------- fetch data --------- */
   const fetchTransactions = useCallback(async () => {
     try {
       const res = await fetch(
@@ -179,6 +191,64 @@ export default function ExpensesPage() {
     .reduce((s, t) => s + Number(t.amount || 0), 0);
   const txNet = txIncome - txExpense; // net = income - expense
 
+  /* --------- REPORT: group by category trên FE (cách 1) --------- */
+
+  // Income report
+  const incomeReport = useMemo(() => {
+    const map = {};
+    transactions.forEach((t) => {
+      if (t.type !== "income") return;
+      const name = catMap[t.category_id] || "Uncategorized";
+      map[name] = (map[name] || 0) + Number(t.amount || 0);
+    });
+
+    const rows = Object.entries(map).map(([category, amount]) => ({
+      category,
+      amount,
+    }));
+    const total = rows.reduce((s, r) => s + r.amount, 0) || 1;
+    return rows.map((r) => ({
+      ...r,
+      percentage: (r.amount / total) * 100,
+    }));
+  }, [transactions, catMap]);
+
+  // Expense report
+  const expenseReport = useMemo(() => {
+    const map = {};
+    transactions.forEach((t) => {
+      if (t.type !== "outcome") return;
+      const name = catMap[t.category_id] || "Uncategorized";
+      map[name] = (map[name] || 0) + Number(t.amount || 0);
+    });
+
+    const rows = Object.entries(map).map(([category, amount]) => ({
+      category,
+      amount,
+    }));
+    const total = rows.reduce((s, r) => s + r.amount, 0) || 1;
+    return rows.map((r) => ({
+      ...r,
+      percentage: (r.amount / total) * 100,
+    }));
+  }, [transactions, catMap]);
+
+  const reportData =
+    reportTab === "income" ? incomeReport : expenseReport;
+
+  // tạo conic-gradient cho pie chart
+  const pieGradient = useMemo(() => {
+    if (!reportData.length) return "#e5e7eb";
+    let current = 0;
+    const parts = reportData.map((item, idx) => {
+      const start = current;
+      const end = current + item.percentage;
+      current = end;
+      return `${REPORT_COLORS[idx % REPORT_COLORS.length]} ${start}% ${end}%`;
+    });
+    return `conic-gradient(${parts.join(",")})`;
+  }, [reportData]);
+
   /* --------- handle modal --------- */
   const openAddModal = () => {
     setForm({
@@ -217,7 +287,7 @@ export default function ExpensesPage() {
     }
   };
 
-  // ----- delete transaction (icon xoá) -----
+  /* --------- delete transaction (xoá + update totals) --------- */
   const deleteTransaction = async (id) => {
     if (!confirm("Delete this transaction?")) return;
     try {
@@ -225,8 +295,7 @@ export default function ExpensesPage() {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("delete failed");
-
-      // ❗ Cập nhật lại state transactions tại FE
+      // cập nhật FE: những tổng phía trên tự tính lại từ state mới
       setTransactions((prev) => prev.filter((t) => t.id !== id));
     } catch (err) {
       console.error(err);
@@ -265,7 +334,7 @@ export default function ExpensesPage() {
 
       {/* -------- Transaction section (tiêu đề đơn lẻ) -------- */}
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="mb-6 text-3xl font-semibold text-blue-700">Transaction</h2>
+        <h2 className="text-xl font-semibold text-blue-700">Transaction</h2>
         <button
           onClick={openAddModal}
           className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700"
@@ -394,6 +463,7 @@ export default function ExpensesPage() {
         <h3 className="mb-3 text-lg font-semibold text-blue-700">
           All Transaction
         </h3>
+
         <ul>
           {(showAll ? filteredTx : filteredTx.slice(0, 5)).map((t) => {
             const isIncome = t.type === "income";
@@ -470,6 +540,111 @@ export default function ExpensesPage() {
           </div>
         )}
       </div>
+
+      {/* ---------- Report section (Income / Expense by categories) ---------- */}
+      <section className="mt-8 rounded-3xl bg-white p-5 shadow">
+        <h2 className="mb-4 text-xl font-semibold text-blue-700">Report</h2>
+
+        {/* Tabs */}
+        <div className="mb-4 flex gap-3">
+          <button
+            onClick={() => setReportTab("income")}
+            className={cls(
+              "rounded-full px-4 py-2 text-sm font-semibold",
+              reportTab === "income"
+                ? "bg-blue-600 text-white shadow"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            )}
+          >
+            Income
+          </button>
+          <button
+            onClick={() => setReportTab("outcome")}
+            className={cls(
+              "rounded-full px-4 py-2 text-sm font-semibold",
+              reportTab === "outcome"
+                ? "bg-blue-600 text-white shadow"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            )}
+          >
+            Expense
+          </button>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* Pie + legend */}
+          <div className="flex flex-col items-center rounded-2xl bg-gray-50 p-4">
+            <div
+              className="mb-4 h-72 w-72 rounded-full border border-blue-400"
+              style={{ background: pieGradient }}
+            />
+            <p className="text-base font-semibold">
+              {reportTab === "income"
+                ? "Income by categories"
+                : "Expense by categories"}
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-3">
+              {reportData.map((item, idx) => (
+                <div
+                  key={item.category}
+                  className="flex items-center gap-2 text-sm text-gray-700"
+                >
+                  <span
+                    className="h-3 w-3 rounded-full"
+                    style={{
+                      backgroundColor:
+                        REPORT_COLORS[idx % REPORT_COLORS.length],
+                    }}
+                  />
+                  <span>{item.category}</span>
+                </div>
+              ))}
+              {!reportData.length && (
+                <p className="text-sm text-gray-400">No data</p>
+              )}
+            </div>
+          </div>
+
+          {/* Details table */}
+          <div className="rounded-2xl bg-gray-50 p-4">
+            <h3 className="mb-3 text-lg font-semibold">Details</h3>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead className="bg-gray-800 text-white">
+                  <tr>
+                    <th className="px-3 py-2 text-left">Category</th>
+                    <th className="px-3 py-2 text-right">Amount</th>
+                    <th className="px-3 py-2 text-right">Percentage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {reportData.map((row) => (
+                    <tr key={row.category} className="border-b">
+                      <td className="px-3 py-2">{row.category}</td>
+                      <td className="px-3 py-2 text-right">
+                        {currency(row.amount)}
+                      </td>
+                      <td className="px-3 py-2 text-right">
+                        {row.percentage.toFixed(1)}%
+                      </td>
+                    </tr>
+                  ))}
+                  {!reportData.length && (
+                    <tr>
+                      <td
+                        colSpan={3}
+                        className="px-3 py-4 text-center text-gray-400"
+                      >
+                        No data
+                      </td>
+                    </tr>
+                  )}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ---------- Popup Create New Transaction ---------- */}
       <Modal
