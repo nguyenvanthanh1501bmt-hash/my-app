@@ -5,6 +5,8 @@ from app.schemas.transaction import TransactionCreate, TransactionUpdate, Transa
 from app.repo.transaction import TransactionRepo
 from app.repo.user import UserRepo
 from app.models.transaction import Transaction
+from app.repo.budget import BudgetRepo
+
 
 router = APIRouter(prefix="/api/transactions", tags=["Transactions"])
 
@@ -13,6 +15,10 @@ def create_tx(body: TransactionCreate, db: Session = Depends(get_db)):
     if not UserRepo.get_by_id(db, body.user_id):
         raise HTTPException(400, "User không tồn tại")
     tx = TransactionRepo.create(db, **body.model_dump())
+
+    if tx.type == "outcome":
+        month = tx.date.strftime("%Y-%m")
+        BudgetRepo.update_used_amount(db, tx.user_id,month, float(tx.amount))
     return tx
 
 @router.get("/by-user/{user_id}", response_model=list[TransactionOut])
@@ -39,5 +45,14 @@ def update_tx(tx_id: int, body: TransactionUpdate, db: Session = Depends(get_db)
 
 @router.delete("/{tx_id}")
 def delete_tx(tx_id: int, db: Session = Depends(get_db)):
+    tx = db.get(Transaction, tx_id)
+    if not tx:
+        raise HTTPException(404, "Không tìm thấy giao dịch")
+
+    # Nếu là chi tiêu thì trừ ngược lại khỏi used của budget
+    if tx.type == "outcome":
+        month = tx.date.strftime("%Y-%m")
+        BudgetRepo.revert_used_amount(db, tx.user_id, month, float(tx.amount))
+
     TransactionRepo.delete(db, tx_id)
     return {"deleted": True}

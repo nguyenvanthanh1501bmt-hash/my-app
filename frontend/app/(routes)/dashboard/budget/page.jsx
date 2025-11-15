@@ -32,6 +32,11 @@ export default function BudgetPage() {
   const [amount, setAmount] = useState("");
   const [busy, setBusy] = useState(false);
 
+  // ===== Transaction history modal =====
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [historyMonth, setHistoryMonth] = useState("");
+  const [historyItems, setHistoryItems] = useState([]);
+
   // ====== Clerk → FastAPI session bridge ======
   useEffect(() => {
     if (!isLoaded) return; // chờ Clerk sẵn sàng
@@ -87,7 +92,10 @@ export default function BudgetPage() {
           loginData = await doLoginByName(candidateName);
         } catch (e) {
           // nếu 404 (user chưa tồn tại) → register rồi login lại
-          if (String(e.message).includes("404") || String(e.message).includes("User không tồn tại")) {
+          if (
+            String(e.message).includes("404") ||
+            String(e.message).includes("User không tồn tại")
+          ) {
             await doRegister(candidateName);
             loginData = await doLoginByName(candidateName);
           } else {
@@ -118,7 +126,12 @@ export default function BudgetPage() {
   }
 
   async function createBudgetAPI(uid, ym, amt) {
-    const payload = { user_id: uid, month: ym.trim(), amount: Number(amt), used: 0 };
+    const payload = {
+      user_id: uid,
+      month: ym.trim(),
+      amount: Number(amt),
+      used: 0,
+    };
     const res = await fetch(`${API_BASE}/api/budgets/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -129,18 +142,32 @@ export default function BudgetPage() {
   }
 
   async function deleteBudgetAPI(id) {
-    const res = await fetch(`${API_BASE}/api/budgets/${id}`, { method: "DELETE" });
+    const res = await fetch(`${API_BASE}/api/budgets/${id}`, {
+      method: "DELETE",
+    });
     if (!res.ok) throw new Error(await res.text());
     return res.json();
   }
 
   async function updateBudgetPartialAPI(uid, ym, newAmount) {
-    const params = new URLSearchParams({ user_id: String(uid), month: ym });
+    const params = new URLSearchParams({
+      user_id: String(uid),
+      month: ym,
+    });
     const res = await fetch(`${API_BASE}/api/budgets/partial?${params}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ amount: Number(newAmount) }),
     });
+    if (!res.ok) throw new Error(await res.text());
+    return res.json();
+  }
+
+  // Lấy transaction theo user (dùng cho history)
+  async function getTransactionsByUserAPI(uid) {
+    const res = await fetch(
+      `${API_BASE}/api/transactions/by-user/${uid}`
+    );
     if (!res.ok) throw new Error(await res.text());
     return res.json();
   }
@@ -154,7 +181,10 @@ export default function BudgetPage() {
         const list = await getBudgetsAPI(userId);
         const normalized = normalizeList(list);
         if (!cancelled) setAllBudgets(normalized);
-        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(normalized));
+        localStorage.setItem(
+          `budgets_user_${userId}`,
+          JSON.stringify(normalized)
+        );
       } catch (e) {
         console.error(e);
         const cached = localStorage.getItem(`budgets_user_${userId}`);
@@ -176,7 +206,7 @@ export default function BudgetPage() {
       user_id: it.user_id,
       month: it.month,
       amount: Number(it.amount),
-      spent: Number(it.used) || 0,
+      spent: Number(it.used) || 0, // used từ backend
     }));
   }
 
@@ -207,7 +237,11 @@ export default function BudgetPage() {
     try {
       setBusy(true);
       if (mode === "create") {
-        const data = await createBudgetAPI(userId, month, Number(amount));
+        const data = await createBudgetAPI(
+          userId,
+          month,
+          Number(amount)
+        );
         const created = {
           id: data.id,
           user_id: data.user_id,
@@ -217,14 +251,26 @@ export default function BudgetPage() {
         };
         const next = [created, ...allBudgets];
         setAllBudgets(next);
-        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
+        localStorage.setItem(
+          `budgets_user_${userId}`,
+          JSON.stringify(next)
+        );
       } else if (mode === "edit" && editing) {
-        const upd = await updateBudgetPartialAPI(editing.user_id ?? userId, month, Number(amount));
+        const upd = await updateBudgetPartialAPI(
+          editing.user_id ?? userId,
+          month,
+          Number(amount)
+        );
         const next = allBudgets.map((x) =>
-          x.id === editing.id ? { ...x, amount: Number(upd.amount) } : x
+          x.id === editing.id
+            ? { ...x, amount: Number(upd.amount) }
+            : x
         );
         setAllBudgets(next);
-        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
+        localStorage.setItem(
+          `budgets_user_${userId}`,
+          JSON.stringify(next)
+        );
       }
       setIsOpen(false);
     } catch (e) {
@@ -241,7 +287,10 @@ export default function BudgetPage() {
       await deleteBudgetAPI(b.id);
       const next = allBudgets.filter((x) => x.id !== b.id);
       setAllBudgets(next);
-      localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
+      localStorage.setItem(
+        `budgets_user_${userId}`,
+        JSON.stringify(next)
+      );
     } catch (e) {
       alert("API error: " + e.message);
     } finally {
@@ -249,9 +298,30 @@ export default function BudgetPage() {
     }
   }
 
+  // ===== Xem transaction history (Eye) =====
+  async function handleViewHistory(budget) {
+    try {
+      const list = await getTransactionsByUserAPI(userId);
+      const filtered = (list || []).filter((tx) => {
+        if (tx.type !== "outcome") return false;
+        const ym = String(tx.date).slice(0, 7); // "YYYY-MM"
+        return ym === budget.month;
+      });
+
+      setHistoryItems(filtered);
+      setHistoryMonth(budget.month);
+      setHistoryOpen(true);
+    } catch (e) {
+      console.error(e);
+      alert("Không tải được transaction history: " + e.message);
+    }
+  }
+
   // ===== UI render =====
   if (!isLoaded) {
-    return <div className="p-6 text-center text-slate-500">Đang tải...</div>;
+    return (
+      <div className="p-6 text-center text-slate-500">Đang tải...</div>
+    );
   }
 
   if (!userId) {
@@ -265,17 +335,19 @@ export default function BudgetPage() {
 
   return (
     <div className="mx-auto max-w-4xl p-6">
-        <h1 className="mb-4 text-3xl font-extrabold tracking-tight">My Budgets</h1>
+      <h1 className="mb-4 text-3xl font-extrabold tracking-tight">
+        My Budgets
+      </h1>
 
-        {/* Filter by month (client-side) */}
-        <div className="mb-4 flex flex-wrap items-center gap-3">
-            <label className="text-sm text-slate-600">Month</label>
-            <input
-            type="month"
-            onChange={(e) => setFilterMonth(e.target.value)}
-            className="h-10 rounded-lg border px-3"
-            />
-        </div>
+      {/* Filter by month (client-side) */}
+      <div className="mb-4 flex flex-wrap items-center gap-3">
+        <label className="text-sm text-slate-600">Month</label>
+        <input
+          type="month"
+          onChange={(e) => setFilterMonth(e.target.value)}
+          className="h-10 rounded-lg border px-3"
+        />
+      </div>
 
       {shown.map((b) => (
         <BudgetCard
@@ -283,6 +355,7 @@ export default function BudgetPage() {
           budget={b}
           onEdit={() => openEdit(b)}
           onDelete={() => handleDelete(b)}
+          onViewHistory={() => handleViewHistory(b)}
         />
       ))}
 
@@ -296,9 +369,13 @@ export default function BudgetPage() {
         <p className="text-lg font-semibold">Create New Budget</p>
       </button>
 
+      {/* Modal create/edit budget */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div className="absolute inset-0 bg-black/40" onClick={() => setIsOpen(false)} />
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setIsOpen(false)}
+          />
           <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
             <h2 className="mb-6 text-xl font-semibold">
               {mode === "create" ? "Create New Budget" : "Edit Budget"}
@@ -317,7 +394,9 @@ export default function BudgetPage() {
               </div>
             </div>
 
-            <label className="mb-2 block text-sm font-medium">Amount</label>
+            <label className="mb-2 block text-sm font-medium">
+              Amount
+            </label>
             <div className="mb-8">
               <input
                 value={amount}
@@ -347,37 +426,100 @@ export default function BudgetPage() {
           </div>
         </div>
       )}
+
+      {/* Modal transaction history */}
+      {historyOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div
+            className="absolute inset-0 bg-black/40"
+            onClick={() => setHistoryOpen(false)}
+          />
+          <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
+            <h2 className="mb-4 text-xl font-semibold">
+              Transaction history – {historyMonth}
+            </h2>
+
+            {historyItems.length === 0 ? (
+              <p className="text-sm text-slate-500">
+                Không có giao dịch chi tiêu nào trong tháng này.
+              </p>
+            ) : (
+              <ul className="max-h-80 space-y-3 overflow-y-auto">
+                {historyItems.map((tx) => (
+                  <li
+                    key={tx.id}
+                    className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-2 text-sm"
+                  >
+                    <div>
+                      <div className="text-xs font-medium text-slate-500">
+                        {String(tx.date).slice(0, 10)}
+                      </div>
+                      <div className="text-sm text-slate-800">
+                        {tx.note || "(Không có ghi chú)"}
+                      </div>
+                    </div>
+                    <div className="text-right text-sm font-bold text-red-600">
+                      {formatVND(tx.amount)}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div className="mt-5 text-right">
+              <button
+                onClick={() => setHistoryOpen(false)}
+                className="inline-flex items-center rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-900"
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
 
-function BudgetCard({ budget, onEdit, onDelete }) {
-  const used = (budget.spent || 0) / Math.max(1, budget.amount);
-  const remaining = Math.max(budget.amount - (budget.spent || 0), 0);
+function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
+  const usedRatio =
+    budget.amount > 0
+      ? (budget.spent || 0) / budget.amount
+      : 0;
+  const remaining = Math.max(
+    budget.amount - (budget.spent || 0),
+    0
+  );
 
   return (
     <div className="mb-4 rounded-2xl border border-slate-200 p-5 shadow-sm">
       <div className="flex items-start justify-between">
         <div className="font-semibold">{budget.month}</div>
-        <div className="text-indigo-600 font-extrabold">{formatVND(budget.amount)}</div>
+        <div className="text-indigo-600 font-extrabold">
+          {formatVND(budget.amount)}
+        </div>
       </div>
       <div className="mt-2 grid grid-cols-2 text-slate-500 text-sm font-semibold">
         <div>{formatVND(budget.spent)} Spent</div>
-        <div className="text-right">{formatVND(remaining)} Remaining</div>
+        <div className="text-right">
+          {formatVND(remaining)} Remaining
+        </div>
       </div>
       <div className="mt-2 h-4 w-full rounded-full bg-slate-200">
         <div
           className="h-4 rounded-full bg-neutral-800"
-          style={{ width: `${Math.min(used * 100, 100)}%` }}
+          style={{
+            width: `${Math.min(usedRatio * 100, 100)}%`,
+          }}
         />
       </div>
       <div className="mt-3 flex items-center justify-between text-slate-500 font-semibold">
-        <div>{Math.round(used * 100)}% Used</div>
+        <div>{Math.round(usedRatio * 100)}% Used</div>
         <div className="flex items-center gap-4">
           <button
             className="rounded-full p-2 hover:bg-slate-100"
             title="Xem lịch sử"
-            onClick={() => alert("Lịch sử (demo)")}
+            onClick={onViewHistory}
           >
             <Eye className="h-5 w-5" />
           </button>
