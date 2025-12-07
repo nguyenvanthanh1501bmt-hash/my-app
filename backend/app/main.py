@@ -4,7 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.database import engine
 import app.models                      # 👈 quan trọng: đăng ký User/Category/Transaction
 from app.models import Base
-from app.routers import categories,user,transaction,budget,saving,loan     # router của bạn
+from app.routers import categories,user,transaction,budget,saving,loan,dashboard     # router của bạn
 
 import traceback
 from fastapi import FastAPI, Request
@@ -43,3 +43,4 @@ app.include_router(transaction.router)
 app.include_router(budget.router)
 app.include_router(loan.router)
 app.include_router(saving.router)
+app.include_router(dashboard.router)

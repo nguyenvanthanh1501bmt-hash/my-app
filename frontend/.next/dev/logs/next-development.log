@@ -181,3 +181,6 @@
 [06:44:39.903] Server  LOG      ✓ Compiled in 49ms
 [06:44:47.870] Server  LOG      ✓ Compiled in 130ms
 [06:44:57.567] Server  LOG      ✓ Compiled in 246ms
+[06:47:55.081] Browser LOG     Current path: /dashboard/saving-wallet
+[06:47:56.702] Browser LOG     Current path: /dashboard/your-debt
+[06:48:02.598] Browser LOG     Current path: /dashboard/saving-wallet
