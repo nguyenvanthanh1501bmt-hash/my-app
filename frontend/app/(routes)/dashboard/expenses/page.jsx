@@ -337,7 +337,7 @@ export default function ExpensesPage() {
         <h2 className="text-xl font-semibold text-blue-700">Transaction</h2>
         <button
           onClick={openAddModal}
-          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700"
+          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 cursor-pointer"
         >
           + Add transaction
         </button>
@@ -357,7 +357,7 @@ export default function ExpensesPage() {
                 key={tab.key}
                 onClick={() => setFilterType(tab.key)}
                 className={cls(
-                  "rounded-full px-4 py-2 text-sm font-semibold",
+                  "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
                   filterType === tab.key
                     ? "bg-blue-600 text-white shadow"
                     : "bg-white text-gray-700 hover:bg-gray-100"
@@ -508,7 +508,7 @@ export default function ExpensesPage() {
                       </span>
                       <button
                         onClick={() => deleteTransaction(t.id)}
-                        className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-xs hover:bg-white/30"
+                        className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-xs hover:bg-white/30 cursor-pointer"
                         title="Delete"
                       >
                         ✕
@@ -533,7 +533,7 @@ export default function ExpensesPage() {
           <div className="mt-4 text-center">
             <button
               onClick={() => setShowAll((s) => !s)}
-              className="rounded-full border border-blue-400 px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50"
+              className="rounded-full border border-blue-400 px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50 cursor-pointer"
             >
               {showAll ? "See less" : "See all"}
             </button>
@@ -550,7 +550,7 @@ export default function ExpensesPage() {
           <button
             onClick={() => setReportTab("income")}
             className={cls(
-              "rounded-full px-4 py-2 text-sm font-semibold",
+              "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
               reportTab === "income"
                 ? "bg-blue-600 text-white shadow"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -561,7 +561,7 @@ export default function ExpensesPage() {
           <button
             onClick={() => setReportTab("outcome")}
             className={cls(
-              "rounded-full px-4 py-2 text-sm font-semibold",
+              "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
               reportTab === "outcome"
                 ? "bg-blue-600 text-white shadow"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -738,7 +738,7 @@ export default function ExpensesPage() {
               onClick={createTransaction}
               disabled={loading}
               className={cls(
-                "rounded-2xl px-5 py-3 font-semibold text-white shadow",
+                "rounded-2xl px-5 py-3 font-semibold text-white shadow cursor-pointer",
                 loading ? "bg-blue-300" : "bg-blue-600 hover:bg-blue-700"
               )}
             >
@@ -746,7 +746,7 @@ export default function ExpensesPage() {
             </button>
             <button
               onClick={() => setOpenModal(false)}
-              className="rounded-2xl bg-red-600 px-5 py-3 font-semibold text-white shadow hover:bg-red-700"
+              className="rounded-2xl bg-red-600 px-5 py-3 font-semibold text-white shadow hover:bg-red-700 cursor-pointer"
             >
               Cancel
             </button>
