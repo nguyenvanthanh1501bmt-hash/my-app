@@ -361,7 +361,7 @@ export default function BudgetPage() {
 
       <button
         onClick={openCreate}
-        className="mt-2 w-full rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100 p-10 text-center transition"
+        className="mt-2 w-full rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100 p-10 text-center transition cursor-pointer"
       >
         <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full border border-slate-300">
           <Plus className="h-5 w-5" />
@@ -373,7 +373,7 @@ export default function BudgetPage() {
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
-            className="absolute inset-0 bg-black/40"
+            className="absolute inset-0 bg-black/40 cursor-pointer"
             onClick={() => setIsOpen(false)}
           />
           <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
@@ -411,14 +411,14 @@ export default function BudgetPage() {
               <button
                 onClick={submitForm}
                 disabled={busy}
-                className="h-12 rounded-full bg-indigo-500 px-6 text-white font-semibold disabled:opacity-60"
+                className="h-12 rounded-full bg-indigo-500 px-6 text-white font-semibold disabled:opacity-60 cursor-pointer"
               >
                 {mode === "create" ? "Create Budget" : "Save Changes"}
               </button>
               <button
                 onClick={() => setIsOpen(false)}
                 disabled={busy}
-                className="h-12 rounded-full bg-red-500 px-6 text-white font-semibold disabled:opacity-60"
+                className="h-12 rounded-full bg-red-500 px-6 text-white font-semibold disabled:opacity-60 cursor-pointer"
               >
                 Cancel
               </button>
@@ -431,7 +431,7 @@ export default function BudgetPage() {
       {historyOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
-            className="absolute inset-0 bg-black/40"
+            className="absolute inset-0 bg-black/40 cursor-pointer"
             onClick={() => setHistoryOpen(false)}
           />
           <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
@@ -469,7 +469,7 @@ export default function BudgetPage() {
             <div className="mt-5 text-right">
               <button
                 onClick={() => setHistoryOpen(false)}
-                className="inline-flex items-center rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-900"
+                className="inline-flex items-center rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-900 cursor-pointer"
               >
                 Đóng
               </button>
@@ -499,39 +499,46 @@ function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
           {formatVND(budget.amount)}
         </div>
       </div>
-      <div className="mt-2 grid grid-cols-2 text-slate-500 text-sm font-semibold">
-        <div>{formatVND(budget.spent)} Spent</div>
-        <div className="text-right">
+
+      {/* Spent / Remaining với màu mới */}
+      <div className="mt-2 grid grid-cols-2 text-sm font-semibold">
+        <div className="text-red-600">
+          Spent: {formatVND(budget.spent)}
+        </div>
+        <div className="text-right text-emerald-600">
           {formatVND(remaining)} Remaining
         </div>
       </div>
+
+      {/* Progress bar gradient tím → xanh */}
       <div className="mt-2 h-4 w-full rounded-full bg-slate-200">
         <div
-          className="h-4 rounded-full bg-neutral-800"
+          className="h-4 rounded-full bg-gradient-to-r from-blue-700 via-purple-500 to-indigo-300"
           style={{
             width: `${Math.min(usedRatio * 100, 100)}%`,
           }}
         />
       </div>
+
       <div className="mt-3 flex items-center justify-between text-slate-500 font-semibold">
         <div>{Math.round(usedRatio * 100)}% Used</div>
         <div className="flex items-center gap-4">
           <button
-            className="rounded-full p-2 hover:bg-slate-100"
+            className="rounded-full p-2 hover:bg-slate-100 cursor-pointer"
             title="Xem lịch sử"
             onClick={onViewHistory}
           >
             <Eye className="h-5 w-5" />
           </button>
           <button
-            className="rounded-full p-2 hover:bg-slate-100"
+            className="rounded-full p-2 hover:bg-slate-100 cursor-pointer"
             title="Chỉnh sửa"
             onClick={onEdit}
           >
             <Pencil className="h-5 w-5" />
           </button>
           <button
-            className="rounded-full p-2 hover:bg-slate-100 text-red-600"
+            className="rounded-full p-2 hover:bg-slate-100 text-red-600 cursor-pointer"
             title="Xóa"
             onClick={onDelete}
           >
