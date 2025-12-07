@@ -4,8 +4,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { Eye, Pencil, Trash2, Plus, Calendar } from "lucide-react";
 
-// ===== Base URL =====
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
+const API_BASE =
+  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
 
 const formatVND = (n) =>
   (n ?? 0).toLocaleString("vi-VN", {
@@ -14,17 +14,43 @@ const formatVND = (n) =>
     maximumFractionDigits: 0,
   });
 
+/**
+ * Mapping icon + màu cho từng category_id
+ * (bạn chỉnh lại id / tên cho khớp DB thực tế nếu cần)
+ */
+const CATEGORY_META = {
+  1: { name: "Uncategorized", icon: "💸", color: "bg-slate-500" },
+  2: { name: "Food & Drinks", icon: "🍽️", color: "bg-rose-500" },
+  3: { name: "Transportation", icon: "🚗", color: "bg-amber-500" },
+  4: { name: "Housing", icon: "🏠", color: "bg-emerald-500" },
+  5: { name: "Bills", icon: "📄", color: "bg-sky-500" },
+  6: { name: "Travel", icon: "✈️", color: "bg-indigo-500" },
+  7: { name: "Health", icon: "🏥", color: "bg-red-500" },
+  8: { name: "Education", icon: "🎓", color: "bg-violet-500" },
+  9: { name: "Shopping", icon: "🛍️", color: "bg-pink-500" },
+  10: { name: "Pets", icon: "🐾", color: "bg-orange-500" },
+  11: { name: "Sports", icon: "⚽", color: "bg-lime-500" },
+  12: { name: "Entertainment", icon: "🎬", color: "bg-fuchsia-500" },
+  13: { name: "Investment", icon: "📈", color: "bg-teal-500" },
+  14: { name: "Family", icon: "👪", color: "bg-cyan-500" },
+  15: { name: "Salary", icon: "💼", color: "bg-blue-600" },
+  16: { name: "Bonus", icon: "🎉", color: "bg-amber-400" },
+  17: { name: "Business", icon: "🏢", color: "bg-slate-700" },
+  18: { name: "Gifts", icon: "🎁", color: "bg-red-400" },
+};
+
 export default function BudgetPage() {
   const { isSignedIn, user, isLoaded } = useUser();
 
-  // ===== Auth bridge state =====
-  const [userId, setUserId] = useState(null); // user_id thật từ backend FastAPI
+  // bridge Clerk -> backend user
+  const [userId, setUserId] = useState(null);
   const [token, setToken] = useState(null);
 
-  // ===== UI state =====
-  const [allBudgets, setAllBudgets] = useState([]); // luôn giữ tất cả budgets
-  const [filterMonth, setFilterMonth] = useState(""); // tháng được chọn, nếu rỗng thì hiển thị tất cả
+  // budgets
+  const [allBudgets, setAllBudgets] = useState([]);
+  const [filterMonth, setFilterMonth] = useState("");
 
+  // form create/edit
   const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState("create"); // create | edit
   const [editing, setEditing] = useState(null);
@@ -32,21 +58,20 @@ export default function BudgetPage() {
   const [amount, setAmount] = useState("");
   const [busy, setBusy] = useState(false);
 
-  // ===== Transaction history modal =====
+  // transaction history
   const [historyOpen, setHistoryOpen] = useState(false);
   const [historyMonth, setHistoryMonth] = useState("");
   const [historyItems, setHistoryItems] = useState([]);
 
-  // ====== Clerk → FastAPI session bridge ======
+  /* ================== Auth bridge Clerk → FastAPI ================== */
   useEffect(() => {
-    if (!isLoaded) return; // chờ Clerk sẵn sàng
+    if (!isLoaded) return;
     if (!isSignedIn || !user) {
       setUserId(null);
       setToken(null);
       return;
     }
 
-    // Quy ước ánh xạ tên đăng nhập sang backend: ưu tiên username, sau đó email, cuối cùng clerkId
     const candidateName =
       user.username ||
       user.primaryEmailAddress?.emailAddress ||
@@ -54,11 +79,6 @@ export default function BudgetPage() {
 
     (async () => {
       try {
-        // Nếu đã có token (trước đó) thì thử dùng lại
-        let storedToken = localStorage.getItem("token");
-        let backendUserId = null;
-
-        // Thử login bằng name (POST + query param như backend định nghĩa)
         const doLoginByName = async (name) => {
           const res = await fetch(
             `${API_BASE}/api/users/login?name=${encodeURIComponent(name)}`,
@@ -68,11 +88,9 @@ export default function BudgetPage() {
             const text = await res.text();
             throw new Error(text || `Login failed (${res.status})`);
           }
-          const data = await res.json(); // { token, user: { id, name, created_at } }
-          return data;
+          return res.json();
         };
 
-        // Đăng ký nếu cần
         const doRegister = async (name) => {
           const res = await fetch(`${API_BASE}/api/users/register`, {
             method: "POST",
@@ -86,25 +104,21 @@ export default function BudgetPage() {
           return res.json();
         };
 
-        // B1: thử login
         let loginData;
         try {
           loginData = await doLoginByName(candidateName);
         } catch (e) {
-          // nếu 404 (user chưa tồn tại) → register rồi login lại
           if (
             String(e.message).includes("404") ||
             String(e.message).includes("User không tồn tại")
           ) {
             await doRegister(candidateName);
             loginData = await doLoginByName(candidateName);
-          } else {
-            throw e;
-          }
+          } else throw e;
         }
 
-        storedToken = loginData.token;
-        backendUserId = loginData.user?.id;
+        const storedToken = loginData.token;
+        const backendUserId = loginData.user?.id;
 
         localStorage.setItem("token", storedToken);
         setToken(storedToken);
@@ -117,9 +131,9 @@ export default function BudgetPage() {
     })();
   }, [isLoaded, isSignedIn, user]);
 
-  // ===== API calls (fetch) =====
+  /* ================== API helpers ================== */
+
   async function getBudgetsAPI(uid) {
-    // Điều chỉnh đường dẫn nếu router backend khác
     const res = await fetch(`${API_BASE}/api/budgets?user_id=${uid}`);
     if (!res.ok) throw new Error(await res.text());
     return res.json();
@@ -149,6 +163,7 @@ export default function BudgetPage() {
     return res.json();
   }
 
+  // update theo user + month (partial)
   async function updateBudgetPartialAPI(uid, ym, newAmount) {
     const params = new URLSearchParams({
       user_id: String(uid),
@@ -163,7 +178,6 @@ export default function BudgetPage() {
     return res.json();
   }
 
-  // Lấy transaction theo user (dùng cho history)
   async function getTransactionsByUserAPI(uid) {
     const res = await fetch(
       `${API_BASE}/api/transactions/by-user/${uid}`
@@ -172,10 +186,11 @@ export default function BudgetPage() {
     return res.json();
   }
 
-  // ===== Load budgets khi đã có userId =====
+  /* ================== Load budgets ================== */
   useEffect(() => {
     if (!userId) return;
     let cancelled = false;
+
     (async () => {
       try {
         const list = await getBudgetsAPI(userId);
@@ -195,6 +210,7 @@ export default function BudgetPage() {
         }
       }
     })();
+
     return () => {
       cancelled = true;
     };
@@ -210,13 +226,15 @@ export default function BudgetPage() {
     }));
   }
 
-  // ===== Derived: filtered budgets =====
+  /* ================== Derived ================== */
+
   const shown = useMemo(() => {
     if (!filterMonth) return allBudgets;
     return allBudgets.filter((b) => b.month === filterMonth);
   }, [allBudgets, filterMonth]);
 
-  // ===== Handlers =====
+  /* ================== Handlers ================== */
+
   function openCreate() {
     setMode("create");
     setEditing(null);
@@ -224,6 +242,7 @@ export default function BudgetPage() {
     setAmount("");
     setIsOpen(true);
   }
+
   function openEdit(b) {
     setMode("edit");
     setEditing(b);
@@ -298,13 +317,12 @@ export default function BudgetPage() {
     }
   }
 
-  // ===== Xem transaction history (Eye) =====
   async function handleViewHistory(budget) {
     try {
       const list = await getTransactionsByUserAPI(userId);
       const filtered = (list || []).filter((tx) => {
         if (tx.type !== "outcome") return false;
-        const ym = String(tx.date).slice(0, 7); // "YYYY-MM"
+        const ym = String(tx.date).slice(0, 7);
         return ym === budget.month;
       });
 
@@ -317,7 +335,8 @@ export default function BudgetPage() {
     }
   }
 
-  // ===== UI render =====
+  /* ================== Render ================== */
+
   if (!isLoaded) {
     return (
       <div className="p-6 text-center text-slate-500">Đang tải...</div>
@@ -325,7 +344,6 @@ export default function BudgetPage() {
   }
 
   if (!userId) {
-    // Đã đăng nhập Clerk nhưng đang khởi tạo phiên với backend FastAPI
     return (
       <div className="p-6 text-center text-slate-500">
         Đang đồng bộ tài khoản với hệ thống...
@@ -339,13 +357,13 @@ export default function BudgetPage() {
         My Budgets
       </h1>
 
-      {/* Filter by month (client-side) */}
+      {/* Filter by month */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <label className="text-sm text-slate-600">Month</label>
         <input
           type="month"
           onChange={(e) => setFilterMonth(e.target.value)}
-          className="h-10 rounded-lg border px-3"
+          className="h-10 rounded-lg border px-3 cursor-pointer"
         />
       </div>
 
@@ -359,6 +377,7 @@ export default function BudgetPage() {
         />
       ))}
 
+      {/* Create new budget card */}
       <button
         onClick={openCreate}
         className="mt-2 w-full rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100 p-10 text-center transition cursor-pointer"
@@ -369,7 +388,7 @@ export default function BudgetPage() {
         <p className="text-lg font-semibold">Create New Budget</p>
       </button>
 
-      {/* Modal create/edit budget */}
+      {/* Modal: create/edit budget */}
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -427,7 +446,7 @@ export default function BudgetPage() {
         </div>
       )}
 
-      {/* Modal transaction history */}
+      {/* Modal: transaction history */}
       {historyOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -445,24 +464,44 @@ export default function BudgetPage() {
               </p>
             ) : (
               <ul className="max-h-80 space-y-3 overflow-y-auto">
-                {historyItems.map((tx) => (
-                  <li
-                    key={tx.id}
-                    className="flex items-center justify-between rounded-xl border border-slate-200 px-4 py-2 text-sm"
-                  >
-                    <div>
-                      <div className="text-xs font-medium text-slate-500">
-                        {String(tx.date).slice(0, 10)}
+                {historyItems.map((tx) => {
+                  const meta =
+                    CATEGORY_META[tx.category_id] || CATEGORY_META[1];
+                  const dateStr = String(tx.date).slice(0, 10);
+
+                  return (
+                    <li
+                      key={tx.id}
+                      className="flex items-center justify-between rounded-3xl bg-gradient-to-r from-purple-500 to-indigo-500 px-4 py-3 text-sm text-white shadow-sm"
+                    >
+                      {/* trái: icon + date + category + note */}
+                      <div className="flex items-start gap-3">
+                        <div
+                          className={`mt-1 grid h-9 w-9 place-items-center rounded-full ${meta.color}`}
+                        >
+                          <span className="text-lg">{meta.icon}</span>
+                        </div>
+
+                        <div>
+                          <div className="text-[11px] font-medium opacity-70">
+                            {dateStr}
+                          </div>
+                          <div className="text-sm font-semibold">
+                            {meta.name}
+                          </div>
+                          <div className="text-sm opacity-85">
+                            {tx.note || "(Không có ghi chú)"}
+                          </div>
+                        </div>
                       </div>
-                      <div className="text-sm text-slate-800">
-                        {tx.note || "(Không có ghi chú)"}
+
+                      {/* phải: số tiền */}
+                      <div className="text-right text-sm font-bold text-red-400">
+                        - {formatVND(tx.amount)}
                       </div>
-                    </div>
-                    <div className="text-right text-sm font-bold text-red-600">
-                      {formatVND(tx.amount)}
-                    </div>
-                  </li>
-                ))}
+                    </li>
+                  );
+                })}
               </ul>
             )}
 
@@ -481,11 +520,11 @@ export default function BudgetPage() {
   );
 }
 
+/* ================== BudgetCard ================== */
+
 function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
   const usedRatio =
-    budget.amount > 0
-      ? (budget.spent || 0) / budget.amount
-      : 0;
+    budget.amount > 0 ? (budget.spent || 0) / budget.amount : 0;
   const remaining = Math.max(
     budget.amount - (budget.spent || 0),
     0
@@ -500,7 +539,6 @@ function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
         </div>
       </div>
 
-      {/* Spent / Remaining với màu mới */}
       <div className="mt-2 grid grid-cols-2 text-sm font-semibold">
         <div className="text-red-600">
           Spent: {formatVND(budget.spent)}
@@ -510,10 +548,10 @@ function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
         </div>
       </div>
 
-      {/* Progress bar gradient tím → xanh */}
+      {/* progress bar gradient */}
       <div className="mt-2 h-4 w-full rounded-full bg-slate-200">
         <div
-          className="h-4 rounded-full bg-gradient-to-r from-blue-700 via-purple-500 to-indigo-300"
+          className="h-4 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400"
           style={{
             width: `${Math.min(usedRatio * 100, 100)}%`,
           }}
