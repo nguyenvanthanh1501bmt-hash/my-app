@@ -38,7 +38,7 @@ export default function LoadingDisplay() {
 
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-2 ml-[10%]">Your goal</h2>
+      <h2 className="text-3xl font-bold mb-2 ml-[15%]">My goal</h2>
       <div className="flex justify-center flex-col items-center">
         {data.map(item => (
           <SavingFormDisplay
@@ -167,7 +167,7 @@ const SavingFormDisplay = ({ goal_name, target_amount, current_amount, onDelete,
 
     <div className="w-full bg-gray-200 rounded-full h-4 mt-4">
       <div
-        className="bg-green-400 h-4 rounded-full"
+        className="bg-gradient-to-r from-lime-500 to-green-400 h-4 rounded-full"
         style={{ width: `${Math.min((current_amount / target_amount) * 100, 100)}%` }}
       />
     </div>
