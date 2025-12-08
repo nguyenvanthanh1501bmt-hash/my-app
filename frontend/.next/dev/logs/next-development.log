@@ -1,85 +1,635 @@
-[00:00:01.999] Server  LOG      ✓ Ready in 1528ms
-[00:02:01.776] Server  LOG      ○ Compiling / ...
-[00:02:05.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:05.841] Server  ERROR    ⨯ TypeError: immutable
-[00:02:05.970] Server  ERROR    ⨯ TypeError: immutable
-[00:02:06.222] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:02:06.222] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:02:06.666] Browser LOG     Sending username to backend: test123
-[00:02:06.666] Browser LOG     Logging in user: test123
-[00:02:08.106] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:08.119] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:09.045] Browser ERROR   Send username failed: {}
-[00:02:09.046] Browser ERROR   Login failed: {}
-[00:02:10.621] Server  ERROR    ⨯ TypeError: immutable
-[00:02:10.634] Browser LOG     Current path: /dashboard
-[00:02:10.634] Browser LOG     Current path: /dashboard
-[00:02:10.667] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:13.503] Browser LOG     Current path: /dashboard/expenses
-[00:02:15.868] Browser ERROR   fetch transactions error: {}
-[00:02:15.868] Browser ERROR   fetch categories error: {}
-[00:02:16.100] Browser ERROR   fetch transactions error: {}
-[00:02:18.174] Browser ERROR   fetch categories error: {}
-[00:02:18.497] Browser LOG     Current path: /dashboard/budget
-[00:02:20.231] Browser LOG     Current path: /dashboard/expenses
-[00:02:21.383] Browser ERROR   Auth bridge error: {}
-[00:02:21.383] Browser ERROR   Auth bridge error: {}
-[00:02:21.383] Browser ERROR   fetch transactions error: {}
-[00:02:24.380] Browser ERROR   fetch categories error: {}
-[00:02:24.380] Browser ERROR   fetch transactions error: {}
-[00:02:24.380] Browser ERROR   fetch categories error: {}
-[00:02:38.977] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:39.079] Server  ERROR    ⨯ TypeError: immutable
-[00:02:39.127] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:02:39.852] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:02:39.852] Browser LOG     Current path: /dashboard/expenses
-[00:02:39.852] Browser LOG     Sending username to backend: test123
-[00:02:39.852] Browser LOG     Logging in user: test123
-[00:02:39.852] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1},{"amount":"150000.00","category_id":13,"date":"2025-11-15","id":14,"note":"Mua chứng khoán","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":17,"date":"2025-11-15","id":15,"note":"Tiền đầu tư bất động sản","type":"income","user_id":1},{"amount":"5000000.00","category_id":8,"date":"2025-11-15","id":16,"note":"Đóng học phí","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":6,"date":"2025-11-15","id":17,"note":"Vé xe ","type":"outcome","user_id":1},{"amount":"300000.00","category_id":10,"date":"2025-06-17","id":18,"note":"Tiền mua đồ ăn thú cưng","type":"outcome","user_id":1}]
-[00:02:39.852] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
-[00:02:39.852] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY3NzEwNTkyfQ.jCdO3LUQxPUjWJ0l_g2hJNVKSe-aL-vM1d5YM4Lre7I","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
-[00:02:39.852] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
-[00:38:42.254] Browser LOG     Current path: /dashboard/budget
-[00:38:44.868] Browser LOG     Current path: /dashboard/expenses
-[00:38:44.868] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
-[00:38:44.868] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1},{"amount":"150000.00","category_id":13,"date":"2025-11-15","id":14,"note":"Mua chứng khoán","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":17,"date":"2025-11-15","id":15,"note":"Tiền đầu tư bất động sản","type":"income","user_id":1},{"amount":"5000000.00","category_id":8,"date":"2025-11-15","id":16,"note":"Đóng học phí","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":6,"date":"2025-11-15","id":17,"note":"Vé xe ","type":"outcome","user_id":1},{"amount":"300000.00","category_id":10,"date":"2025-06-17","id":18,"note":"Tiền mua đồ ăn thú cưng","type":"outcome","user_id":1}]
-[00:38:44.868] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
-[00:38:44.868] Browser LOG     TX data: [{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1},{"amount":"150000.00","category_id":13,"date":"2025-11-15","id":14,"note":"Mua chứng khoán","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":17,"date":"2025-11-15","id":15,"note":"Tiền đầu tư bất động sản","type":"income","user_id":1},{"amount":"5000000.00","category_id":8,"date":"2025-11-15","id":16,"note":"Đóng học phí","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":6,"date":"2025-11-15","id":17,"note":"Vé xe ","type":"outcome","user_id":1},{"amount":"300000.00","category_id":10,"date":"2025-06-17","id":18,"note":"Tiền mua đồ ăn thú cưng","type":"outcome","user_id":1}]
-[00:38:52.361] Browser LOG     Current path: /dashboard/budget
-[00:38:54.277] Browser LOG     Current path: /dashboard/saving-wallet
-[00:39:06.027] Browser LOG     Current path: /dashboard/your-debt
-[00:39:09.094] Browser LOG     Current path: /dashboard/saving-wallet
-[00:46:11.952] Browser LOG     Current path: /dashboard/your-debt
-[00:46:13.531] Browser LOG     Current path: /dashboard/saving-wallet
-[00:46:18.766] Browser LOG     Current path: /dashboard/budget
-[00:46:21.444] Browser LOG     Current path: /dashboard/saving-wallet
-[00:46:24.543] Browser LOG     Current path: /dashboard/budget
-[00:46:25.554] Browser LOG     Current path: /dashboard/saving-wallet
-[00:57:35.721] Server  LOG      ✓ Compiled in 83ms
-[00:57:42.376] Server  LOG      ✓ Compiled in 107ms
-[00:57:49.675] Server  LOG      ✓ Compiled in 243ms
-[00:57:52.315] Server  LOG      ✓ Compiled in 159ms
-[00:57:56.754] Server  LOG      ✓ Compiled in 254ms
-[00:57:59.242] Server  LOG      ✓ Compiled in 118ms
-[00:58:03.372] Server  LOG      ✓ Compiled in 198ms
-[00:58:06.069] Server  LOG      ✓ Compiled in 107ms
-[01:02:05.211] Server  LOG      ✓ Compiled in 136ms
-[01:02:16.194] Server  LOG      ✓ Compiled in 50ms
-[01:02:47.297] Server  LOG      ✓ Compiled in 185ms
-[01:02:54.304] Server  LOG      ✓ Compiled in 127ms
-[01:03:04.932] Server  LOG      ✓ Compiled in 168ms
-[01:03:09.131] Server  ERROR    ⨯ TypeError: immutable
-[01:03:09.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:03:09.180] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[01:03:09.274] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[01:03:09.274] Browser LOG     Current path: /dashboard/saving-wallet
-[01:03:09.570] Browser LOG     Sending username to backend: test123
-[01:03:09.570] Browser LOG     Logging in user: test123
-[01:03:09.973] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY3NzE0MjIyfQ.rSvkDpXr5EmOnom9xr9VgYShQU23eGXjp-Hp0lElxB0","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
-[01:03:09.973] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
-[01:03:38.624] Server  LOG      ✓ Compiled in 189ms
-[01:03:47.396] Server  LOG      ✓ Compiled in 56ms
-[01:03:49.781] Server  LOG      ✓ Compiled in 183ms
-[01:05:22.695] Browser LOG     Current path: /dashboard/your-debt
-[01:05:41.222] Server  LOG      ✓ Compiled in 154ms
-[01:05:55.789] Server  LOG      ✓ Compiled in 40ms
+[00:00:01.853] Server  LOG      ✓ Ready in 1402ms
+[00:00:05.800] Server  LOG      ○ Compiling / ...
+[00:00:07.605] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:07.836] Server  ERROR    ⨯ TypeError: immutable
+[00:00:07.934] Server  ERROR    ⨯ TypeError: immutable
+[00:00:08.093] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:08.093] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:08.438] Browser LOG     Sending username to backend: ab123
+[00:00:08.438] Browser LOG     Logging in user: ab123
+[00:00:08.783] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:00:08.783] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3NDEwfQ.E-YEG8GjrsM17zhmxBEbESmtd2EZzq0Yu1lWaBUHXdE","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:00:09.697] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:09.699] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:14.213] Server  ERROR    ⨯ TypeError: immutable
+[00:00:14.232] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:14.342] Browser LOG     Current path: /dashboard
+[00:00:14.343] Browser LOG     Current path: /dashboard
+[00:00:14.343] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:14.343] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:14.343] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:14.343] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:43.631] Browser LOG     Current path: /dashboard/expenses
+[00:00:43.631] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:00:43.631] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:00:43.631] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:00:43.631] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:00:47.895] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:47.895] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:47.895] Browser LOG     Current path: /dashboard
+[00:00:52.209] Server  WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:52.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:52.553] Server  ERROR    ⨯ TypeError: immutable
+[00:00:52.584] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:52.631] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:52.631] Browser LOG     Current path: /dashboard
+[00:00:52.766] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:52.766] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:00:52.969] Browser LOG     Sending username to backend: ab123
+[00:00:52.970] Browser LOG     Logging in user: ab123
+[00:00:52.970] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3NDU0fQ.Q2lEszqYKWdpzogHmP5VRU7VE0S0GKVeCcs7kibqybI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:00:52.970] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:00:57.991] Browser LOG     Current path: /dashboard/expenses
+[00:00:57.991] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:00:57.991] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:00:57.991] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:00:57.991] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:01:13.395] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:01:13.395] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:01:13.395] Browser LOG     Current path: /dashboard
+[00:02:40.300] Server  LOG      ✓ Compiled in 133ms
+[00:03:21.246] Browser LOG     Current path: /dashboard/budget
+[00:03:32.579] Browser LOG     Current path: /dashboard/expenses
+[00:03:32.580] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:03:32.580] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:03:32.580] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:03:32.580] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:03:44.520] Browser LOG     Current path: /dashboard
+[00:04:18.633] Browser LOG     Current path: /dashboard/budget
+[00:04:20.391] Browser LOG     Current path: /dashboard
+[00:04:34.745] Browser LOG     Current path: /dashboard/budget
+[00:04:48.085] Server  ERROR    ⨯ TypeError: immutable
+[00:04:48.109] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:48.109] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:04:48.109] Browser LOG     Current path: /dashboard/budget
+[00:04:48.188] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:04:48.507] Browser LOG     Sending username to backend: ab123
+[00:04:48.507] Browser LOG     Logging in user: ab123
+[00:04:48.507] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:04:48.507] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3NjkwfQ.RiJ9UgOJ_yCQ4Og41Yq8aVH2xUz6VQDHLIqt1RcPz0Q","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:04:52.780] Browser LOG     Current path: /dashboard/expenses
+[00:04:52.780] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:04:52.780] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:04:52.780] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:04:52.780] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:01.215] Browser LOG     Current path: /dashboard/budget
+[00:05:02.264] Browser LOG     Current path: /dashboard/expenses
+[00:05:02.264] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:02.264] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:02.264] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:02.264] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:04.824] Browser LOG     Current path: /dashboard
+[00:05:07.073] Browser LOG     Current path: /dashboard/expenses
+[00:05:07.073] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:07.073] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:07.073] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:07.073] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:23.267] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:30.983] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:31.064] Server  ERROR    ⨯ TypeError: immutable
+[00:05:31.125] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:31.125] Browser LOG     Current path: /dashboard/expenses
+[00:05:31.126] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:31.467] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:05:31.467] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:05:31.467] Browser LOG     Sending username to backend: ab123
+[00:05:31.467] Browser LOG     Logging in user: ab123
+[00:05:31.467] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:05:31.467] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3NzMzfQ.nwXtkBGPfoMcioZpOA278_NJGqEV5jUdnCRiJq-jdMs","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:05:38.711] Browser LOG     Current path: /dashboard
+[00:06:44.931] Server  LOG      ✓ Compiled in 121ms
+[00:06:46.890] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:46.956] Server  ERROR    ⨯ TypeError: immutable
+[00:06:46.989] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:06:47.110] Browser LOG     Current path: /dashboard
+[00:06:47.111] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:06:47.454] Browser LOG     Sending username to backend: ab123
+[00:06:47.454] Browser LOG     Logging in user: ab123
+[00:06:47.823] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:06:47.824] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3ODA5fQ.EgnfCNtTmA0v6QWzRBnNdzhEEX3ug8OP0in1duIFg4c","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:06:54.452] Server  LOG      ✓ Compiled in 88ms
+[00:06:55.836] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:55.894] Server  ERROR    ⨯ TypeError: immutable
+[00:06:55.955] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:06:55.981] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:06:55.981] Browser LOG     Current path: /dashboard
+[00:06:56.372] Browser LOG     Sending username to backend: ab123
+[00:06:56.372] Browser LOG     Logging in user: ab123
+[00:06:56.372] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:06:56.372] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk3ODE3fQ.sG0gPJL9IzgXlODGRwXFmwxOBG151uE6v3RmXD-bZ7w","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:09:51.005] Browser LOG     Current path: /dashboard/expenses
+[00:09:51.407] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:09:51.407] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:09:51.408] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:09:51.408] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:10:19.565] Server  LOG      ✓ Compiled in 34ms
+[00:10:22.326] Server  LOG      ✓ Compiled in 80ms
+[00:10:25.375] Server  LOG      ✓ Compiled in 157ms
+[00:10:27.794] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:27.925] Server  ERROR    ⨯ TypeError: immutable
+[00:10:27.985] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:10:28.001] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:10:28.002] Browser LOG     Current path: /dashboard/expenses
+[00:10:28.294] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:10:28.294] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:10:28.294] Browser LOG     Sending username to backend: ab123
+[00:10:28.294] Browser LOG     Logging in user: ab123
+[00:10:28.666] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4MDMwfQ.kuUS-Q9IS87ySYnEPFSE1fMuGLGbWEIuvTNGVfagPwc","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:10:28.666] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:10:34.630] Browser LOG     Current path: /dashboard
+[00:10:42.892] Server  LOG      ✓ Compiled in 38ms
+[00:10:52.907] Browser LOG     Current path: /dashboard/expenses
+[00:10:52.907] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:10:52.907] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:10:52.907] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:10:52.907] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:11:12.719] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:11:14.609] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:14.693] Server  ERROR    ⨯ TypeError: immutable
+[00:11:14.773] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:11:14.773] Browser LOG     Current path: /dashboard/expenses
+[00:11:14.774] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:11:14.974] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:11:14.974] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:11:15.156] Browser LOG     Sending username to backend: ab123
+[00:11:15.156] Browser LOG     Logging in user: ab123
+[00:11:15.156] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4MDc2fQ.qM3ph2byteo-AQqZ_bTynTjaKoDmYBTBsz827l3AIqk","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:11:15.156] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:12:25.534] Browser LOG     Current path: /dashboard
+[00:14:53.382] Server  LOG      ✓ Compiled in 43ms
+[00:14:53.852] Browser ERROR   uncaughtError: ReferenceError: userId is not defined
+[00:14:58.149] Server  LOG      ✓ Compiled in 68ms
+[00:14:58.852] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:23:3
+Parsing ecmascript source code failed
+  21 | export default function IncomeOutcomeChart() {
+  22 |     const 
+> 23 |   const [chartData, setChartData] = useState([]);
+     |   ^^^^^
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+  26 |   useEffect(() => {
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:01.845] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:22:11
+Parsing ecmascript source code failed
+  20 |
+  21 | export default function IncomeOutcomeChart() {
+> 22 |     const {}
+     |           ^^
+  23 |   const [chartData, setChartData] = useState([]);
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:02.843] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:22:11
+Parsing ecmascript source code failed
+  20 |
+  21 | export default function IncomeOutcomeChart() {
+> 22 |     const {id}
+     |           ^^^^
+  23 |   const [chartData, setChartData] = useState([]);
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:05.851] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:22:11
+Parsing ecmascript source code failed
+  20 |
+  21 | export default function IncomeOutcomeChart() {
+> 22 |     const {id: user}
+     |           ^^^^^^^^^^
+  23 |   const [chartData, setChartData] = useState([]);
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:06.851] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:22:11
+Parsing ecmascript source code failed
+  20 |
+  21 | export default function IncomeOutcomeChart() {
+> 22 |     const {id: userId}
+     |           ^^^^^^^^^^^^
+  23 |   const [chartData, setChartData] = useState([]);
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+
+'const' declarations must be initialized
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:08.846] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:23:3
+Parsing ecmascript source code failed
+  21 | export default function IncomeOutcomeChart() {
+  22 |     const {id: userId} = 
+> 23 |   const [chartData, setChartData] = useState([]);
+     |   ^^^^^
+  24 |   const [mode, setMode] = useState("monthly"); // default monthly
+  25 |
+  26 |   useEffect(() => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:15.850] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:17:1
+Parsing ecmascript source code failed
+  15 |
+  16 | // Hàm lấy tháng hiện tại dạng "YYYY-MM"
+> 17 | function getCurrentMonth() {
+     | ^^^^^^^^
+  18 |   const d = new Date();
+  19 |   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+  20 | }
+
+Expected 'from', got 'function'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:30.855] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:24:3
+Parsing ecmascript source code failed
+  22 | export default function IncomeOutcomeChart() {
+  23 |     const {id: userId} = 
+> 24 |   const [chartData, setChartData] = useState([]);
+     |   ^^^^^
+  25 |   const [mode, setMode] = useState("monthly"); // default monthly
+  26 |
+  27 |   useEffect(() => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:32.850] Browser ERROR   ./app/(routes)/dashboard/components/InOutcomeChart.jsx:24:3
+Parsing ecmascript source code failed
+  22 | export default function IncomeOutcomeChart() {
+  23 |     const {id: userId} = 
+> 24 |   const [chartData, setChartData] = useState([]);
+     |   ^^^^^
+  25 |   const [mode, setMode] = useState("monthly"); // default monthly
+  26 |
+  27 |   useEffect(() => {
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/InOutcomeChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:15:36.738] Server  LOG      ✓ Compiled in 55ms
+[00:15:36.752] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:37.031] Server  ERROR    ⨯ TypeError: immutable
+[00:15:37.044] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:37.708] Server  ERROR    ⨯ ReferenceError: u is not defined
+[00:15:38.009] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:38.207] Server  ERROR    ⨯ TypeError: immutable
+[00:15:38.224] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:39.014] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:15:39.015] Browser LOG     Current path: /dashboard
+[00:15:39.015] Browser ERROR   uncaughtError: ReferenceError: u is not defined
+[00:15:39.015] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:15:39.016] Server  LOG      ✓ Compiled in 75ms
+[00:15:39.775] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:40.082] Server  ERROR    ⨯ TypeError: immutable
+[00:15:40.100] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:40.892] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:15:40.892] Browser LOG     Current path: /dashboard
+[00:15:40.892] Browser LOG     Sending username to backend: ab123
+[00:15:40.892] Browser LOG     Logging in user: ab123
+[00:15:41.852] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4MzQyfQ.7gIxuwuIod5k7qx_H0b2auVSjjEXuv0YLQ3KdLR-Dgo","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:15:41.852] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:15:41.852] Browser LOG     IncomeOutcome API res: []
+[00:16:16.460] Server  LOG      ✓ Compiled in 140ms
+[00:16:16.847] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:16:16.848] Browser LOG     IncomeOutcome API res: []
+[00:16:20.582] Server  ERROR    ⨯ TypeError: immutable
+[00:16:20.585] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:16:20.617] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:16:20.682] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:16:20.683] Browser LOG     Current path: /dashboard
+[00:16:21.073] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:16:21.073] Browser LOG     Sending username to backend: ab123
+[00:16:21.073] Browser LOG     Logging in user: ab123
+[00:16:21.073] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:16:21.073] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4MzgyfQ.0mJ9mu1Qdy7SLsUDIHG3GpeOq5-6ilYHkaERDlQtAwQ","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:16:21.073] Browser LOG     IncomeOutcome API res: []
+[00:16:58.649] Browser LOG     Current path: /dashboard/expenses
+[00:16:59.085] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:16:59.086] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:16:59.086] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:16:59.086] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:18:00.172] Browser LOG     Current path: /dashboard/budget
+[00:18:13.581] Browser LOG     Current path: /dashboard/expenses
+[00:18:13.581] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:18:13.581] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:18:13.581] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:18:13.581] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:18:17.750] Server  ERROR    ⨯ TypeError: immutable
+[00:18:17.757] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:17.833] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:18:18.005] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:18:18.005] Browser LOG     Current path: /dashboard/expenses
+[00:18:18.265] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:18:18.265] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:18:18.265] Browser LOG     Sending username to backend: ab123
+[00:18:18.265] Browser LOG     Logging in user: ab123
+[00:18:18.598] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:18:18.598] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NTAwfQ.dzlKP3k-9BdHDohaRaKhiUTCLVpxrOBj1Q3GgHT04VI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:18:28.494] Browser LOG     Current path: /dashboard
+[00:18:28.826] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:18:28.826] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:18:28.947] Browser LOG     IncomeOutcome API res: []
+[00:19:10.427] Browser LOG     Current path: /dashboard/expenses
+[00:19:10.806] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:19:10.806] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:19:10.806] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:19:10.806] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:19:23.476] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:19:31.007] Server  ERROR    ⨯ TypeError: immutable
+[00:19:31.016] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:31.040] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:19:31.187] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:19:31.187] Browser LOG     Current path: /dashboard/expenses
+[00:19:31.479] Browser LOG     Sending username to backend: ab123
+[00:19:31.479] Browser LOG     Logging in user: ab123
+[00:19:31.668] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:19:31.668] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:19:31.824] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NTczfQ.LysxL65Ly9f7WtA3F8LMgu7gaEn10I0qCpBGjrya2Y8","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:19:31.824] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:20:04.720] Browser LOG     Current path: /dashboard
+[00:20:05.037] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:20:05.037] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:20:05.143] Browser LOG     IncomeOutcome API res: []
+[00:20:06.507] Server  ERROR    ⨯ TypeError: immutable
+[00:20:06.519] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:06.519] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:20:06.519] Browser LOG     Current path: /dashboard
+[00:20:06.560] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:20:06.764] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:20:06.982] Browser LOG     Sending username to backend: ab123
+[00:20:06.982] Browser LOG     Logging in user: ab123
+[00:20:06.982] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NjA4fQ.YsvH4HVi64hFa0RLebA0isKQZRT9FnnlQxHTbMUhvlI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:20:06.982] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:20:06.982] Browser LOG     IncomeOutcome API res: []
+[00:20:26.933] Server  LOG      ✓ Compiled in 42ms
+[00:20:30.360] Server  LOG      ✓ Compiled in 108ms
+[00:20:33.024] Server  ERROR    ⨯ TypeError: immutable
+[00:20:33.027] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:33.051] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:20:33.277] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:20:33.277] Browser LOG     Current path: /dashboard
+[00:20:33.277] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:20:33.530] Browser LOG     Sending username to backend: ab123
+[00:20:33.530] Browser LOG     Logging in user: ab123
+[00:20:33.921] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NjM1fQ.rpwZRrNTS9A6YJTNLE4hB8B0dSXlmCFayb4TJ4mTo24","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:20:33.921] Browser LOG     2025-12
+[00:20:33.921] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:20:34.254] Browser LOG     IncomeOutcome API res: []
+[00:21:32.717] Server  LOG      ✓ Compiled in 44ms
+[00:21:33.842] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:21:33.842] Browser LOG     2025-12
+[00:21:33.842] Browser LOG     IncomeOutcome API res: []
+[00:21:37.467] Server  ERROR    ⨯ TypeError: immutable
+[00:21:37.471] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:37.489] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:21:37.667] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:21:37.668] Browser LOG     Current path: /dashboard
+[00:21:37.668] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:21:37.919] Browser LOG     Sending username to backend: ab123
+[00:21:37.919] Browser LOG     Logging in user: ab123
+[00:21:38.309] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4Njk5fQ.mbzgxFH5F3gLG35EHF-BoVUMB0xUY49zjJ8GlrlxmB4","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:21:38.309] Browser LOG     2025-12
+[00:21:38.309] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:21:38.309] Browser LOG     IncomeOutcome API res: []
+[00:22:02.698] Server  LOG      ✓ Compiled in 35ms
+[00:22:08.098] Server  LOG      ✓ Compiled in 131ms
+[00:22:10.552] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:10.618] Server  ERROR    ⨯ TypeError: immutable
+[00:22:10.651] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:10.774] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:22:10.774] Browser LOG     Current path: /dashboard
+[00:22:10.898] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:22:11.115] Browser LOG     Sending username to backend: ab123
+[00:22:11.115] Browser LOG     Logging in user: ab123
+[00:22:11.115] Browser LOG     2025-12
+[00:22:11.115] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NzMyfQ.e-mm-q4DmTyLv3bb4fM3jGa1VHJzyuVw3bb6L-MXY7g","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:22:11.115] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:22:11.115] Browser LOG     IncomeOutcome API res: []
+[00:22:11.115] Browser LOG     []
+[00:22:27.506] Server  LOG      ✓ Compiled in 159ms
+[00:22:29.626] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:29.700] Server  ERROR    ⨯ TypeError: immutable
+[00:22:29.739] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:22:29.925] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:22:29.925] Browser LOG     Current path: /dashboard
+[00:22:29.925] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:22:30.298] Browser LOG     Sending username to backend: ab123
+[00:22:30.298] Browser LOG     Logging in user: ab123
+[00:22:30.298] Browser LOG     2025-12
+[00:22:30.298] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NzUxfQ.rdTjwm-lAdpAWrx_4amEfyzQTZsR2yMIRxo3JAMnYc8","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:22:30.298] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:22:30.622] Browser LOG     IncomeOutcome API res: []
+[00:22:30.622] Browser LOG     Test xem có data k
+[00:22:52.539] Server  LOG      ✓ Compiled in 34ms
+[00:22:56.468] Server  LOG      ✓ Compiled in 36ms
+[00:22:58.150] Server  LOG      ✓ Compiled in 60ms
+[00:23:01.006] Server  ERROR    ⨯ TypeError: immutable
+[00:23:01.010] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:01.040] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:01.286] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:01.286] Browser LOG     Current path: /dashboard
+[00:23:01.286] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:23:01.751] Browser LOG     Sending username to backend: ab123
+[00:23:01.751] Browser LOG     Logging in user: ab123
+[00:23:01.751] Browser LOG     2025-12
+[00:23:01.751] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:23:01.751] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4NzgzfQ.JdBJEL8qhcTKDRVMmATY87woe4E8Dh5YlBsiKtBMUCc","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:23:01.751] Browser LOG     IncomeOutcome API res: []
+[00:23:01.751] Browser ERROR   unhandledRejection: ReferenceError: res is not defined
+[00:23:12.250] Server  LOG      ✓ Compiled in 44ms
+[00:23:14.560] Server  ERROR    ⨯ TypeError: immutable
+[00:23:14.563] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:14.591] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:14.681] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:14.681] Browser LOG     Current path: /dashboard
+[00:23:15.037] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:23:15.037] Browser LOG     Sending username to backend: ab123
+[00:23:15.037] Browser LOG     Logging in user: ab123
+[00:23:15.037] Browser LOG     2025-12
+[00:23:15.037] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4Nzk2fQ.GgZeoP3DPkkleJJ4tbMfN49yJwACHO_o_Uj0f9MYaXA","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:23:15.037] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:23:15.037] Browser LOG     IncomeOutcome API res: []
+[00:23:15.037] Browser LOG     Test xem có data k
+[00:23:20.475] Server  ERROR    ⨯ TypeError: immutable
+[00:23:20.478] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:20.509] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:20.614] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:20.614] Browser LOG     Current path: /dashboard
+[00:23:20.724] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:23:21.006] Browser LOG     Sending username to backend: ab123
+[00:23:21.006] Browser LOG     Logging in user: ab123
+[00:23:21.006] Browser LOG     2025-12
+[00:23:21.006] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4ODAyfQ.GCROUNkv0-FsMUQQvMetdZI6f-ftVLyLwtnJvR7kLm4","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:23:21.006] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:23:21.006] Browser LOG     IncomeOutcome API res: []
+[00:23:21.006] Browser LOG     Test xem có data k
+[00:26:03.187] Server  LOG      ✓ Compiled in 74ms
+[00:26:03.854] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:26:03.854] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:26:04.842] Browser INFO    API trả về array rỗng
+[00:26:07.884] Server  ERROR    ⨯ TypeError: immutable
+[00:26:07.887] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:26:07.922] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:26:08.017] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:26:08.017] Browser LOG     Current path: /dashboard
+[00:26:08.279] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:26:08.448] Browser LOG     Sending username to backend: ab123
+[00:26:08.448] Browser LOG     Logging in user: ab123
+[00:26:08.448] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:26:08.448] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk4OTY5fQ.lxFQ1plRPrrHBGFVv559VzIsxsPcZ3FaIa-IbEJSngI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:26:08.448] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:26:08.448] Browser INFO    API trả về array rỗng
+[00:29:15.907] Server  ERROR    ⨯ TypeError: immutable
+[00:29:15.911] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:29:15.936] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:29:16.113] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:29:16.113] Browser LOG     Current path: /dashboard
+[00:29:16.113] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:29:16.350] Browser LOG     Sending username to backend: ab123
+[00:29:16.350] Browser LOG     Logging in user: ab123
+[00:29:16.752] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:29:16.753] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3Nzk5MTU4fQ.6KgZ4NwF2owLUljdrrVs9OWztRupM7JdVJsdT11nslg","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:29:16.753] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:29:17.079] Browser INFO    API trả về array rỗng
+[00:29:18.817] Browser LOG     Current path: /dashboard/expenses
+[00:29:18.817] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:29:18.817] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:29:18.817] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:29:18.817] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:29:20.511] Browser LOG     Current path: /dashboard/budget
+[00:29:22.692] Browser LOG     Current path: /dashboard/saving-wallet
+[00:29:24.557] Browser LOG     Current path: /dashboard/your-debt
+[00:29:29.133] Browser LOG     Current path: /dashboard
+[00:29:29.133] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:29:29.133] Browser LOG     IncomeOutcomeChart: userId not ready yet
+[00:29:29.133] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:29:29.133] Browser INFO    API trả về array rỗng
+[00:29:30.105] Browser LOG     Current path: /dashboard/expenses
+[00:29:30.105] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:29:30.105] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]
+[00:29:30.105] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
+[00:29:30.105] Browser LOG     TX data: [{"amount":"2000000.00","category_id":18,"date":"2025-12-08","id":28,"note":"mẹ cho","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-12-03","id":29,"note":"","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":5,"date":"2025-12-03","id":31,"note":"sửa xe","type":"outcome","user_id":1},{"amount":"100000.00","category_id":5,"date":"2025-12-02","id":30,"note":"lụm được","type":"income","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":1,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"50000.00","category_id":1,"date":"2024-01-15","id":4,"note":"Grocery shopping","type":"outcome","user_id":1},{"amount":"30000.00","category_id":1,"date":"2024-01-10","id":3,"note":"Coffee","type":"outcome","user_id":1},{"amount":"1000000.00","category_id":1,"date":"2024-01-01","id":2,"note":"Salary","type":"income","user_id":1}]

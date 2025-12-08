@@ -29,7 +29,7 @@ export default function SendUsername() {
           body: JSON.stringify({ name }),
           credentials: "include", // ❗ để gửi cookie nếu BE có set cookies
         });
-
+ 
         if (res.status === 400) {
           // User đã tồn tại -> không coi là lỗi
           console.log("User already exists, skipping");
