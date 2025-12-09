@@ -1,22 +1,15 @@
 import { useEffect, useState } from "react";
 import { GetSummary } from "./API_setup";
-import { useUserInfo } from "./necessary_info";
 
-export default function SummarySection() {
+export default function SummarySection({ userId, month }) {
     const [summary, setSummary] = useState(null);
-    const { id: userId } = useUserInfo();
-
-    // Lấy tháng hiện tại dạng YYYY-MM
-    const getCurrentMonth = () => {
-        return new Date().toISOString().slice(0, 7);
-    };
 
     useEffect(() => {
-        if (!userId) return; // đợi userId load xong
+        if (!userId || !month) return; // đợi userId và month có giá trị
 
         async function fetchData() {
             try {
-                const data = await GetSummary(userId, getCurrentMonth());
+                const data = await GetSummary(userId, month);
                 setSummary(data);
             } catch (err) {
                 console.error("Load summary error:", err);
@@ -24,7 +17,7 @@ export default function SummarySection() {
         }
 
         fetchData();
-    }, [userId]);
+    }, [userId, month]);
 
     if (!summary) return <p>Đang tải...</p>;
 
