@@ -2,41 +2,54 @@ import { useEffect, useState } from "react";
 import { GetSummary } from "./API_setup";
 
 export default function SummarySection({ userId, month }) {
-    const [summary, setSummary] = useState(null);
+  const [summary, setSummary] = useState(null);
 
-    useEffect(() => {
-        if (!userId || !month) return; // đợi userId và month có giá trị
+  useEffect(() => {
+    if (!userId || !month) return;
 
-        async function fetchData() {
-            try {
-                const data = await GetSummary(userId, month);
-                setSummary(data);
-            } catch (err) {
-                console.error("Load summary error:", err);
-            }
-        }
+    async function fetchData() {
+      try {
+        const data = await GetSummary(userId, month);
+        setSummary(data);
+      } catch (err) {
+        console.error("Load summary error:", err);
+      }
+    }
 
-        fetchData();
-    }, [userId, month]);
+    fetchData();
+  }, [userId, month]);
 
-    if (!summary) return <p>Đang tải...</p>;
+  if (!summary) {
+    return <p className="text-center text-gray-500">Đang tải...</p>;
+  }
 
-    return (
-        <div style={{ display: "flex", gap: "20px" }}>
-            <div>
-                <h3>Budget</h3>
-                <p>{summary.total_budget}</p>
-            </div>
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
 
-            <div>
-                <h3>Đã xài</h3>
-                <p>{summary.total_spend}</p>
-            </div>
+      {/* Budget */}
+      <div className="bg-gray-50 p-5 rounded-xl shadow flex flex-col items-center">
+        <h3 className="text-lg font-semibold text-gray-700">Budget</h3>
+        <p className="text-2xl font-bold text-blue-600 mt-1">
+          {summary.total_budget?.toLocaleString("vi-VN")}
+        </p>
+      </div>
 
-            <div>
-                <h3>Còn lại</h3>
-                <p>{summary.current_balance}</p>
-            </div>
-        </div>
-    );
+      {/* Đã xài */}
+      <div className="bg-gray-50 p-5 rounded-xl shadow flex flex-col items-center">
+        <h3 className="text-lg font-semibold text-gray-700">Đã xài</h3>
+        <p className="text-2xl font-bold text-red-600 mt-1">
+          {summary.total_spend?.toLocaleString("vi-VN")}
+        </p>
+      </div>
+
+      {/* Còn lại */}
+      <div className="bg-gray-50 p-5 rounded-xl shadow flex flex-col items-center">
+        <h3 className="text-lg font-semibold text-gray-700">Còn lại</h3>
+        <p className="text-2xl font-bold text-green-600 mt-1">
+          {summary.current_balance?.toLocaleString("vi-VN")}
+        </p>
+      </div>
+
+    </div>
+  );
 }

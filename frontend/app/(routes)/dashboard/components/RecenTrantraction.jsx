@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { GetRecentTransactions } from "./API_setup";
 
-export default function RecentTransactions({ userId, month, limit = 5 }) {
+export default function RecentTransactions({ userId, month, limit = 10 }) {
   const [transactions, setTransactions] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -29,12 +29,14 @@ export default function RecentTransactions({ userId, month, limit = 5 }) {
   if (loading) return <p>Loading recent transactions...</p>;
   if (!transactions.length) return <p>No transactions for this month.</p>;
 
-  const currency = (val) =>
-    new Intl.NumberFormat("vi-VN", { style: "currency", currency: "VND" }).format(val);
+  const formatCurrency = (val) =>
+    new Intl.NumberFormat("vi-VN", {
+      style: "currency",
+      currency: "VND",
+    }).format(val);
 
   return (
     <div className="rounded-2xl bg-white p-4 shadow">
-      <h3 className="mb-3 text-lg font-semibold">Recent Transactions</h3>
       <div className="overflow-x-auto">
         <table className="w-full text-sm">
           <thead className="bg-gray-800 text-white">
@@ -43,19 +45,30 @@ export default function RecentTransactions({ userId, month, limit = 5 }) {
               <th className="px-3 py-2 text-left">Category</th>
               <th className="px-3 py-2 text-left">Note</th>
               <th className="px-3 py-2 text-right">Amount</th>
-              <th className="px-3 py-2 text-left">Type</th>
             </tr>
           </thead>
           <tbody>
-            {transactions.map((t, idx) => (
-              <tr key={idx} className="border-b">
-                <td className="px-3 py-2">{new Date(t.date).toLocaleDateString()}</td>
-                <td className="px-3 py-2">{t.category || "-"}</td>
-                <td className="px-3 py-2">{t.note || "-"}</td>
-                <td className="px-3 py-2 text-right">{currency(t.amount)}</td>
-                <td className="px-3 py-2">{t.type}</td>
-              </tr>
-            ))}
+            {transactions.map((t, idx) => {
+              const isOutcome = t.type === "outcome";
+              const amount = isOutcome ? -Math.abs(t.amount) : Math.abs(t.amount);
+
+              return (
+                <tr key={idx} className="border-b">
+                  <td className="px-3 py-2">
+                    {new Date(t.date).toLocaleDateString()}
+                  </td>
+                  <td className="px-3 py-2">{t.category || "-"}</td>
+                  <td className="px-3 py-2">{t.note || "-"}</td>
+                  <td
+                    className={`px-3 py-2 text-right font-medium ${
+                      isOutcome ? "text-red-600" : "text-green-600"
+                    }`}
+                  >
+                    {formatCurrency(amount)}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
