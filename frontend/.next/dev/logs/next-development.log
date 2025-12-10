@@ -196,3 +196,232 @@ You can claim your keys by visiting https://dashboard.clerk.com/apps/claim?token
 [00:25:27.446] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
 [00:25:27.446] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
 [00:25:27.446] Browser ERROR   Load income-outcome error: {}
+[00:26:01.377] Browser LOG     Current path: /dashboard/budget
+[00:26:10.729] Browser LOG     Current path: /dashboard/expenses
+[00:26:11.556] Browser LOG     Current path: /dashboard
+[00:26:11.556] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:11.556] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:11.923] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
+[00:26:11.924] Browser ERROR   Load income-outcome error: {}
+[00:26:13.287] Browser LOG     Current path: /dashboard/expenses
+[00:26:21.216] Browser LOG     Current path: /dashboard
+[00:26:21.217] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:21.217] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:21.217] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
+[00:26:21.217] Browser ERROR   Load income-outcome error: {}
+[00:26:23.482] Browser LOG     Current path: /dashboard/expenses
+[00:26:52.816] Browser LOG     Current path: /dashboard
+[00:26:52.816] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:52.816] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:26:52.816] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
+[00:26:53.148] Browser ERROR   Load income-outcome error: {}
+[00:26:59.375] Browser LOG     Current path: /dashboard/budget
+[00:40:20.139] Server  LOG      ✓ Compiled in 156ms
+[00:40:20.505] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 | <div className="mb-5 relative">
+  405 |
+  406 |   <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[00:40:25.509] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |             <div className="mb-5 relative">
+  405 |
+  406 |               <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[00:40:31.196] Server  LOG      ✓ Compiled in 54ms
+[00:40:36.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:40:36.492] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:40:36.492] Browser LOG     Current path: /dashboard/budget
+[00:40:36.786] Browser LOG     Sending username to backend: tamnguyen179
+[00:40:36.787] Browser LOG     Logging in user: tamnguyen179
+[00:40:37.147] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI1OTcyfQ.cZqPY_kG_f1TrsBqri9QyzVtpRCRVpcTEUG46r25CFc","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
+[00:40:37.147] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
+[00:40:53.141] Server  LOG      ✓ Compiled in 142ms
+[00:40:53.254] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |           <div className="mb-5 relative">
+  405 |
+  406 |             <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[00:40:55.468] Server  ERROR    ⨯ ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |           <div className="mb-5 relative">
+  405 |
+  406 |             <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+
+[00:40:57.160] Browser ERROR   uncaughtError: Error: ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |           <div className="mb-5 relative">
+  405 |
+  406 |             <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+
+[00:40:57.501] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |           <div className="mb-5 relative">
+  405 |
+  406 |             <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[00:40:57.501] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
+Parsing ecmascript source code failed
+  401 |             </h2>
+  402 |
+> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
+      |              ^
+  404 |           <div className="mb-5 relative">
+  405 |
+  406 |             <input
+
+Expression expected
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[00:40:59.381] Server  LOG      ✓ Compiled in 89ms
+[00:41:00.452] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:00.592] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:41:00.592] Browser LOG     Current path: /dashboard/budget
+[00:41:00.936] Browser LOG     Sending username to backend: tamnguyen179
+[00:41:00.936] Browser LOG     Logging in user: tamnguyen179
+[00:41:00.937] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI1OTk2fQ.kdAMtjpm6yfNZbDsatF3L-K1ma_LInw0epNLBvN-7os","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
+[00:41:00.937] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
+[00:59:25.933] Server  LOG      ✓ Compiled in 133ms
+[00:59:33.754] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:33.956] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:59:33.956] Browser LOG     Current path: /dashboard/budget
+[00:59:34.311] Browser LOG     Sending username to backend: tamnguyen179
+[00:59:34.311] Browser LOG     Logging in user: tamnguyen179
+[00:59:34.680] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI3MTA5fQ.aT2Jx74ZKlK1Trq3p7-3QUR930W960a3AIY07OZuYkg","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
+[00:59:34.681] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
+[00:59:47.790] Server  LOG      ✓ Compiled in 193ms
+[01:35:34.648] Server  LOG      ✓ Compiled in 130ms
+[01:35:39.078] Server  LOG      ✓ Compiled in 55ms
+[01:35:54.274] Server  LOG      ✓ Compiled in 63ms
+[01:35:55.900] Server  LOG      ✓ Compiled in 42ms
+[01:36:00.665] Server  LOG      ✓ Compiled in 138ms
+[01:36:08.319] Server  LOG      ✓ Compiled in 41ms
+[01:36:34.733] Server  LOG      ✓ Compiled in 171ms
+[01:36:46.154] Server  LOG      ✓ Compiled in 50ms
+[01:36:49.043] Server  LOG      ✓ Compiled in 146ms
+[01:36:53.365] Server  LOG      ✓ Compiled in 45ms
+[01:37:24.155] Server  LOG      ✓ Compiled in 160ms
+[01:37:24.275] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:371:24
+Parsing ecmascript source code failed
+  369 |           />
+  370 |           <div className="h-10 w-10 flex items-center justify-center border rounded-lg bg-white">
+> 371 |             < className="h-5 w-5 text-slate-600 cursor"/>
+      |                        ^
+  372 |           </div>
+  373 |         </div>
+  374 |       </div>
+
+Expected '</', got '='
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
+[01:37:26.905] Server  LOG      ✓ Compiled in 60ms
+[01:37:30.399] Server  LOG      ✓ Compiled in 147ms
+[01:37:35.188] Server  LOG      ✓ Compiled in 124ms
+[01:37:55.103] Server  LOG      ✓ Compiled in 157ms
+[01:38:05.379] Server  LOG      ✓ Compiled in 124ms
+[01:45:15.788] Server  LOG      ✓ Compiled in 97ms
+[01:46:41.099] Server  LOG      ✓ Compiled in 123ms

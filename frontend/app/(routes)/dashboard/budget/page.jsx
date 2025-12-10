@@ -360,11 +360,17 @@ export default function BudgetPage() {
       {/* Filter by month */}
       <div className="mb-4 flex flex-wrap items-center gap-3">
         <label className="text-sm text-slate-600">Month</label>
-        <input
-          type="month"
-          onChange={(e) => setFilterMonth(e.target.value)}
-          className="h-10 rounded-lg border px-3 cursor-pointer"
-        />
+
+        <div className="relative">
+          <input
+            type="month"
+            onChange={(e) => setFilterMonth(e.target.value)}
+            className="h-10 w-10 appearance-none border rounded-lg opacity-0 absolute inset-0"
+          />
+          <div className="h-10 w-10 flex items-center justify-center border rounded-lg bg-white">
+            <Calendar className="h-5 w-5 text-slate-600 "/>
+          </div>
+        </div>
       </div>
 
       {shown.map((b) => (
