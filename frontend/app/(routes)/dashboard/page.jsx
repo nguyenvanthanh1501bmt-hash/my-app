@@ -23,7 +23,7 @@ export default function DashboardPage() {
 
       <SummarySection userId={userId} month={month} />
       <IncomeOutcomeChart userId={userId} month={month} className="mt-5" />
-      <CategoryExpensePie userId={userId} month={month} className="mt-5" />
+      <CategoryExpensePie userId={userId} month={month} className="mt-10" />
       <RecentTransactions userId={userId} month={month} className="mt-5" />
     </div>
   );

@@ -45,53 +45,47 @@ class DashboardRepo:
     def income_vs_outcome(
         db: Session, user_id: int, month: str, mode: str = "weekly"
     ) -> list[dict[str, Any]]:
-        """
-        Data cho chart 'Income Vs Outcome'
-        - mode='weekly': group theo thứ trong tuần (Mon..Sun) trong tháng đó
-        - mode='monthly': group theo ngày trong tháng (1..31)
-        Dùng bảng transactions.:contentReference[oaicite:3]{index=3}
-        """
+
         y, m = _ym(month)
 
         if mode == "monthly":
-            sql = text(
-                """
+            sql = text("""
                 SELECT 
-                  DAY([date]) AS label,
-                  SUM(CASE WHEN [type] = 'income' THEN amount ELSE 0 END) AS income,
-                  SUM(CASE WHEN [type] = 'outcome' THEN amount ELSE 0 END) AS outcome
+                DAY([date]) AS label,
+                SUM(CASE WHEN [type] = 'income' THEN amount ELSE 0 END) AS income,
+                SUM(CASE WHEN [type] = 'outcome' THEN amount ELSE 0 END) AS outcome
                 FROM transactions
                 WHERE user_id = :uid
-                  AND YEAR([date]) = :y AND MONTH([date]) = :m
+                AND YEAR([date]) = :y AND MONTH([date]) = :m
                 GROUP BY DAY([date])
                 ORDER BY DAY([date])
-                """
-            )
-        else:  # weekly
-            sql = text(
-                """
+            """)
+        else:
+            sql = text("""
                 SELECT 
-                  DATENAME(WEEKDAY, [date]) AS label,
-                  DATEPART(WEEKDAY, [date]) AS sort_order,
-                  SUM(CASE WHEN [type] = 'income' THEN amount ELSE 0 END) AS income,
-                  SUM(CASE WHEN [type] = 'outcome' THEN amount ELSE 0 END) AS outcome
+                DATENAME(WEEKDAY, [date]) AS label,
+                DATEPART(WEEKDAY, [date]) AS sort_order,
+                SUM(CASE WHEN [type] = 'income' THEN amount ELSE 0 END) AS income,
+                SUM(CASE WHEN [type] = 'outcome' THEN amount ELSE 0 END) AS outcome
                 FROM transactions
                 WHERE user_id = :uid
-                  AND YEAR([date]) = :y AND MONTH([date]) = :m
+                AND YEAR([date]) = :y AND MONTH([date]) = :m
                 GROUP BY DATENAME(WEEKDAY, [date]), DATEPART(WEEKDAY, [date])
                 ORDER BY sort_order
-                """
-            )
+            """)
 
         rows = db.execute(sql, {"uid": user_id, "y": y, "m": m}).mappings().all()
-        return [
-            {
-                "label": r["label"],
-                "income": r["income"],
-                "outcome": r["outcome"],
-            }
-            for r in rows
-        ]
+
+        result = []
+        for r in rows:
+            result.append({
+                "label": str(r["label"]),
+                "income": Decimal(r["income"] or 0),
+                "outcome": Decimal(r["outcome"] or 0),
+            })
+
+        return result
+
 
     @staticmethod
     def category_expense(

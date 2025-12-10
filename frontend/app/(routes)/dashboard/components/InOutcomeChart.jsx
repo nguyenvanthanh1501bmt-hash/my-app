@@ -14,27 +14,22 @@ import { GetIncomeOutcome } from "./API_setup";
 
 export default function IncomeOutcomeChart({ userId, month }) {
   const [chartData, setChartData] = useState([]);
-  const [mode, setMode] = useState("monthly"); // mặc định monthly
+  const [mode, setMode] = useState("monthly"); 
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (!userId || !month) {
-      console.log("IncomeOutcomeChart: userId hoặc month chưa có");
-      return;
-    }
+    if (!userId || !month) return;
 
     async function load() {
       setLoading(true);
       try {
-        console.log("Fetching data for:", { userId, mode, month });
-        const res = await GetIncomeOutcome(userId, mode, month);
+        const res = await GetIncomeOutcome(userId, month, mode);
 
-        if (!Array.isArray(res) || res.length === 0) {
-          console.info("API trả về rỗng hoặc không phải array");
+        if (!Array.isArray(res)) {
           setChartData([]);
         } else {
-          const normalized = res.map(item => ({
-            label: item.label || item.date || "N/A",
+          const normalized = res.map((item) => ({
+            label: item.label ?? "N/A",
             income: Number(item.income) || 0,
             outcome: Number(item.outcome) || 0,
           }));
@@ -88,7 +83,8 @@ export default function IncomeOutcomeChart({ userId, month }) {
         </button>
       </div>
 
-      <ResponsiveContainer width="100%" height="100%">
+      {/* FIXED: height cố định */}
+      <ResponsiveContainer width="100%" height={240}>
         <BarChart data={chartData}>
           <XAxis dataKey="label" />
           <YAxis />

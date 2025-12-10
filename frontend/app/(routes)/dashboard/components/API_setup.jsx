@@ -30,13 +30,12 @@ export async function GetSummary(userId, month) {
 // =============================
 // 2. INCOME – OUTCOME
 // =============================
-export async function GetIncomeOutcome(userId, mode = "weekly", month) {
+export async function GetIncomeOutcome(userId, month, mode = "weekly") {
     const url = `${BASE}/income-outcome?user_id=${userId}&month=${month}&mode=${mode}`;
     const res = await fetch(url);
 
     if (!res.ok) throw new Error(`API Error: ${res.status}`);
     return res.json();
-
 }
 
 // =============================

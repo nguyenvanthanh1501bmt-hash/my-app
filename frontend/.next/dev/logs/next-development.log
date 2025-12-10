@@ -1,427 +1,362 @@
-[00:00:04.564] Server  LOG      ✓ Ready in 3.9s
-[00:00:40.907] Server  LOG      ○ Compiling / ...
-[00:00:44.785] Server  LOG     
-
-[Clerk]: You are running in keyless mode.
-You can claim your keys by visiting https://dashboard.clerk.com/apps/claim?token=x17e7voakhezjog8y0udrhqcbzs5vh7jangnpptt&return_url=http%3A%2F%2Flocalhost%3A3000%2F
-
-[00:00:45.995] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:48.508] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:01:29.429] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:01:56.753] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:56.862] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:01:59.821] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:02:08.051] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:02:08.162] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:03:13.952] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:15.507] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:03:22.812] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:03:22.812] Browser LOG     Sending username to backend: Tâm
-[00:03:22.812] Browser LOG     Logging in user: Tâm
-[00:03:23.282] Browser ERROR   Login failed: {}
-[00:03:23.282] Browser LOG     Username sent successfully: Tâm Backend response: {"created_at":"2025-12-10T01:55:38","id":4,"name":"Tâm"}
-[00:03:27.293] Browser LOG     Current path: /dashboard
-[00:03:27.293] Browser LOG     Current path: /dashboard
-[00:03:27.694] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:03:27.694] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:03:27.694] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":4}
-[00:03:27.694] Browser INFO    API trả về rỗng hoặc không phải array
-[00:04:03.940] Server  LOG        Reload env: .env.local
-[00:04:04.182] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:04:04.918] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:06.505] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:08.999] Server  LOG        Reload env: .env.local
-[00:04:09.827] Server  LOG      ✓ Compiled in 749ms
-[00:04:09.830] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./node_modules/next/dist/client/image-component.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:04:10.818] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:12.228] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:12.229] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:12.229] Browser LOG     Logging in user: tamnguyen179
-[00:04:12.229] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:04:12.229] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTIzNzg3fQ.7PtR1LtGeDjOLizN28hQ70IVMPFjKdm14OCzLx0TdJs","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:04:12.229] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:14.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:14.194] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:14.194] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:14.503] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:14.503] Browser LOG     Logging in user: tamnguyen179
-[00:04:14.503] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTIzNzg5fQ.NKwitVTkJEV7OJIjmN5jbLaswPX8qGUi_eMkm7LTWs4","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:04:14.503] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:04:16.473] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:16.625] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:16.625] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:20.188] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:20.188] Browser LOG     Logging in user: tamnguyen179
-[00:04:20.527] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTIzNzk1fQ.eWQ7A4wADYi3X5TGUnvQS1wztY8jQtD5drVDG3LqLC0","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:04:20.527] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:04:22.249] Browser LOG     Current path: /dashboard
-[00:04:22.249] Browser LOG     Current path: /dashboard
-[00:04:22.637] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:04:22.637] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:04:22.637] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:04:22.637] Browser INFO    API trả về rỗng hoặc không phải array
-[00:04:24.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:25.120] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:25.120] Browser LOG     Current path: /dashboard
-[00:04:25.120] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:04:25.470] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:25.470] Browser LOG     Logging in user: tamnguyen179
-[00:04:25.470] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTIzODAwfQ.tcCodqbiNVyuK9tjobZy03SvoDaOEkl_yjDPRzmx7Ig","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:04:25.470] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:04:25.470] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:04:25.470] Browser INFO    API trả về rỗng hoặc không phải array
-[00:04:55.304] Browser LOG     Current path: /dashboard/expenses
-[00:04:55.722] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
-[00:04:55.722] Browser LOG     TX data: [{"amount":"5000000.00","category_id":16,"date":"2025-12-08","id":19,"note":"Tien thuong","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1},{"amount":"150000.00","category_id":13,"date":"2025-11-15","id":14,"note":"Mua chứng khoán","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":17,"date":"2025-11-15","id":15,"note":"Tiền đầu tư bất động sản","type":"income","user_id":1},{"amount":"5000000.00","category_id":8,"date":"2025-11-15","id":16,"note":"Đóng học phí","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":6,"date":"2025-11-15","id":17,"note":"Vé xe ","type":"outcome","user_id":1},{"amount":"300000.00","category_id":10,"date":"2025-06-17","id":18,"note":"Tiền mua đồ ăn thú cưng","type":"outcome","user_id":1}]
-[00:04:55.722] Browser LOG     Categories data: [{"id":5,"name":"Bills"},{"id":16,"name":"Bonus"},{"id":17,"name":"Business"},{"id":8,"name":"Education"},{"id":12,"name":"Entertainment"},{"id":14,"name":"Family"},{"id":2,"name":"Food & Drinks"},{"id":18,"name":"Gifts"},{"id":7,"name":"Health"},{"id":4,"name":"Housing"},{"id":13,"name":"Investment"},{"id":10,"name":"Pets"},{"id":15,"name":"Salary"},{"id":9,"name":"Shopping"},{"id":11,"name":"Sports"},{"id":3,"name":"Transportation"},{"id":6,"name":"Travel"},{"id":1,"name":"Uncategorized"}]
-[00:04:55.722] Browser LOG     TX data: [{"amount":"5000000.00","category_id":16,"date":"2025-12-08","id":19,"note":"Tien thuong","type":"income","user_id":1},{"amount":"500000.00","category_id":5,"date":"2025-11-15","id":7,"note":"Trả tiền điện","type":"outcome","user_id":1},{"amount":"500000.00","category_id":8,"date":"2025-11-15","id":8,"note":"Mua sách","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":15,"date":"2025-11-15","id":9,"note":"Tiền lương","type":"income","user_id":1},{"amount":"5000000.00","category_id":18,"date":"2025-11-15","id":11,"note":"Mẹ cho","type":"income","user_id":1},{"amount":"3500000.00","category_id":7,"date":"2025-11-15","id":12,"note":"Tiền khám bệnh","type":"outcome","user_id":1},{"amount":"13000000.00","category_id":3,"date":"2025-11-15","id":13,"note":"Sửa xe","type":"outcome","user_id":1},{"amount":"150000.00","category_id":13,"date":"2025-11-15","id":14,"note":"Mua chứng khoán","type":"outcome","user_id":1},{"amount":"10000000.00","category_id":17,"date":"2025-11-15","id":15,"note":"Tiền đầu tư bất động sản","type":"income","user_id":1},{"amount":"5000000.00","category_id":8,"date":"2025-11-15","id":16,"note":"Đóng học phí","type":"outcome","user_id":1},{"amount":"2000000.00","category_id":6,"date":"2025-11-15","id":17,"note":"Vé xe ","type":"outcome","user_id":1},{"amount":"300000.00","category_id":10,"date":"2025-06-17","id":18,"note":"Tiền mua đồ ăn thú cưng","type":"outcome","user_id":1}]
-[00:04:58.685] Browser LOG     Current path: /dashboard
-[00:04:58.685] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:04:58.685] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:04:59.069] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:04:59.069] Browser INFO    API trả về rỗng hoặc không phải array
-[00:17:29.666] Server  LOG      ✓ Compiled in 89ms
-[00:17:33.768] Browser LOG     Current path: /dashboard/expenses
-[00:17:38.752] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:17:42.649] Browser LOG     Sending username to backend: test123
-[00:17:42.649] Browser LOG     Logging in user: test123
-[00:17:42.974] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY3OTI0NTk4fQ._NM0jby71_tCoeG3A3cutfqamKrM0djmoPA3zyjzGQk","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
-[00:17:42.974] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
-[00:17:43.722] Browser LOG     Current path: /dashboard
-[00:17:43.722] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:17:43.722] Browser LOG     Current path: /dashboard
-[00:17:43.722] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:17:43.722] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:17:43.722] Browser ERROR   Load income-outcome error: {}
-[00:17:47.017] Browser LOG     Current path: /dashboard/expenses
-[00:17:49.321] Browser LOG     Current path: /dashboard
-[00:17:49.321] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:17:49.321] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:17:49.321] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:17:49.321] Browser ERROR   Load income-outcome error: {}
-[00:17:58.611] Browser LOG     Current path: /dashboard/budget
-[00:18:12.085] Browser LOG     Current path: /dashboard
-[00:18:12.085] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:12.085] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:12.085] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:18:12.085] Browser ERROR   Load income-outcome error: {}
-[00:18:22.640] Browser LOG     Current path: /dashboard/expenses
-[00:18:25.089] Browser LOG     Current path: /dashboard
-[00:18:25.089] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:25.089] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:25.089] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:18:25.089] Browser ERROR   Load income-outcome error: {}
-[00:18:29.793] Browser LOG     Current path: /dashboard/expenses
-[00:18:30.918] Browser LOG     Current path: /dashboard
-[00:18:30.918] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:30.918] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:30.918] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:18:30.918] Browser ERROR   Load income-outcome error: {}
-[00:18:31.983] Browser LOG     Current path: /dashboard/expenses
-[00:18:32.389] Browser LOG     Current path: /dashboard
-[00:18:32.390] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:32.390] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:32.390] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":1}
-[00:18:32.390] Browser ERROR   Load income-outcome error: {}
-[00:18:33.229] Browser LOG     Current path: /dashboard/budget
-[00:18:42.272] Browser LOG     Current path: /dashboard/expenses
-[00:18:43.882] Browser LOG     Current path: /dashboard/budget
-[00:18:53.844] Browser LOG     Sending username to backend: tamnguyen179
-[00:18:53.844] Browser LOG     Logging in user: tamnguyen179
-[00:18:54.173] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI0NjY5fQ.IqMPzPkfX5w_3C-fPkXohuIun_OG2DeawR9vKSee3U0","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:18:54.173] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:18:55.359] Browser LOG     Current path: /dashboard
-[00:18:55.359] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:55.359] Browser LOG     Current path: /dashboard
-[00:18:55.359] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:18:55.359] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:18:55.359] Browser INFO    API trả về rỗng hoặc không phải array
-[00:18:57.105] Browser LOG     Current path: /dashboard/expenses
-[00:18:58.350] Browser LOG     Current path: /dashboard/budget
-[00:19:13.334] Browser LOG     Current path: /dashboard/expenses
-[00:19:13.879] Browser LOG     Current path: /dashboard
-[00:19:13.879] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:19:13.879] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:19:13.879] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:19:13.879] Browser INFO    API trả về rỗng hoặc không phải array
-[00:19:15.271] Browser LOG     Current path: /dashboard/budget
-[00:19:15.987] Browser LOG     Current path: /dashboard/expenses
-[00:19:16.267] Browser LOG     Current path: /dashboard
-[00:19:16.267] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:19:16.267] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:19:16.267] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:19:16.267] Browser INFO    API trả về rỗng hoặc không phải array
-[00:19:21.560] Browser LOG     Current path: /dashboard/budget
-[00:19:23.094] Browser LOG     Current path: /dashboard/saving-wallet
-[00:19:23.563] Browser LOG     Current path: /dashboard/budget
-[00:19:25.870] Browser LOG     Current path: /dashboard/expenses
-[00:20:07.164] Browser LOG     Current path: /dashboard
-[00:20:07.164] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:20:07.164] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:20:07.164] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:20:07.164] Browser ERROR   Load income-outcome error: {}
-[00:20:58.189] Browser LOG     Current path: /dashboard/expenses
-[00:20:59.379] Browser LOG     Current path: /dashboard
-[00:20:59.379] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:20:59.379] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:20:59.753] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:20:59.753] Browser ERROR   Load income-outcome error: {}
-[00:21:12.096] Browser LOG     Current path: /dashboard/expenses
-[00:21:12.553] Browser LOG     Current path: /dashboard
-[00:21:12.553] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:21:12.554] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:21:12.554] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:21:12.554] Browser ERROR   Load income-outcome error: {}
-[00:23:10.814] Browser LOG     Current path: /dashboard/expenses
-[00:23:41.859] Browser LOG     Current path: /dashboard
-[00:23:41.859] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:23:41.859] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:23:42.247] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:23:42.247] Browser ERROR   Load income-outcome error: {}
-[00:25:06.692] Browser LOG     Current path: /dashboard/expenses
-[00:25:11.031] Browser LOG     Current path: /dashboard
-[00:25:11.031] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:11.031] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:11.418] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:25:11.418] Browser ERROR   Load income-outcome error: {}
-[00:25:24.010] Browser LOG     Current path: /dashboard/expenses
-[00:25:25.354] Browser LOG     Current path: /dashboard
-[00:25:25.354] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:25.354] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:25.354] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:25:25.355] Browser ERROR   Load income-outcome error: {}
-[00:25:26.492] Browser LOG     Current path: /dashboard/expenses
-[00:25:27.446] Browser LOG     Current path: /dashboard
-[00:25:27.446] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:27.446] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:25:27.446] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:25:27.446] Browser ERROR   Load income-outcome error: {}
-[00:26:01.377] Browser LOG     Current path: /dashboard/budget
-[00:26:10.729] Browser LOG     Current path: /dashboard/expenses
-[00:26:11.556] Browser LOG     Current path: /dashboard
-[00:26:11.556] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:11.556] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:11.923] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:26:11.924] Browser ERROR   Load income-outcome error: {}
-[00:26:13.287] Browser LOG     Current path: /dashboard/expenses
-[00:26:21.216] Browser LOG     Current path: /dashboard
-[00:26:21.217] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:21.217] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:21.217] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:26:21.217] Browser ERROR   Load income-outcome error: {}
-[00:26:23.482] Browser LOG     Current path: /dashboard/expenses
-[00:26:52.816] Browser LOG     Current path: /dashboard
-[00:26:52.816] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:52.816] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
-[00:26:52.816] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":3}
-[00:26:53.148] Browser ERROR   Load income-outcome error: {}
-[00:26:59.375] Browser LOG     Current path: /dashboard/budget
-[00:40:20.139] Server  LOG      ✓ Compiled in 156ms
-[00:40:20.505] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 | <div className="mb-5 relative">
-  405 |
-  406 |   <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[00:40:25.509] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |             <div className="mb-5 relative">
-  405 |
-  406 |               <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[00:40:31.196] Server  LOG      ✓ Compiled in 54ms
-[00:40:36.288] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:40:36.492] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:40:36.492] Browser LOG     Current path: /dashboard/budget
-[00:40:36.786] Browser LOG     Sending username to backend: tamnguyen179
-[00:40:36.787] Browser LOG     Logging in user: tamnguyen179
-[00:40:37.147] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI1OTcyfQ.cZqPY_kG_f1TrsBqri9QyzVtpRCRVpcTEUG46r25CFc","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:40:37.147] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:40:53.141] Server  LOG      ✓ Compiled in 142ms
-[00:40:53.254] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |           <div className="mb-5 relative">
-  405 |
-  406 |             <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[00:40:55.468] Server  ERROR    ⨯ ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |           <div className="mb-5 relative">
-  405 |
-  406 |             <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-
-[00:40:57.160] Browser ERROR   uncaughtError: Error: ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |           <div className="mb-5 relative">
-  405 |
-  406 |             <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-
-[00:40:57.501] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |           <div className="mb-5 relative">
-  405 |
-  406 |             <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[00:40:57.501] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:403:14
-Parsing ecmascript source code failed
-  401 |             </h2>
-  402 |
-> 403 |             <<label className="mb-2 block text-sm font-medium">Month</label>
-      |              ^
-  404 |           <div className="mb-5 relative">
-  405 |
-  406 |             <input
-
-Expression expected
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[00:40:59.381] Server  LOG      ✓ Compiled in 89ms
-[00:41:00.452] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:41:00.592] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:41:00.592] Browser LOG     Current path: /dashboard/budget
-[00:41:00.936] Browser LOG     Sending username to backend: tamnguyen179
-[00:41:00.936] Browser LOG     Logging in user: tamnguyen179
-[00:41:00.937] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI1OTk2fQ.kdAMtjpm6yfNZbDsatF3L-K1ma_LInw0epNLBvN-7os","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:41:00.937] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:59:25.933] Server  LOG      ✓ Compiled in 133ms
-[00:59:33.754] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:59:33.956] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:59:33.956] Browser LOG     Current path: /dashboard/budget
-[00:59:34.311] Browser LOG     Sending username to backend: tamnguyen179
-[00:59:34.311] Browser LOG     Logging in user: tamnguyen179
-[00:59:34.680] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY3OTI3MTA5fQ.aT2Jx74ZKlK1Trq3p7-3QUR930W960a3AIY07OZuYkg","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179"}}
-[00:59:34.681] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179"}
-[00:59:47.790] Server  LOG      ✓ Compiled in 193ms
-[01:35:34.648] Server  LOG      ✓ Compiled in 130ms
-[01:35:39.078] Server  LOG      ✓ Compiled in 55ms
-[01:35:54.274] Server  LOG      ✓ Compiled in 63ms
-[01:35:55.900] Server  LOG      ✓ Compiled in 42ms
-[01:36:00.665] Server  LOG      ✓ Compiled in 138ms
-[01:36:08.319] Server  LOG      ✓ Compiled in 41ms
-[01:36:34.733] Server  LOG      ✓ Compiled in 171ms
-[01:36:46.154] Server  LOG      ✓ Compiled in 50ms
-[01:36:49.043] Server  LOG      ✓ Compiled in 146ms
-[01:36:53.365] Server  LOG      ✓ Compiled in 45ms
-[01:37:24.155] Server  LOG      ✓ Compiled in 160ms
-[01:37:24.275] Browser ERROR   ./app/(routes)/dashboard/budget/page.jsx:371:24
-Parsing ecmascript source code failed
-  369 |           />
-  370 |           <div className="h-10 w-10 flex items-center justify-center border rounded-lg bg-white">
-> 371 |             < className="h-5 w-5 text-slate-600 cursor"/>
-      |                        ^
-  372 |           </div>
-  373 |         </div>
-  374 |       </div>
-
-Expected '</', got '='
-
-Import traces:
-  Client Component Browser:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component Browser]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-
-  Client Component SSR:
-    ./app/(routes)/dashboard/budget/page.jsx [Client Component SSR]
-    ./app/(routes)/dashboard/budget/page.jsx [Server Component]
-[01:37:26.905] Server  LOG      ✓ Compiled in 60ms
-[01:37:30.399] Server  LOG      ✓ Compiled in 147ms
-[01:37:35.188] Server  LOG      ✓ Compiled in 124ms
-[01:37:55.103] Server  LOG      ✓ Compiled in 157ms
-[01:38:05.379] Server  LOG      ✓ Compiled in 124ms
-[01:45:15.788] Server  LOG      ✓ Compiled in 97ms
-[01:46:41.099] Server  LOG      ✓ Compiled in 123ms
+[00:00:01.365] Server  LOG      ✓ Ready in 1046ms
+[00:00:13.343] Server  LOG      ○ Compiling / ...
+[00:00:16.481] Server  ERROR    ⨯ TypeError: immutable
+[00:00:16.557] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:16.644] Server  ERROR    ⨯ TypeError: immutable
+[00:00:16.883] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:16.884] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:17.316] Browser LOG     Sending username to backend: ab123
+[00:00:17.316] Browser LOG     Logging in user: ab123
+[00:00:20.444] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:20.446] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5NDc3fQ.zC4kArzouXw-NDln9VXpqguLSRb1nXboOli0L6BQ1fA","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:00:20.446] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:00:20.449] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:23.141] Server  ERROR    ⨯ TypeError: immutable
+[00:00:23.161] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:23.184] Browser LOG     Current path: /dashboard
+[00:00:23.184] Browser LOG     Current path: /dashboard
+[00:00:23.594] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:00:23.594] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:00:23.594] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:00:23.594] Browser INFO    API trả về rỗng hoặc không phải array
+[00:00:26.561] Browser LOG     Current path: /dashboard/expenses
+[00:01:27.753] Server  ERROR    ⨯ TypeError: immutable
+[00:01:27.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:27.790] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:01:27.892] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:01:27.892] Browser LOG     Current path: /dashboard/expenses
+[00:01:28.217] Browser LOG     Sending username to backend: ab123
+[00:01:28.217] Browser LOG     Logging in user: ab123
+[00:01:28.568] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5NTQ4fQ.3b3FnIuOrBBqmENtU_1ULI5SHbw95w9a2P8Z4NAGq4o","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:01:28.568] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:01:32.665] Browser LOG     Current path: /dashboard
+[00:01:33.036] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:01:33.036] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:01:33.036] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:01:33.036] Browser ERROR   Load income-outcome error: {}
+[00:02:25.034] Server  ERROR    ⨯ TypeError: immutable
+[00:02:25.037] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:02:25.057] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:02:25.279] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:02:25.279] Browser LOG     Current path: /dashboard
+[00:02:25.279] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:02:25.530] Browser LOG     Sending username to backend: ab123
+[00:02:25.530] Browser LOG     Logging in user: ab123
+[00:02:25.530] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:02:25.530] Browser ERROR   Load income-outcome error: {}
+[00:02:25.530] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:02:25.530] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5NjA1fQ.-PnBnN4mjLKbSHcpxYQseG_0s2ZUu0GpoaYOSCWSg_o","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:03:35.495] Server  ERROR    ⨯ TypeError: immutable
+[00:03:35.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:35.522] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:03:35.758] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:03:35.758] Browser LOG     Current path: /dashboard
+[00:03:35.758] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:03:35.948] Browser LOG     Sending username to backend: ab123
+[00:03:35.948] Browser LOG     Logging in user: ab123
+[00:03:36.292] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:03:36.293] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5Njc1fQ.OQdJCp_ZbAljFlG9ZBEkR-WbW_MCWtdlFAcHzycS3d0","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:03:36.293] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:03:36.639] Browser ERROR   Load income-outcome error: {}
+[00:06:40.082] Server  LOG      ✓ Compiled in 96ms
+[00:06:43.910] Server  ERROR    ⨯ TypeError: immutable
+[00:06:43.914] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:43.944] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:06:44.176] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:06:44.176] Browser LOG     Current path: /dashboard
+[00:06:44.177] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:06:44.370] Browser LOG     Sending username to backend: ab123
+[00:06:44.370] Browser LOG     Logging in user: ab123
+[00:06:44.712] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5ODY0fQ.vGZaJi9vVArNiuVbnSPZ22LgRSI0nUBNg5-NHr4hudc","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:06:44.712] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:06:44.712] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:06:45.024] Browser ERROR   Load income-outcome error: {}
+[00:06:52.346] Server  LOG      ✓ Compiled in 89ms
+[00:06:53.924] Server  ERROR    ⨯ TypeError: immutable
+[00:06:53.930] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:53.961] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:06:54.074] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:06:54.074] Browser LOG     Current path: /dashboard
+[00:06:54.191] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:06:54.385] Browser LOG     Sending username to backend: ab123
+[00:06:54.386] Browser LOG     Logging in user: ab123
+[00:06:54.386] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:06:54.386] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:06:54.386] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5ODc0fQ.WIBcSigMaiYtO-hUh7S93-zu2aKlezABODp_rMV9XzI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:06:54.386] Browser ERROR   Load income-outcome error: {}
+[00:07:16.462] Server  LOG      ✓ Compiled in 88ms
+[00:07:18.431] Server  ERROR    ⨯ TypeError: immutable
+[00:07:18.432] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:18.467] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:07:18.657] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:07:18.657] Browser LOG     Current path: /dashboard
+[00:07:18.657] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:07:18.890] Browser LOG     Sending username to backend: ab123
+[00:07:18.891] Browser LOG     Logging in user: ab123
+[00:07:18.891] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:07:18.891] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:07:18.891] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5ODk4fQ.rartlWyeFwV6-IMEav67Dt44j61x-Y8G5DmObyw3z8g","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:07:18.891] Browser ERROR   Load income-outcome error: {}
+[00:07:23.778] Server  LOG      ✓ Compiled in 73ms
+[00:07:26.771] Server  ERROR    ⨯ TypeError: immutable
+[00:07:26.781] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:26.798] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:07:27.004] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:07:27.004] Browser LOG     Current path: /dashboard
+[00:07:27.004] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:07:27.270] Browser LOG     Sending username to backend: ab123
+[00:07:27.270] Browser LOG     Logging in user: ab123
+[00:07:27.270] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:07:27.270] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:07:27.270] Browser ERROR   Load income-outcome error: {}
+[00:07:27.270] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTM5OTA2fQ.CB1Y-i-dNyy3nnttzYb4mIdd8V232OT9IshrQ3QfCes","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:09:14.016] Server  LOG      ✓ Compiled in 56ms
+[00:09:16.341] Server  ERROR    ⨯ TypeError: immutable
+[00:09:16.344] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:16.369] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:09:16.536] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:09:16.536] Browser LOG     Current path: /dashboard
+[00:09:16.536] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:09:16.774] Browser LOG     Sending username to backend: ab123
+[00:09:16.775] Browser LOG     Logging in user: ab123
+[00:09:17.139] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:09:17.139] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMDE2fQ.QXBoL5hJAFACr9vyDOd80KOjqhzh7CLQryjJ3Mob20Y","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:09:17.139] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:09:17.454] Browser ERROR   Load income-outcome error: {}
+[00:10:16.502] Server  ERROR    ⨯ TypeError: immutable
+[00:10:16.507] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:16.529] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:10:16.654] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:10:16.654] Browser LOG     Current path: /dashboard
+[00:10:16.768] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:10:16.969] Browser LOG     Sending username to backend: ab123
+[00:10:16.969] Browser LOG     Logging in user: ab123
+[00:10:16.969] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:10:16.969] Browser ERROR   Load income-outcome error: {}
+[00:10:16.969] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:10:16.969] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMDc2fQ.lEIpiNHa_YBFxu2ECoC7S2cgQ9pEuJZv5zc20revNeI","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:11:07.201] Server  LOG      ✓ Compiled in 73ms
+[00:11:09.559] Server  LOG      ✓ Compiled in 46ms
+[00:11:14.324] Server  LOG      ✓ Compiled in 84ms
+[00:11:16.404] Server  LOG      ✓ Compiled in 30ms
+[00:11:19.408] Server  ERROR    ⨯ TypeError: immutable
+[00:11:19.411] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:19.436] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:11:19.615] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:11:19.616] Browser LOG     Current path: /dashboard
+[00:11:19.616] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:11:19.844] Browser LOG     Sending username to backend: ab123
+[00:11:19.844] Browser LOG     Logging in user: ab123
+[00:11:20.205] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMTM5fQ.oWZ3fmexwl16OIk3H4Otxl4DJ021ti-cFGA5oLHmgG0","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:11:20.205] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:11:20.205] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:11:20.206] Browser ERROR   Load income-outcome error: {}
+[00:11:26.532] Server  LOG      ✓ Compiled in 82ms
+[00:11:28.193] Server  ERROR    ⨯ TypeError: immutable
+[00:11:28.196] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:11:28.218] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:11:28.332] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:11:28.681] Browser LOG     Current path: /dashboard
+[00:11:28.681] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:11:28.681] Browser LOG     Sending username to backend: ab123
+[00:11:28.681] Browser LOG     Logging in user: ab123
+[00:11:28.681] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:11:28.681] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMTQ4fQ.QpuILwL0-xRVycNEePNDpis5gp-ZXqm09uX0kwAUdPY","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:11:28.681] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:11:28.681] Browser ERROR   Load income-outcome error: {}
+[00:11:57.600] Server  LOG      ✓ Compiled in 47ms
+[00:12:03.928] Server  ERROR    ⨯ TypeError: immutable
+[00:12:03.931] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:03.951] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:04.141] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:12:04.141] Browser LOG     Current path: /dashboard
+[00:12:04.141] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:12:04.390] Browser LOG     Sending username to backend: ab123
+[00:12:04.390] Browser LOG     Logging in user: ab123
+[00:12:04.390] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:12:04.390] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:12:04.390] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMTg0fQ.ia7RplEUOi6jsNVw-EW6XySN2XXrxkkIuQQ9JlwpaZE","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:12:04.705] Browser ERROR   Load income-outcome error: {}
+[00:12:14.878] Server  LOG      ✓ Compiled in 46ms
+[00:12:16.488] Server  ERROR    ⨯ TypeError: immutable
+[00:12:16.491] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:16.510] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:12:16.677] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:12:16.677] Browser LOG     Current path: /dashboard
+[00:12:16.677] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:12:16.962] Browser LOG     Sending username to backend: ab123
+[00:12:16.962] Browser LOG     Logging in user: ab123
+[00:12:16.962] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:12:16.962] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:12:16.962] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMTk2fQ.RhGA0NiFa4qqINXZabOaHOvjfSrRw1o2XxsetodfoaQ","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:12:16.962] Browser ERROR   Load income-outcome error: {}
+[00:14:22.288] Server  LOG      ✓ Compiled in 64ms
+[00:14:24.012] Server  ERROR    ⨯ TypeError: immutable
+[00:14:24.014] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:14:24.037] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:14:24.233] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:14:24.233] Browser LOG     Current path: /dashboard
+[00:14:24.233] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:14:24.458] Browser LOG     Sending username to backend: ab123
+[00:14:24.458] Browser LOG     Logging in user: ab123
+[00:14:24.804] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:14:24.804] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:14:24.804] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMzI0fQ.uZV-b_Zu5SiVstzvBDK-YJ52J3FHgjzb7tCeRS1W5wQ","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:14:25.122] Browser ERROR   Load income-outcome error: {}
+[00:15:01.986] Browser LOG     Current path: /dashboard/expenses
+[00:15:06.706] Server  ERROR    ⨯ TypeError: immutable
+[00:15:06.710] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:15:06.728] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:15:06.903] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:15:06.903] Browser LOG     Current path: /dashboard/expenses
+[00:15:07.286] Browser LOG     Sending username to backend: ab123
+[00:15:07.286] Browser LOG     Logging in user: ab123
+[00:15:07.286] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:15:07.286] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwMzY2fQ.4GXn4DSnLUvwCpDbeLkfgSLH5mlILXW3oTIMOOxqnYc","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:15:10.894] Browser LOG     Current path: /dashboard
+[00:15:11.259] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:15:11.259] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:15:11.259] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:15:11.259] Browser ERROR   Load income-outcome error: {}
+[00:18:22.312] Browser LOG     Current path: /dashboard/expenses
+[00:18:44.021] Server  ERROR    ⨯ TypeError: immutable
+[00:18:44.024] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:44.050] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:18:44.207] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:18:44.207] Browser LOG     Current path: /dashboard/expenses
+[00:18:44.489] Browser LOG     Sending username to backend: ab123
+[00:18:44.489] Browser LOG     Logging in user: ab123
+[00:18:44.825] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwNTg0fQ.Y9OdofWNxCnEDSb3Yu0DPSL0qnCsxF5KGPE6NKZURm4","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:18:44.825] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:18:46.985] Browser LOG     Current path: /dashboard
+[00:18:47.363] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:18:47.363] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:18:47.364] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:18:47.364] Browser ERROR   Load income-outcome error: {}
+[00:18:58.328] Server  ERROR    ⨯ TypeError: immutable
+[00:18:58.337] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:18:58.359] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:18:58.554] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:18:58.554] Browser LOG     Current path: /dashboard
+[00:18:58.554] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:18:58.829] Browser LOG     Sending username to backend: ab123
+[00:18:58.829] Browser LOG     Logging in user: ab123
+[00:18:58.829] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:18:58.829] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:18:58.829] Browser ERROR   Load income-outcome error: {}
+[00:18:58.829] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwNTk4fQ.B6kBcIBEL76GmbZxoAsUiK4OiilxbBg6jR9giWVYhCk","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:19:18.486] Server  ERROR    ⨯ TypeError: immutable
+[00:19:18.489] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:18.505] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:19:18.774] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:19:18.774] Browser LOG     Current path: /dashboard
+[00:19:18.774] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:19:18.956] Browser LOG     Sending username to backend: ab123
+[00:19:18.956] Browser LOG     Logging in user: ab123
+[00:19:20.948] Browser LOG     Current path: /dashboard/expenses
+[00:19:21.290] Browser ERROR   Login error: {}
+[00:19:21.290] Browser ERROR   Send username failed: {}
+[00:19:21.290] Browser ERROR   Login failed: {}
+[00:19:24.204] Browser ERROR   Auth bridge error: {}
+[00:19:24.204] Browser ERROR   Auth bridge error: {}
+[00:19:24.204] Browser ERROR   fetch categories error: {}
+[00:19:24.204] Browser ERROR   fetch categories error: {}
+[00:19:28.597] Server  ERROR    ⨯ TypeError: immutable
+[00:19:28.633] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:19:28.636] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:28.824] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:19:28.824] Browser LOG     Current path: /dashboard/expenses
+[00:19:29.049] Browser LOG     Sending username to backend: ab123
+[00:19:29.049] Browser LOG     Logging in user: ab123
+[00:19:29.395] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwNjI5fQ._zltj_-LcKv7zeLSMCC-K9pQA6px--RnFMEXnC8mQ7Q","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:19:29.395] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:19:31.248] Browser LOG     Current path: /dashboard
+[00:19:31.644] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:19:31.644] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:19:31.644] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:19:31.644] Browser ERROR   Load income-outcome error: {}
+[00:23:11.491] Server  ERROR    ⨯ TypeError: immutable
+[00:23:11.495] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:11.514] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:11.766] Browser LOG     Current path: /dashboard
+[00:23:11.766] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:11.766] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:23:12.136] Browser LOG     Sending username to backend: ab123
+[00:23:12.136] Browser LOG     Logging in user: ab123
+[00:23:12.660] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:23:12.660] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwODUyfQ.d0h4IKPVxaTh_zFEKtcsue7V4GBWM978UE_Q-1NzUOY","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:23:12.660] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:23:12.660] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:12.660] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:44.888] Server  LOG      ✓ Compiled in 162ms
+[00:23:47.881] Server  ERROR    ⨯ TypeError: immutable
+[00:23:47.884] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:47.904] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:48.165] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:48.165] Browser LOG     Current path: /dashboard
+[00:23:48.165] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:23:48.441] Browser LOG     Sending username to backend: ab123
+[00:23:48.441] Browser LOG     Logging in user: ab123
+[00:23:48.441] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:23:48.441] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:23:48.441] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQwODg4fQ.WA2qWJba_0oalccp_klVJ4HbLHodnH2z3EBJF1WL9IU","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:23:48.441] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:48.441] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:53.631] Browser LOG     Fetching data for: {"mode":"weekly","month":"2025-12","userId":7}
+[00:23:53.972] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:53.972] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:55.158] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:23:55.158] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:23:55.158] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:24:53.038] Browser LOG     Current path: /dashboard/expenses
+[00:24:56.275] Browser LOG     Current path: /dashboard
+[00:24:56.275] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:24:56.275] Browser LOG     IncomeOutcomeChart: userId hoặc month chưa có
+[00:24:56.701] Browser LOG     Fetching data for: {"mode":"monthly","month":"2025-12","userId":7}
+[00:24:56.701] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:24:56.701] Browser WARN    The width(-1) and height(-1) of chart should be greater than 0,
+       please check the style of container, or the props width(100%) and height(100%),
+       or add a minWidth(0) or minHeight(undefined) or use aspect(undefined) to control the
+       height and width.
+[00:25:40.293] Server  LOG      ✓ Compiled in 62ms
+[00:25:43.500] Server  ERROR    ⨯ TypeError: immutable
+[00:25:43.504] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:25:43.522] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:25:43.626] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:25:43.626] Browser LOG     Current path: /dashboard
+[00:25:44.037] Browser LOG     Sending username to backend: ab123
+[00:25:44.037] Browser LOG     Logging in user: ab123
+[00:25:44.037] Browser LOG     Username sent successfully: ab123 Backend response: {"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}
+[00:25:44.038] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiZXhwIjoxNzY3OTQxMDAzfQ.h1JGXyPZDMHnyVLv5IrhsiI2VkiXGxGhVowNzjYq3Jk","user":{"created_at":"2025-12-08T13:57:12","id":7,"name":"ab123"}}
+[00:25:54.977] Browser LOG     Current path: /dashboard/expenses
+[00:25:56.139] Browser LOG     Current path: /dashboard
+[00:25:57.022] Browser LOG     Current path: /dashboard/expenses
+[00:25:58.712] Browser LOG     Current path: /dashboard/saving-wallet
+[00:26:00.238] Browser LOG     Current path: /dashboard
