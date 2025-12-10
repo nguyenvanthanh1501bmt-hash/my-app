@@ -5,6 +5,7 @@ import React, {
   useState,
   useCallback,
 } from "react";
+import { useUser } from "@clerk/nextjs";
 
 // URL FastAPI – chỉnh lại nếu bạn dùng port/host khác
 const API_BASE =
@@ -41,7 +42,7 @@ function Modal({ open, onClose, title, children }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
       <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/40 backdrop-blur-sm cursor-pointer"
         onClick={onClose}
       />
       <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl">
@@ -49,7 +50,7 @@ function Modal({ open, onClose, title, children }) {
           <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
           <button
             onClick={onClose}
-            className="grid h-10 w-10 place-items-center rounded-full bg-gray-100 text-xl hover:bg-gray-200"
+            className="grid h-10 w-10 place-items-center rounded-full bg-gray-100 text-xl hover:bg-gray-200 cursor-pointer"
           >
             ✕
           </button>
@@ -62,7 +63,12 @@ function Modal({ open, onClose, title, children }) {
 
 /* --------- main page --------- */
 export default function ExpensesPage() {
-  const [userId] = useState(1); // TODO: thay bằng ID user thật khi gắn auth
+  const { isSignedIn, user, isLoaded } = useUser();
+
+  // user backend
+  const [userId, setUserId] = useState(null);
+  const [token, setToken] = useState(null);
+
   const [transactions, setTransactions] = useState([]);
   const [categories, setCategories] = useState([]);
   const [filterType, setFilterType] = useState("all"); // all | income | outcome
@@ -76,7 +82,7 @@ export default function ExpensesPage() {
   const [reportTab, setReportTab] = useState("income"); // income | outcome
 
   const [form, setForm] = useState({
-    user_id: userId,
+    user_id: null,
     amount: "",
     type: "outcome",
     note: "",
@@ -84,15 +90,85 @@ export default function ExpensesPage() {
     category_id: 1,
   });
 
+  /* ================== Auth bridge Clerk → FastAPI ================== */
+  useEffect(() => {
+    if (!isLoaded) return;
+    if (!isSignedIn || !user) {
+      setUserId(null);
+      setToken(null);
+      return;
+    }
+
+    const candidateName =
+      user.username ||
+      user.primaryEmailAddress?.emailAddress ||
+      user.id;
+
+    (async () => {
+      try {
+        const doLoginByName = async (name) => {
+          const res = await fetch(
+            `${API_BASE}/api/users/login?name=${encodeURIComponent(name)}`,
+            { method: "POST" }
+          );
+          if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || `Login failed (${res.status})`);
+          }
+          return res.json();
+        };
+
+        const doRegister = async (name) => {
+          const res = await fetch(`${API_BASE}/api/users/register`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name }),
+          });
+          if (!res.ok) {
+            const text = await res.text();
+            throw new Error(text || `Register failed (${res.status})`);
+          }
+          return res.json();
+        };
+
+        let loginData;
+        try {
+          loginData = await doLoginByName(candidateName);
+        } catch (e) {
+          if (
+            String(e.message).includes("404") ||
+            String(e.message).includes("User không tồn tại")
+          ) {
+            await doRegister(candidateName);
+            loginData = await doLoginByName(candidateName);
+          } else {
+            throw e;
+          }
+        }
+
+        const storedToken = loginData.token;
+        const backendUserId = loginData.user?.id;
+
+        localStorage.setItem("token", storedToken);
+        setToken(storedToken);
+        setUserId(backendUserId);
+      } catch (err) {
+        console.error("Auth bridge error:", err);
+        setUserId(null);
+        setToken(null);
+      }
+    })();
+  }, [isLoaded, isSignedIn, user]);
+
   /* --------- fetch data --------- */
   const fetchTransactions = useCallback(async () => {
+    if (!userId) return;
     try {
       const res = await fetch(
         `${API_BASE}/api/transactions/by-user/${userId}`
       );
       if (!res.ok) throw new Error("fetch transactions failed");
       const data = await res.json();
-      console.log("TX data:", data);
       setTransactions(Array.isArray(data) ? data : []);
     } catch (err) {
       console.error("fetch transactions error:", err);
@@ -104,7 +180,6 @@ export default function ExpensesPage() {
       const res = await fetch(`${API_BASE}/api/categories`);
       if (!res.ok) throw new Error("fetch categories failed");
       const data = await res.json();
-      console.log("Categories data:", data);
       setCategories(Array.isArray(data) ? data : []);
       if (Array.isArray(data) && data.length > 0) {
         setForm((f) => ({ ...f, category_id: data[0].id }));
@@ -115,9 +190,13 @@ export default function ExpensesPage() {
   }, []);
 
   useEffect(() => {
-    fetchTransactions();
     fetchCategories();
-  }, [fetchTransactions, fetchCategories]);
+  }, [fetchCategories]);
+
+  useEffect(() => {
+    if (!userId) return;
+    fetchTransactions();
+  }, [fetchTransactions, userId]);
 
   /* --------- map category id -> name --------- */
   const catMap = useMemo(() => {
@@ -128,7 +207,7 @@ export default function ExpensesPage() {
     return m;
   }, [categories]);
 
-  /* --------- totals (tất cả transaction) cho Expense Tracker --------- */
+  /* --------- totals --------- */
   const totalIncome = useMemo(
     () =>
       transactions
@@ -145,7 +224,7 @@ export default function ExpensesPage() {
   );
   const currentBalance = totalIncome - totalExpense;
 
-  /* --------- options month/year (dựa theo data) --------- */
+  /* --------- options month/year --------- */
   const monthOptions = useMemo(() => {
     const set = new Set();
     transactions.forEach((t) => {
@@ -166,7 +245,7 @@ export default function ExpensesPage() {
     return Array.from(set).sort();
   }, [transactions]);
 
-  /* --------- apply filter cho phần Transaction --------- */
+  /* --------- apply filter cho Transaction --------- */
   const filteredTx = useMemo(() => {
     return transactions.filter((t) => {
       if (filterType !== "all" && t.type !== filterType) return false;
@@ -189,11 +268,9 @@ export default function ExpensesPage() {
   const txExpense = filteredTx
     .filter((t) => t.type === "outcome")
     .reduce((s, t) => s + Number(t.amount || 0), 0);
-  const txNet = txIncome - txExpense; // net = income - expense
+  const txNet = txIncome - txExpense;
 
-  /* --------- REPORT: group by category trên FE (cách 1) --------- */
-
-  // Income report
+  /* --------- REPORT: group by category --------- */
   const incomeReport = useMemo(() => {
     const map = {};
     transactions.forEach((t) => {
@@ -213,7 +290,6 @@ export default function ExpensesPage() {
     }));
   }, [transactions, catMap]);
 
-  // Expense report
   const expenseReport = useMemo(() => {
     const map = {};
     transactions.forEach((t) => {
@@ -236,7 +312,6 @@ export default function ExpensesPage() {
   const reportData =
     reportTab === "income" ? incomeReport : expenseReport;
 
-  // tạo conic-gradient cho pie chart
   const pieGradient = useMemo(() => {
     if (!reportData.length) return "#e5e7eb";
     let current = 0;
@@ -251,12 +326,13 @@ export default function ExpensesPage() {
 
   /* --------- handle modal --------- */
   const openAddModal = () => {
+    if (!userId) return;
     setForm({
       user_id: userId,
       amount: "",
       type: "outcome",
       note: "",
-      date: new Date().toISOString().slice(0, 10), // yyyy-MM-dd
+      date: new Date().toISOString().slice(0, 10),
       category_id: categories?.[0]?.id ?? 1,
     });
     setOpenModal(true);
@@ -265,13 +341,15 @@ export default function ExpensesPage() {
   const createTransaction = async () => {
     if (!form.amount) return alert("Vui lòng nhập Amount");
     if (!form.date) return alert("Vui lòng chọn Date");
+    if (!userId) return alert("User chưa được đồng bộ với backend.");
 
     try {
       setLoading(true);
+      const payload = { ...form, user_id: userId };
       const res = await fetch(`${API_BASE}/api/transactions/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify(payload),
       });
       if (!res.ok) {
         const msg = await res.text();
@@ -287,7 +365,7 @@ export default function ExpensesPage() {
     }
   };
 
-  /* --------- delete transaction (xoá + update totals) --------- */
+  /* --------- delete transaction --------- */
   const deleteTransaction = async (id) => {
     if (!confirm("Delete this transaction?")) return;
     try {
@@ -295,7 +373,6 @@ export default function ExpensesPage() {
         method: "DELETE",
       });
       if (!res.ok) throw new Error("delete failed");
-      // cập nhật FE: những tổng phía trên tự tính lại từ state mới
       setTransactions((prev) => prev.filter((t) => t.id !== id));
     } catch (err) {
       console.error(err);
@@ -303,17 +380,34 @@ export default function ExpensesPage() {
     }
   };
 
-  /* ==============================================================
-     UI
-     ============================================================== */
+  /* ================== Render ================== */
+
+  if (!isLoaded) {
+    return (
+      <div className="p-6 text-center text-slate-500">Đang tải...</div>
+    );
+  }
+
+  if (!userId) {
+    return (
+      <div className="p-6 text-center text-slate-500">
+        Đang đồng bộ tài khoản với hệ thống...
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-white px-6 py-8 text-gray-800">
-      {/* -------- Expense Tracker: GIỮ NGUYÊN -------- */}
-      <h1 className="mb-6 text-3xl font-bold text-blue-700">Expense Tracker</h1>
+      {/* -------- Expense Tracker -------- */}
+      <h1 className="mb-6 text-3xl font-bold text-blue-700">
+        Expense Tracker
+      </h1>
 
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div className="rounded-3xl bg-blue-50 p-5 text-center shadow-sm">
-          <p className="text-sm font-semibold text-blue-700">Current Balance</p>
+          <p className="text-sm font-semibold text-blue-700">
+            Current Balance
+          </p>
           <p className="mt-2 text-2xl font-extrabold text-blue-800">
             {currency(currentBalance)}
           </p>
@@ -332,9 +426,11 @@ export default function ExpensesPage() {
         </div>
       </div>
 
-      {/* -------- Transaction section (tiêu đề đơn lẻ) -------- */}
+      {/* -------- Transaction header -------- */}
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-blue-700">Transaction</h2>
+        <h2 className="text-xl font-semibold text-blue-700">
+          Transaction
+        </h2>
         <button
           onClick={openAddModal}
           className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 cursor-pointer"
@@ -381,7 +477,7 @@ export default function ExpensesPage() {
             <select
               value={month}
               onChange={(e) => setMonth(e.target.value)}
-              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500"
+              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500 cursor-pointer"
             >
               <option value="all">Month</option>
               {monthOptions.map((m) => (
@@ -394,7 +490,7 @@ export default function ExpensesPage() {
             <select
               value={year}
               onChange={(e) => setYear(e.target.value)}
-              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500"
+              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500 cursor-pointer"
             >
               <option value="all">Year</option>
               {yearOptions.map((y) => (
@@ -407,9 +503,8 @@ export default function ExpensesPage() {
         </div>
       </div>
 
-      {/* 3 stat cards dưới filter – có icon */}
+      {/* 3 stat cards dưới filter */}
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-        {/* Total Income */}
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100 text-xl">
             📈
@@ -422,7 +517,6 @@ export default function ExpensesPage() {
           </div>
         </div>
 
-        {/* Total Expense */}
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-xl">
             📉
@@ -435,7 +529,6 @@ export default function ExpensesPage() {
           </div>
         </div>
 
-        {/* Net Amount */}
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-xl">
             📊
@@ -458,7 +551,7 @@ export default function ExpensesPage() {
         </div>
       </div>
 
-      {/* All Transactions – card đỏ / xanh + category + icon xoá */}
+      {/* All Transactions */}
       <div className="rounded-2xl bg-white p-4 shadow">
         <h3 className="mb-3 text-lg font-semibold text-blue-700">
           All Transaction
@@ -478,7 +571,6 @@ export default function ExpensesPage() {
                     isIncome ? "bg-green-700" : "bg-red-800"
                   )}
                 >
-                  {/* left: date + note */}
                   <div className="flex items-start gap-3">
                     <div
                       className={cls(
@@ -500,7 +592,6 @@ export default function ExpensesPage() {
                     </div>
                   </div>
 
-                  {/* right: category pill + delete + amount */}
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
                       <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
@@ -541,11 +632,12 @@ export default function ExpensesPage() {
         )}
       </div>
 
-      {/* ---------- Report section (Income / Expense by categories) ---------- */}
+      {/* ---------- Report section ---------- */}
       <section className="mt-8 rounded-3xl bg-white p-5 shadow">
-        <h2 className="mb-4 text-xl font-semibold text-blue-700">Report</h2>
+        <h2 className="mb-4 text-xl font-semibold text-blue-700">
+          Report
+        </h2>
 
-        {/* Tabs */}
         <div className="mb-4 flex gap-3">
           <button
             onClick={() => setReportTab("income")}
@@ -572,7 +664,6 @@ export default function ExpensesPage() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {/* Pie + legend */}
           <div className="flex flex-col items-center rounded-2xl bg-gray-50 p-4">
             <div
               className="mb-4 h-72 w-72 rounded-full border border-blue-400"
@@ -605,7 +696,6 @@ export default function ExpensesPage() {
             </div>
           </div>
 
-          {/* Details table */}
           <div className="rounded-2xl bg-gray-50 p-4">
             <h3 className="mb-3 text-lg font-semibold">Details</h3>
             <div className="overflow-x-auto">
@@ -653,7 +743,6 @@ export default function ExpensesPage() {
         title="Create New Transaction"
       >
         <div className="space-y-5">
-          {/* Amount */}
           <div>
             <label className="mb-2 block text-sm font-semibold text-gray-800">
               Amount (VND)
@@ -662,27 +751,29 @@ export default function ExpensesPage() {
               type="number"
               placeholder="Amount"
               value={form.amount}
-              onChange={(e) => setForm({ ...form, amount: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, amount: e.target.value })
+              }
               className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
             />
           </div>
 
-          {/* Type */}
           <div>
             <label className="mb-2 block text-sm font-semibold text-gray-800">
               Type
             </label>
             <select
               value={form.type}
-              onChange={(e) => setForm({ ...form, type: e.target.value })}
-              className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+              onChange={(e) =>
+                setForm({ ...form, type: e.target.value })
+              }
+              className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
             >
               <option value="income">Income</option>
               <option value="outcome">Expense</option>
             </select>
           </div>
 
-          {/* Description */}
           <div>
             <label className="mb-2 block text-sm font-semibold text-gray-800">
               Description
@@ -691,12 +782,13 @@ export default function ExpensesPage() {
               type="text"
               placeholder="Transaction description"
               value={form.note}
-              onChange={(e) => setForm({ ...form, note: e.target.value })}
+              onChange={(e) =>
+                setForm({ ...form, note: e.target.value })
+              }
               className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
             />
           </div>
 
-          {/* Date & Category */}
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <label className="mb-2 block text-sm font-semibold text-gray-800">
@@ -705,7 +797,9 @@ export default function ExpensesPage() {
               <input
                 type="date"
                 value={form.date}
-                onChange={(e) => setForm({ ...form, date: e.target.value })}
+                onChange={(e) =>
+                  setForm({ ...form, date: e.target.value })
+                }
                 className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
               />
             </div>
@@ -716,9 +810,12 @@ export default function ExpensesPage() {
               <select
                 value={form.category_id}
                 onChange={(e) =>
-                  setForm({ ...form, category_id: Number(e.target.value) })
+                  setForm({
+                    ...form,
+                    category_id: Number(e.target.value),
+                  })
                 }
-                className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
+                className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
               >
                 {categories.length === 0 && (
                   <option value="">No category found</option>
@@ -732,7 +829,6 @@ export default function ExpensesPage() {
             </div>
           </div>
 
-          {/* buttons */}
           <div className="mt-2 grid gap-3 md:grid-cols-2">
             <button
               onClick={createTransaction}
