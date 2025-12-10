@@ -18,7 +18,9 @@ def create_tx(body: TransactionCreate, db: Session = Depends(get_db)):
 
     if tx.type == "outcome":
         month = tx.date.strftime("%Y-%m")
-        BudgetRepo.update_used_amount(db, tx.user_id,month, float(tx.amount))
+        # dùng luôn Decimal trong tx.amount
+        BudgetRepo.update_used_amount(db, tx.user_id, month, tx.amount)
+
     return tx
 
 @router.get("/by-user/{user_id}", response_model=list[TransactionOut])
@@ -52,7 +54,7 @@ def delete_tx(tx_id: int, db: Session = Depends(get_db)):
     # Nếu là chi tiêu thì trừ ngược lại khỏi used của budget
     if tx.type == "outcome":
         month = tx.date.strftime("%Y-%m")
-        BudgetRepo.revert_used_amount(db, tx.user_id, month, float(tx.amount))
+        BudgetRepo.revert_used_amount(db, tx.user_id, month, tx.amount)
 
     TransactionRepo.delete(db, tx_id)
     return {"deleted": True}
