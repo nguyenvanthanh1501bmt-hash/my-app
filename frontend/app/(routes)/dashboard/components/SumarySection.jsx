@@ -36,7 +36,7 @@ export default function SummarySection({ userId, month }) {
 
       {/* Đã xài */}
       <div className="bg-gray-50 p-5 rounded-xl shadow flex flex-col items-center">
-        <h3 className="text-lg font-semibold text-gray-700">Đã xài</h3>
+        <h3 className="text-lg font-semibold text-gray-700">Expense</h3>
         <p className="text-2xl font-bold text-red-600 mt-1">
           {summary.total_spend?.toLocaleString("vi-VN")}
         </p>
@@ -44,7 +44,7 @@ export default function SummarySection({ userId, month }) {
 
       {/* Còn lại */}
       <div className="bg-gray-50 p-5 rounded-xl shadow flex flex-col items-center">
-        <h3 className="text-lg font-semibold text-gray-700">Còn lại</h3>
+        <h3 className="text-lg font-semibold text-gray-700">Remain</h3>
         <p className="text-2xl font-bold text-green-600 mt-1">
           {summary.current_balance?.toLocaleString("vi-VN")}
         </p>

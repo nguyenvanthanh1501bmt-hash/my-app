@@ -38,10 +38,10 @@ export default function CategoryExpensePie({ userId, month }) {
         ];
 
         setChartData({
-          labels: res.map(item => item.category),
+          labels: res.map((item) => item.category),
           datasets: [
             {
-              data: res.map(item => Number(item.total)),
+              data: res.map((item) => Number(item.total)),
               backgroundColor: colors.slice(0, res.length),
               borderWidth: 1,
             },
@@ -62,8 +62,28 @@ export default function CategoryExpensePie({ userId, month }) {
   if (!chartData) return <p>No expense data for this month.</p>;
 
   return (
-    <div style={{ maxWidth: 500, margin: "0 auto" }}>
-      <Pie data={chartData} />
+    <div style={{ maxWidth: 600, margin: "0 auto" }}>
+      <Pie
+        data={chartData}
+        options={{
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: true,
+              position: "right", // đặt legend bên phải
+              labels: {
+                boxWidth: 20,
+                padding: 15,
+              },
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
+        }}
+        height={300} // chiều cao cố định để legend bên phải không bị chèn
+      />
     </div>
   );
 }

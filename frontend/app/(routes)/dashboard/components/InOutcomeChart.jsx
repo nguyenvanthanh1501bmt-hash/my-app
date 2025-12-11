@@ -49,7 +49,7 @@ export default function IncomeOutcomeChart({ userId, month }) {
   if (loading) {
     return (
       <div className="w-full h-80 p-4 flex items-center justify-center text-gray-500">
-        Đang tải dữ liệu...
+        Loading...
       </div>
     );
   }
@@ -57,14 +57,14 @@ export default function IncomeOutcomeChart({ userId, month }) {
   if (!chartData || chartData.length === 0) {
     return (
       <div className="w-full h-80 p-4 flex items-center justify-center text-gray-500">
-        Không có dữ liệu để hiển thị
+        No data
       </div>
     );
   }
 
   return (
     <div className="w-full h-80 p-4">
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-2 mb-4 justify-center">
         <button
           className={`px-3 py-1 rounded ${
             mode === "weekly" ? "bg-blue-500 text-white" : "bg-gray-200"
@@ -85,13 +85,13 @@ export default function IncomeOutcomeChart({ userId, month }) {
 
       {/* FIXED: height cố định */}
       <ResponsiveContainer width="100%" height={240}>
-        <BarChart data={chartData}>
+        <BarChart data={chartData} margin={{ top: 20, right: 30, left: 40, bottom: 20 }}>
           <XAxis dataKey="label" />
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="income" fill="#4ade80" name="Thu nhập" />
-          <Bar dataKey="outcome" fill="#f87171" name="Chi tiêu" />
+          <Bar dataKey="income" fill="#4ade80" name="Income" />
+          <Bar dataKey="outcome" fill="#f87171" name="Expense" />
         </BarChart>
       </ResponsiveContainer>
     </div>

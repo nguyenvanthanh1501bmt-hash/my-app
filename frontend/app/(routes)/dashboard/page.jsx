@@ -19,9 +19,6 @@ export default function DashboardPage() {
   return (
     <div className="p-6 space-y-8">
 
-      {/* Title */}
-      <h1 className="text-3xl font-semibold">Dashboard</h1>
-
       {/* Summary */}
       <div className="bg-white rounded-xl shadow p-5">
         <SummarySection userId={userId} month={month} />

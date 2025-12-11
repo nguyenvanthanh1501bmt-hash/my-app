@@ -695,10 +695,6 @@
     display: inline-flex;
   }
 
-  .table {
-    display: table;
-  }
-
   .size-8 {
     width: calc(var(--spacing) * 8);
     height: calc(var(--spacing) * 8);
@@ -946,6 +942,10 @@
     align-items: flex-start;
   }
 
+  .justify-around {
+    justify-content: space-around;
+  }
+
   .justify-between {
     justify-content: space-between;
   }
@@ -956,6 +956,10 @@
 
   .justify-end {
     justify-content: flex-end;
+  }
+
+  .justify-end-safe {
+    justify-content: safe flex-end;
   }
 
   .justify-start {
