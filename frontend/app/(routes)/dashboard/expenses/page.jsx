@@ -1,40 +1,52 @@
 "use client";
-import React, {
-  useEffect,
-  useMemo,
-  useState,
-  useCallback,
-} from "react";
+import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useUser } from "@clerk/nextjs";
 
+// ✅ add: react-datepicker
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 // URL FastAPI – chỉnh lại nếu bạn dùng port/host khác
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
 // màu cho pie chart report
-const REPORT_COLORS = [
-  "#2563eb",
-  "#22c55e",
-  "#f97316",
-  "#e11d48",
-  "#0ea5e9",
-  "#a855f7",
-];
+const REPORT_COLORS = ["#2563eb", "#22c55e", "#f97316", "#e11d48", "#0ea5e9", "#a855f7"];
 
 /* --------- helpers --------- */
 const currency = (n) =>
-  (Number(n || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) ||
-    "0") + " ₫";
+  (Number(n || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) || "0") + " ₫";
 
 const currencyAbs = (n) =>
-  (Number(Math.abs(n) || 0).toLocaleString("vi-VN", {
-    maximumFractionDigits: 0,
-  }) || "0") + " ₫";
+  (Number(Math.abs(n) || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) || "0") + " ₫";
 
-const formatSigned = (n) =>
-  (n > 0 ? "+" : n < 0 ? "-" : "") + currencyAbs(n);
+const formatSigned = (n) => (n > 0 ? "+" : n < 0 ? "-" : "") + currencyAbs(n);
 
 const cls = (...a) => a.filter(Boolean).join(" ");
+
+// Format YYYY-MM-DD -> DD/MM/YYYY (hiển thị kiểu VN)
+const formatDateVN = (value) => {
+  if (!value) return "";
+  const s = String(value).slice(0, 10); // lấy YYYY-MM-DD
+  const [y, m, d] = s.split("-");
+  if (!y || !m || !d) return s;
+  return `${d}/${m}/${y}`;
+};
+
+// ✅ add: helpers cho react-datepicker (Date <-> ISO string)
+const parseISODate = (s) => {
+  if (!s) return null;
+  const [y, m, d] = String(s).slice(0, 10).split("-");
+  if (!y || !m || !d) return null;
+  return new Date(Number(y), Number(m) - 1, Number(d));
+};
+
+const toISODate = (date) => {
+  if (!date) return "";
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+};
 
 /* --------- modal component --------- */
 function Modal({ open, onClose, title, children }) {
@@ -99,18 +111,14 @@ export default function ExpensesPage() {
       return;
     }
 
-    const candidateName =
-      user.username ||
-      user.primaryEmailAddress?.emailAddress ||
-      user.id;
+    const candidateName = user.username || user.primaryEmailAddress?.emailAddress || user.id;
 
     (async () => {
       try {
         const doLoginByName = async (name) => {
-          const res = await fetch(
-            `${API_BASE}/api/users/login?name=${encodeURIComponent(name)}`,
-            { method: "POST" }
-          );
+          const res = await fetch(`${API_BASE}/api/users/login?name=${encodeURIComponent(name)}`, {
+            method: "POST",
+          });
           if (!res.ok) {
             const text = await res.text();
             throw new Error(text || `Login failed (${res.status})`);
@@ -135,10 +143,7 @@ export default function ExpensesPage() {
         try {
           loginData = await doLoginByName(candidateName);
         } catch (e) {
-          if (
-            String(e.message).includes("404") ||
-            String(e.message).includes("User không tồn tại")
-          ) {
+          if (String(e.message).includes("404") || String(e.message).includes("User không tồn tại")) {
             await doRegister(candidateName);
             loginData = await doLoginByName(candidateName);
           } else {
@@ -164,9 +169,7 @@ export default function ExpensesPage() {
   const fetchTransactions = useCallback(async () => {
     if (!userId) return;
     try {
-      const res = await fetch(
-        `${API_BASE}/api/transactions/by-user/${userId}`
-      );
+      const res = await fetch(`${API_BASE}/api/transactions/by-user/${userId}`);
       if (!res.ok) throw new Error("fetch transactions failed");
       const data = await res.json();
       setTransactions(Array.isArray(data) ? data : []);
@@ -249,11 +252,7 @@ export default function ExpensesPage() {
   const filteredTx = useMemo(() => {
     return transactions.filter((t) => {
       if (filterType !== "all" && t.type !== filterType) return false;
-      if (
-        search &&
-        !String(t.note || "").toLowerCase().includes(search.toLowerCase())
-      )
-        return false;
+      if (search && !String(t.note || "").toLowerCase().includes(search.toLowerCase())) return false;
 
       if (month !== "all" && String(t.date).slice(5, 7) !== month) return false;
       if (year !== "all" && String(t.date).slice(0, 4) !== year) return false;
@@ -279,15 +278,9 @@ export default function ExpensesPage() {
       map[name] = (map[name] || 0) + Number(t.amount || 0);
     });
 
-    const rows = Object.entries(map).map(([category, amount]) => ({
-      category,
-      amount,
-    }));
+    const rows = Object.entries(map).map(([category, amount]) => ({ category, amount }));
     const total = rows.reduce((s, r) => s + r.amount, 0) || 1;
-    return rows.map((r) => ({
-      ...r,
-      percentage: (r.amount / total) * 100,
-    }));
+    return rows.map((r) => ({ ...r, percentage: (r.amount / total) * 100 }));
   }, [transactions, catMap]);
 
   const expenseReport = useMemo(() => {
@@ -298,19 +291,12 @@ export default function ExpensesPage() {
       map[name] = (map[name] || 0) + Number(t.amount || 0);
     });
 
-    const rows = Object.entries(map).map(([category, amount]) => ({
-      category,
-      amount,
-    }));
+    const rows = Object.entries(map).map(([category, amount]) => ({ category, amount }));
     const total = rows.reduce((s, r) => s + r.amount, 0) || 1;
-    return rows.map((r) => ({
-      ...r,
-      percentage: (r.amount / total) * 100,
-    }));
+    return rows.map((r) => ({ ...r, percentage: (r.amount / total) * 100 }));
   }, [transactions, catMap]);
 
-  const reportData =
-    reportTab === "income" ? incomeReport : expenseReport;
+  const reportData = reportTab === "income" ? incomeReport : expenseReport;
 
   const pieGradient = useMemo(() => {
     if (!reportData.length) return "#e5e7eb";
@@ -369,9 +355,7 @@ export default function ExpensesPage() {
   const deleteTransaction = async (id) => {
     if (!confirm("Delete this transaction?")) return;
     try {
-      const res = await fetch(`${API_BASE}/api/transactions/${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(`${API_BASE}/api/transactions/${id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("delete failed");
       setTransactions((prev) => prev.filter((t) => t.id !== id));
     } catch (err) {
@@ -381,56 +365,37 @@ export default function ExpensesPage() {
   };
 
   /* ================== Render ================== */
-
   if (!isLoaded) {
-    return (
-      <div className="p-6 text-center text-slate-500">Đang tải...</div>
-    );
+    return <div className="p-6 text-center text-slate-500">Đang tải...</div>;
   }
 
   if (!userId) {
-    return (
-      <div className="p-6 text-center text-slate-500">
-        Đang đồng bộ tài khoản với hệ thống...
-      </div>
-    );
+    return <div className="p-6 text-center text-slate-500">Đang đồng bộ tài khoản với hệ thống...</div>;
   }
 
   return (
     <div className="min-h-screen bg-white px-6 py-8 text-gray-800">
       {/* -------- Expense Tracker -------- */}
-      <h1 className="mb-6 text-3xl font-bold text-blue-700">
-        Expense Tracker
-      </h1>
+      <h1 className="mb-6 text-3xl font-bold text-blue-700">Expense Tracker</h1>
 
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div className="rounded-3xl bg-blue-50 p-5 text-center shadow-sm">
-          <p className="text-sm font-semibold text-blue-700">
-            Current Balance
-          </p>
-          <p className="mt-2 text-2xl font-extrabold text-blue-800">
-            {currency(currentBalance)}
-          </p>
+          <p className="text-sm font-semibold text-blue-700">Current Balance</p>
+          <p className="mt-2 text-2xl font-extrabold text-blue-800">{currency(currentBalance)}</p>
         </div>
         <div className="rounded-3xl bg-green-50 p-5 text-center shadow-sm">
           <p className="text-sm font-semibold text-green-700">Income</p>
-          <p className="mt-2 text-2xl font-extrabold text-green-700">
-            {currency(totalIncome)}
-          </p>
+          <p className="mt-2 text-2xl font-extrabold text-green-700">{currency(totalIncome)}</p>
         </div>
         <div className="rounded-3xl bg-red-50 p-5 text-center shadow-sm">
           <p className="text-sm font-semibold text-red-700">Expense</p>
-          <p className="mt-2 text-2xl font-extrabold text-red-700">
-            {currency(totalExpense)}
-          </p>
+          <p className="mt-2 text-2xl font-extrabold text-red-700">{currency(totalExpense)}</p>
         </div>
       </div>
 
       {/* -------- Transaction header -------- */}
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-blue-700">
-          Transaction
-        </h2>
+        <h2 className="text-xl font-semibold text-blue-700">Transaction</h2>
         <button
           onClick={openAddModal}
           className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 cursor-pointer"
@@ -506,43 +471,29 @@ export default function ExpensesPage() {
       {/* 3 stat cards dưới filter */}
       <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100 text-xl">
-            📈
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100 text-xl">📈</div>
           <div>
             <p className="text-sm text-gray-500">Total Income</p>
-            <p className="mt-1 text-xl font-bold text-green-600">
-              {currency(txIncome)}
-            </p>
+            <p className="mt-1 text-xl font-bold text-green-600">{currency(txIncome)}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-xl">
-            📉
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-xl">📉</div>
           <div>
             <p className="text-sm text-gray-500">Total Expense</p>
-            <p className="mt-1 text-xl font-bold text-red-600">
-              {currency(txExpense)}
-            </p>
+            <p className="mt-1 text-xl font-bold text-red-600">{currency(txExpense)}</p>
           </div>
         </div>
 
         <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-xl">
-            📊
-          </div>
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-xl">📊</div>
           <div>
             <p className="text-sm text-gray-500">Net Amount</p>
             <p
               className={cls(
                 "mt-1 text-xl font-bold",
-                txNet > 0
-                  ? "text-blue-700"
-                  : txNet < 0
-                  ? "text-red-600"
-                  : "text-gray-700"
+                txNet > 0 ? "text-blue-700" : txNet < 0 ? "text-red-600" : "text-gray-700"
               )}
             >
               {formatSigned(txNet)}
@@ -553,15 +504,15 @@ export default function ExpensesPage() {
 
       {/* All Transactions */}
       <div className="rounded-2xl bg-white p-4 shadow">
-        <h3 className="mb-3 text-lg font-semibold text-blue-700">
-          All Transaction
-        </h3>
+        <h3 className="mb-3 text-lg font-semibold text-blue-700">All Transaction</h3>
 
         <ul>
           {(showAll ? filteredTx : filteredTx.slice(0, 5)).map((t) => {
             const isIncome = t.type === "income";
             const catName = catMap[t.category_id] || "Uncategorized";
-            const date = String(t.date).slice(0, 10);
+
+            // ✅ hiển thị ngày kiểu VN
+            const date = formatDateVN(t.date);
 
             return (
               <li key={t.id} className="mb-3 last:mb-0">
@@ -575,28 +526,20 @@ export default function ExpensesPage() {
                     <div
                       className={cls(
                         "mt-1 grid h-8 w-8 place-items-center rounded-full border-2",
-                        isIncome
-                          ? "border-green-200 bg-green-500"
-                          : "border-red-200 bg-red-500"
+                        isIncome ? "border-green-200 bg-green-500" : "border-red-200 bg-red-500"
                       )}
                     >
                       {isIncome ? "↑" : "↓"}
                     </div>
                     <div>
-                      <p className="text-sm font-semibold opacity-80">
-                        {date}
-                      </p>
-                      <p className="text-base font-semibold">
-                        {t.note || "(no note)"}
-                      </p>
+                      <p className="text-sm font-semibold opacity-80">{date}</p>
+                      <p className="text-base font-semibold">{t.note || "(no note)"}</p>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
-                      <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">
-                        {catName}
-                      </span>
+                      <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">{catName}</span>
                       <button
                         onClick={() => deleteTransaction(t.id)}
                         className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-xs hover:bg-white/30 cursor-pointer"
@@ -605,12 +548,7 @@ export default function ExpensesPage() {
                         ✕
                       </button>
                     </div>
-                    <p
-                      className={cls(
-                        "text-lg font-bold",
-                        isIncome ? "text-green-200" : "text-red-200"
-                      )}
-                    >
+                    <p className={cls("text-lg font-bold", isIncome ? "text-green-200" : "text-red-200")}>
                       {isIncome ? "+" : "-"} {currency(t.amount)}
                     </p>
                   </div>
@@ -634,18 +572,14 @@ export default function ExpensesPage() {
 
       {/* ---------- Report section ---------- */}
       <section className="mt-8 rounded-3xl bg-white p-5 shadow">
-        <h2 className="mb-4 text-xl font-semibold text-blue-700">
-          Report
-        </h2>
+        <h2 className="mb-4 text-xl font-semibold text-blue-700">Report</h2>
 
         <div className="mb-4 flex gap-3">
           <button
             onClick={() => setReportTab("income")}
             className={cls(
               "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
-              reportTab === "income"
-                ? "bg-blue-600 text-white shadow"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              reportTab === "income" ? "bg-blue-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             )}
           >
             Income
@@ -654,9 +588,7 @@ export default function ExpensesPage() {
             onClick={() => setReportTab("outcome")}
             className={cls(
               "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
-              reportTab === "outcome"
-                ? "bg-blue-600 text-white shadow"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              reportTab === "outcome" ? "bg-blue-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
             )}
           >
             Expense
@@ -665,34 +597,21 @@ export default function ExpensesPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <div className="flex flex-col items-center rounded-2xl bg-gray-50 p-4">
-            <div
-              className="mb-4 h-72 w-72 rounded-full border border-blue-400"
-              style={{ background: pieGradient }}
-            />
+            <div className="mb-4 h-72 w-72 rounded-full border border-blue-400" style={{ background: pieGradient }} />
             <p className="text-base font-semibold">
-              {reportTab === "income"
-                ? "Income by categories"
-                : "Expense by categories"}
+              {reportTab === "income" ? "Income by categories" : "Expense by categories"}
             </p>
             <div className="mt-4 flex flex-wrap justify-center gap-3">
               {reportData.map((item, idx) => (
-                <div
-                  key={item.category}
-                  className="flex items-center gap-2 text-sm text-gray-700"
-                >
+                <div key={item.category} className="flex items-center gap-2 text-sm text-gray-700">
                   <span
                     className="h-3 w-3 rounded-full"
-                    style={{
-                      backgroundColor:
-                        REPORT_COLORS[idx % REPORT_COLORS.length],
-                    }}
+                    style={{ backgroundColor: REPORT_COLORS[idx % REPORT_COLORS.length] }}
                   />
                   <span>{item.category}</span>
                 </div>
               ))}
-              {!reportData.length && (
-                <p className="text-sm text-gray-400">No data</p>
-              )}
+              {!reportData.length && <p className="text-sm text-gray-400">No data</p>}
             </div>
           </div>
 
@@ -711,20 +630,13 @@ export default function ExpensesPage() {
                   {reportData.map((row) => (
                     <tr key={row.category} className="border-b">
                       <td className="px-3 py-2">{row.category}</td>
-                      <td className="px-3 py-2 text-right">
-                        {currency(row.amount)}
-                      </td>
-                      <td className="px-3 py-2 text-right">
-                        {row.percentage.toFixed(1)}%
-                      </td>
+                      <td className="px-3 py-2 text-right">{currency(row.amount)}</td>
+                      <td className="px-3 py-2 text-right">{row.percentage.toFixed(1)}%</td>
                     </tr>
                   ))}
                   {!reportData.length && (
                     <tr>
-                      <td
-                        colSpan={3}
-                        className="px-3 py-4 text-center text-gray-400"
-                      >
+                      <td colSpan={3} className="px-3 py-4 text-center text-gray-400">
                         No data
                       </td>
                     </tr>
@@ -737,36 +649,24 @@ export default function ExpensesPage() {
       </section>
 
       {/* ---------- Popup Create New Transaction ---------- */}
-      <Modal
-        open={openModal}
-        onClose={() => setOpenModal(false)}
-        title="Create New Transaction"
-      >
+      <Modal open={openModal} onClose={() => setOpenModal(false)} title="Create New Transaction">
         <div className="space-y-5">
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">
-              Amount (VND)
-            </label>
+            <label className="mb-2 block text-sm font-semibold text-gray-800">Amount (VND)</label>
             <input
               type="number"
               placeholder="Amount"
               value={form.amount}
-              onChange={(e) =>
-                setForm({ ...form, amount: e.target.value })
-              }
+              onChange={(e) => setForm({ ...form, amount: e.target.value })}
               className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
             />
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">
-              Type
-            </label>
+            <label className="mb-2 block text-sm font-semibold text-gray-800">Type</label>
             <select
               value={form.type}
-              onChange={(e) =>
-                setForm({ ...form, type: e.target.value })
-              }
+              onChange={(e) => setForm({ ...form, type: e.target.value })}
               className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
             >
               <option value="income">Income</option>
@@ -775,51 +675,44 @@ export default function ExpensesPage() {
           </div>
 
           <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">
-              Description
-            </label>
+            <label className="mb-2 block text-sm font-semibold text-gray-800">Description</label>
             <input
               type="text"
               placeholder="Transaction description"
               value={form.note}
-              onChange={(e) =>
-                setForm({ ...form, note: e.target.value })
-              }
+              onChange={(e) => setForm({ ...form, note: e.target.value })}
               className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
             />
           </div>
 
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-800">
-                Date
-              </label>
-              <input
-                type="date"
-                value={form.date}
-                onChange={(e) =>
-                  setForm({ ...form, date: e.target.value })
-                }
+              <label className="mb-2 block text-sm font-semibold text-gray-800">Date</label>
+
+              {/* ✅ CHỈ THAY ĐOẠN DATE: input type="date" -> react-datepicker */}
+              <DatePicker
+                selected={parseISODate(form.date)}
+                onChange={(date) => setForm({ ...form, date: toISODate(date) })}
+                dateFormat="dd/MM/yyyy"
+                placeholderText="dd/mm/yyyy"
+                showPopperArrow={false}
                 className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
               />
+
+              {/* vẫn giữ preview như cũ */}
+              <p className="mt-1 text-xs text-gray-500">
+                Ngày đã chọn: <span className="font-semibold">{formatDateVN(form.date)}</span>
+              </p>
             </div>
+
             <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-800">
-                Category
-              </label>
+              <label className="mb-2 block text-sm font-semibold text-gray-800">Category</label>
               <select
                 value={form.category_id}
-                onChange={(e) =>
-                  setForm({
-                    ...form,
-                    category_id: Number(e.target.value),
-                  })
-                }
+                onChange={(e) => setForm({ ...form, category_id: Number(e.target.value) })}
                 className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
               >
-                {categories.length === 0 && (
-                  <option value="">No category found</option>
-                )}
+                {categories.length === 0 && <option value="">No category found</option>}
                 {categories.map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.name}
