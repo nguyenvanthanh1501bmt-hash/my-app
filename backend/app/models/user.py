@@ -8,8 +8,12 @@ class User(Base):
 
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(100), nullable=False)
+
+    # NEW: role
+    role = Column(String(20), nullable=False, default="user")  # "user" | "admin"
+
     created_at = Column(DateTime, default=datetime.utcnow)
-    
+
     # relationships
     transactions = relationship("Transaction", back_populates="user", cascade="all, delete-orphan")
     budgets = relationship("Budget", back_populates="user", cascade="all, delete-orphan")

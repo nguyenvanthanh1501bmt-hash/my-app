@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 
 from app.deps import get_db
-from app.schemas.user import UserCreate, UserUpdate, UserOut
+from app.schemas.user import UserCreate, UserUpdate, UserOut, RoleUpdate
 from app.repo.user import UserRepo
 from app.auth_utils import issue_token
 from jose import jwt, JWTError
@@ -34,30 +34,23 @@ def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2)
         raise HTTPException(status_code=401, detail="Người dùng không tồn tại")
     return user
 
+def require_admin(current=Depends(get_current_user)):
+    if getattr(current, "role", None) != "admin":
+        raise HTTPException(status_code=403, detail="Chỉ admin mới được phép")
+    return current
+
 # ====== Đăng ký (theo name) ======
 @router.post("/register", response_model=UserOut)
 def register(body: UserCreate, db: Session = Depends(get_db)):
     """
     Tạo user mới chỉ với name. Chặn trùng name.
     """
-    print("Register request body:", body)  # log request
+    existing_user = UserRepo.find_by_name(db, body.name)
+    if existing_user:
+        return existing_user
 
-    try:
-        # Kiểm tra trùng tên
-        existing_user = UserRepo.find_by_name(db, body.name)
-        if existing_user:
-            return existing_user
-
-        # Tạo user mới
-        user = UserRepo.create(db, name=body.name)
-        print("User created:", user)  # log thành công
-        return user
-    except Exception as e:
-        import traceback
-        print("Error creating user:", e)
-        traceback.print_exc()  # log stack trace đầy đủ
-        raise HTTPException(status_code=500, detail=str(e))
-
+    user = UserRepo.create(db, name=body.name)
+    return user
 
 # ====== Đăng nhập (không mật khẩu) ======
 @router.post("/login")
@@ -67,11 +60,8 @@ def login(
     name: str | None = Query(default=None, description="Hoặc đăng nhập theo name"),
 ):
     """
-    Hai cách:
     - /login?user_id=123
     - /login?name=alice
-
-    Trả về: {"token": "...", "user": {...}}
     """
     user = None
     if user_id is not None:
@@ -87,7 +77,12 @@ def login(
     token = issue_token({"id": user.id})
     return {
         "token": token,
-        "user": {"id": user.id, "name": user.name, "created_at": user.created_at},
+        "user": {
+            "id": user.id,
+            "name": user.name,
+            "role": user.role,                # NEW
+            "created_at": user.created_at,
+        },
     }
 
 # ====== Hồ sơ hiện tại ======
@@ -102,13 +97,9 @@ def update_me(
     db: Session = Depends(get_db),
     current=Depends(get_current_user),
 ):
-    """
-    Chỉ cho phép đổi name. Nếu name mới đã có người dùng khác dùng -> 400.
-    """
     fields = {}
 
     if body.name is not None:
-        # Nếu trùng với người khác (không phải chính mình) -> chặn
         existing = UserRepo.find_by_name(db, body.name)
         if existing and existing.id != current.id:
             raise HTTPException(status_code=400, detail="Name đã được sử dụng")
@@ -117,18 +108,28 @@ def update_me(
     user = UserRepo.update_partial(db, current, **fields)
     return user
 
-# ====== Danh sách người dùng (basic) ======
+# ====== Danh sách người dùng (ADMIN ONLY) ======
 @router.get("/", response_model=list[UserOut])
-def list_users(db: Session = Depends(get_db)):
+def list_users(db: Session = Depends(get_db), admin=Depends(require_admin)):
     rows = UserRepo.list_basic(db)
-    # rows có thể là tuple/Row: (id, name, created_at) tuỳ query
     out = []
     for r in rows:
-        # Hỗ trợ cả object (User) và tuple
-        if hasattr(r, "id"):
-            out.append(UserOut(id=r.id, name=r.name, created_at=getattr(r, "created_at", None)))
-        else:
-            # tuple dạng (id, name, created_at)
-            rid, rname, rcreated = r if len(r) == 3 else (r[0], r[1], None)
-            out.append(UserOut(id=rid, name=rname, created_at=rcreated))
+        # tuple: (id, name, role, created_at)
+        rid, rname, rrole, rcreated = r
+        out.append(UserOut(id=rid, name=rname, role=rrole, created_at=rcreated))
     return out
+
+# ====== Đổi role cho user (ADMIN ONLY) - Optional ======
+@router.patch("/{user_id}/role", response_model=UserOut)
+def set_user_role(
+    user_id: int,
+    body: RoleUpdate,
+    db: Session = Depends(get_db),
+    admin=Depends(require_admin),
+):
+    u = UserRepo.get_by_id(db, user_id)
+    if not u:
+        raise HTTPException(status_code=404, detail="User không tồn tại")
+
+    u = UserRepo.set_role(db, u, body.role)
+    return u

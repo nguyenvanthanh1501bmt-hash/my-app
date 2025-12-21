@@ -31,6 +31,9 @@ CREATE TABLE dbo.[users](
   [created_at] DATETIME2(0) NOT NULL CONSTRAINT DF_users_created_at DEFAULT SYSUTCDATETIME()
 );
 
+ALTER TABLE dbo.[users]
+ADD [role] NVARCHAR(20) NOT NULL
+    CONSTRAINT DF_users_role DEFAULT ('user');
 
 /* 2.2 CATEGORIES: danh mục chi tiêu/thu nhập */
 CREATE TABLE dbo.[categories](

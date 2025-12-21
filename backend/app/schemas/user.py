@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, Field
 from datetime import datetime
 
 class UserCreate(BaseModel):
@@ -6,11 +6,16 @@ class UserCreate(BaseModel):
 
 class UserUpdate(BaseModel):
     name: str | None = Field(default=None, min_length=1, max_length=100)
-    # thường không cho đổi email; nếu cần thì thêm: email: EmailStr | None = None
 
 class UserOut(BaseModel):
     id: int
     name: str
+    role: str
     created_at: datetime | None = None
+
     class Config:
         from_attributes = True
+
+# (Optional) schema cho admin đổi role
+class RoleUpdate(BaseModel):
+    role: str = Field(pattern="^(admin|user)$")

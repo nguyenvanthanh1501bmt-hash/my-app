@@ -1,40 +1,67 @@
-[00:00:01.959] Server  LOG      ✓ Ready in 1503ms
-[00:00:20.403] Server  LOG      ○ Compiling / ...
-[00:00:23.234] Server  ERROR    ⨯ TypeError: immutable
-[00:00:23.362] Server  ERROR    ⨯ TypeError: immutable
-[00:00:23.556] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:23.773] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:00:23.773] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:00:24.247] Browser LOG     Sending username to backend: test123
-[00:00:24.247] Browser LOG     Logging in user: test123
-[00:00:25.527] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY4MTQ0OTcxfQ.en_Pt1QUnCr2o3FxvBLwsJgcA533uAOqlBdK2O8G0hI","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
-[00:00:25.527] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
-[00:00:25.528] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:25.532] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:28.587] Server  LOG      ○ Compiling /dashboard ...
-[00:00:29.488] Server  ERROR    ⨯ TypeError: immutable
-[00:00:29.532] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:00:29.650] Browser LOG     Current path: /dashboard
-[00:00:29.650] Browser LOG     Current path: /dashboard
-[00:00:44.559] Browser LOG     Current path: /dashboard/expenses
-[00:11:09.310] Server  LOG      ✓ Compiled in 94ms
-[00:11:45.819] Browser LOG     Current path: /dashboard
-[00:11:50.618] Server  ERROR    ⨯ TypeError: immutable
-[00:11:50.623] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:11:50.668] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:11:50.727] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:11:50.727] Browser LOG     Current path: /dashboard
-[00:11:51.180] Browser LOG     Sending username to backend: test123
-[00:11:51.180] Browser LOG     Logging in user: test123
-[00:11:51.180] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY4MTQ1NjU4fQ.UBqXo_5DRU5NVjU_6Ok4gULvtw7BtrR3c_7d7TQgom4","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123"}}
-[00:11:51.180] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123"}
-[00:11:57.293] Browser LOG     Current path: /dashboard/expenses
-[00:17:17.803] Server  LOG      ✓ Compiled in 545ms
-[00:20:36.292] Server  LOG      ✓ Compiled in 73ms
-[00:20:38.159] Server  LOG      ✓ Compiled in 135ms
-[00:20:45.309] Server  LOG      ✓ Compiled in 171ms
-[00:20:47.647] Server  LOG      ✓ Compiled in 145ms
-[00:20:55.950] Server  LOG      ✓ Compiled in 83ms
-[00:24:32.553] Server  LOG      ✓ Compiled in 70ms
-[00:24:53.218] Browser LOG     Current path: /dashboard
-[00:24:59.944] Browser LOG     Current path: /dashboard/expenses
+[00:00:02.101] Server  LOG      ✓ Ready in 1592ms
+[00:00:06.817] Server  LOG      ○ Compiling / ...
+[00:00:10.447] Server  ERROR    ⨯ TypeError: immutable
+[00:00:10.795] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:11.002] Server  ERROR    ⨯ TypeError: immutable
+[00:00:12.315] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:12.317] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:12.375] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:12.376] Browser LOG     Sending username to backend: tamnguyen179
+[00:00:12.376] Browser LOG     Logging in user: tamnguyen179
+[00:00:12.376] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY4ODgxNzU3fQ.cY7A7SVZXc1mcUN8rjIcvtS14rgCrPlIVr-xfj_knrQ","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:00:12.376] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:00:15.201] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:21.417] Server  LOG      ○ Compiling /dashboard ...
+[00:00:21.881] Server  ERROR    ⨯ TypeError: immutable
+[00:00:21.908] Browser LOG     Current path: /dashboard
+[00:00:21.908] Browser LOG     Current path: /dashboard
+[00:00:21.909] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:00:22.108] Server  ERROR    ⨯ TypeError: immutable
+[00:00:22.347] Server  ERROR    ⨯ TypeError: immutable
+[00:03:41.017] Browser LOG     {"data":{"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"},"ok":true,"status":200}
+[00:04:33.547] Browser LOG     ROLE = admin FULL = {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:05:04.240] Server  LOG      ✓ Compiled in 59ms
+[00:05:08.239] Server  ERROR    ⨯ TypeError: immutable
+[00:05:08.252] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:08.277] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:08.428] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:08.550] Browser LOG     Current path: /dashboard
+[00:05:08.805] Browser LOG     Sending username to backend: tamnguyen179
+[00:05:08.805] Browser LOG     Logging in user: tamnguyen179
+[00:05:09.236] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY4ODgyMDU0fQ.KuF_e_e2mNM0gen3UDrc2kLBcH_JvRDUmdd1IAzTYQE","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:05:09.236] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:05:11.031] Browser LOG     Current path: /dashboard/admin-test
+[00:05:33.136] Browser LOG     Current path: /dashboard
+[00:05:37.201] Server  ERROR    ⨯ TypeError: immutable
+[00:05:37.457] Browser ERROR   uncaughtError: TypeError: immutable
+[00:05:42.732] Server  ERROR    ⨯ TypeError: immutable
+[00:05:42.796] Server  ERROR    ⨯ TypeError: immutable
+[00:05:42.802] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:42.894] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:42.900] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:43.144] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:05:43.144] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:48.739] Server  ERROR    ⨯ TypeError: immutable
+[00:05:48.792] Server  ERROR    ⨯ TypeError: immutable
+[00:05:48.794] Browser LOG     Sending username to backend: test123
+[00:05:48.794] Browser LOG     Logging in user: test123
+[00:05:48.856] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:48.881] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:49.088] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY4ODgyMDk0fQ.C9zR90p2rb0sDbLnL0R8Izdnt235uUwPkxlEIAsmku0","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123","role":"user"}}
+[00:05:49.088] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123","role":"user"}
+[00:05:50.096] Server  ERROR    ⨯ TypeError: immutable
+[00:05:50.135] Browser LOG     Current path: /dashboard
+[00:05:50.135] Browser LOG     Current path: /dashboard
+[00:05:50.137] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:52.711] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:52.780] Server  ERROR    ⨯ TypeError: immutable
+[00:05:52.811] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:05:52.928] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:05:52.928] Browser LOG     Current path: /dashboard
+[00:05:53.305] Browser LOG     Sending username to backend: test123
+[00:05:53.305] Browser LOG     Logging in user: test123
+[00:05:53.305] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY4ODgyMDk4fQ.xUYrcSNnOt7hMKkogViS4hbwfuI41gHBOgzHw5ZRHBA","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123","role":"user"}}
+[00:05:53.305] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123","role":"user"}
+[00:06:52.977] Browser LOG     Current path: /dashboard/admin-test
+[00:06:53.999] Browser LOG     Current path: /dashboard
+[00:06:54.891] Browser LOG     Current path: /dashboard/admin-test

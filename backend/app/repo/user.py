@@ -12,7 +12,8 @@ class UserRepo:
 
     @staticmethod
     def create(db: Session, name: str) -> User:
-        u = User(name=name)
+        # NEW: default role='user'
+        u = User(name=name, role="user")
         db.add(u); db.commit(); db.refresh(u)
         return u
 
@@ -26,5 +27,11 @@ class UserRepo:
 
     @staticmethod
     def list_basic(db: Session):
-        # Trả về luôn cả created_at để map ra UserOut cho dễ
-        return db.query(User.id, User.name, User.created_at).all()
+        # trả về đủ role
+        return db.query(User.id, User.name, User.role, User.created_at).all()
+
+    @staticmethod
+    def set_role(db: Session, user: User, role: str) -> User:
+        user.role = role
+        db.commit(); db.refresh(user)
+        return user
