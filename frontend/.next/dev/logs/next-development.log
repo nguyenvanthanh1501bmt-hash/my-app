@@ -95,3 +95,28 @@
 [01:25:42.698] Browser LOG     Current path: /dashboard/your-debt
 [01:26:33.048] Browser LOG     Current path: /dashboard/budget
 [01:27:11.015] Browser LOG     Current path: /dashboard/your-debt
+[01:28:54.542] Browser LOG     Current path: /dashboard/saving-wallet
+[01:28:56.037] Browser LOG     Current path: /dashboard/budget
+[01:28:56.629] Browser LOG     Current path: /dashboard/saving-wallet
+[01:29:23.217] Browser LOG     Current path: /dashboard/your-debt
+[01:29:25.108] Browser LOG     Current path: /dashboard/saving-wallet
+[01:29:29.950] Browser LOG     Current path: /dashboard/budget
+[03:52:31.004] Server  LOG      ✓ Compiled in 109ms
+[03:52:47.223] Server  LOG      ✓ Compiled in 78ms
+[03:53:09.089] Browser LOG     Current path: /dashboard/expenses
+[03:53:11.040] Browser LOG     Current path: /dashboard
+[03:53:11.813] Browser LOG     Current path: /dashboard/expenses
+[03:53:12.985] Browser LOG     Current path: /dashboard/budget
+[03:53:15.717] Browser LOG     Current path: /dashboard/expenses
+[03:53:16.419] Browser LOG     Current path: /dashboard/saving-wallet
+[03:55:41.717] Browser LOG     Current path: /dashboard/budget
+[03:57:58.145] Server  LOG      ✓ Compiled in 456ms
+[03:58:03.043] Server  ERROR    ⨯ TypeError: immutable
+[03:58:03.062] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[03:58:03.062] Browser LOG     Current path: /dashboard/budget
+[03:58:03.160] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[03:58:03.297] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[03:58:03.772] Browser LOG     Sending username to backend: tamnguyen179
+[03:58:03.772] Browser LOG     Logging in user: tamnguyen179
+[03:58:04.107] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY4OTc1ODE4fQ.r5-ee384nvMQUTd7Gc94vCLwULs2BE0GKrSAZBfkdDo","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[03:58:04.107] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}

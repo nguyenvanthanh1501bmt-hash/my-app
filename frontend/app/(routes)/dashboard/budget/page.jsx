@@ -2,42 +2,16 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import { Eye, Pencil, Trash2, Plus, Calendar } from "lucide-react";
+import { Plus } from "lucide-react";
 
-const API_BASE =
-  process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
+import MonthFilter from "./components/MonthFilter";
+import BudgetCard from "./components/BudgetCard";
+import BudgetFormModal from "./components/BudgetFormModal";
+import TransactionHistoryModal from "./components/TransactionHistoryModal";
 
-const formatVND = (n) =>
-  (n ?? 0).toLocaleString("vi-VN", {
-    style: "currency",
-    currency: "VND",
-    maximumFractionDigits: 0,
-  });
+import { normalizeList } from "./components/utils";
 
-/**
- * Mapping icon + màu cho từng category_id
- * (bạn chỉnh lại id / tên cho khớp DB thực tế nếu cần)
- */
-const CATEGORY_META = {
-  1: { name: "Uncategorized", icon: "💸", color: "bg-slate-500" },
-  2: { name: "Food & Drinks", icon: "🍽️", color: "bg-rose-500" },
-  3: { name: "Transportation", icon: "🚗", color: "bg-amber-500" },
-  4: { name: "Housing", icon: "🏠", color: "bg-emerald-500" },
-  5: { name: "Bills", icon: "📄", color: "bg-sky-500" },
-  6: { name: "Travel", icon: "✈️", color: "bg-indigo-500" },
-  7: { name: "Health", icon: "🏥", color: "bg-red-500" },
-  8: { name: "Education", icon: "🎓", color: "bg-violet-500" },
-  9: { name: "Shopping", icon: "🛍️", color: "bg-pink-500" },
-  10: { name: "Pets", icon: "🐾", color: "bg-orange-500" },
-  11: { name: "Sports", icon: "⚽", color: "bg-lime-500" },
-  12: { name: "Entertainment", icon: "🎬", color: "bg-fuchsia-500" },
-  13: { name: "Investment", icon: "📈", color: "bg-teal-500" },
-  14: { name: "Family", icon: "👪", color: "bg-cyan-500" },
-  15: { name: "Salary", icon: "💼", color: "bg-blue-600" },
-  16: { name: "Bonus", icon: "🎉", color: "bg-amber-400" },
-  17: { name: "Business", icon: "🏢", color: "bg-slate-700" },
-  18: { name: "Gifts", icon: "🎁", color: "bg-red-400" },
-};
+const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://localhost:8000";
 
 export default function BudgetPage() {
   const { isSignedIn, user, isLoaded } = useUser();
@@ -73,9 +47,7 @@ export default function BudgetPage() {
     }
 
     const candidateName =
-      user.username ||
-      user.primaryEmailAddress?.emailAddress ||
-      user.id;
+      user.username || user.primaryEmailAddress?.emailAddress || user.id;
 
     (async () => {
       try {
@@ -132,7 +104,6 @@ export default function BudgetPage() {
   }, [isLoaded, isSignedIn, user]);
 
   /* ================== API helpers ================== */
-
   async function getBudgetsAPI(uid) {
     const res = await fetch(`${API_BASE}/api/budgets?user_id=${uid}`);
     if (!res.ok) throw new Error(await res.text());
@@ -163,7 +134,6 @@ export default function BudgetPage() {
     return res.json();
   }
 
-  // update theo user + month (partial)
   async function updateBudgetPartialAPI(uid, ym, newAmount) {
     const params = new URLSearchParams({
       user_id: String(uid),
@@ -179,9 +149,7 @@ export default function BudgetPage() {
   }
 
   async function getTransactionsByUserAPI(uid) {
-    const res = await fetch(
-      `${API_BASE}/api/transactions/by-user/${uid}`
-    );
+    const res = await fetch(`${API_BASE}/api/transactions/by-user/${uid}`);
     if (!res.ok) throw new Error(await res.text());
     return res.json();
   }
@@ -196,10 +164,7 @@ export default function BudgetPage() {
         const list = await getBudgetsAPI(userId);
         const normalized = normalizeList(list);
         if (!cancelled) setAllBudgets(normalized);
-        localStorage.setItem(
-          `budgets_user_${userId}`,
-          JSON.stringify(normalized)
-        );
+        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(normalized));
       } catch (e) {
         console.error(e);
         const cached = localStorage.getItem(`budgets_user_${userId}`);
@@ -216,25 +181,13 @@ export default function BudgetPage() {
     };
   }, [userId]);
 
-  function normalizeList(arr) {
-    return (arr || []).map((it) => ({
-      id: it.id,
-      user_id: it.user_id,
-      month: it.month,
-      amount: Number(it.amount),
-      spent: Number(it.used) || 0, // used từ backend
-    }));
-  }
-
   /* ================== Derived ================== */
-
   const shown = useMemo(() => {
     if (!filterMonth) return allBudgets;
     return allBudgets.filter((b) => b.month === filterMonth);
   }, [allBudgets, filterMonth]);
 
   /* ================== Handlers ================== */
-
   function openCreate() {
     setMode("create");
     setEditing(null);
@@ -255,12 +208,9 @@ export default function BudgetPage() {
     if (!month || !amount) return alert("Vui lòng nhập đủ Month và Amount");
     try {
       setBusy(true);
+
       if (mode === "create") {
-        const data = await createBudgetAPI(
-          userId,
-          month,
-          Number(amount)
-        );
+        const data = await createBudgetAPI(userId, month, Number(amount));
         const created = {
           id: data.id,
           user_id: data.user_id,
@@ -270,27 +220,14 @@ export default function BudgetPage() {
         };
         const next = [created, ...allBudgets];
         setAllBudgets(next);
-        localStorage.setItem(
-          `budgets_user_${userId}`,
-          JSON.stringify(next)
-        );
+        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
       } else if (mode === "edit" && editing) {
-        const upd = await updateBudgetPartialAPI(
-          editing.user_id ?? userId,
-          month,
-          Number(amount)
-        );
-        const next = allBudgets.map((x) =>
-          x.id === editing.id
-            ? { ...x, amount: Number(upd.amount) }
-            : x
-        );
+        const upd = await updateBudgetPartialAPI(editing.user_id ?? userId, month, Number(amount));
+        const next = allBudgets.map((x) => (x.id === editing.id ? { ...x, amount: Number(upd.amount) } : x));
         setAllBudgets(next);
-        localStorage.setItem(
-          `budgets_user_${userId}`,
-          JSON.stringify(next)
-        );
+        localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
       }
+
       setIsOpen(false);
     } catch (e) {
       alert("API error: " + e.message);
@@ -306,10 +243,7 @@ export default function BudgetPage() {
       await deleteBudgetAPI(b.id);
       const next = allBudgets.filter((x) => x.id !== b.id);
       setAllBudgets(next);
-      localStorage.setItem(
-        `budgets_user_${userId}`,
-        JSON.stringify(next)
-      );
+      localStorage.setItem(`budgets_user_${userId}`, JSON.stringify(next));
     } catch (e) {
       alert("API error: " + e.message);
     } finally {
@@ -336,42 +270,19 @@ export default function BudgetPage() {
   }
 
   /* ================== Render ================== */
-
   if (!isLoaded) {
-    return (
-      <div className="p-6 text-center text-slate-500">Đang tải...</div>
-    );
+    return <div className="p-6 text-center text-slate-500">Đang tải...</div>;
   }
 
   if (!userId) {
-    return (
-      <div className="p-6 text-center text-slate-500">
-        Đang đồng bộ tài khoản với hệ thống...
-      </div>
-    );
+    return <div className="p-6 text-center text-slate-500">Đang đồng bộ tài khoản với hệ thống...</div>;
   }
 
   return (
     <div className="mx-auto max-w-4xl p-6">
-      <h1 className="mb-4 text-3xl font-extrabold tracking-tight">
-        My Budgets
-      </h1>
+      <h1 className="mb-4 text-3xl font-extrabold tracking-tight">My Budgets</h1>
 
-      {/* Filter by month */}
-      <div className="mb-4 flex flex-wrap items-center gap-3">
-        <label className="text-sm text-slate-600">Month</label>
-
-        <div className="relative">
-          <input
-            type="month"
-            onChange={(e) => setFilterMonth(e.target.value)}
-            className="h-10 w-10 appearance-none border rounded-lg opacity-0 absolute inset-0"
-          />
-          <div className="h-10 w-10 flex items-center justify-center border rounded-lg bg-white">
-            <Calendar className="h-5 w-5 text-slate-600 "/>
-          </div>
-        </div>
-      </div>
+      <MonthFilter value={filterMonth} onChange={setFilterMonth} />
 
       {shown.map((b) => (
         <BudgetCard
@@ -383,7 +294,6 @@ export default function BudgetPage() {
         />
       ))}
 
-      {/* Create new budget card */}
       <button
         onClick={openCreate}
         className="mt-2 w-full rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 hover:bg-slate-100 p-10 text-center transition cursor-pointer"
@@ -394,202 +304,24 @@ export default function BudgetPage() {
         <p className="text-lg font-semibold">Create New Budget</p>
       </button>
 
-      {/* Modal: create/edit budget */}
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/40 cursor-pointer"
-            onClick={() => setIsOpen(false)}
-          />
-          <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
-            <h2 className="mb-6 text-xl font-semibold">
-              {mode === "create" ? "Create New Budget" : "Edit Budget"}
-            </h2>
+      <BudgetFormModal
+        isOpen={isOpen}
+        mode={mode}
+        month={month}
+        amount={amount}
+        busy={busy}
+        setMonth={setMonth}
+        setAmount={setAmount}
+        onClose={() => setIsOpen(false)}
+        onSubmit={submitForm}
+      />
 
-            <label className="mb-2 block text-sm font-medium">Month</label>
-            <div className="mb-5 relative">
-              <input
-                value={month}
-                onChange={(e) => setMonth(e.target.value)}
-                placeholder="YYYY-MM"
-                className="h-12 w-full rounded-full border border-slate-300 px-5 pr-12 outline-none focus:border-slate-400"
-              />
-              <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
-                <Calendar className="h-5 w-5" />
-              </div>
-            </div>
-
-            <label className="mb-2 block text-sm font-medium">
-              Amount
-            </label>
-            <div className="mb-8">
-              <input
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
-                inputMode="numeric"
-                placeholder="Amount"
-                className="h-12 w-full rounded-full border border-slate-300 px-5 outline-none focus:border-slate-400"
-              />
-            </div>
-
-            <div className="mt-2 flex items-center gap-4">
-              <button
-                onClick={submitForm}
-                disabled={busy}
-                className="h-12 rounded-full bg-indigo-500 px-6 text-white font-semibold disabled:opacity-60 cursor-pointer"
-              >
-                {mode === "create" ? "Create Budget" : "Save Changes"}
-              </button>
-              <button
-                onClick={() => setIsOpen(false)}
-                disabled={busy}
-                className="h-12 rounded-full bg-red-500 px-6 text-white font-semibold disabled:opacity-60 cursor-pointer"
-              >
-                Cancel
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal: transaction history */}
-      {historyOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
-          <div
-            className="absolute inset-0 bg-black/40 cursor-pointer"
-            onClick={() => setHistoryOpen(false)}
-          />
-          <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
-            <h2 className="mb-4 text-xl font-semibold">
-              Transaction history – {historyMonth}
-            </h2>
-
-            {historyItems.length === 0 ? (
-              <p className="text-sm text-slate-500">
-                Không có giao dịch chi tiêu nào trong tháng này.
-              </p>
-            ) : (
-              <ul className="max-h-80 space-y-3 overflow-y-auto">
-                {historyItems.map((tx) => {
-                  const meta =
-                    CATEGORY_META[tx.category_id] || CATEGORY_META[1];
-                  const dateStr = String(tx.date).slice(0, 10);
-
-                  return (
-                    <li
-                      key={tx.id}
-                      className="flex items-center justify-between rounded-3xl bg-gradient-to-r from-purple-500 to-indigo-500 px-4 py-3 text-sm text-white shadow-sm"
-                    >
-                      {/* trái: icon + date + category + note */}
-                      <div className="flex items-start gap-3">
-                        <div
-                          className={`mt-1 grid h-9 w-9 place-items-center rounded-full ${meta.color}`}
-                        >
-                          <span className="text-lg">{meta.icon}</span>
-                        </div>
-
-                        <div>
-                          <div className="text-[11px] font-medium opacity-70">
-                            {dateStr}
-                          </div>
-                          <div className="text-sm font-semibold">
-                            {meta.name}
-                          </div>
-                          <div className="text-sm opacity-85">
-                            {tx.note || "(Không có ghi chú)"}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* phải: số tiền */}
-                      <div className="text-right text-sm font-bold text-red-400">
-                        - {formatVND(tx.amount)}
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            )}
-
-            <div className="mt-5 text-right">
-              <button
-                onClick={() => setHistoryOpen(false)}
-                className="inline-flex items-center rounded-full bg-slate-800 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-900 cursor-pointer"
-              >
-                Đóng
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
-/* ================== BudgetCard ================== */
-
-function BudgetCard({ budget, onEdit, onDelete, onViewHistory }) {
-  const usedRatio =
-    budget.amount > 0 ? (budget.spent || 0) / budget.amount : 0;
-  const remaining = Math.max(
-    budget.amount - (budget.spent || 0),
-    0
-  );
-
-  return (
-    <div className="mb-4 rounded-2xl border border-slate-200 p-5 shadow-sm">
-      <div className="flex items-start justify-between">
-        <div className="font-semibold">{budget.month}</div>
-        <div className="text-indigo-600 font-extrabold">
-          {formatVND(budget.amount)}
-        </div>
-      </div>
-
-      <div className="mt-2 grid grid-cols-2 text-sm font-semibold">
-        <div className="text-red-600">
-          Spent: {formatVND(budget.spent)}
-        </div>
-        <div className="text-right text-emerald-600">
-          {formatVND(remaining)} Remaining
-        </div>
-      </div>
-
-      {/* progress bar gradient */}
-      <div className="mt-2 h-4 w-full rounded-full bg-slate-200">
-        <div
-          className="h-4 rounded-full bg-gradient-to-r from-purple-500 via-indigo-500 to-cyan-400"
-          style={{
-            width: `${Math.min(usedRatio * 100, 100)}%`,
-          }}
-        />
-      </div>
-
-      <div className="mt-3 flex items-center justify-between text-slate-500 font-semibold">
-        <div>{Math.round(usedRatio * 100)}% Used</div>
-        <div className="flex items-center gap-4">
-          <button
-            className="rounded-full p-2 hover:bg-slate-100 cursor-pointer"
-            title="Xem lịch sử"
-            onClick={onViewHistory}
-          >
-            <Eye className="h-5 w-5" />
-          </button>
-          <button
-            className="rounded-full p-2 hover:bg-slate-100 cursor-pointer"
-            title="Chỉnh sửa"
-            onClick={onEdit}
-          >
-            <Pencil className="h-5 w-5" />
-          </button>
-          <button
-            className="rounded-full p-2 hover:bg-slate-100 text-red-600 cursor-pointer"
-            title="Xóa"
-            onClick={onDelete}
-          >
-            <Trash2 className="h-5 w-5" />
-          </button>
-        </div>
-      </div>
+      <TransactionHistoryModal
+        open={historyOpen}
+        month={historyMonth}
+        items={historyItems}
+        onClose={() => setHistoryOpen(false)}
+      />
     </div>
   );
 }
