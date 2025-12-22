@@ -1,28 +1,27 @@
 import React, { useState } from "react";
-import { CreateLoan, UpdateLoan } from "./API_setup"; // API backend
+import { CreateLoan, UpdateLoan } from "./API_setup";
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-// đổi Date -> "YYYY-MM-DD"
+// Date -> "YYYY-MM-DD"
 const toYMD = (date) => {
   if (!date || !(date instanceof Date) || Number.isNaN(date.getTime())) return "";
   return date.toISOString().slice(0, 10);
 };
 
-// parse string date -> Date
 const parseToDate = (val) => {
   if (!val) return null;
   const d = val instanceof Date ? val : new Date(val);
   return Number.isNaN(d.getTime()) ? null : d;
 };
 
-// ========== CREATE FORM ==========
+// ========== CREATE ==========
 export function LoanInputForm({ id, onClose, onSubmit }) {
   const [person, setPerson] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("loan");
-  const [dueDate, setDueDate] = useState(null); // Date
+  const [dueDate, setDueDate] = useState(null);
   const [status, setStatus] = useState("pending");
 
   const handleCreate = async (e) => {
@@ -54,13 +53,9 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-      <form
-        className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative"
-        onSubmit={handleCreate}
-      >
+      <form className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative" onSubmit={handleCreate}>
         <h1 className="font-bold text-xl text-center">Create New Loan / Debt</h1>
 
-        {/* Person */}
         <div>
           <label className="font-medium mb-1 block">Person</label>
           <input
@@ -72,7 +67,6 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
           />
         </div>
 
-        {/* Amount */}
         <div>
           <label className="font-medium mb-1 block">Amount (đ)</label>
           <div className="relative">
@@ -88,7 +82,6 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
           </div>
         </div>
 
-        {/* Type buttons */}
         <div className="flex justify-between">
           <button
             type="button"
@@ -110,7 +103,6 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
           </button>
         </div>
 
-        {/* Due Date */}
         <div>
           <label className="font-medium mb-1 block">Due Date</label>
           <DatePicker
@@ -124,19 +116,11 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
           />
         </div>
 
-        {/* Buttons */}
         <div className="flex gap-2 mt-2 justify-between">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded-2xl hover:bg-green-400 w-[45%] cursor-pointer"
-          >
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded-2xl hover:bg-green-400 w-[45%] cursor-pointer">
             Save
           </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%] cursor-pointer"
-          >
+          <button type="button" onClick={onClose} className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%] cursor-pointer">
             Cancel
           </button>
         </div>
@@ -145,13 +129,13 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
   );
 }
 
-// ========== UPDATE FORM ==========
+// ========== UPDATE ==========
 export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
   const [person, setPerson] = useState(datachange.person || "");
   const [amount, setAmount] = useState(datachange.amount || "");
   const [type, setType] = useState(datachange.type ? datachange.type.toLowerCase() : "loan");
-  const [dueDate, setDueDate] = useState(parseToDate(datachange.due_date)); // Date
-  const [status, setStatus] = useState(datachange.status || "pending");
+  const [dueDate, setDueDate] = useState(parseToDate(datachange.due_date));
+  const [status, setStatus] = useState((datachange.status || "pending").toLowerCase());
 
   const handleUpdate = async (e) => {
     e.preventDefault();
@@ -159,9 +143,9 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
       const newData = {
         amount: parseFloat(amount),
         person: person.trim(),
-        due_date: toYMD(dueDate), // YYYY-MM-DD
+        due_date: toYMD(dueDate),
         type,
-        status,
+        status, // vẫn lưu pending/paid (overdue sẽ tự tính khi render)
       };
 
       if (onSubmit) await onSubmit(newData);
@@ -176,13 +160,9 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-      <form
-        className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative"
-        onSubmit={handleUpdate}
-      >
+      <form className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative" onSubmit={handleUpdate}>
         <h1 className="font-bold text-xl text-center mb-2">Update Loan / Debt</h1>
 
-        {/* Person */}
         <div>
           <label className="font-medium mb-1 block">Person</label>
           <input
@@ -190,12 +170,10 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
             value={person}
             onChange={(e) => setPerson(e.target.value)}
             className="w-full border p-2 rounded"
-            placeholder="Tên người cho vay hoặc người nợ"
             required
           />
         </div>
 
-        {/* Amount */}
         <div>
           <label className="font-medium mb-1 block">Amount (đ)</label>
           <div className="relative">
@@ -205,19 +183,17 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
               className="w-full border p-2 rounded pr-10"
-              placeholder="Nhập số tiền"
               required
             />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">đ</span>
           </div>
         </div>
 
-        {/* Type Buttons */}
         <div className="flex justify-between">
           <button
             type="button"
             onClick={() => setType("loan")}
-            className={`w-[48%] p-2 rounded-2xl hover:bg-green-300 transition-colors cursor-pointer ${
+            className={`w-[48%] p-2 rounded-2xl cursor-pointer ${
               type === "loan" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
@@ -226,7 +202,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
           <button
             type="button"
             onClick={() => setType("debt")}
-            className={`w-[48%] p-2 rounded-2xl transition-colors hover:bg-red-400 cursor-pointer ${
+            className={`w-[48%] p-2 rounded-2xl cursor-pointer ${
               type === "debt" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
@@ -234,7 +210,6 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
           </button>
         </div>
 
-        {/* Due Date */}
         <div>
           <label className="font-medium mb-1 block">Due Date</label>
           <DatePicker
@@ -248,7 +223,6 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
           />
         </div>
 
-        {/* Status */}
         <div>
           <label className="font-medium mb-1 block">Status</label>
           <select
@@ -258,22 +232,19 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
           >
             <option value="pending">Pending</option>
             <option value="paid">Paid</option>
+            {/* Nếu muốn test tay "overdue" thì mở dòng dưới */}
+            {/* <option value="overdue">Overdue</option> */}
           </select>
+          <p className="text-xs text-gray-500 mt-1">
+            * Overdue will be calculated automatically based on Due Date.
+          </p>
         </div>
 
-        {/* Buttons */}
         <div className="flex gap-2 mt-2 justify-between">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white p-2 rounded-2xl hover:bg-green-400 w-[45%] cursor-pointer"
-          >
+          <button type="submit" className="bg-blue-500 text-white p-2 rounded-2xl hover:bg-green-400 w-[45%] cursor-pointer">
             Save
           </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%] cursor-pointer"
-          >
+          <button type="button" onClick={onClose} className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%] cursor-pointer">
             Cancel
           </button>
         </div>
@@ -282,23 +253,37 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
   );
 }
 
-export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, currentstatus, onClose, onSubmit }) {
+// ========== UPDATE CURRENT (Record Repayment / Borrowing) ==========
+export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, onClose, onSubmit }) {
   const [currentAmount, setCurrentAmount] = useState("");
-  const [typeSelect, setTypeSelect] = useState("loan"); // "loan" hoặc "debt"
+  // mapping logic giữ nguyên: "loan" / "debt"
+  // UI label: Repayment / Borrow More
+  const [typeSelect, setTypeSelect] = useState("repayment"); // "repayment" | "borrow_more"
 
   const handleUpdate = async (e) => {
     e.preventDefault();
+
     const parsedAmount = parseFloat(currentAmount);
     if (!parsedAmount || parsedAmount <= 0) return;
 
-    let newCurrent = Number(oldAmount);
-    if (currentType.toLowerCase() === "loan") {
-      if (typeSelect.toLowerCase() === "loan") newCurrent += parsedAmount;
-      else if (typeSelect.toLowerCase() === "debt") newCurrent -= parsedAmount;
+    let newCurrent = Number(oldAmount) || 0;
+
+    const baseType = String(currentType || "").toLowerCase(); // loan/debt
+
+    // repayment => giảm số dư; borrow_more => tăng số dư
+    // nhưng với loan/debt gốc, chiều +/- khác nhau như code bạn đã làm
+    if (baseType === "loan") {
+      // LOAN: người ta nợ mình
+      if (typeSelect === "borrow_more") newCurrent += parsedAmount; // mượn thêm => tăng số dư
+      if (typeSelect === "repayment") newCurrent -= parsedAmount;  // trả bớt => giảm số dư
     } else {
-      if (typeSelect.toLowerCase() === "loan") newCurrent -= parsedAmount;
-      else if (typeSelect.toLowerCase() === "debt") newCurrent += parsedAmount;
+      // DEBT: mình nợ người ta
+      if (typeSelect === "borrow_more") newCurrent += parsedAmount; // mượn thêm => tăng số dư nợ
+      if (typeSelect === "repayment") newCurrent -= parsedAmount;  // trả bớt => giảm nợ
     }
+
+    // clamp không cho âm
+    if (newCurrent < 0) newCurrent = 0;
 
     const newStatus = Number(newCurrent) === 0 ? "paid" : "pending";
 
@@ -318,35 +303,31 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, current
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
-      <form
-        className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative"
-        onSubmit={handleUpdate}
-      >
-        <h1 className="font-bold text-xl text-center mb-2">Record Repayment / Borrowing</h1>
+      <form className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative" onSubmit={handleUpdate}>
+        <h1 className="font-bold text-xl text-center mb-1">Record Repayment / Borrowing</h1>
+        <p className="text-center text-sm text-gray-500 mb-2">Record the amount repaid or borrowed more to update the balance.</p>
 
-        {/* Type Buttons */}
         <div className="flex justify-between">
           <button
             type="button"
-            onClick={() => setTypeSelect("loan")}
+            onClick={() => setTypeSelect("repayment")}
             className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
-              typeSelect === "loan" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+              typeSelect === "repayment" ? "bg-green-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-green-100"
             }`}
           >
-            Pay Back
+            Repayment
           </button>
           <button
             type="button"
-            onClick={() => setTypeSelect("debt")}
+            onClick={() => setTypeSelect("borrow_more")}
             className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
-              typeSelect === "debt" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-red-400"
+              typeSelect === "borrow_more" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-blue-100"
             }`}
           >
             Borrow More
           </button>
         </div>
 
-        {/* Amount Input */}
         <div>
           <label className="font-medium mb-1 block">Amount (đ)</label>
           <div className="relative">
@@ -363,24 +344,17 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, current
           </div>
         </div>
 
-        {/* Buttons */}
         <div className="flex gap-2 mt-2 justify-between">
           <button
             type="submit"
             disabled={!currentAmount || Number(currentAmount) <= 0}
             className={`w-[45%] p-2 rounded-2xl text-white transition-colors ${
-              !currentAmount || Number(currentAmount) <= 0
-                ? "bg-gray-300 cursor-not-allowed"
-                : "bg-blue-500 hover:bg-green-400"
+              !currentAmount || Number(currentAmount) <= 0 ? "bg-gray-300 cursor-not-allowed" : "bg-blue-500 hover:bg-green-400"
             }`}
           >
             Save
           </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%]"
-          >
+          <button type="button" onClick={onClose} className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-400 w-[45%]">
             Cancel
           </button>
         </div>

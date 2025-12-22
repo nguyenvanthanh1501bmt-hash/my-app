@@ -76,3 +76,22 @@
 [00:53:18.566] Server  LOG      ✓ Compiled in 102ms
 [00:53:20.422] Server  LOG      ✓ Compiled in 45ms
 [00:53:25.584] Server  LOG      ✓ Compiled in 114ms
+[01:21:06.106] Server  LOG      ✓ Compiled in 251ms
+[01:22:31.797] Server  LOG      ✓ Compiled in 108ms
+[01:24:45.140] Browser LOG     Current path: /dashboard/budget
+[01:24:47.018] Browser LOG     Current path: /dashboard/expenses
+[01:24:47.899] Browser LOG     Current path: /dashboard
+[01:24:49.414] Browser LOG     Current path: /dashboard/admin-test
+[01:24:50.434] Browser LOG     Current path: /dashboard/your-debt
+[01:24:51.167] Browser LOG     Current path: /dashboard/saving-wallet
+[01:24:52.335] Browser LOG     Current path: /dashboard/your-debt
+[01:24:52.814] Browser LOG     Current path: /dashboard/saving-wallet
+[01:24:54.869] Browser LOG     Current path: /dashboard/your-debt
+[01:24:55.771] Browser LOG     Current path: /dashboard/budget
+[01:24:57.528] Browser LOG     Current path: /dashboard/expenses
+[01:24:58.317] Browser LOG     Current path: /dashboard/budget
+[01:24:58.855] Browser LOG     Current path: /dashboard/saving-wallet
+[01:25:40.437] Server  LOG      ✓ Compiled in 109ms
+[01:25:42.698] Browser LOG     Current path: /dashboard/your-debt
+[01:26:33.048] Browser LOG     Current path: /dashboard/budget
+[01:27:11.015] Browser LOG     Current path: /dashboard/your-debt
