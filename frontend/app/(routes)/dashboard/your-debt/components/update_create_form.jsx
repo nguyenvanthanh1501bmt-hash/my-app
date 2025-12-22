@@ -1,12 +1,28 @@
 import React, { useState } from "react";
 import { CreateLoan, UpdateLoan } from "./API_setup"; // API backend
 
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
+// đổi Date -> "YYYY-MM-DD"
+const toYMD = (date) => {
+  if (!date || !(date instanceof Date) || Number.isNaN(date.getTime())) return "";
+  return date.toISOString().slice(0, 10);
+};
+
+// parse string date -> Date
+const parseToDate = (val) => {
+  if (!val) return null;
+  const d = val instanceof Date ? val : new Date(val);
+  return Number.isNaN(d.getTime()) ? null : d;
+};
+
 // ========== CREATE FORM ==========
 export function LoanInputForm({ id, onClose, onSubmit }) {
   const [person, setPerson] = useState("");
   const [amount, setAmount] = useState("");
   const [type, setType] = useState("loan");
-  const [dueDate, setDueDate] = useState("");
+  const [dueDate, setDueDate] = useState(null); // Date
   const [status, setStatus] = useState("pending");
 
   const handleCreate = async (e) => {
@@ -16,7 +32,7 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
         user_id: id,
         person,
         amount: parseFloat(amount),
-        due_date: dueDate,
+        due_date: toYMD(dueDate), // YYYY-MM-DD
         type,
         status,
       };
@@ -27,14 +43,14 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
       setPerson("");
       setAmount("");
       setType("loan");
-      setDueDate("");
+      setDueDate(null);
       setStatus("pending");
       onClose();
     } catch (err) {
       console.error(err);
-      alert("Error creating loan/debt"); 
+      alert("Error creating loan/debt");
     }
-  }; 
+  };
 
   return (
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
@@ -58,15 +74,18 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
 
         {/* Amount */}
         <div>
-          <label className="font-medium mb-1 block">Amount</label>
-          <input
-            type="number"
-            step="0.01"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="w-full border p-2 rounded"
-            required
-          />
+          <label className="font-medium mb-1 block">Amount (đ)</label>
+          <div className="relative">
+            <input
+              type="number"
+              step="0.01"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className="w-full border p-2 rounded pr-10"
+              required
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">đ</span>
+          </div>
         </div>
 
         {/* Type buttons */}
@@ -75,9 +94,7 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
             type="button"
             onClick={() => setType("loan")}
             className={`w-[48%] p-2 rounded-2xl cursor-pointer ${
-              type === "loan"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-700"
+              type === "loan" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
             Loan
@@ -86,9 +103,7 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
             type="button"
             onClick={() => setType("debt")}
             className={`w-[48%] p-2 rounded-2xl cursor-pointer ${
-              type === "debt"
-                ? "bg-red-500 text-white"
-                : "bg-gray-200 text-gray-700"
+              type === "debt" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
             Debt
@@ -98,11 +113,13 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
         {/* Due Date */}
         <div>
           <label className="font-medium mb-1 block">Due Date</label>
-          <input
-            type="date"
-            value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
+          <DatePicker
+            selected={dueDate}
+            onChange={(date) => setDueDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="dd/mm/yyyy"
             className="w-full border p-2 rounded"
+            showPopperArrow={false}
             required
           />
         </div>
@@ -132,10 +149,8 @@ export function LoanInputForm({ id, onClose, onSubmit }) {
 export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
   const [person, setPerson] = useState(datachange.person || "");
   const [amount, setAmount] = useState(datachange.amount || "");
-  const [type, setType] = useState(
-    datachange.type ? datachange.type.toLowerCase() : "loan"
-  );
-  const [dueDate, setDueDate] = useState(datachange.due_date || "");
+  const [type, setType] = useState(datachange.type ? datachange.type.toLowerCase() : "loan");
+  const [dueDate, setDueDate] = useState(parseToDate(datachange.due_date)); // Date
   const [status, setStatus] = useState(datachange.status || "pending");
 
   const handleUpdate = async (e) => {
@@ -144,10 +159,11 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
       const newData = {
         amount: parseFloat(amount),
         person: person.trim(),
-        due_date: dueDate,
+        due_date: toYMD(dueDate), // YYYY-MM-DD
         type,
         status,
       };
+
       if (onSubmit) await onSubmit(newData);
       else await UpdateLoan(loanid, newData);
 
@@ -164,9 +180,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
         className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative"
         onSubmit={handleUpdate}
       >
-        <h1 className="font-bold text-xl text-center mb-2">
-          Update Loan / Debt
-        </h1>
+        <h1 className="font-bold text-xl text-center mb-2">Update Loan / Debt</h1>
 
         {/* Person */}
         <div>
@@ -183,16 +197,19 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
 
         {/* Amount */}
         <div>
-          <label className="font-medium mb-1 block">Amount</label>
-          <input
-            type="number"
-            step="0.01"
-            value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            className="w-full border p-2 rounded"
-            placeholder="Nhập số tiền"
-            required
-          />
+          <label className="font-medium mb-1 block">Amount (đ)</label>
+          <div className="relative">
+            <input
+              type="number"
+              step="0.01"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              className="w-full border p-2 rounded pr-10"
+              placeholder="Nhập số tiền"
+              required
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">đ</span>
+          </div>
         </div>
 
         {/* Type Buttons */}
@@ -201,9 +218,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
             type="button"
             onClick={() => setType("loan")}
             className={`w-[48%] p-2 rounded-2xl hover:bg-green-300 transition-colors cursor-pointer ${
-              type === "loan"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-700"
+              type === "loan" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
             Loan
@@ -212,9 +227,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
             type="button"
             onClick={() => setType("debt")}
             className={`w-[48%] p-2 rounded-2xl transition-colors hover:bg-red-400 cursor-pointer ${
-              type === "debt"
-                ? "bg-red-500 text-white"
-                : "bg-gray-200 text-gray-700"
+              type === "debt" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700"
             }`}
           >
             Debt
@@ -224,11 +237,13 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
         {/* Due Date */}
         <div>
           <label className="font-medium mb-1 block">Due Date</label>
-          <input
-            type="date"
-            value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
+          <DatePicker
+            selected={dueDate}
+            onChange={(date) => setDueDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="dd/mm/yyyy"
             className="w-full border p-2 rounded"
+            showPopperArrow={false}
             required
           />
         </div>
@@ -267,7 +282,7 @@ export function LoanUpdateForm({ loanid, datachange, onClose, onSubmit }) {
   );
 }
 
-export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, currentstatus , onClose, onSubmit }) {
+export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, currentstatus, onClose, onSubmit }) {
   const [currentAmount, setCurrentAmount] = useState("");
   const [typeSelect, setTypeSelect] = useState("loan"); // "loan" hoặc "debt"
 
@@ -276,39 +291,24 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, current
     const parsedAmount = parseFloat(currentAmount);
     if (!parsedAmount || parsedAmount <= 0) return;
 
-    // Tính toán mới
-    // const newCurrent =
-    //   typeSelect.toLowerCase() === "loan"
-    //     ? Number(oldAmount) + parsedAmount
-    //     : Number(oldAmount) - parsedAmount;
-    //   typeSelect.toLowerCase() === "debt"
-    //     ? Number(oldAmount) - parsedAmount
-    //     : Number(oldAmount) + parsedAmount;
-
     let newCurrent = Number(oldAmount);
-    if(currentType.toLowerCase() === 'loan'){
-      if (typeSelect.toLowerCase() === "loan") {
-        newCurrent += parsedAmount; 
-      } else if (typeSelect.toLowerCase() === "debt") {
-        newCurrent -= parsedAmount; 
-      }
+    if (currentType.toLowerCase() === "loan") {
+      if (typeSelect.toLowerCase() === "loan") newCurrent += parsedAmount;
+      else if (typeSelect.toLowerCase() === "debt") newCurrent -= parsedAmount;
+    } else {
+      if (typeSelect.toLowerCase() === "loan") newCurrent -= parsedAmount;
+      else if (typeSelect.toLowerCase() === "debt") newCurrent += parsedAmount;
     }
-    else {
-      if (typeSelect.toLowerCase() === "loan") {
-        newCurrent -= parsedAmount; 
-      } else if (typeSelect.toLowerCase() === "debt") {
-        newCurrent += parsedAmount; 
-      }
-    }
+
     const newStatus = Number(newCurrent) === 0 ? "paid" : "pending";
 
     const newData = {
-      amount: Number(newCurrent.toFixed(2)), // backend loan dùng 'amount'
-      status: newStatus
+      amount: Number(newCurrent.toFixed(2)),
+      status: newStatus,
     };
 
     try {
-      await onSubmit(newData); // gọi handleSubmit ở UpdateCurrentLoan
+      await onSubmit(newData);
       onClose();
     } catch (err) {
       console.error(err);
@@ -322,9 +322,7 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, current
         className="bg-white p-6 rounded-2xl w-[400px] flex flex-col gap-4 shadow-xl relative"
         onSubmit={handleUpdate}
       >
-        <h1 className="font-bold text-xl text-center mb-2">
-          Update Loan Debt in/out
-        </h1>
+        <h1 className="font-bold text-xl text-center mb-2">Record Repayment / Borrowing</h1>
 
         {/* Type Buttons */}
         <div className="flex justify-between">
@@ -332,38 +330,37 @@ export function UpdateCurrentLoan_Debt({ loanid, oldAmount, currentType, current
             type="button"
             onClick={() => setTypeSelect("loan")}
             className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
-              typeSelect === "loan"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-blue-400"
+              typeSelect === "loan" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-blue-400"
             }`}
           >
-            Loan
+            Pay Back
           </button>
           <button
             type="button"
             onClick={() => setTypeSelect("debt")}
             className={`w-[48%] p-2 rounded-2xl transition-colors cursor-pointer ${
-              typeSelect === "debt"
-                ? "bg-red-500 text-white"
-                : "bg-gray-200 text-gray-700 hover:bg-red-400"
+              typeSelect === "debt" ? "bg-red-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-red-400"
             }`}
           >
-            Debt
+            Borrow More
           </button>
         </div>
 
         {/* Amount Input */}
         <div>
-          <label className="font-medium mb-1 block">Amount</label>
-          <input
-            type="number"
-            min="0"
-            value={currentAmount}
-            onChange={(e) => setCurrentAmount(e.target.value)}
-            className="w-full border p-2 rounded"
-            placeholder="Nhập số tiền"
-            required
-          />
+          <label className="font-medium mb-1 block">Amount (đ)</label>
+          <div className="relative">
+            <input
+              type="number"
+              min="0"
+              value={currentAmount}
+              onChange={(e) => setCurrentAmount(e.target.value)}
+              className="w-full border p-2 rounded pr-10"
+              placeholder="Nhập số tiền"
+              required
+            />
+            <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500">đ</span>
+          </div>
         </div>
 
         {/* Buttons */}

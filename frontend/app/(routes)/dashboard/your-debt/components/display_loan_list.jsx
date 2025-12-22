@@ -12,8 +12,27 @@ import {
 } from "lucide-react";
 import { Button } from "../../../../../components/ui/components/ui/button";
 import { DeleteLoan, CreateLoan, UpdateLoan } from "./API_setup";
-import { LoanInputForm, LoanUpdateForm, UpdateCurrentLoan_Debt } from "./update_create_form";
+import {
+  LoanInputForm,
+  LoanUpdateForm,
+  UpdateCurrentLoan_Debt,
+} from "./update_create_form";
 import LoanDebtCard from "./loan_debt_card";
+
+// ===== helpers =====
+const formatVND = (value) => {
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "0đ";
+  return `${new Intl.NumberFormat("vi-VN").format(n)}đ`;
+};
+
+// format date dd/mm/yyyy (đọc được cả "YYYY-MM-DD" hoặc ISO)
+const formatDMY = (dateVal) => {
+  if (!dateVal) return "";
+  const d = dateVal instanceof Date ? dateVal : new Date(dateVal);
+  if (Number.isNaN(d.getTime())) return String(dateVal);
+  return d.toLocaleDateString("vi-VN"); // dd/mm/yyyy
+};
 
 export default function LoadingDisplay() {
   const { data, setData, error, total_loan, total_debt } = useLoanData();
@@ -21,7 +40,10 @@ export default function LoadingDisplay() {
 
   const [showForm, setShowForm] = useState(false);
   const [updateModal, setUpdateModal] = useState({ show: false, item: null });
-  const [showFormUpdateCurrent, setShowFormUpdateCurrent] = useState({ show: false, item: null });
+  const [showFormUpdateCurrent, setShowFormUpdateCurrent] = useState({
+    show: false,
+    item: null,
+  });
 
   // ===== Xóa khoản vay / nợ =====
   const handleDelete = async (id) => {
@@ -50,13 +72,17 @@ export default function LoadingDisplay() {
   if (!data) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
+  const net = Number(total_loan || 0) - Number(total_debt || 0);
+
   return (
     <div>
-      <h2 className="text-3xl font-bold mb-2 ml-[10%]">Your Loans & Debts</h2>
+      <h2 className="text-3xl font-bold mb-6 ml-[15%]">Your Loans & Debts</h2>
+
       <div className="flex justify-center flex-row items-center gap-15">
         <LoanDebtCard title="Total Loan" value={total_loan} />
-        <LoanDebtCard title="Total Debt" value={-total_debt} />
-        <LoanDebtCard title="Net Currency" value={total_loan - total_debt} />
+        {/* Total Debt: để số dương, màu đỏ do card quyết định */}
+        <LoanDebtCard title="Total Debt" value={total_debt} />
+        <LoanDebtCard title="Net Currency" value={net} />
       </div>
 
       <div className="flex justify-center flex-col items-center">
@@ -100,9 +126,7 @@ export default function LoadingDisplay() {
             loanid={showFormUpdateCurrent.item.id}
             oldamount={showFormUpdateCurrent.item.amount}
             currentType={showFormUpdateCurrent.item.type}
-            onClose={() =>
-              setShowFormUpdateCurrent({ show: false, item: null })
-            }
+            onClose={() => setShowFormUpdateCurrent({ show: false, item: null })}
             onUpdate={handleUpdate}
           />
         )}
@@ -183,7 +207,17 @@ function UpdateCurrentLoan({ loanid, oldamount, currentType, onClose, onUpdate }
 }
 
 // ===== HIỂN THỊ ITEM =====
-function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete, onEdit, onUpdate }) {
+function LoanFormDisplay({
+  id,
+  amount,
+  person,
+  due_date,
+  type,
+  status,
+  onDelete,
+  onEdit,
+  onUpdate,
+}) {
   const isPaid = status?.toLowerCase() === "paid";
   const typeLabel = type?.toLowerCase() === "loan" ? "Owed to you" : "You owed";
 
@@ -200,7 +234,7 @@ function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete,
       {/* Header: Amount + Status */}
       <div className="flex justify-between items-center">
         <p className="text-gray-700 font-semibold text-lg">
-          Amount: <span className="text-blue-600">${amount}</span>
+          Amount: <span className="text-blue-600 font-extrabold">{formatVND(amount)}</span>
         </p>
         <p
           className={`text-sm font-semibold uppercase tracking-wide px-4 py-1 rounded-full shadow-sm ${statusClass}`}
@@ -231,7 +265,7 @@ function LoanFormDisplay({ id, amount, person, due_date, type, status, onDelete,
       <div className="flex justify-between items-center mt-5">
         <div className="flex flex-row items-center gap-2 text-gray-500 text-sm font-medium bg-white shadow-inner rounded-xl px-4 py-2">
           <CalendarDays className="h-5 w-5 text-gray-400" />
-          <span>Due: {due_date}</span>
+          <span>Due: {formatDMY(due_date)}</span>
         </div>
 
         <div className="flex gap-4">

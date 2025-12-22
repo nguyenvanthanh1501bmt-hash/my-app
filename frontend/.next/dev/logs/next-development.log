@@ -28,3 +28,51 @@
 [00:01:59.369] Browser LOG     Current path: /dashboard/your-debt
 [00:02:29.227] Server  LOG      ✓ Compiled in 193ms
 [00:02:31.237] Browser LOG     Current path: /dashboard/expenses
+[00:04:54.665] Browser LOG     Current path: /dashboard/your-debt
+[00:04:56.313] Browser LOG     Current path: /dashboard/budget
+[00:06:27.412] Browser LOG     Current path: /dashboard/saving-wallet
+[00:06:28.741] Browser LOG     Current path: /dashboard/your-debt
+[00:06:52.261] Server  LOG      ✓ Compiled in 299ms
+[00:06:55.714] Server  LOG      ✓ Compiled in 161ms
+[00:06:58.909] Browser LOG     Current path: /dashboard/saving-wallet
+[00:07:00.609] Browser LOG     Current path: /dashboard/your-debt
+[00:07:47.329] Server  LOG      ✓ Compiled in 52ms
+[00:07:52.150] Server  LOG      ✓ Compiled in 127ms
+[00:07:55.001] Server  LOG      ✓ Compiled in 145ms
+[00:07:56.525] Browser LOG     Current path: /dashboard/saving-wallet
+[00:07:57.878] Browser LOG     Current path: /dashboard/your-debt
+[00:15:00.935] Browser LOG     Current path: /dashboard/budget
+[00:15:02.106] Browser LOG     Current path: /dashboard
+[00:15:03.656] Browser LOG     Current path: /dashboard/your-debt
+[00:15:07.722] Browser LOG     Current path: /dashboard
+[00:15:09.090] Browser LOG     Current path: /dashboard/budget
+[00:15:09.749] Browser LOG     Current path: /dashboard/expenses
+[00:15:10.557] Browser LOG     Current path: /dashboard/saving-wallet
+[00:15:11.049] Browser LOG     Current path: /dashboard
+[00:15:19.985] Browser LOG     Current path: /dashboard/expenses
+[00:15:22.366] Browser LOG     Current path: /dashboard/budget
+[00:15:23.481] Browser LOG     Current path: /dashboard/expenses
+[00:15:24.956] Browser LOG     Current path: /dashboard
+[00:15:30.312] Browser LOG     Current path: /dashboard/saving-wallet
+[00:15:30.904] Browser LOG     Current path: /dashboard/budget
+[00:15:31.564] Browser LOG     Current path: /dashboard/expenses
+[00:15:32.527] Browser LOG     Current path: /dashboard/your-debt
+[00:19:42.006] Browser LOG     Current path: /dashboard/expenses
+[00:19:48.385] Browser LOG     Current path: /dashboard/your-debt
+[00:42:59.494] Server  LOG      ✓ Compiled in 390ms
+[00:43:27.657] Server  LOG      ✓ Compiled in 49ms
+[00:43:30.201] Server  LOG      ✓ Compiled in 47ms
+[00:43:32.497] Server  LOG      ✓ Compiled in 104ms
+[00:43:35.047] Server  LOG      ✓ Compiled in 48ms
+[00:44:00.330] Server  LOG      ✓ Compiled in 141ms
+[00:44:09.039] Server  LOG      ✓ Compiled in 233ms
+[00:44:13.024] Server  LOG      ✓ Compiled in 194ms
+[00:44:16.572] Server  LOG      ✓ Compiled in 139ms
+[00:44:35.182] Browser LOG     Current path: /dashboard/expenses
+[00:44:37.218] Browser LOG     Current path: /dashboard/admin-test
+[00:44:38.311] Browser LOG     Current path: /dashboard/your-debt
+[00:44:44.053] Server  LOG      ✓ Compiled in 132ms
+[00:50:40.806] Server  LOG      ✓ Compiled in 45ms
+[00:53:18.566] Server  LOG      ✓ Compiled in 102ms
+[00:53:20.422] Server  LOG      ✓ Compiled in 45ms
+[00:53:25.584] Server  LOG      ✓ Compiled in 114ms
