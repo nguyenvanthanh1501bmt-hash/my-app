@@ -2,82 +2,25 @@
 import React, { useEffect, useMemo, useState, useCallback } from "react";
 import { useUser } from "@clerk/nextjs";
 
-// ✅ add: react-datepicker
-import DatePicker from "react-datepicker";
+// react-datepicker css giữ 1 chỗ (tại page)
 import "react-datepicker/dist/react-datepicker.css";
 
-// URL FastAPI – chỉnh lại nếu bạn dùng port/host khác
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+import {
+  API_BASE,
+  REPORT_COLORS,
+} from "./components/helpers";
 
-// màu cho pie chart report
-const REPORT_COLORS = ["#2563eb", "#22c55e", "#f97316", "#e11d48", "#0ea5e9", "#a855f7"];
+import SummaryCards from "./components/SummaryCards";
+import TransactionHeader from "./components/TransactionHeader";
+import FiltersBar from "./components/FiltersBar";
+import StatsCards from "./components/StatsCards";
+import TransactionsList from "./components/TransactionsList";
+import ReportSection from "./components/ReportSection";
+import CreateTransactionModal from "./components/CreateTransactionModal";
 
-/* --------- helpers --------- */
-const currency = (n) =>
-  (Number(n || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) || "0") + " ₫";
-
-const currencyAbs = (n) =>
-  (Number(Math.abs(n) || 0).toLocaleString("vi-VN", { maximumFractionDigits: 0 }) || "0") + " ₫";
-
-const formatSigned = (n) => (n > 0 ? "+" : n < 0 ? "-" : "") + currencyAbs(n);
-
-const cls = (...a) => a.filter(Boolean).join(" ");
-
-// Format YYYY-MM-DD -> DD/MM/YYYY (hiển thị kiểu VN)
-const formatDateVN = (value) => {
-  if (!value) return "";
-  const s = String(value).slice(0, 10); // lấy YYYY-MM-DD
-  const [y, m, d] = s.split("-");
-  if (!y || !m || !d) return s;
-  return `${d}/${m}/${y}`;
-};
-
-// ✅ add: helpers cho react-datepicker (Date <-> ISO string)
-const parseISODate = (s) => {
-  if (!s) return null;
-  const [y, m, d] = String(s).slice(0, 10).split("-");
-  if (!y || !m || !d) return null;
-  return new Date(Number(y), Number(m) - 1, Number(d));
-};
-
-const toISODate = (date) => {
-  if (!date) return "";
-  const y = date.getFullYear();
-  const m = String(date.getMonth() + 1).padStart(2, "0");
-  const d = String(date.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}`;
-};
-
-/* --------- modal component --------- */
-function Modal({ open, onClose, title, children }) {
-  if (!open) return null;
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div
-        className="absolute inset-0 bg-black/40 backdrop-blur-sm cursor-pointer"
-        onClick={onClose}
-      />
-      <div className="relative z-10 w-full max-w-lg rounded-2xl bg-white p-6 shadow-xl">
-        <div className="mb-6 flex items-center justify-between">
-          <h3 className="text-2xl font-semibold text-gray-900">{title}</h3>
-          <button
-            onClick={onClose}
-            className="grid h-10 w-10 place-items-center rounded-full bg-gray-100 text-xl hover:bg-gray-200 cursor-pointer"
-          >
-            ✕
-          </button>
-        </div>
-        {children}
-      </div>
-    </div>
-  );
-}
-
-/* --------- main page --------- */
 export default function ExpensesPage() {
   const { isSignedIn, user, isLoaded } = useUser();
 
-  // user backend
   const [userId, setUserId] = useState(null);
   const [token, setToken] = useState(null);
 
@@ -218,6 +161,7 @@ export default function ExpensesPage() {
         .reduce((sum, t) => sum + Number(t.amount || 0), 0),
     [transactions]
   );
+
   const totalExpense = useMemo(
     () =>
       transactions
@@ -225,6 +169,7 @@ export default function ExpensesPage() {
         .reduce((sum, t) => sum + Number(t.amount || 0), 0),
     [transactions]
   );
+
   const currentBalance = totalIncome - totalExpense;
 
   /* --------- options month/year --------- */
@@ -248,7 +193,7 @@ export default function ExpensesPage() {
     return Array.from(set).sort();
   }, [transactions]);
 
-  /* --------- apply filter cho Transaction --------- */
+  /* --------- apply filter --------- */
   const filteredTx = useMemo(() => {
     return transactions.filter((t) => {
       if (filterType !== "all" && t.type !== filterType) return false;
@@ -264,9 +209,11 @@ export default function ExpensesPage() {
   const txIncome = filteredTx
     .filter((t) => t.type === "income")
     .reduce((s, t) => s + Number(t.amount || 0), 0);
+
   const txExpense = filteredTx
     .filter((t) => t.type === "outcome")
     .reduce((s, t) => s + Number(t.amount || 0), 0);
+
   const txNet = txIncome - txExpense;
 
   /* --------- REPORT: group by category --------- */
@@ -310,7 +257,7 @@ export default function ExpensesPage() {
     return `conic-gradient(${parts.join(",")})`;
   }, [reportData]);
 
-  /* --------- handle modal --------- */
+  /* --------- modal handlers --------- */
   const openAddModal = () => {
     if (!userId) return;
     setForm({
@@ -351,7 +298,6 @@ export default function ExpensesPage() {
     }
   };
 
-  /* --------- delete transaction --------- */
   const deleteTransaction = async (id) => {
     if (!confirm("Delete this transaction?")) return;
     try {
@@ -365,383 +311,60 @@ export default function ExpensesPage() {
   };
 
   /* ================== Render ================== */
-  if (!isLoaded) {
-    return <div className="p-6 text-center text-slate-500">Đang tải...</div>;
-  }
-
-  if (!userId) {
-    return <div className="p-6 text-center text-slate-500">Đang đồng bộ tài khoản với hệ thống...</div>;
-  }
+  if (!isLoaded) return <div className="p-6 text-center text-slate-500">Đang tải...</div>;
+  if (!userId) return <div className="p-6 text-center text-slate-500">Đang đồng bộ tài khoản với hệ thống...</div>;
 
   return (
     <div className="min-h-screen bg-white px-6 py-8 text-gray-800">
-      {/* -------- Expense Tracker -------- */}
       <h1 className="mb-6 text-3xl font-bold text-blue-700">Expense Tracker</h1>
 
-      <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="rounded-3xl bg-blue-50 p-5 text-center shadow-sm">
-          <p className="text-sm font-semibold text-blue-700">Current Balance</p>
-          <p className="mt-2 text-2xl font-extrabold text-blue-800">{currency(currentBalance)}</p>
-        </div>
-        <div className="rounded-3xl bg-green-50 p-5 text-center shadow-sm">
-          <p className="text-sm font-semibold text-green-700">Income</p>
-          <p className="mt-2 text-2xl font-extrabold text-green-700">{currency(totalIncome)}</p>
-        </div>
-        <div className="rounded-3xl bg-red-50 p-5 text-center shadow-sm">
-          <p className="text-sm font-semibold text-red-700">Expense</p>
-          <p className="mt-2 text-2xl font-extrabold text-red-700">{currency(totalExpense)}</p>
-        </div>
-      </div>
+      <SummaryCards
+        currentBalance={currentBalance}
+        totalIncome={totalIncome}
+        totalExpense={totalExpense}
+      />
 
-      {/* -------- Transaction header -------- */}
-      <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-xl font-semibold text-blue-700">Transaction</h2>
-        <button
-          onClick={openAddModal}
-          className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow hover:bg-blue-700 cursor-pointer"
-        >
-          + Add transaction
-        </button>
-      </div>
+      <TransactionHeader onAdd={openAddModal} />
 
-      {/* Filter + search bar */}
-      <div className="mb-6 rounded-3xl bg-blue-50 p-4 shadow-sm">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          {/* tabs */}
-          <div className="flex gap-2">
-            {[
-              { key: "all", label: "All" },
-              { key: "income", label: "Income" },
-              { key: "outcome", label: "Expense" },
-            ].map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setFilterType(tab.key)}
-                className={cls(
-                  "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
-                  filterType === tab.key
-                    ? "bg-blue-600 text-white shadow"
-                    : "bg-white text-gray-700 hover:bg-gray-100"
-                )}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
+      <FiltersBar
+        filterType={filterType}
+        setFilterType={setFilterType}
+        search={search}
+        setSearch={setSearch}
+        month={month}
+        setMonth={setMonth}
+        year={year}
+        setYear={setYear}
+        monthOptions={monthOptions}
+        yearOptions={yearOptions}
+      />
 
-          {/* search + month/year */}
-          <div className="flex flex-1 items-center justify-end gap-3">
-            <input
-              type="text"
-              placeholder="Search..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="h-10 w-full max-w-xs rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500"
-            />
+      <StatsCards txIncome={txIncome} txExpense={txExpense} txNet={txNet} />
 
-            <select
-              value={month}
-              onChange={(e) => setMonth(e.target.value)}
-              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500 cursor-pointer"
-            >
-              <option value="all">Month</option>
-              {monthOptions.map((m) => (
-                <option key={m} value={m}>
-                  {m}
-                </option>
-              ))}
-            </select>
+      <TransactionsList
+        filteredTx={filteredTx}
+        showAll={showAll}
+        setShowAll={setShowAll}
+        catMap={catMap}
+        deleteTransaction={deleteTransaction}
+      />
 
-            <select
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-              className="h-10 rounded-full border border-gray-300 px-3 text-sm outline-none focus:border-blue-500 cursor-pointer"
-            >
-              <option value="all">Year</option>
-              {yearOptions.map((y) => (
-                <option key={y} value={y}>
-                  {y}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-      </div>
+      <ReportSection
+        reportTab={reportTab}
+        setReportTab={setReportTab}
+        reportData={reportData}
+        pieGradient={pieGradient}
+      />
 
-      {/* 3 stat cards dưới filter */}
-      <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-3">
-        <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-green-100 text-xl">📈</div>
-          <div>
-            <p className="text-sm text-gray-500">Total Income</p>
-            <p className="mt-1 text-xl font-bold text-green-600">{currency(txIncome)}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-xl">📉</div>
-          <div>
-            <p className="text-sm text-gray-500">Total Expense</p>
-            <p className="mt-1 text-xl font-bold text-red-600">{currency(txExpense)}</p>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-3 rounded-2xl bg-white p-4 shadow">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-100 text-xl">📊</div>
-          <div>
-            <p className="text-sm text-gray-500">Net Amount</p>
-            <p
-              className={cls(
-                "mt-1 text-xl font-bold",
-                txNet > 0 ? "text-blue-700" : txNet < 0 ? "text-red-600" : "text-gray-700"
-              )}
-            >
-              {formatSigned(txNet)}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* All Transactions */}
-      <div className="rounded-2xl bg-white p-4 shadow">
-        <h3 className="mb-3 text-lg font-semibold text-blue-700">All Transaction</h3>
-
-        <ul>
-          {(showAll ? filteredTx : filteredTx.slice(0, 5)).map((t) => {
-            const isIncome = t.type === "income";
-            const catName = catMap[t.category_id] || "Uncategorized";
-
-            // ✅ hiển thị ngày kiểu VN
-            const date = formatDateVN(t.date);
-
-            return (
-              <li key={t.id} className="mb-3 last:mb-0">
-                <div
-                  className={cls(
-                    "flex items-center justify-between rounded-3xl px-5 py-4 text-white shadow-md",
-                    isIncome ? "bg-green-700" : "bg-red-800"
-                  )}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={cls(
-                        "mt-1 grid h-8 w-8 place-items-center rounded-full border-2",
-                        isIncome ? "border-green-200 bg-green-500" : "border-red-200 bg-red-500"
-                      )}
-                    >
-                      {isIncome ? "↑" : "↓"}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold opacity-80">{date}</p>
-                      <p className="text-base font-semibold">{t.note || "(no note)"}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-2">
-                      <span className="rounded-full bg-white/20 px-3 py-1 text-sm font-medium">{catName}</span>
-                      <button
-                        onClick={() => deleteTransaction(t.id)}
-                        className="grid h-7 w-7 place-items-center rounded-full bg-white/20 text-xs hover:bg-white/30 cursor-pointer"
-                        title="Delete"
-                      >
-                        ✕
-                      </button>
-                    </div>
-                    <p className={cls("text-lg font-bold", isIncome ? "text-green-200" : "text-red-200")}>
-                      {isIncome ? "+" : "-"} {currency(t.amount)}
-                    </p>
-                  </div>
-                </div>
-              </li>
-            );
-          })}
-        </ul>
-
-        {filteredTx.length > 5 && (
-          <div className="mt-4 text-center">
-            <button
-              onClick={() => setShowAll((s) => !s)}
-              className="rounded-full border border-blue-400 px-4 py-2 text-sm font-semibold text-blue-700 hover:bg-blue-50 cursor-pointer"
-            >
-              {showAll ? "See less" : "See all"}
-            </button>
-          </div>
-        )}
-      </div>
-
-      {/* ---------- Report section ---------- */}
-      <section className="mt-8 rounded-3xl bg-white p-5 shadow">
-        <h2 className="mb-4 text-xl font-semibold text-blue-700">Report</h2>
-
-        <div className="mb-4 flex gap-3">
-          <button
-            onClick={() => setReportTab("income")}
-            className={cls(
-              "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
-              reportTab === "income" ? "bg-blue-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            )}
-          >
-            Income
-          </button>
-          <button
-            onClick={() => setReportTab("outcome")}
-            className={cls(
-              "rounded-full px-4 py-2 text-sm font-semibold cursor-pointer",
-              reportTab === "outcome" ? "bg-blue-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            )}
-          >
-            Expense
-          </button>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="flex flex-col items-center rounded-2xl bg-gray-50 p-4">
-            <div className="mb-4 h-72 w-72 rounded-full border border-blue-400" style={{ background: pieGradient }} />
-            <p className="text-base font-semibold">
-              {reportTab === "income" ? "Income by categories" : "Expense by categories"}
-            </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-3">
-              {reportData.map((item, idx) => (
-                <div key={item.category} className="flex items-center gap-2 text-sm text-gray-700">
-                  <span
-                    className="h-3 w-3 rounded-full"
-                    style={{ backgroundColor: REPORT_COLORS[idx % REPORT_COLORS.length] }}
-                  />
-                  <span>{item.category}</span>
-                </div>
-              ))}
-              {!reportData.length && <p className="text-sm text-gray-400">No data</p>}
-            </div>
-          </div>
-
-          <div className="rounded-2xl bg-gray-50 p-4">
-            <h3 className="mb-3 text-lg font-semibold">Details</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-gray-800 text-white">
-                  <tr>
-                    <th className="px-3 py-2 text-left">Category</th>
-                    <th className="px-3 py-2 text-right">Amount</th>
-                    <th className="px-3 py-2 text-right">Percentage</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {reportData.map((row) => (
-                    <tr key={row.category} className="border-b">
-                      <td className="px-3 py-2">{row.category}</td>
-                      <td className="px-3 py-2 text-right">{currency(row.amount)}</td>
-                      <td className="px-3 py-2 text-right">{row.percentage.toFixed(1)}%</td>
-                    </tr>
-                  ))}
-                  {!reportData.length && (
-                    <tr>
-                      <td colSpan={3} className="px-3 py-4 text-center text-gray-400">
-                        No data
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ---------- Popup Create New Transaction ---------- */}
-      <Modal open={openModal} onClose={() => setOpenModal(false)} title="Create New Transaction">
-        <div className="space-y-5">
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">Amount (VND)</label>
-            <input
-              type="number"
-              placeholder="Amount"
-              value={form.amount}
-              onChange={(e) => setForm({ ...form, amount: e.target.value })}
-              className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-            />
-          </div>
-
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">Type</label>
-            <select
-              value={form.type}
-              onChange={(e) => setForm({ ...form, type: e.target.value })}
-              className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
-            >
-              <option value="income">Income</option>
-              <option value="outcome">Expense</option>
-            </select>
-          </div>
-
-          <div>
-            <label className="mb-2 block text-sm font-semibold text-gray-800">Description</label>
-            <input
-              type="text"
-              placeholder="Transaction description"
-              value={form.note}
-              onChange={(e) => setForm({ ...form, note: e.target.value })}
-              className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-            />
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-800">Date</label>
-
-              {/* ✅ CHỈ THAY ĐOẠN DATE: input type="date" -> react-datepicker */}
-              <DatePicker
-                selected={parseISODate(form.date)}
-                onChange={(date) => setForm({ ...form, date: toISODate(date) })}
-                dateFormat="dd/MM/yyyy"
-                placeholderText="dd/mm/yyyy"
-                showPopperArrow={false}
-                className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500"
-              />
-
-              {/* vẫn giữ preview như cũ */}
-              <p className="mt-1 text-xs text-gray-500">
-                Ngày đã chọn: <span className="font-semibold">{formatDateVN(form.date)}</span>
-              </p>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-800">Category</label>
-              <select
-                value={form.category_id}
-                onChange={(e) => setForm({ ...form, category_id: Number(e.target.value) })}
-                className="w-full rounded-full border border-gray-300 px-4 py-3 outline-none focus:border-blue-500 cursor-pointer"
-              >
-                {categories.length === 0 && <option value="">No category found</option>}
-                {categories.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="mt-2 grid gap-3 md:grid-cols-2">
-            <button
-              onClick={createTransaction}
-              disabled={loading}
-              className={cls(
-                "rounded-2xl px-5 py-3 font-semibold text-white shadow cursor-pointer",
-                loading ? "bg-blue-300" : "bg-blue-600 hover:bg-blue-700"
-              )}
-            >
-              {loading ? "Creating..." : "Create Transaction"}
-            </button>
-            <button
-              onClick={() => setOpenModal(false)}
-              className="rounded-2xl bg-red-600 px-5 py-3 font-semibold text-white shadow hover:bg-red-700 cursor-pointer"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </Modal>
+      <CreateTransactionModal
+        open={openModal}
+        onClose={() => setOpenModal(false)}
+        form={form}
+        setForm={setForm}
+        categories={categories}
+        createTransaction={createTransaction}
+        loading={loading}
+      />
     </div>
   );
 }
