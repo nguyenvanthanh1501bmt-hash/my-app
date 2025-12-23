@@ -1,0 +1,143 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { getUsers } from "./API_setup";
+import UpdateForm from "./UpdateForm";
+
+export default function User_list({
+  filterName,
+  filterId,
+  filterRole,
+  filterMonth,
+}) {
+  const [users, setUsers] = useState([]);
+  const [selectedIds, setSelectedIds] = useState([]);
+  const [isOpenUpdateForm, setIsOpenUpdateForm] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+
+  // Hàm fetch lại users
+  const fetchUsers = async () => {
+    try {
+      const data = await getUsers();
+      setUsers(data || []);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
+  const filteredUsers = users.filter(u => {
+    if (filterName && !u.name.toLowerCase().includes(filterName.toLowerCase()))
+      return false;
+
+    if (filterId && u.id !== Number(filterId)) return false;
+
+    if (filterRole !== "all" && u.role !== filterRole) return false;
+
+    if (filterMonth?.month && filterMonth?.year) {
+      const d = new Date(u.created_at);
+      if (
+        d.getMonth() + 1 !== filterMonth.month ||
+        d.getFullYear() !== filterMonth.year
+      ) {
+        return false;
+      }
+    }
+
+    return true;
+  });
+
+  const toggleUser = (id) => {
+    setSelectedIds(prev =>
+      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+    );
+  };
+
+  const toggleAll = () => {
+    if (selectedIds.length === filteredUsers.length) {
+      setSelectedIds([]);
+    } else {
+      setSelectedIds(filteredUsers.map(u => u.id));
+    }
+  };
+
+  return (
+    <div className="mt-4 overflow-x-auto">
+      <table className="min-w-full border border-gray-300">
+        <thead className="bg-gray-100">
+          <tr>
+            <th className="border px-3 py-2 text-center">
+              <input
+                type="checkbox"
+                checked={
+                  filteredUsers.length > 0 &&
+                  selectedIds.length === filteredUsers.length
+                }
+                onChange={toggleAll}
+              />
+            </th>
+            <th className="border px-3 py-2 text-left">ID</th>
+            <th className="border px-3 py-2 text-left">Name</th>
+            <th className="border px-3 py-2 text-left">Role</th>
+            <th className="border px-3 py-2 text-left">Created at</th>
+            <th className="border px-3 py-2 text-left">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {filteredUsers.length === 0 && (
+            <tr>
+              <td colSpan={6} className="text-center py-4 text-gray-500">
+                Không có dữ liệu
+              </td>
+            </tr>
+          )}
+
+          {filteredUsers.map(u => (
+            <tr key={u.id} className="hover:bg-gray-50">
+              <td className="border px-3 py-2 text-center">
+                <input
+                  type="checkbox"
+                  checked={selectedIds.includes(u.id)}
+                  onChange={() => toggleUser(u.id)}
+                />
+              </td>
+              <td className="border px-3 py-2">{u.id}</td>
+              <td className="border px-3 py-2 font-medium">{u.name}</td>
+              <td className="border px-3 py-2">{u.role}</td>
+              <td className="border px-3 py-2">
+                {new Date(u.created_at).toLocaleDateString("vi-VN")}
+              </td>
+              <td className="border px-3 py-2 flex flex-row justify-around">
+                <button
+                  className="text-blue-500 hover:underline"
+                  onClick={() => {
+                    setSelectedUser(u);
+                    setIsOpenUpdateForm(true);
+                  }}
+                >
+                  Edit
+                </button>
+                <button className="ml-4 text-red-500 hover:underline">Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      {isOpenUpdateForm && (
+        <UpdateForm
+          open={isOpenUpdateForm}
+          user={selectedUser}
+          onOpenChange={(state) => {
+            setIsOpenUpdateForm(state);
+            if (!state) fetchUsers(); // reload danh sách khi đóng form
+          }}
+        />
+      )}
+    </div>
+  );
+}

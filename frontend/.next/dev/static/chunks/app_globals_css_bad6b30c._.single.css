@@ -86,7 +86,6 @@
     --color-red-50: #fef2f2;
     --color-red-100: #ffe2e2;
     --color-red-200: #ffcaca;
-    --color-red-300: #ffa3a3;
     --color-red-400: #ff6568;
     --color-red-500: #fb2c36;
     --color-red-600: #e40014;
@@ -101,7 +100,6 @@
     --color-yellow-100: #fef9c2;
     --color-yellow-300: #ffe02a;
     --color-yellow-400: #fac800;
-    --color-yellow-600: #cd8900;
     --color-yellow-700: #a36100;
     --color-lime-500: #80cd00;
     --color-green-50: #f0fdf4;
@@ -206,7 +204,6 @@
       --color-red-50: lab(96.5005% 4.18511 1.52329);
       --color-red-100: lab(92.243% 10.2865 3.83865);
       --color-red-200: lab(86.017% 19.8815 7.75869);
-      --color-red-300: lab(76.5514% 36.4219 15.5335);
       --color-red-400: lab(63.7053% 60.7449 31.3109);
       --color-red-500: lab(55.4814% 75.0732 48.8528);
       --color-red-600: lab(48.4493% 77.4328 61.5452);
@@ -221,7 +218,6 @@
       --color-yellow-100: lab(97.3564% -4.51407 27.344);
       --color-yellow-300: lab(89.7033% -.480324 84.4917);
       --color-yellow-400: lab(83.2664% 8.65132 106.895);
-      --color-yellow-600: lab(62.7799% 22.4198 86.1544);
       --color-yellow-700: lab(47.8202% 25.2426 66.5015);
       --color-lime-500: lab(75.3197% -46.6547 86.1778);
       --color-green-50: lab(98.1563% -5.60117 2.75913);
@@ -683,16 +679,8 @@
     margin-left: calc(var(--spacing) * 2);
   }
 
-  .ml-\[10\%\] {
-    margin-left: 10%;
-  }
-
   .ml-\[15\%\] {
     margin-left: 15%;
-  }
-
-  .ml-\[20\%\] {
-    margin-left: 20%;
   }
 
   .block {
@@ -870,20 +858,8 @@
     width: 70%;
   }
 
-  .w-\[280px\] {
-    width: 280px;
-  }
-
-  .w-\[290px\] {
-    width: 290px;
-  }
-
   .w-\[300px\] {
     width: 300px;
-  }
-
-  .w-\[320px\] {
-    width: 320px;
   }
 
   .w-\[400px\] {
@@ -1187,14 +1163,6 @@
 
   .border-red-200 {
     border-color: var(--color-red-200);
-  }
-
-  .border-red-300 {
-    border-color: var(--color-red-300);
-  }
-
-  .border-red-400 {
-    border-color: var(--color-red-400);
   }
 
   .border-slate-200 {
@@ -1681,10 +1649,6 @@
     color: var(--color-black);
   }
 
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
-
   .text-blue-600 {
     color: var(--color-blue-600);
   }
@@ -1785,10 +1749,6 @@
     color: var(--color-red-200);
   }
 
-  .text-red-300 {
-    color: var(--color-red-300);
-  }
-
   .text-red-400 {
     color: var(--color-red-400);
   }
@@ -1819,10 +1779,6 @@
 
   .text-white {
     color: var(--color-white);
-  }
-
-  .text-yellow-600 {
-    color: var(--color-yellow-600);
   }
 
   .text-yellow-700 {
@@ -1999,12 +1955,6 @@
   @media (hover: hover) {
     .hover\:bg-blue-100:hover {
       background-color: var(--color-blue-100);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:bg-blue-400:hover {
-      background-color: var(--color-blue-400);
     }
   }
 
