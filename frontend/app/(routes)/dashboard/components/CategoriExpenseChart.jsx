@@ -62,7 +62,7 @@ export default function CategoryExpensePie({ userId, month }) {
   if (!chartData) return <p>No expense data for this month.</p>;
 
   return (
-    <div style={{ maxWidth: 600, margin: "0 auto" }}>
+    <div style={{ width: "100%", maxWidth: 600, height: 320, margin: "0 auto" }}>
       <Pie
         data={chartData}
         options={{
@@ -71,18 +71,18 @@ export default function CategoryExpensePie({ userId, month }) {
           plugins: {
             legend: {
               display: true,
-              position: "right", // đặt legend bên phải
+              position: "right",
               labels: {
-                boxWidth: 20,
-                padding: 15,
+                boxWidth: 22,
+                padding: 18,
+                font: {
+                  size: 14,
+                },
               },
             },
-            tooltip: {
-              enabled: true,
-            },
+            tooltip: { enabled: true },
           },
         }}
-        height={300} // chiều cao cố định để legend bên phải không bị chèn
       />
     </div>
   );

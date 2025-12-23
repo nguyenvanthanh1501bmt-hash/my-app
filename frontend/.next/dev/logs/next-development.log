@@ -67,3 +67,181 @@ Import traces:
 [00:12:44.839] Server  LOG      ✓ Compiled in 156ms
 [00:13:27.957] Server  LOG      ✓ Compiled in 47ms
 [00:14:51.168] Browser LOG     Current path: /dashboard/budget
+[00:16:17.609] Browser LOG     Current path: /dashboard/expenses
+[00:16:20.710] Browser LOG     Current path: /dashboard/saving-wallet
+[00:19:42.387] Server  LOG      ✓ Compiled in 55ms
+[00:19:42.711] Browser ERROR   uncaughtError: ReferenceError: targetAmount is not defined
+[00:19:56.363] Server  WARN     ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:19:56.389] Server  LOG      ✓ Compiled in 63ms
+[00:19:56.526] Server  ERROR    ⨯ TypeError: immutable
+[00:19:56.579] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:19:56.715] Browser LOG     Current path: /dashboard/saving-wallet
+[00:19:56.715] Browser LOG     Sending username to backend: tamnguyen179
+[00:19:56.715] Browser LOG     Logging in user: tamnguyen179
+[00:19:57.560] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:19:57.771] Server  ERROR    ⨯ TypeError: immutable
+[00:19:57.798] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:19:59.727] Browser LOG     Current path: /dashboard/saving-wallet
+[00:19:59.727] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:19:59.727] Browser LOG     Sending username to backend: tamnguyen179
+[00:19:59.727] Browser LOG     Logging in user: tamnguyen179
+[00:19:59.727] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:19:59.727] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MDkzMDYxfQ.m3rMs9pyXAkb5TXN040TL76Xf2MXWy9cnC8ZEIKXWvE","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:20:04.447] Browser LOG     Current path: /dashboard/your-debt
+[00:20:07.571] Browser LOG     Current path: /dashboard/saving-wallet
+[00:20:09.331] Browser LOG     Current path: /dashboard/budget
+[00:20:09.962] Browser LOG     Current path: /dashboard/user-management
+[00:20:10.672] Browser LOG     Current path: /dashboard/your-debt
+[00:20:11.262] Browser LOG     Current path: /dashboard/saving-wallet
+[00:20:11.799] Browser LOG     Current path: /dashboard/expenses
+[00:20:12.622] Browser LOG     Current path: /dashboard
+[00:22:48.015] Server  LOG      ✓ Compiled in 161ms
+[00:22:52.441] Server  LOG      ✓ Compiled in 139ms
+[00:23:04.758] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:04.844] Server  ERROR    ⨯ TypeError: immutable
+[00:23:04.918] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:23:04.918] Browser LOG     Current path: /dashboard
+[00:23:04.918] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:23:05.511] Browser LOG     Sending username to backend: tamnguyen179
+[00:23:05.511] Browser LOG     Logging in user: tamnguyen179
+[00:23:05.861] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MDkzMjQ3fQ.RB0c7JPOIWVFXjcgMMgJyisglWCUIlZ87vBrN8FoRAU","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:23:05.861] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:25:05.378] Server  LOG      ✓ Compiled in 61ms
+[00:25:05.722] Browser ERROR   ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx:88:3
+Parsing ecmascript source code failed
+  86 |     />
+  87 |   </div>
+> 88 | );
+     |   ^
+  89 |
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:25:09.715] Browser ERROR   ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx:88:3
+Parsing ecmascript source code failed
+  86 |     />
+  87 |   </div>
+> 88 | );
+     |   ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:25:15.721] Browser ERROR   ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx:88:5
+Parsing ecmascript source code failed
+  86 |     />
+  87 |   </div>
+> 88 |   );
+     |     ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:25:17.714] Browser ERROR   ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx:88:3
+Parsing ecmascript source code failed
+  86 |     />
+  87 |   </div>
+> 88 | );
+     |   ^
+
+Expected '}', got '<eof>'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/CategoriExpenseChart.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:25:22.904] Server  LOG      ✓ Compiled in 54ms
+[00:25:28.682] Server  LOG      ✓ Compiled in 54ms
+[00:25:32.468] Server  LOG      ✓ Compiled in 45ms
+[00:25:44.542] Server  LOG      ✓ Compiled in 39ms
+[00:25:47.145] Server  LOG      ✓ Compiled in 120ms
+[00:25:52.348] Server  LOG      ✓ Compiled in 128ms
+[00:25:59.649] Server  LOG      ✓ Compiled in 133ms
+[00:26:03.079] Server  LOG      ✓ Compiled in 112ms
+[00:26:06.307] Server  LOG      ✓ Compiled in 115ms
+[00:26:09.641] Server  LOG      ✓ Compiled in 112ms
+[00:26:15.410] Server  LOG      ✓ Compiled in 109ms
+[00:29:53.355] Browser LOG     Current path: /dashboard/saving-wallet
+[00:29:54.587] Browser LOG     Current path: /dashboard/budget
+[00:29:55.192] Browser LOG     Current path: /dashboard/saving-wallet
+[00:29:55.840] Browser LOG     Current path: /dashboard/budget
+[00:29:56.399] Browser LOG     Current path: /dashboard/expenses
+[00:29:57.717] Browser LOG     Current path: /dashboard/budget
+[00:29:58.318] Browser LOG     Current path: /dashboard/saving-wallet
+[00:30:05.745] Browser LOG     Current path: /dashboard/your-debt
+[00:30:09.278] Browser LOG     Current path: /dashboard/user-management
+[00:30:10.291] Browser LOG     Current path: /dashboard/budget
+[00:30:11.162] Browser LOG     Current path: /dashboard/expenses
+[00:30:12.135] Browser LOG     Current path: /dashboard
+[00:32:08.293] Browser LOG     Current path: /dashboard/expenses
+[00:32:09.575] Browser LOG     Current path: /dashboard
+[00:33:22.077] Server  LOG      ✓ Compiled in 171ms
+[00:33:50.099] Server  LOG      ✓ Compiled in 61ms
+[00:33:50.722] Browser ERROR   ./app/(routes)/dashboard/components/SumarySection.jsx:18:7
+Parsing ecmascript source code failed
+  16 |
+  17 |     async function fetchData() {
+> 18 |       try {
+     |       ^^^
+  19 |         const data = await GetSummary(userId, month);
+  20 |         setSummary(data);
+  21 |       } catch (err) {
+
+Expected '</', got 'try'
+
+Import traces:
+  Client Component Browser:
+    ./app/(routes)/dashboard/components/SumarySection.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Client Component Browser]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+
+  Client Component SSR:
+    ./app/(routes)/dashboard/components/SumarySection.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Client Component SSR]
+    ./app/(routes)/dashboard/page.jsx [Server Component]
+[00:34:35.457] Server  LOG      ✓ Compiled in 58ms
+[00:34:36.824] Server  LOG      ✓ Compiled in 52ms
+[00:35:27.186] Server  LOG      ✓ Compiled in 66ms
+[01:05:05.255] Server  LOG      ✓ Compiled in 228ms
+[01:05:20.694] Server  LOG      ✓ Compiled in 55ms
+[01:06:30.488] Server  LOG      ✓ Compiled in 129ms
+[01:06:47.122] Server  LOG      ✓ Compiled in 158ms
+[01:06:50.552] Server  LOG      ✓ Compiled in 126ms
+[01:07:12.890] Browser LOG     Current path: /dashboard/budget
+[01:07:13.450] Browser LOG     Current path: /dashboard/saving-wallet
+[01:07:14.385] Browser LOG     Current path: /dashboard/your-debt
+[01:07:16.012] Browser LOG     Current path: /dashboard/user-management
