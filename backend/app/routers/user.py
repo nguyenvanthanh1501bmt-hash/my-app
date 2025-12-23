@@ -119,6 +119,20 @@ def list_users(db: Session = Depends(get_db), admin=Depends(require_admin)):
         out.append(UserOut(id=rid, name=rname, role=rrole, created_at=rcreated))
     return out
 
+# ====== Xóa user (ADMIN ONLY) ======
+@router.delete("/{user_id}", response_model=dict)
+def delete_user(
+    user_id: int,
+    db: Session = Depends(get_db),
+    admin=Depends(require_admin),
+):
+    u = UserRepo.get_by_id(db, user_id)
+    if not u:
+        raise HTTPException(status_code=404, detail="User không tồn tại")
+
+    UserRepo.delete(db, user_id)
+    return {"deleted": True}
+
 # ====== Đổi role cho user (ADMIN ONLY) - Optional ======
 @router.patch("/{user_id}/role", response_model=UserOut)
 def set_user_role(

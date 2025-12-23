@@ -27,7 +27,7 @@ export default function SendUsername() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ name }),
-          credentials: "include", // ❗ để gửi cookie nếu BE có set cookies
+          credentials: "include", // để gửi cookie nếu BE có set cookies
         });
  
         if (res.status === 400) {

@@ -31,6 +31,13 @@ class UserRepo:
         return db.query(User.id, User.name, User.role, User.created_at).all()
 
     @staticmethod
+    def delete(db: Session, user_id: int) -> None:
+        user = db.get(User, user_id)
+        if user:
+            db.delete(user)
+            db.commit()
+
+    @staticmethod
     def set_role(db: Session, user: User, role: str) -> User:
         user.role = role
         db.commit(); db.refresh(user)

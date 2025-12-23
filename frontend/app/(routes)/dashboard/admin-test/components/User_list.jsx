@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { getUsers } from "./API_setup";
 import UpdateForm from "./UpdateForm";
+import ConfirmForm from "./Confirmform";
+import { Edit2, Trash2 } from "lucide-react";
 
 export default function User_list({
   filterName,
@@ -11,8 +13,8 @@ export default function User_list({
   filterMonth,
 }) {
   const [users, setUsers] = useState([]);
-  const [selectedIds, setSelectedIds] = useState([]);
   const [isOpenUpdateForm, setIsOpenUpdateForm] = useState(false);
+  const [isOpenConfirmForm, setIsOpenConfirmForm] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
   // Hàm fetch lại users
@@ -39,10 +41,7 @@ export default function User_list({
 
     if (filterMonth?.month && filterMonth?.year) {
       const d = new Date(u.created_at);
-      if (
-        d.getMonth() + 1 !== filterMonth.month ||
-        d.getFullYear() !== filterMonth.year
-      ) {
+      if (d.getMonth() + 1 !== filterMonth.month || d.getFullYear() !== filterMonth.year) {
         return false;
       }
     }
@@ -50,35 +49,11 @@ export default function User_list({
     return true;
   });
 
-  const toggleUser = (id) => {
-    setSelectedIds(prev =>
-      prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
-    );
-  };
-
-  const toggleAll = () => {
-    if (selectedIds.length === filteredUsers.length) {
-      setSelectedIds([]);
-    } else {
-      setSelectedIds(filteredUsers.map(u => u.id));
-    }
-  };
-
   return (
     <div className="mt-4 overflow-x-auto">
       <table className="min-w-full border border-gray-300">
         <thead className="bg-gray-100">
           <tr>
-            <th className="border px-3 py-2 text-center">
-              <input
-                type="checkbox"
-                checked={
-                  filteredUsers.length > 0 &&
-                  selectedIds.length === filteredUsers.length
-                }
-                onChange={toggleAll}
-              />
-            </th>
             <th className="border px-3 py-2 text-left">ID</th>
             <th className="border px-3 py-2 text-left">Name</th>
             <th className="border px-3 py-2 text-left">Role</th>
@@ -90,7 +65,7 @@ export default function User_list({
         <tbody>
           {filteredUsers.length === 0 && (
             <tr>
-              <td colSpan={6} className="text-center py-4 text-gray-500">
+              <td colSpan={5} className="text-center py-4 text-gray-500">
                 Không có dữ liệu
               </td>
             </tr>
@@ -98,41 +73,54 @@ export default function User_list({
 
           {filteredUsers.map(u => (
             <tr key={u.id} className="hover:bg-gray-50">
-              <td className="border px-3 py-2 text-center">
-                <input
-                  type="checkbox"
-                  checked={selectedIds.includes(u.id)}
-                  onChange={() => toggleUser(u.id)}
-                />
-              </td>
               <td className="border px-3 py-2">{u.id}</td>
               <td className="border px-3 py-2 font-medium">{u.name}</td>
               <td className="border px-3 py-2">{u.role}</td>
               <td className="border px-3 py-2">
                 {new Date(u.created_at).toLocaleDateString("vi-VN")}
               </td>
-              <td className="border px-3 py-2 flex flex-row justify-around">
+              <td className="border px-3 py-2 flex flex-row justify-start gap-2">
                 <button
-                  className="text-blue-500 hover:underline"
+                  className="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-600 transition"
                   onClick={() => {
                     setSelectedUser(u);
                     setIsOpenUpdateForm(true);
                   }}
                 >
-                  Edit
+                  <Edit2 size={18} />
                 </button>
-                <button className="ml-4 text-red-500 hover:underline">Delete</button>
+
+                <button
+                  className="flex items-center gap-1 text-sm text-red-500 hover:text-red-600 transition"
+                  onClick={() => {
+                    setSelectedUser(u);
+                    setIsOpenConfirmForm(true);
+                  }}
+                >
+                  <Trash2 size={18} />
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
 
+      {isOpenConfirmForm && (
+        <ConfirmForm
+          open={isOpenConfirmForm}
+          user={selectedUser}
+          onOpenChange={state => {
+            setIsOpenConfirmForm(state);
+            if (!state) fetchUsers(); // reload danh sách khi đóng form
+          }}
+        />
+      )}
+
       {isOpenUpdateForm && (
         <UpdateForm
           open={isOpenUpdateForm}
           user={selectedUser}
-          onOpenChange={(state) => {
+          onOpenChange={state => {
             setIsOpenUpdateForm(state);
             if (!state) fetchUsers(); // reload danh sách khi đóng form
           }}
