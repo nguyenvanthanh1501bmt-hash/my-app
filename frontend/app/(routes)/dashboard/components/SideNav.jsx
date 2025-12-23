@@ -32,9 +32,9 @@ function SideNav() {
   if (!loading && isAdmin) {
     menuList.push({
       id: 99,
-      name: "Admin Test",
+      name: "User Management",
       icon: <UserCog />,
-      path: "/dashboard/admin-test",
+      path: "/dashboard/user-management",
     });
   }
 

@@ -8,6 +8,13 @@ import { DeleteSaving, CreateSaving, UpdateSaving } from "./API_setup";
 import { InputForm, Updateform, SavingInCome } from "./update_create_form";
 import { useUserInfo } from "../../components/necessary_info";
 
+const formatVND = (value) => {
+  if (value === null || value === undefined || value === "") return "0đ";
+  const number = Number(value);
+  if (isNaN(number)) return "0đ";
+  return number.toLocaleString("vi-VN") + "đ";
+};
+
 export default function LoadingDisplay() {
   const { data, setData, error } = useUserSavingList();
   const [showForm, setShowForm] = useState(false);
@@ -150,18 +157,18 @@ const SavingFormDisplay = ({ goal_name, target_amount, current_amount, onDelete,
     <div className="flex justify-between items-center">
       <span className="font-bold">{goal_name}</span>
       <span className="text-indigo-400 font-bold flex items-center gap-1">
-        <Target className="h-4 w-4" /> Target: {target_amount}đ
+        <Target className="h-4 w-4" /> Target: {formatVND(target_amount)}
       </span>
     </div>
 
     <div className="text-green-600 font-bold flex justify-between items-center">
-      <p>{current_amount}đ</p>
+      <p>{formatVND(current_amount)}</p>
       <p className={Number(current_amount) >= Number(target_amount)
           ? "text-green-300"
           : "text-gray-400"}>
         {Number(current_amount) >= Number(target_amount)
           ? "Complete"
-          : `${(Number(target_amount) - Number(current_amount)).toFixed(2)} left`}
+          : `${formatVND(Number(target_amount) - Number(current_amount))} left`}
       </p>
     </div>
 

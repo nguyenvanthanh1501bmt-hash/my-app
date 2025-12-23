@@ -1,6 +1,19 @@
 import React, { useState } from "react";
 import { CreateSaving, UpdateSaving } from "./API_setup"; // API gọi backend
 
+
+const formatMoneyInput = (val) => {
+  // chỉ giữ số
+  const digits = String(val ?? "").replace(/\D/g, "");
+  if (!digits) return "";
+  // thêm dấu chấm ngăn cách nghìn
+  return digits.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+};
+
+const parseMoneyInput = (val) => {
+  const digits = String(val ?? "").replace(/\D/g, "");
+  return digits ? Number(digits) : 0;
+};
 // ======= Form tạo mới saving =======
 export function InputForm({ id, onClose, onSubmit }) {
   const [goalName, setGoalName] = useState(""); // state lưu goal name
@@ -88,28 +101,31 @@ export function InputForm({ id, onClose, onSubmit }) {
 
 // ======= Form cập nhật saving =======
 export function Updateform({ savingid, datachange, onClose, onSubmit }) {
-  const [goalName, setGoalName] = useState(datachange.goal_name); // state goal name khởi tạo từ data hiện tại
-  const [targetAmount, setTargetAmount] = useState(datachange.target_amount); // state target amount khởi tạo từ data hiện tại
+  const [goalName, setGoalName] = useState(datachange.goal_name);
 
-  // Hàm submit form update
+  // targetAmountText sẽ là dạng đã format: "5.000.000"
+  const [targetAmountText, setTargetAmountText] = useState(
+    formatMoneyInput(datachange.target_amount)
+  );
+
   const handleCreate = async (e) => {
-    e.preventDefault(); // ngăn reload trang
+    e.preventDefault();
     try {
       const newData = {
         goal_name: goalName,
-        target_amount: parseFloat(targetAmount),
+        target_amount: parseMoneyInput(targetAmountText),
       };
 
       if (onSubmit) {
-        await onSubmit(newData); // gọi callback về LoadingDisplay
+        await onSubmit(newData);
       } else {
-        await UpdateSaving(savingid, newData); // fallback: tự gọi API nếu không có callback
+        await UpdateSaving(savingid, newData);
       }
 
-      onClose(); // đóng modal
+      onClose();
     } catch (err) {
       console.error(err);
-      alert("Error updating saving"); // thông báo lỗi
+      alert("Error updating saving");
     }
   };
 
@@ -117,11 +133,10 @@ export function Updateform({ savingid, datachange, onClose, onSubmit }) {
     <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
       <form
         className="bg-white p-6 rounded-xl w-[400px] flex flex-col gap-4 shadow-lg relative"
-        onSubmit={handleCreate} // gắn handler submit
+        onSubmit={handleCreate}
       >
         <h1 className="font-bold text-xl">Edit Saving</h1>
 
-        {/* Input Goal Name */}
         <div>
           <label className="font-medium mb-1 block">Goal Name</label>
           <input
@@ -133,19 +148,19 @@ export function Updateform({ savingid, datachange, onClose, onSubmit }) {
           />
         </div>
 
-        {/* Input Target Amount */}
         <div>
           <label className="font-medium mb-1 block">Target Amount</label>
           <input
-            type="number"
-            value={targetAmount}
-            onChange={(e) => setTargetAmount(e.target.value)}
+            type="text"
+            inputMode="numeric"
+            value={targetAmountText}
+            onChange={(e) => setTargetAmountText(formatMoneyInput(e.target.value))}
             className="w-full border p-2 rounded"
+            placeholder="Ví dụ: 5.000.000"
             required
           />
         </div>
 
-        {/* Buttons */}
         <div className="flex gap-2 mt-2 justify-between">
           <button
             type="submit"
@@ -155,7 +170,7 @@ export function Updateform({ savingid, datachange, onClose, onSubmit }) {
           </button>
           <button
             type="button"
-            onClick={onClose} // đóng modal khi cancel
+            onClick={onClose}
             className="bg-gray-300 text-black p-2 rounded-2xl hover:bg-red-500 w-[40%]"
           >
             Cancel
@@ -165,6 +180,7 @@ export function Updateform({ savingid, datachange, onClose, onSubmit }) {
     </div>
   );
 }
+
 
 
 export function SavingInCome({savingid, oldCurrent, onClose, onSubmit}){
