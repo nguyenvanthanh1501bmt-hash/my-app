@@ -17,7 +17,6 @@
       --tw-gradient-from-position: 0%;
       --tw-gradient-via-position: 50%;
       --tw-gradient-to-position: 100%;
-      --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
       --tw-shadow: 0 0 #0000;
@@ -636,6 +635,14 @@
     margin-top: calc(var(--spacing) * -12);
   }
 
+  .-mt-100 {
+    margin-top: calc(var(--spacing) * -100);
+  }
+
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
+
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -694,6 +701,18 @@
 
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
+  }
+
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
+
+  .mb-20 {
+    margin-bottom: calc(var(--spacing) * 20);
+  }
+
+  .mb-30 {
+    margin-bottom: calc(var(--spacing) * 30);
   }
 
   .ml-2 {
@@ -809,10 +828,6 @@
 
   .h-screen {
     height: 100vh;
-  }
-
-  .max-h-80 {
-    max-height: calc(var(--spacing) * 80);
   }
 
   .max-h-96 {
@@ -1050,12 +1065,6 @@
 
   .gap-15 {
     gap: calc(var(--spacing) * 15);
-  }
-
-  :where(.space-y-3 > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(var(--spacing) * 3) * var(--tw-space-y-reverse));
-    margin-block-end: calc(calc(var(--spacing) * 3) * calc(1 - var(--tw-space-y-reverse)));
   }
 
   :where(.space-y-4 > :not(:last-child)) {
@@ -1526,11 +1535,6 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .to-indigo-500 {
-    --tw-gradient-to: var(--color-indigo-500);
-    --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
-  }
-
   .to-slate-50 {
     --tw-gradient-to: var(--color-slate-50);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
@@ -1632,6 +1636,10 @@
     padding-top: calc(var(--spacing) * 5);
   }
 
+  .pt-10 {
+    padding-top: calc(var(--spacing) * 10);
+  }
+
   .pr-8 {
     padding-right: calc(var(--spacing) * 8);
   }
@@ -1699,15 +1707,6 @@
   .text-xs {
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
-  }
-
-  .text-\[11px\] {
-    font-size: 11px;
-  }
-
-  .leading-none {
-    --tw-leading: 1;
-    line-height: 1;
   }
 
   .font-bold {
@@ -1917,20 +1916,12 @@
     opacity: .25;
   }
 
-  .opacity-70 {
-    opacity: .7;
-  }
-
   .opacity-75 {
     opacity: .75;
   }
 
   .opacity-80 {
     opacity: .8;
-  }
-
-  .opacity-85 {
-    opacity: .85;
   }
 
   .shadow {
@@ -2111,12 +2102,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-gray-50:hover {
-      background-color: var(--color-gray-50);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:bg-gray-100:hover {
       background-color: var(--color-gray-100);
     }
@@ -2237,12 +2222,6 @@
   }
 
   @media (hover: hover) {
-    .hover\:text-blue-600:hover {
-      color: var(--color-blue-600);
-    }
-  }
-
-  @media (hover: hover) {
     .hover\:text-blue-700:hover {
       color: var(--color-blue-700);
     }
@@ -2269,12 +2248,6 @@
   @media (hover: hover) {
     .hover\:text-red-500:hover {
       color: var(--color-red-500);
-    }
-  }
-
-  @media (hover: hover) {
-    .hover\:text-red-600:hover {
-      color: var(--color-red-600);
     }
   }
 
@@ -2493,12 +2466,6 @@
     }
   }
 
-  @media (min-width: 48rem) {
-    .md\:text-\[6rem\] {
-      font-size: 6rem;
-    }
-  }
-
   @media (min-width: 64rem) {
     .lg\:col-span-4 {
       grid-column: span 4 / span 4;
@@ -2557,6 +2524,10 @@
 
   .dark\:bg-zinc-900:is(.dark *) {
     background-color: var(--color-zinc-900);
+  }
+
+  .dark\:text-gray-300:is(.dark *) {
+    color: var(--color-gray-300);
   }
 
   .dark\:text-neutral-200:is(.dark *) {
@@ -2952,11 +2923,6 @@
   syntax: "<length-percentage>";
   inherits: false;
   initial-value: 100%;
-}
-
-@property --tw-leading {
-  syntax: "*";
-  inherits: false
 }
 
 @property --tw-font-weight {

@@ -14,7 +14,10 @@ import {
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useMe } from "@/app/_components/useMe"; // chỉnh path nếu bạn đặt khác
+import { useMe } from "@/app/_components/useMe";
+
+// 👉 import logo chung folder
+import finmanLogo from "./finman.png";
 
 function SideNav() {
   const path = usePathname();
@@ -28,7 +31,6 @@ function SideNav() {
     { id: 5, name: "Your Loan/Debt", icon: <CircleDollarSign />, path: "/dashboard/your-debt" },
   ];
 
-  // thêm tab admin khi đã load xong & là admin
   if (!loading && isAdmin) {
     menuList.push({
       id: 99,
@@ -47,13 +49,16 @@ function SideNav() {
       <div className="flex flex-row items-center">
         <Link href="/">
           <div className="flex flex-row items-center">
+            
+            {/* ✅ LOGO mới */}
             <Image
-              src="/LogoWeb-removebg-preview.png"
-              alt="LOGO"
-              width={40}
+              src={finmanLogo}
+              alt="Finman Logo"
+              width={180}
               height={40}
+              priority
             />
-            <span className="ml-2 font-bold text-lg text-green-400">Finman</span>
+
           </div>
         </Link>
       </div>

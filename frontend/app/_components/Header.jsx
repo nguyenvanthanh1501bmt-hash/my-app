@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import finmanLogo from './finman.png'   // 👈 import ảnh cùng thư mục
 import { Button } from "@/components/ui/components/ui/button"
 import { useUser, useClerk } from "@clerk/nextjs"
 
@@ -16,15 +17,14 @@ export default function Header() {
           className="flex items-center"
           onClick={() => window.location.href = '/'}
         >
+          {/* ✅ THAY CHỮ FINMAN BẰNG LOGO */}
           <Image
-            src="/LogoWeb-removebg-preview.png"
-            alt="Logo"
-            width={50}
-            height={50}
+            src={finmanLogo}
+            alt="Finman Logo"
+            width={200}
+            height={48}
+            priority
           />
-          <span className="ml-2 font-bold text-lg text-black">
-            Finman
-          </span>
         </Button>
       </div>
 
