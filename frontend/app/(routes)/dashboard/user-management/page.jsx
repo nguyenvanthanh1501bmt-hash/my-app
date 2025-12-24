@@ -30,8 +30,13 @@ export default function AdminTestPage() {
   return (
     <div className="p-6 space-y-8 max-w-7xl mx-auto">
       {/* ===== HEADER ===== */}
-      <div>
-        <h1 className="text-3xl font-bold mb-6 ml-[15%]">User management</h1>
+      <div className="text-center">
+        <h1 className="text-5xl font-extrabold tracking-tight">
+          User Management
+        </h1>
+        <p className="mt-3 text-2xl text-gray-500">
+          Manage user accounts and permissions
+        </p>
       </div>
 
       {/* ===== FILTER BAR ===== */}

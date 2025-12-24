@@ -71,34 +71,47 @@ export default function User_list({
             </tr>
           )}
 
-          {filteredUsers.map(u => (
-            <tr key={u.id} className="hover:bg-gray-50">
+          {filteredUsers.map((u,idx) => (
+            <tr
+              key={u.id}
+              className={`hover:opacity-95 transition ${
+                idx % 2 === 0 ? "bg-white" : "bg-[#41BCBE]/15"
+              }`}
+            >
               <td className="border px-3 py-2">{u.id}</td>
               <td className="border px-3 py-2 font-medium">{u.name}</td>
               <td className="border px-3 py-2">{u.role}</td>
               <td className="border px-3 py-2">
                 {new Date(u.created_at).toLocaleDateString("vi-VN")}
               </td>
-              <td className="border px-3 py-2 flex flex-row justify-start gap-2">
-                <button
-                  className="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-600 transition"
-                  onClick={() => {
-                    setSelectedUser(u);
-                    setIsOpenUpdateForm(true);
-                  }}
-                >
-                  <Edit2 size={18} />
-                </button>
+              <td className="border px-3 py-2">
+                <div className="flex items-center gap-3">
+                  <button
+                    type="button"
+                    className="cursor-pointer text-blue-500 hover:text-blue-700 transition-transform hover:scale-110"
+                    onClick={() => {
+                      setSelectedUser(u);
+                      setIsOpenUpdateForm(true);
+                    }}
+                    aria-label="Edit user"
+                    title="Edit"
+                  >
+                    <Edit2 size={22} />
+                  </button>
 
-                <button
-                  className="flex items-center gap-1 text-sm text-red-500 hover:text-red-600 transition"
-                  onClick={() => {
-                    setSelectedUser(u);
-                    setIsOpenConfirmForm(true);
-                  }}
-                >
-                  <Trash2 size={18} />
-                </button>
+                  <button
+                    type="button"
+                    className="cursor-pointer text-red-500 hover:text-red-700 transition-transform hover:scale-110"
+                    onClick={() => {
+                      setSelectedUser(u);
+                      setIsOpenConfirmForm(true);
+                    }}
+                    aria-label="Delete user"
+                    title="Delete"
+                  >
+                    <Trash2 size={22} />
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
