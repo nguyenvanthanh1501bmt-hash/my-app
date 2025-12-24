@@ -126,3 +126,53 @@ Import traces:
 [00:28:14.971] Server  LOG      ✓ Compiled in 54ms
 [00:28:17.954] Server  LOG      ✓ Compiled in 51ms
 [00:28:20.000] Server  LOG      ✓ Compiled in 41ms
+[00:31:30.426] Server  ERROR    ⨯ TypeError: immutable
+[00:31:30.430] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:31:30.465] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:31:30.496] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:31:30.496] Browser LOG     Current path: /dashboard/user-management
+[00:31:30.989] Browser LOG     Sending username to backend: tamnguyen179
+[00:31:30.989] Browser LOG     Logging in user: tamnguyen179
+[00:31:31.309] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTMxODU0fQ.aNoLX84rKglA-9DlSA2tUshKjq5mzEr-LZ9tPsb5kQE","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:31:31.309] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:31:39.932] Browser LOG     Current path: /dashboard/your-debt
+[00:31:44.662] Browser LOG     Current path: /dashboard/saving-wallet
+[00:42:12.594] Server  ERROR    ⨯ TypeError: immutable
+[00:42:12.663] Server  ERROR    ⨯ TypeError: immutable
+[00:42:12.675] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:42:12.722] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:42:12.732] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:42:13.036] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:42:13.036] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:42:13.570] Browser LOG     Sending username to backend: tamnguyen179
+[00:42:13.570] Browser LOG     Logging in user: tamnguyen179
+[00:42:13.961] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTMyNDk3fQ.Le_5iRBU6gWOIM8lk1-ObtvlRyXn1LXSa9V9qgCg4cw","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:42:13.961] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:43:41.047] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:43:41.159] Server  ERROR    ⨯ TypeError: immutable
+[00:43:41.223] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:43:41.223] Browser LOG     Current path: /dashboard
+[00:43:41.225] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
+[00:43:41.697] Browser LOG     Sending username to backend: tamnguyen179
+[00:43:41.697] Browser LOG     Logging in user: tamnguyen179
+[00:43:42.123] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTMyNTg1fQ.mZ0JmUza38BM2Gx1WuCK7U1Mwo4IJKDoZWpr_pU6qG0","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:43:42.123] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:44:05.100] Browser LOG     Current path: /dashboard/budget
+[00:44:07.994] Browser LOG     Current path: /dashboard/expenses
+[00:44:10.406] Browser LOG     Current path: /dashboard/budget
+[00:44:12.360] Browser LOG     Current path: /dashboard
+[00:44:13.673] Browser LOG     Current path: /dashboard/expenses
+[00:44:19.921] Browser LOG     Current path: /dashboard/budget
+[00:44:31.369] Browser LOG     Current path: /dashboard/saving-wallet
+[00:44:35.007] Browser LOG     Current path: /dashboard/your-debt
+[00:44:38.014] Browser LOG     Current path: /dashboard/user-management
+[00:45:43.232] Server  LOG      ✓ Compiled in 173ms
+[00:45:56.140] Browser LOG     Current path: /dashboard/your-debt
+[00:45:56.699] Browser LOG     Current path: /dashboard/saving-wallet
+[00:45:57.700] Browser LOG     Current path: /dashboard/budget
+[01:11:40.769] Server  LOG      ✓ Compiled in 101ms
+[01:11:58.184] Server  LOG      ✓ Compiled in 146ms
+[01:12:02.219] Server  LOG      ✓ Compiled in 178ms
+[01:12:15.670] Server  LOG      ✓ Compiled in 127ms
+[01:12:19.467] Server  LOG      ✓ Compiled in 167ms
+[01:12:22.648] Server  LOG      ✓ Compiled in 253ms

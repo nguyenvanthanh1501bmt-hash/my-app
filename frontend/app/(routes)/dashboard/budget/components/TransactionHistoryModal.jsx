@@ -12,41 +12,67 @@ export default function TransactionHistoryModal({
 }) {
   if (!open) return null;
 
+  // format date dd/mm/yyyy
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "-";
+    const d = new Date(dateStr);
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/40 cursor-pointer" onClick={onClose} />
-      <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
-        <h2 className="mb-4 text-xl font-semibold">Transaction history – {month}</h2>
+      <div
+        className="absolute inset-0 bg-black/40 cursor-pointer"
+        onClick={onClose}
+      />
+
+      <div className="relative z-10 w-[600px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
+        <h2 className="mb-4 text-xl font-semibold">
+          Transaction history – {month}
+        </h2>
 
         {items.length === 0 ? (
           <p className="text-sm text-slate-500">
             Không có giao dịch chi tiêu nào trong tháng này.
           </p>
         ) : (
-          <ul className="max-h-80 space-y-3 overflow-y-auto">
-            {items.map((tx) => {
+          <ul className="max-h-96 overflow-y-auto rounded-xl border border-slate-200 divide-y divide-slate-200">
+            {items.map((tx, idx) => {
               const meta = CATEGORY_META[tx.category_id] || CATEGORY_META[1];
-              const dateStr = String(tx.date).slice(0, 10);
 
               return (
                 <li
                   key={tx.id}
-                  className="flex items-center justify-between rounded-3xl bg-gradient-to-r from-purple-500 to-indigo-500 px-4 py-3 text-sm text-white shadow-sm"
+                  className={`flex items-center justify-between px-4 py-3 ${
+                    idx % 2 === 0 ? "bg-white" : "bg-slate-100"
+                  }`}
                 >
+                  {/* LEFT */}
                   <div className="flex items-start gap-3">
-                    <div className={`mt-1 grid h-9 w-9 place-items-center rounded-full ${meta.color}`}>
+                    <div
+                      className={`mt-1 grid h-9 w-9 place-items-center rounded-full ${meta.color}`}
+                    >
                       <span className="text-lg">{meta.icon}</span>
                     </div>
 
                     <div>
-                      <div className="text-[11px] font-medium opacity-70">{dateStr}</div>
-                      <div className="text-sm font-semibold">{meta.name}</div>
-                      <div className="text-sm opacity-85">{tx.note || "(Không có ghi chú)"}</div>
+                      <div className="text-xs text-slate-500">
+                        {formatDate(tx.date)}
+                      </div>
+                      <div className="text-sm font-semibold text-slate-800">
+                        {meta.name}
+                      </div>
+                      <div className="text-sm text-slate-600">
+                        {tx.note || "(Không có ghi chú)"}
+                      </div>
                     </div>
                   </div>
 
-                  {/* ✅ tiền: trắng + 500.000đ */}
-                  <div className="text-right text-sm font-extrabold text-white">
+                  {/* RIGHT */}
+                  <div className="text-right text-sm font-bold text-red-600">
                     - {formatVND(tx.amount)}
                   </div>
                 </li>

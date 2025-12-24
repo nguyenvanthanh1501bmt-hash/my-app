@@ -51,7 +51,7 @@ export default function UpdateForm({ open, onOpenChange, user }) {
   return (
     <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg w-full max-w-md p-6 shadow-lg">
-        <h2 className="text-lg font-semibold mb-4">Đổi role người dùng</h2>
+        <h2 className="text-lg font-semibold mb-4">Update Role</h2>
 
         <div className="mb-3 text-sm text-gray-600">
           User: <b>{user.name}</b> (ID: {user.id})
