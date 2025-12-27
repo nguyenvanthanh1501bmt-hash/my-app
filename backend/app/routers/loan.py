@@ -13,12 +13,12 @@ def create_loan(body: LoanCreate, db: Session = Depends(get_db)):
         raise HTTPException(400, "User không tồn tại")
     return LoanRepo.create(db, **body.model_dump())
 
-# NEW: find_by_user
+""" find_by_user """
 @router.get("/find-by-user/{user_id}", response_model=list[LoanOut])
 def find_by_user(user_id: int, db: Session = Depends(get_db)):
     return LoanRepo.find_by_user(db, user_id)
 
-# NEW: update (theo id, không gọi get_by_id)
+""" update (theo id, không gọi get_by_id) """
 @router.patch("/{loan_id}", response_model=LoanOut)
 def update_loan(loan_id: int, body: LoanUpdate, db: Session = Depends(get_db)):
     l = LoanRepo.update(db, loan_id, **body.model_dump())
@@ -26,7 +26,7 @@ def update_loan(loan_id: int, body: LoanUpdate, db: Session = Depends(get_db)):
         raise HTTPException(404, "Không tìm thấy khoản vay/nợ")
     return l
 
-# NEW: update_status
+""" update_status """
 @router.patch("/{loan_id}/status", response_model=LoanOut)
 def update_status(loan_id: int, status: str, db: Session = Depends(get_db)):
     l = LoanRepo.update_status(db, loan_id, status)

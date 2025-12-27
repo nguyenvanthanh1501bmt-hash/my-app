@@ -12,12 +12,12 @@ class BudgetRepo:
         db.add(b); db.commit(); db.refresh(b)
         return b
 
-    # NEW: tìm budget theo user + month (YYYY-MM)
+    """ tìm budget theo user + month (YYYY-MM) """
     @staticmethod
     def find_user_by_month(db: Session, user_id: int, month: str) -> Budget | None:
         return db.query(Budget).filter(Budget.user_id==user_id, Budget.month==month).first()
 
-    # cập nhật trường thông thường (không dùng get_by_id nữa)
+    """ cập nhật trường thông thường (không dùng get_by_id nữa) """
     @staticmethod
     def update_partial(db: Session, budget: Budget, **fields) -> Budget:
         for k, v in fields.items():
@@ -26,7 +26,7 @@ class BudgetRepo:
         db.commit(); db.refresh(budget)
         return budget
 
-    # tính used từ transactions cho đúng tháng
+    """ tính used từ transactions cho đúng tháng """
     @staticmethod
     def recalc_used_from_transactions(db: Session, budget: Budget) -> Budget:
         y, m = _ym(budget.month)
@@ -41,7 +41,7 @@ class BudgetRepo:
         db.commit(); db.refresh(budget)
         return budget
 
-    # NEW: tăng used lên một lượng (vd khi thêm giao dịch outcome)
+    """ tăng used lên một lượng (vd khi thêm giao dịch outcome) """
     @staticmethod
     def update_used_amount(db: Session, user_id: int, month: str, delta):
         b = BudgetRepo.find_user_by_month(db, user_id, month)
@@ -53,7 +53,7 @@ class BudgetRepo:
         db.commit(); db.refresh(b)
         return b
 
-    # NEW: giảm used (vd khi xóa giao dịch outcome)
+    """ giảm used (vd khi xóa giao dịch outcome) """
     @staticmethod
     def revert_used_amount(db: Session, user_id: int, month: str, delta):
         # delta nên truyền vào là số dương; hàm sẽ trừ

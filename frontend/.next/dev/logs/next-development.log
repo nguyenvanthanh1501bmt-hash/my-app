@@ -1,159 +1,23 @@
-[00:00:02.272] Server  LOG      ✓ Ready in 1709ms
-[00:04:08.845] Server  LOG      ○ Compiling / ...
-[00:04:10.359] Server  ERROR    ⨯ TypeError: immutable
-[00:04:10.700] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:10.932] Server  ERROR    ⨯ TypeError: immutable
-[00:04:11.491] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:11.491] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:12.347] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:12.350] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:12.352] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:12.352] Browser LOG     Logging in user: tamnguyen179
-[00:04:12.352] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc3NDA4fQ.Vo9BGNl-tQnB8tk9sdatkzOuHpsoM1jWtmIJcNHlHh8","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:04:12.352] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:04:19.037] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:19.111] Server  ERROR    ⨯ TypeError: immutable
-[00:04:19.168] Server  ERROR    ⨯ TypeError: immutable
-[00:04:19.236] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:19.242] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:19.385] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:19.385] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:23.153] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:23.268] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:27.174] Server  ERROR    ⨯ TypeError: immutable
-[00:04:27.246] Server  ERROR    ⨯ TypeError: immutable
-[00:04:27.252] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:27.252] Browser LOG     Sending username to backend: test123
-[00:04:27.252] Browser LOG     Logging in user: test123
-[00:04:27.252] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123","role":"user"}
-[00:04:27.253] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY5MTc3NDIzfQ.GNrHh6IBbcAE1xnu747Jj4-OcmW1SdDr_NOZLK-eMOg","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123","role":"user"}}
-[00:04:27.327] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:27.352] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:32.105] Server  LOG      ○ Compiling /dashboard ...
-[00:04:32.811] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:32.882] Server  ERROR    ⨯ TypeError: immutable
-[00:04:32.976] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:33.034] Browser LOG     Current path: /dashboard
-[00:04:33.034] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:33.360] Browser LOG     Sending username to backend: test123
-[00:04:33.360] Browser LOG     Logging in user: test123
-[00:04:33.693] Browser LOG     Username sent successfully: test123 Backend response: {"created_at":"2025-10-30T12:11:11","id":1,"name":"test123","role":"user"}
-[00:04:33.693] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzY5MTc3NDI5fQ.4oPrv3bG882bYvCH1JhlaG_Lzy9gev54DOVmKEHmWAY","user":{"created_at":"2025-10-30 12:11:11","id":1,"name":"test123","role":"user"}}
-[00:04:42.071] Server  ERROR    ⨯ TypeError: immutable
-[00:04:42.137] Server  ERROR    ⨯ TypeError: immutable
-[00:04:42.148] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:42.235] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:42.237] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:43.175] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:43.175] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:47.392] Server  ERROR    ⨯ TypeError: immutable
-[00:04:47.450] Server  ERROR    ⨯ TypeError: immutable
-[00:04:47.455] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:47.455] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:47.455] Browser LOG     Logging in user: tamnguyen179
-[00:04:47.455] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:04:47.455] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc3NDQzfQ.RBIEhq1Q5XSmSWnBtId5LMxF8CIqeQc561bfRpmQdmQ","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:04:47.533] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:47.536] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:48.556] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:48.640] Server  ERROR    ⨯ TypeError: immutable
-[00:04:48.736] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:04:48.741] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:48.741] Browser LOG     Current path: /dashboard
-[00:04:49.080] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:49.080] Browser LOG     Logging in user: tamnguyen179
-[00:04:49.080] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:04:49.080] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc3NDQ1fQ.oD2ricxmrfJ8Ib0px06e0MUciwKyNFB69LM15F1-oXw","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:08:20.739] Server  LOG      ✓ Compiled in 70ms
-[00:08:36.725] Server  LOG      ✓ Compiled in 59ms
-[00:09:00.250] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:09:00.420] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:09:00.420] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:09:00.712] Browser WARN    Image with src "/_next/static/media/dashboard.cee7b1c1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+[00:00:05.896] Server  LOG      ✓ Ready in 4.7s
+[00:03:08.621] Server  LOG      ○ Compiling / ...
+[00:03:13.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:16.803] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:03:16.803] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:03:16.803] Browser LOG     Sending username to backend: tamnguyen179
+[00:03:16.803] Browser LOG     Logging in user: tamnguyen179
+[00:03:16.803] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5Mzk4OTEzfQ.tQ3mlhOSSaQijjdqUj2Iv2Rxz1TJZS0jYrvJDtoyB6k","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:03:16.803] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:04:39.044] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:04:39.309] Browser WARN    Image with src "/_next/static/media/dashboard.cee7b1c1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
 Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:09:00.713] Browser LOG     Sending username to backend: tamnguyen179
-[00:09:00.713] Browser LOG     Logging in user: tamnguyen179
-[00:09:01.060] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc3Njk3fQ.dBxwVAo3cAAnwIxMatLokhpd0fNow9oOb2geXkjS9Eg","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:09:01.061] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:09:18.197] Server  LOG      ✓ Compiled in 260ms
-[00:27:40.022] Server  LOG      ✓ Compiled in 130ms
-[00:27:40.240] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:27:43.742] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:27:43.975] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:27:43.975] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:27:43.975] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:27:44.340] Browser LOG     Sending username to backend: tamnguyen179
-[00:27:44.340] Browser LOG     Logging in user: tamnguyen179
-[00:27:44.726] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4ODIwfQ.x94-4DsmfF00rTyEo61SYMt6Y_ksb5PIZuBN2XDEZyg","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:27:44.727] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:27:53.984] Server  LOG      ✓ Compiled in 157ms
-[00:27:57.334] Server  LOG      ✓ Compiled in 128ms
-[00:28:02.522] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:02.676] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:28:02.676] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:28:02.676] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:28:03.011] Browser LOG     Sending username to backend: tamnguyen179
-[00:28:03.011] Browser LOG     Logging in user: tamnguyen179
-[00:28:03.011] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:28:03.011] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4ODM5fQ.vyG02NsMjgp2YPetDBmMeWVQaFqIUScIYombJjtpsfY","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:28:04.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:04.648] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:28:04.649] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:28:04.649] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:28:05.921] Browser LOG     Sending username to backend: tamnguyen179
-[00:28:05.921] Browser LOG     Logging in user: tamnguyen179
-[00:28:05.921] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:28:05.921] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4ODQxfQ.vhshWocout8CrzMS8sg5STtQ6Da79BGCFW3iZ-FleMM","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:28:07.019] Server  LOG      ✓ Compiled in 40ms
-[00:28:08.597] Server  LOG      ✓ Compiled in 163ms
-[00:28:13.761] Server  LOG      ✓ Compiled in 136ms
-[00:28:22.156] Server  LOG      ✓ Compiled in 146ms
-[00:28:28.130] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:28.225] Server  ERROR    ⨯ TypeError: immutable
-[00:28:28.292] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:28:28.292] Browser LOG     Current path: /dashboard
-[00:28:28.293] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:28:28.944] Browser LOG     Sending username to backend: tamnguyen179
-[00:28:28.945] Browser LOG     Logging in user: tamnguyen179
-[00:28:29.338] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4ODY1fQ.M06F0IOrN272onTlc6pfL0gWueGvHHI0TwPDasfIhjI","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:28:29.338] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:28:31.464] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:28:31.611] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:28:31.611] Browser WARN    Image with src "/_next/static/media/dashboard.cee7b1c1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:28:31.611] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:28:31.611] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:28:31.920] Browser LOG     Sending username to backend: tamnguyen179
-[00:28:31.921] Browser LOG     Logging in user: tamnguyen179
-[00:28:31.921] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4ODY4fQ.esU8t0MiaP1-4I4nWAOGmx_EXxmnhhKD6Frmn3lHwQQ","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:28:31.921] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:29:16.286] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:29:16.358] Server  ERROR    ⨯ TypeError: immutable
-[00:29:16.394] Server  ERROR    ⨯ "The requested resource isn't a valid image for" "/LogoWeb-removebg-preview.png" "received" null
-[00:29:16.426] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:29:16.426] Browser LOG     Current path: /dashboard
-[00:29:16.843] Browser LOG     Sending username to backend: tamnguyen179
-[00:29:16.843] Browser LOG     Logging in user: tamnguyen179
-[00:29:16.843] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:29:16.843] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc4OTEzfQ.ldDqrPiPjFNcOnhiwFi9PWpUTPo1dMc9Da5KWFRI-q0","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:31:06.531] Server  LOG      ✓ Compiled in 74ms
-[00:31:08.236] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:08.406] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:31:08.406] Browser LOG     Current path: /dashboard
-[00:31:08.406] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:31:08.714] Browser LOG     Sending username to backend: tamnguyen179
-[00:31:08.714] Browser LOG     Logging in user: tamnguyen179
-[00:31:09.040] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc5MDI1fQ.BIhO_ALCQcY_ri5k44RPcQuWaAKyOq0C6u1MEIbxwrg","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:31:09.040] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:31:16.208] Server  LOG      ✓ Compiled in 135ms
-[00:31:23.642] Server  LOG      ✓ Compiled in 125ms
-[00:31:27.996] Server  LOG      ✓ Compiled in 135ms
-[00:31:39.323] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:31:42.284] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:31:42.434] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:31:42.434] Browser LOG     Current path: /dashboard
-[00:31:42.434] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:31:42.786] Browser LOG     Sending username to backend: tamnguyen179
-[00:31:42.786] Browser LOG     Logging in user: tamnguyen179
-[00:31:42.786] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:31:42.786] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5MTc5MDU5fQ.6NO60JmnWjB-q50-Xnu-6WyQfDd0efQfIhZ7NERbJ1g","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:04:43.304] Server  LOG      ○ Compiling /dashboard ...
+[00:04:44.622] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:44.780] Browser LOG     Current path: /dashboard
+[00:04:44.780] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:04:45.044] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:04:45.458] Browser LOG     Sending username to backend: tamnguyen179
+[00:04:45.459] Browser LOG     Logging in user: tamnguyen179
+[00:04:45.968] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:04:45.968] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5Mzk5MDAzfQ.Xt1oe7LvKoqkgJbgSWQdMBt1CH_ehk1olZUsp18hhEE","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:04:48.058] Browser LOG     Current path: /dashboard/budget
+[00:11:52.793] Server  LOG      ✓ Compiled in 253ms

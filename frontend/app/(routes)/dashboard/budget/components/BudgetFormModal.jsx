@@ -14,16 +14,27 @@ export default function BudgetFormModal({
   onClose,
   onSubmit,
 }) {
+  // Không render nếu modal đang đóng
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/40 cursor-pointer" onClick={onClose} />
+
+      {/* Overlay */}
+      <div
+        className="absolute inset-0 bg-black/40 cursor-pointer"
+        onClick={onClose}
+      />
+
+      {/* Modal content */}
       <div className="relative z-10 w-[560px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
+        
+        {/* Title */}
         <h2 className="mb-6 text-xl font-semibold">
           {mode === "create" ? "Create New Budget" : "Edit Budget"}
         </h2>
 
+        {/* Month input */}
         <label className="mb-2 block text-sm font-medium">Month</label>
         <div className="mb-5 relative">
           <input
@@ -37,6 +48,7 @@ export default function BudgetFormModal({
           </div>
         </div>
 
+        {/* Amount input */}
         <label className="mb-2 block text-sm font-medium">Amount</label>
         <div className="mb-8">
           <input
@@ -48,6 +60,7 @@ export default function BudgetFormModal({
           />
         </div>
 
+        {/* Action buttons */}
         <div className="mt-2 flex items-center gap-4">
           <button
             onClick={onSubmit}

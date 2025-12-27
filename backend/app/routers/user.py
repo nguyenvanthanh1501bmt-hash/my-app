@@ -90,7 +90,7 @@ def login(
 def me(current=Depends(get_current_user)):
     return current
 
-# ====== Cập nhật thông tin (chỉ cho đổi name) ======
+"""Cập nhật thông tin (chỉ cho đổi name) """ 
 @router.patch("/me", response_model=UserOut)
 def update_me(
     body: UserUpdate,
@@ -108,7 +108,7 @@ def update_me(
     user = UserRepo.update_partial(db, current, **fields)
     return user
 
-# ====== Danh sách người dùng (ADMIN ONLY) ======
+""" Danh sách người dùng (ADMIN ONLY) """
 @router.get("/", response_model=list[UserOut])
 def list_users(db: Session = Depends(get_db), admin=Depends(require_admin)):
     rows = UserRepo.list_basic(db)
@@ -119,7 +119,7 @@ def list_users(db: Session = Depends(get_db), admin=Depends(require_admin)):
         out.append(UserOut(id=rid, name=rname, role=rrole, created_at=rcreated))
     return out
 
-# ====== Xóa user (ADMIN ONLY) ======
+""" Xóa user (ADMIN ONLY) """ 
 @router.delete("/{user_id}", response_model=dict)
 def delete_user(
     user_id: int,
@@ -133,7 +133,7 @@ def delete_user(
     UserRepo.delete(db, user_id)
     return {"deleted": True}
 
-# ====== Đổi role cho user (ADMIN ONLY) - Optional ======
+""" Đổi role cho user (ADMIN ONLY) - Optional """
 @router.patch("/{user_id}/role", response_model=UserOut)
 def set_user_role(
     user_id: int,

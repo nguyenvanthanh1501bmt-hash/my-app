@@ -8,13 +8,13 @@ class LoanRepo:
         db.add(l); db.commit(); db.refresh(l)
         return l
 
-    # NEW: tìm theo user (thay cho list_by_user)
+    """ tìm theo user """
     @staticmethod
     def find_by_user(db: Session, user_id: int):
         return db.query(LoanDebt).filter(LoanDebt.user_id == user_id) \
                  .order_by(LoanDebt.due_date.asc()).all()
 
-    # NEW: update theo id (tự fetch bên trong, KHÔNG lộ get_by_id)
+    """ update theo id (tự fetch bên trong, KHÔNG lộ get_by_id) """
     @staticmethod
     def update(db: Session, loan_id: int, **fields) -> LoanDebt | None:
         l = db.get(LoanDebt, loan_id)
@@ -25,7 +25,7 @@ class LoanRepo:
         db.commit(); db.refresh(l)
         return l
 
-    # NEW: update status riêng
+    """ update status riêng """
     @staticmethod
     def update_status(db: Session, loan_id: int, status: str) -> LoanDebt | None:
         l = db.get(LoanDebt, loan_id)

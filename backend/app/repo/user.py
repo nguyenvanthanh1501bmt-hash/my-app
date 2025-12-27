@@ -12,7 +12,7 @@ class UserRepo:
 
     @staticmethod
     def create(db: Session, name: str) -> User:
-        # NEW: default role='user'
+        # default role='user'
         u = User(name=name, role="user")
         db.add(u); db.commit(); db.refresh(u)
         return u

@@ -1,4 +1,4 @@
-# app/models/__init__.py
+""" app/models/__init__.py """
 from app.database import Base
 from .user import User
 from .categories import Category

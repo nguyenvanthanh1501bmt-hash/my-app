@@ -4,6 +4,15 @@ import React from "react";
 import { CATEGORY_META } from "./constants";
 import { formatVND } from "./utils";
 
+/**
+ * Modal hiển thị lịch sử giao dịch chi tiêu theo tháng
+ *
+ * Props:
+ * - open: hiển thị modal
+ * - month: tháng đang xem
+ * - items: danh sách transaction
+ * - onClose: đóng modal
+ */
 export default function TransactionHistoryModal({
   open,
   month,
@@ -12,7 +21,7 @@ export default function TransactionHistoryModal({
 }) {
   if (!open) return null;
 
-  // format date dd/mm/yyyy
+  // Format ngày sang dd/mm/yyyy
   const formatDate = (dateStr) => {
     if (!dateStr) return "-";
     const d = new Date(dateStr);
@@ -24,16 +33,20 @@ export default function TransactionHistoryModal({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
+
+      {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/40 cursor-pointer"
         onClick={onClose}
       />
 
+      {/* Modal content */}
       <div className="relative z-10 w-[600px] max-w-[92vw] rounded-2xl bg-white p-6 shadow-xl">
         <h2 className="mb-4 text-xl font-semibold">
           Transaction history – {month}
         </h2>
 
+        {/* Empty state */}
         {items.length === 0 ? (
           <p className="text-sm text-slate-500">
             Không có giao dịch chi tiêu nào trong tháng này.
@@ -41,7 +54,8 @@ export default function TransactionHistoryModal({
         ) : (
           <ul className="max-h-96 overflow-y-auto rounded-xl border border-slate-200 divide-y divide-slate-200">
             {items.map((tx, idx) => {
-              const meta = CATEGORY_META[tx.category_id] || CATEGORY_META[1];
+              const meta =
+                CATEGORY_META[tx.category_id] || CATEGORY_META[1];
 
               return (
                 <li
@@ -50,7 +64,7 @@ export default function TransactionHistoryModal({
                     idx % 2 === 0 ? "bg-white" : "bg-slate-100"
                   }`}
                 >
-                  {/* LEFT */}
+                  {/* LEFT: icon + info */}
                   <div className="flex items-start gap-3">
                     <div
                       className={`mt-1 grid h-9 w-9 place-items-center rounded-full ${meta.color}`}
@@ -71,7 +85,7 @@ export default function TransactionHistoryModal({
                     </div>
                   </div>
 
-                  {/* RIGHT */}
+                  {/* RIGHT: số tiền */}
                   <div className="text-right text-sm font-bold text-red-600">
                     - {formatVND(tx.amount)}
                   </div>
@@ -81,6 +95,7 @@ export default function TransactionHistoryModal({
           </ul>
         )}
 
+        {/* Close button */}
         <div className="mt-5 text-right">
           <button
             onClick={onClose}

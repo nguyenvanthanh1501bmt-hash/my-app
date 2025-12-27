@@ -3,11 +3,19 @@
 import React from "react";
 import { Calendar } from "lucide-react";
 
+/**
+ * Bộ lọc chọn tháng
+ *
+ * Props:
+ * - value: giá trị tháng (YYYY-MM)
+ * - onChange: callback khi đổi tháng
+ */
 export default function MonthFilter({ value, onChange }) {
   return (
     <div className="mb-4 flex flex-wrap items-center gap-3">
       <label className="text-sm text-slate-600">Month</label>
 
+      {/* Input type=month ẩn, dùng icon thay thế */}
       <div className="relative">
         <input
           type="month"

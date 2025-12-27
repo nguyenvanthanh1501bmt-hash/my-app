@@ -29,7 +29,7 @@ class TransactionRepo:
         if t:
             db.delete(t); db.commit()
 
-    # NEW: tìm theo note (case-insensitive cho SQL Server)
+    """ tìm theo note (case-insensitive cho SQL Server) """
     @staticmethod
     def search_by_note(db: Session, user_id: int, keyword: str):
         kw = f"%{keyword.lower()}%"
@@ -40,7 +40,7 @@ class TransactionRepo:
             ) \
             .order_by(Transaction.date.desc()).all()
 
-    # NEW: lấy category theo tên
+    """ lấy category theo tên """
     @staticmethod
     def get_category_by_name(db: Session, name: str) -> Category | None:
         return db.query(Category).filter(func.lower(Category.name) == name.lower()).first()
