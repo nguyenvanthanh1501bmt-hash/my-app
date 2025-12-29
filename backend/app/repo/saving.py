@@ -2,6 +2,17 @@ from sqlalchemy.orm import Session
 from app.models.saving import Saving
 
 class SavingRepo:
+    """
+    Repository lớp Saving (savings).
+
+    Quản lý mục tiêu tiết kiệm:
+    - Tạo mới mục tiêu
+    - Lấy danh sách theo user
+    - Cập nhật từng phần dựa trên instance Saving
+    - Lấy theo id
+    - Xóa theo id
+    """
+
     @staticmethod
     def create(db: Session, **kw) -> Saving:
         s = Saving(**kw)

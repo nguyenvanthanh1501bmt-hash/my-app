@@ -2,6 +2,17 @@ from sqlalchemy.orm import Session
 from app.models.loan import LoanDebt
 
 class LoanRepo:
+    """
+    Repository lớp LoanDebt.
+
+    Quản lý các thao tác CRUD cho khoản vay/nợ:
+    - Tạo mới khoản vay/nợ
+    - Lấy danh sách theo user (sắp xếp theo due_date)
+    - Cập nhật từng phần theo id
+    - Cập nhật riêng status (pending/paid)
+    - Xóa theo id
+    """
+
     @staticmethod
     def create(db: Session, **kw) -> LoanDebt:
         l = LoanDebt(**kw)

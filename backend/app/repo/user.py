@@ -2,6 +2,19 @@ from sqlalchemy.orm import Session
 from app.models.user import User
 
 class UserRepo:
+    """
+    Repository lớp User (users).
+
+    Quản lý dữ liệu người dùng phục vụ đăng nhập/đăng ký & admin:
+    - Lấy user theo id
+    - Tìm theo name
+    - Tạo user mới (mặc định role='user')
+    - Cập nhật từng phần dựa trên instance User
+    - Lấy danh sách cơ bản 
+    - Xóa user
+    - Set role (user/admin)
+    """
+
     @staticmethod
     def get_by_id(db: Session, user_id: int) -> User | None:
         return db.get(User, user_id)

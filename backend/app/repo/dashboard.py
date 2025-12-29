@@ -1,4 +1,3 @@
-# app/repo/dashboard.py
 from decimal import Decimal
 from typing import Any
 
@@ -17,6 +16,17 @@ def _ym(month: str) -> tuple[int, int]:
 
 
 class DashboardRepo:
+    """
+    Repository phục vụ Dashboard.
+
+    Gom các truy vấn tổng hợp để trả dữ liệu hiển thị dashboard, gồm:
+    - Summary 3 box: total_budget, total_spend, current_balance
+    - Biểu đồ income vs outcome (theo weekday hoặc theo day-of-month)
+    - Pie chart chi tiêu theo category
+    - Danh sách recent transactions
+
+    """
+
     @staticmethod
     def get_summary(db: Session, user_id: int, month: str) -> dict[str, Any] | None:
         """
@@ -45,7 +55,13 @@ class DashboardRepo:
     def income_vs_outcome(
         db: Session, user_id: int, month: str, mode: str = "weekly"
     ) -> list[dict[str, Any]]:
+        """
+        Trả data cho biểu đồ Income vs Outcome.
 
+        mode:
+        - 'weekly'  : nhóm theo thứ trong tuần (DATENAME/DATEPART)
+        - 'monthly' : nhóm theo ngày trong tháng (DAY)
+        """
         y, m = _ym(month)
 
         if mode == "monthly":
@@ -86,7 +102,6 @@ class DashboardRepo:
 
         return result
 
-
     @staticmethod
     def category_expense(
         db: Session, user_id: int, month: str
@@ -118,7 +133,7 @@ class DashboardRepo:
     ) -> list[dict[str, Any]]:
         """
         Data cho list 'Recent Transaction'.
-        - mặc định lấy 5 record mới nhất
+        - mặc định lấy `limit` record mới nhất
         - nếu truyền month='YYYY-MM' thì filter theo tháng đó
         """
         params: dict[str, Any] = {"uid": user_id}
@@ -128,7 +143,6 @@ class DashboardRepo:
             filter_month = "AND YEAR(t.[date]) = :y AND MONTH(t.[date]) = :m"
             params.update({"y": y, "m": m})
 
-        # TOP 5 fix cứng cho đơn giản (limit bên ngoài đã khớp)
         sql = text(
             f"""
             SELECT TOP {limit}

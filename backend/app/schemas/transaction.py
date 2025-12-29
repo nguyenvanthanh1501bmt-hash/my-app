@@ -9,6 +9,9 @@ from pydantic import BaseModel, Field
 Amount18_2 = Annotated[Decimal, Field(max_digits=18, decimal_places=2, ge=0)]
 
 class TransactionCreate(BaseModel):
+    """
+    Schema tạo giao dịch thu / chi.
+    """
     user_id: int
     category_id: int
     amount: Amount18_2
@@ -17,6 +20,9 @@ class TransactionCreate(BaseModel):
     type: Literal["income", "outcome"]
 
 class TransactionUpdate(BaseModel):
+    """
+    Schema cập nhật giao dịch (partial update).
+    """
     category_id: int | None = None
     amount: Annotated[Decimal | None, Field(max_digits=18, decimal_places=2, ge=0)] = None
     date: datetime | None = None
@@ -24,6 +30,9 @@ class TransactionUpdate(BaseModel):
     type: Literal["income", "outcome"] | None = None
 
 class TransactionOut(BaseModel):
+    """
+    Schema trả dữ liệu giao dịch ra API.
+    """
     id: int
     user_id: int
     category_id: int

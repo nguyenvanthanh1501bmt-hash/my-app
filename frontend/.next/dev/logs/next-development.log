@@ -1,23 +1,26 @@
-[00:00:05.896] Server  LOG      ✓ Ready in 4.7s
-[00:03:08.621] Server  LOG      ○ Compiling / ...
-[00:03:13.521] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:16.803] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:03:16.803] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:03:16.803] Browser LOG     Sending username to backend: tamnguyen179
-[00:03:16.803] Browser LOG     Logging in user: tamnguyen179
-[00:03:16.803] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5Mzk4OTEzfQ.tQ3mlhOSSaQijjdqUj2Iv2Rxz1TJZS0jYrvJDtoyB6k","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:03:16.803] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:04:39.044] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
-[00:04:39.309] Browser WARN    Image with src "/_next/static/media/dashboard.cee7b1c1.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:04:43.304] Server  LOG      ○ Compiling /dashboard ...
-[00:04:44.622] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:04:44.780] Browser LOG     Current path: /dashboard
-[00:04:44.780] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
-[00:04:45.044] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
-[00:04:45.458] Browser LOG     Sending username to backend: tamnguyen179
-[00:04:45.459] Browser LOG     Logging in user: tamnguyen179
-[00:04:45.968] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
-[00:04:45.968] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5Mzk5MDAzfQ.Xt1oe7LvKoqkgJbgSWQdMBt1CH_ehk1olZUsp18hhEE","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
-[00:04:48.058] Browser LOG     Current path: /dashboard/budget
-[00:11:52.793] Server  LOG      ✓ Compiled in 253ms
+[00:00:03.284] Server  LOG      ✓ Ready in 2.6s
+[00:00:11.927] Server  LOG      ○ Compiling / ...
+[00:00:15.644] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:15.827] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[00:00:15.827] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:15.984] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:16.427] Browser LOG     Sending username to backend: tamnguyen179
+[00:00:16.427] Browser LOG     Logging in user: tamnguyen179
+[00:00:16.951] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5NTk3OTg3fQ.5cAu3jPs7z_bmUL_ik_prmcJAViRR-nrXO634zpzIPY","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:00:16.952] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:00:24.786] Server  LOG      ○ Compiling /dashboard ...
+[00:00:26.104] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:26.271] Browser WARN    Clerk: Clerk has been loaded with development keys. Development instances have strict usage limits and should not be used when deploying your application to production. Learn more: https://clerk.com/docs/deployments/overview
+[00:00:26.271] Browser LOG     Current path: /dashboard
+[00:00:26.271] Browser WARN    Image with src "/_next/static/media/finman.714d9a54.png" has either width or height modified, but not the other. If you use CSS to change the size of your image, also include the styles 'width: "auto"' or 'height: "auto"' to maintain the aspect ratio.
+[00:00:26.676] Browser LOG     Sending username to backend: tamnguyen179
+[00:00:26.677] Browser LOG     Logging in user: tamnguyen179
+[00:00:26.677] Browser LOG     Login successful: {"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZXhwIjoxNzY5NTk3OTk3fQ.31zeiT67HLdZ5HhdSH8RTwahrdWClyXBUguYult4cUY","user":{"created_at":"2025-12-09 04:12:25","id":3,"name":"tamnguyen179","role":"admin"}}
+[00:00:26.677] Browser LOG     Username sent successfully: tamnguyen179 Backend response: {"created_at":"2025-12-09T04:12:25","id":3,"name":"tamnguyen179","role":"admin"}
+[00:00:34.130] Browser LOG     Current path: /dashboard/expenses
+[00:01:21.898] Browser LOG     Current path: /dashboard
+[00:01:27.102] Browser LOG     Current path: /dashboard/budget
+[00:02:19.391] Browser LOG     Current path: /dashboard/saving-wallet
+[00:03:50.884] Browser LOG     Current path: /dashboard/your-debt
+[00:06:15.081] Browser LOG     Current path: /dashboard/user-management
+[00:06:21.474] Browser LOG     Current path: /dashboard

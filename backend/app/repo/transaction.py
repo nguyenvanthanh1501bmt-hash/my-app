@@ -4,6 +4,18 @@ from app.models.transaction import Transaction
 from app.models.categories import Category
 
 class TransactionRepo:
+    """
+    Repository lớp Transaction .
+
+    Quản lý giao dịch thu/chi:
+    - Tạo mới transaction
+    - Lấy danh sách theo user (mới nhất trước)
+    - Cập nhật từng phần dựa trên instance Transaction
+    - Xóa theo id
+    - Tìm kiếm theo note 
+    - Lấy Category theo tên 
+    """
+
     @staticmethod
     def create(db: Session, **kw) -> Transaction:
         t = Transaction(**kw)

@@ -3,10 +3,33 @@ from sqlalchemy.orm import relationship
 from ..database import Base
 
 class LoanDebt(Base):
+    """
+    ORM model đại diện cho bảng loans_debts.
+
+    Lưu thông tin các khoản vay hoặc nợ của người dùng.
+    Dùng để theo dõi số tiền, đối tượng liên quan,
+    ngày đến hạn và trạng thái thanh toán.
+
+    Thuộc tính type:
+    - 'loan' : cho người khác vay
+    - 'debt' : nợ người khác
+
+    Thuộc tính status:
+    - 'pending' : chưa thanh toán
+    - 'paid'    : đã thanh toán
+
+    Quan hệ:
+    - Thuộc về một User
+    """
+
     __tablename__ = "loans_debts"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    user_id = Column(Integer, ForeignKey("users.id", ondelete="NO ACTION", onupdate="NO ACTION"), nullable=False)
+    user_id = Column(
+        Integer,
+        ForeignKey("users.id", ondelete="NO ACTION", onupdate="NO ACTION"),
+        nullable=False
+    )
     amount = Column(DECIMAL(18, 2), nullable=False)
     person = Column(String(100), nullable=False)
     due_date = Column(Date, nullable=False)

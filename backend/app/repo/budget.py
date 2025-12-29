@@ -6,6 +6,19 @@ def _ym(month: str) -> tuple[int, int]:
     y, m = month.split("-"); return int(y), int(m)
 
 class BudgetRepo:
+    """
+    Repository lớp Budget (budgets).
+
+    Thao tác dữ liệu ngân sách theo tháng của user:
+    - Tạo mới budget theo tháng
+    - Tìm budget theo (user_id, month)
+    - Cập nhật từng phần (partial update)
+    - Tính lại 'used' dựa trên transactions outcome trong tháng
+    - Cộng/trừ used khi thêm/xóa giao dịch outcome (để không phải recalc toàn bộ)
+    - Xóa budget và liệt kê budgets của user
+    
+    """
+
     @staticmethod
     def create(db: Session, user_id: int, month: str, amount, used):
         b = Budget(user_id=user_id, month=month, amount=amount, used=used)
